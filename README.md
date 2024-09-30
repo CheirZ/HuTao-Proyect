@@ -1,23 +1,22 @@
-> 🚩 Versión Actual: 3.0.1
+> 💝 Versión Actual: V2
 
-## 💥 **`Megumin - Bot - MD`**
-## 💥 **`El bot más explosivo de WhatsApp!`**
+## ❤️‍🔥 **`HuTao - Proyect`**
+## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Megumin+-+Bot+-+MD;Gracias+por+preferirnos;Creado+por+David+Chian;💥+BOOM!!!;🔥)](https://git.io/typing-svg)
-![Megumin](https://telegra.ph/file/b8170842d84523340c674.jpg)
+![HuTao](https://qu.ax/MRxO.jpg)
 
 ---
 
-> **`AVISO`**: Megumin-Bot no funciona en la terminal (termux).
-> Estaremos arreglando el error de la bot para que se pueda instalar en la terminal (termux).
+> **`AVISO`**: HuTao Proyect aun no se encuentra disponible para Termux, recomiendo usar un hosting en lo que se soluciona el problema con Termux.
 
-> **`Megumin - Bot - MD`** es un super bot de WhatsApp con multi funciones.
+> **`HuTao - Proyect`** Bot innovador en constante evolucion
 ---
 
 ### <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Prueba La Bot Aqui" width="42" height="42"> Prueba La Bot Aqui
 
 > Si Deseas Probar El Bot Antes De Instalarlo, Click Abajo. 🍟
 
-[![Click Aquí](https://img.shields.io/badge/Grupo-Megumin-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/H5bw4MJucS1BBHnZ9wv3vI)
+[![Click Aquí](https://img.shields.io/badge/Grupo-Megumin-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw)
 
 🍟 **`INSTALACION MANUAL POR TERMUX`**
 
@@ -107,7 +106,7 @@ Para que no pierda su progreso en Megumin, estos comandos realizarán un respald
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
 
-<a href="https://wa.me/573138954963?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+<a href="https://wa.me/5216566753569?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 > No Spam A La Bot! (solo esta disponible para grupos)
 
