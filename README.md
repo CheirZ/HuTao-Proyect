@@ -2,7 +2,7 @@
 
 ## ❤️‍🔥 **`HuTao - Proyect`**
 ## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenido+al+Repositorio;Megumin+-+Bot+-+MD;Gracias+por+preferirnos;Creado+por+David+Chian;💥+BOOM!!!;🔥)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio+disfruta+de+HuTao;🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
 ![HuTao](https://qu.ax/MRxO.jpg)
 
 ---
@@ -56,7 +56,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > npm start
 ```
 
-🍟 **`Megumin 24/7 (TERMUX)`**
+🍟 **`HuTao-Proyect 24/7 (TERMUX)`**
 ```bash
 > termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
 ```
@@ -138,14 +138,10 @@ Para que no pierda su progreso en Megumin, estos comandos realizarán un respald
 <img src="https://contrib.rocks/image?repo=David-Chian/Megumin-Bot-MD" /> 
 </a>
 
-### `✨️ AGRADECIMIENTOS`
-<a
-href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="120" height="120" alt="Agradecimientos"/></a>
-
 ### `🍟 CREADOR`
 <a
-href="https://github.com/David-Chian"><img src="https://github.com/David-Chian.png" width="130" height="130" alt="David"/></a>
+href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="CheirZ"/></a>
 
-> Copyright (c) 2024 **[David-Chian](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
+> Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
 **`¡GRACIAS POR PREFERIRNOS!` 🍟**
