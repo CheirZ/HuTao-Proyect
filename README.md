@@ -2,7 +2,7 @@
 
 ## ❤️‍🔥 **`HuTao - Proyect`**
 ## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio+disfruta+de+HuTao;🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio;disfruta+de+HuTao;+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
 ![HuTao](https://qu.ax/MRxO.jpg)
 
 ---
@@ -132,11 +132,6 @@ Para que no pierda su progreso en Megumin, estos comandos realizarán un respald
 - [ ] Otros
 
 --- 
-
-### `🔥 DESARROLLADORES`
-<a href="https://github.com/David-Chian/Megumin-Bot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=David-Chian/Megumin-Bot-MD" /> 
-</a>
 
 ### `🍟 CREADOR`
 <a
