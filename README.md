@@ -2,7 +2,7 @@
 
 ## ❤️‍🔥 **`HuTao - Proyect`**
 ## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio;disfruta+de+HuTao;+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio+disfruta+de+HuTao;🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
 ![HuTao](https://qu.ax/MRxO.jpg)
 
 ---
@@ -16,7 +16,7 @@
 
 > Si Deseas Probar El Bot Antes De Instalarlo, Click Abajo. 🍟
 
-[![Click Aquí](https://img.shields.io/badge/Grupo-Megumin-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw)
+[![Click Aquí](https://img.shields.io/badge/Grupo-HuTao-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw)
 
 🍟 **`INSTALACION MANUAL POR TERMUX`**
 
@@ -31,10 +31,10 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/David-Chian/Megumin-Bot-MD && cd Megumin-MD
+git clone https://github.com/CheirZ/HuTao-Proyect.git && cd HuTao-Proyect
 ```
 ```bash
-yarn install && npm install
+yarn install && npm update && npm i
 ```
 ```bash
 npm start
@@ -44,15 +44,15 @@ npm start
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
-> cd Megumin-MD
+> cd HuTao-Proyect
 > npm start
 ```
 
 🔥 **`OBTENER OTRO CODIGO QR`**
 ```bash
 > ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd Megumin-MD
-> rm -rf MiniSession
+> cd HuTao-Proyect
+> rm -rf Seccion-activas
 > npm start
 ```
 
@@ -132,6 +132,7 @@ Para que no pierda su progreso en Megumin, estos comandos realizarán un respald
 - [ ] Otros
 
 --- 
+
 
 ### `🍟 CREADOR`
 <a
