@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: meguminbot-md
+    name: HuTao-Proyect
     env: docker
     region: Frankfurt
     plan: free
