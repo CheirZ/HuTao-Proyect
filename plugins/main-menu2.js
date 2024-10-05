@@ -24,7 +24,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 const document = doc[Math.floor(Math.random() * doc.length)];
  const str = `*☘️ M E N U  - A U D I O S ☘️*
 
-*NO ES NECESARIO USAR PREFIJO EN AUDIOS*\n*para usar usar los audios primero debes activarlos con*\n !enable audios
+*NO ES NECESARIO USAR PREFIJO EN AUDIOS*\n\n*NOTA DEL EDITOR:*\n*para usar usar los audios primero debes activarlos con*\n *!enable audios*
 ∘ _Noche de paz_
 ∘ _Buenos dias_
 ∘ _Audio hentai_

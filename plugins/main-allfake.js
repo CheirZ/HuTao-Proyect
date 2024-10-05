@@ -63,9 +63,9 @@ global.waittt =  'ꨄ︎ 🅱︎🅰︎🅹︎🅰︎🅽︎🅳︎🅾︎ 🆃�
 global.waitttt = 'ꨄ︎ 🅱︎🅰︎🅹︎🅰︎🅽︎🅳︎🅾︎ 🆃︎🆄︎ 🅲︎🅾︎🅽︎🆃︎🅴︎🅽︎🅸︎🅳︎🅾︎\n🄴🅂🄿🄴🅁🄰 🅄🄽 🄼🄾🄼🄴🄽🅃🄾';
 
 //Enlaces
-var grupo = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa'
+var grupo = 'https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw'
 var canal = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'  
-var git = 'https://github.com/David-Chian' 
+var git = 'https://github.com/CheirZ' 
 var youtube = 'https://youtube.com/@davidchian4957' 
 var github = 'https://github.com/Cheirz' 
 let correo = 'miguel.doce12000@outlook.com'
