@@ -31,7 +31,7 @@ const texto1 = `
 ├» ${yt_play[0].url}
 ╰ׁ̻۫─۪۬─۟─۪─۫─۪۬─۟─۪─۟─۪۬─۟─۪─۟─۪۬─۟─۪─۟┄۪۬┄۟┄۪┈۟┈۪`.trim()
 
-await conn.sendButton(m.chat, wm, texto1, yt_play[0].thumbnail, [['𝐌 𝐄 𝐍 𝐔 ❤️‍🔥', `${usedPrefix}menu`],['⍟ 𝐌 𝐏 3 ',`${usedPrefix}play5 ${yt_play[0].url}`],['𑁍 𝐕 𝐈 𝐃 𝐄 𝐎',`${usedPrefix}play6 ${yt_play[0].url}`]], null, null, fgif2)
+await conn.sendButton(m.chat, wm, texto1, yt_play[0].thumbnail, [['𝐌 𝐄 𝐍 𝐔 ❤️‍🔥', `${usedPrefix}menu`],['⍟ 𝐌 𝐏 3 ',`${usedPrefix}yta ${yt_play[0].url}`],['𑁍 𝐕 𝐈 𝐃 𝐄 𝐎',`${usedPrefix}fgmp4 ${yt_play[0].url}`]], null, null, fgif2)
 } catch (e) {
 await conn.reply(m.chat, `*[ ! ] ʜᴜʙᴏ ᴜɴ ᴇʀʀᴏʀ ᴇɴ ᴇʟ ᴄᴏᴍᴀɴᴅᴏ ᴘᴏʀ ғᴀᴠᴏʀ ɪɴᴛᴇɴᴛᴀ ᴍᴀs ᴛᴀʀᴅᴇ..*`, fkontak, m, rcanal)
 console.log(`❗❗ᴇʀʀᴏʀ ${usedPrefix + command} ❗❗`)
@@ -40,7 +40,7 @@ handler.limit = 0
 }}
 handler.command = ['play', 'play2', 'play3', 'play4']
 //handler.limit = 3
-handler.register = false 
+//handler.register = false 
 handler.group = true
 export default handler;
 
