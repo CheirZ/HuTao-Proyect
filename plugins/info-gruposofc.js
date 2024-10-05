@@ -4,9 +4,7 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
     await conn.sendMessage(m.chat, { react: { text: '⚡️', key: m.key } })
 let str =  `Hola, 
 *➤ 𝙶𝚛𝚞𝚙𝚘𝚜 donde puedes encontrar el bot y hablar con amigos*
-*1.-* https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa
-
-*2.-* https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI
+*1.-* https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw
 `
 await conn.sendButton(m.chat, str, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★͟͞\n` + wm, media, [
 ['Menu Lista 💖', '/lista']], null, [
