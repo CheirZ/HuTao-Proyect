@@ -1,8 +1,6 @@
 import { WAMessageStubType } from '@whiskeysockets/baileys';
 import fetch from 'node-fetch';
 
-/*let fkontak3 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }*/
-
 export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true;
 
@@ -51,12 +49,17 @@ export async function before(m, { conn, participants, groupMetadata }) {
           "containsAutoReply": true,
           "title": '❀☹︎𝙰𝚍𝚒𝚘𝚜☹︎☯︎',
           body: `${userName}, se despide.`,
-          "previewType": "PHOTO",
-          "thumbnailUrl": '',
-          "thumbnail": adi,
+        "previewType": "PHOTO",
+          "showAdAttribution": true,
+          "containsAutoReply": true,
+         "thumbnailUrl": null,
+          "showAdAttribution": true,
           "sourceUrl": redes
         }
-      }
+      },
+      ptt: true,
+      mimetype: 'audio/mpeg',
+      fileName: 'bye.mp3'
     }, { quoted: fkontak });
   }
 }
