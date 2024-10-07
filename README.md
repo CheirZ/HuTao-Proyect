@@ -62,18 +62,18 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ```
 
 💥 **`ACTUALIZAR HuTao`**
-> Note Comandos para actualizar Megumin-Bot de forma automática
+> Note Comandos para actualizar HuTao-Proyect de forma automática
 ```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/David-Chian/Megumin-Bot-MD/master/update.sh | bash
+grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/CheirZ/HuTao-Proyect/master/update.sh | bash
 ```
-Para que no pierda su progreso en Megumin, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
+Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
 
 > Warning Estos comandos solo funcionan para TERMUX, REPLIT, LINUX
 
 ---
 
 #### ☂️ ACTIVA EN HEROKU ☂️
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/David-Chian/Megumin-Bot-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CheirZ/HuTao-Proyect)
 
 #### Heroku Buildpack
 | BuildPack | LINK |
@@ -81,28 +81,14 @@ Para que no pierda su progreso en Megumin, estos comandos realizarán un respald
 | **FFMPEG** |[click](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
 | **IMAGEMAGICK** | [click](https://github.com/DuckyTeam/heroku-buildpack-imagemagick) |
 
-### 🔵 OLYMPUS-HOST 
-<a href="https://dash.olympus-host.xyz"><img src="https://qu.ax/waCu.jpg" height="125px"></a>
-### Información del Host
-
-• Dashboard: [`Aquí`](https://dash.olympus-host.xyz)
-
-• Panel: [`Aquí`](https://panel.olympus-host.xyz)
-
-• Canal de WhatsApp: [`Aquí`](https://whatsapp.com/channel/0029ValCkNT2ER6gHWFRQ71J)
-
-• Correo: [`Aquí`](olympushost2@gmail.com.com)
-
-- [x] **Configuración** <details><summary>**Ajustes del Servidor - Megumin-Bot**</summary><img src="https://telegra.ph/file/93fe3689cc3aafc4e2f95.jpg"></details>
-
 #### 🟢 ACTIVAR EN CODES SPACES 
-[`CREAR SERVIDOR`](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=David-Chian/Megumin-Bot-MD&ref=main&geo=UsEast)
+[`CREAR SERVIDOR`](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=CheirZ/HuTao-Proyect&ref=main&geo=UsEast)
 
 #### ⚡ ACRIVAR EN REPLIT
-[![`CREAR SERVIDOR REPLIT`](https://repl.it/badge/github/David-Chian/Megumin-Bot-MD)](https://repl.it/github/David-Chian/Megumin-Bot-MD)
+[![`CREAR SERVIDOR REPLIT`](https://repl.it/badge/github/CheirZ/HuTao-Proyect)](https://repl.it/github/CheirZ/HuTao-Proyect)
 
 #### 🤍 ACTIVAR EN RENDER
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%David-Chian%Megumin-Bot-MD) 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%CheirZ%HuTao-Proyect) 
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
 
