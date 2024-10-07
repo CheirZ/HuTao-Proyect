@@ -25,14 +25,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     let pp7 = 'https://telegra.ph/file/9611e5c1d616209bc0315.mp4' //y
     const videos = [pp, pp2, pp3, pp4, pp5, pp6, pp7];
     const video = videos[Math.floor(Math.random() * videos.length)];
-    conn.sendMessage(m.chat, { video: { url: video }, gifPlayback: true, caption:str, mentions: [m.sender] },{ quoted: estilo })
+    conn.sendMessage(m.chat, { video: { url: video }, gifPlayback: true, caption:str})
     };
    
 }
 
 handler.help = ['sonrojarse @tag'];
 handler.tags = ['fun'];
-handler.command = ['blush','sonrojarse'];
+handler.command = ['blush','sonrojarse',];
 handler.group = true;
 
 export default handler;

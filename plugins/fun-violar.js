@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let pp28 = 'https://telegra.ph/file/89891693613651230d6f0.mp4'
     const videos = [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15, pp16, pp17, pp18, pp19, pp20, pp21, pp22, pp23, pp24, pp25, pp26, pp27, pp28];
     const video = videos[Math.floor(Math.random() * videos.length)];
-    conn.sendMessage(m.chat, { video: { url: video }, gifPlayback: true, caption:str, mentions: [m.sender] },{ quoted: estilo })
+    conn.sendMessage(m.chat, { video: { url: video }, gifPlayback: true, caption:str})
     };
    
   //  m.react('🔥');
