@@ -15,7 +15,8 @@ global.confirmCode = ''
 //• ↳𝑺𝑶𝑳𝑶 𝑫𝑬𝑺𝑨𝑹𝑹𝑶𝑳𝑳𝑨𝑫𝑶𝑹𝑬𝑺 𝑨𝑷𝑹𝑶𝑩𝑨𝑫𝑶𝑺
 global.owner = [
   ['5216566753569', '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀', true],
- ['5218711426787', 'CREADOR', true]
+ ['5218711426787', 'CREADOR', true],
+  ['5217561063371']
 ];
 
 //• ↳𝑺𝑶𝑳𝑶 𝑴𝑶𝑫𝑬𝑹𝑨𝑫𝑶𝑹𝑬𝑺!
@@ -37,7 +38,7 @@ global.dev = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.textbot = '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊* : ★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀';
 global.namechannel = '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*'
-global.vs = '3.0.1'
+global.vs = 'V2'
 
 
 //• ↳ ◜𝑰𝑴𝑨́𝑮𝑬𝑵𝑬𝑺◞ • 🌇
@@ -117,8 +118,8 @@ global.mes = d.toLocaleDateString('es', {month: 'long'});
 global.año = d.toLocaleDateString('es', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.wm2 = `${dia} ${fecha}\nMegumin - Bot`;
-global.nomorown = '5218712620915';
+global.wm2 = `${dia} ${fecha}\nHuTao-Proyecy`;
+global.nomorown = '5218711426787';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
