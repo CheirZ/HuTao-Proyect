@@ -120,10 +120,10 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 --- 
 
 
-### `🍟 CREADOR`
+### `❤️‍🔥 CREADOR`
 <a
 href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="CheirZ"/></a>
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
-**`¡GRACIAS POR PREFERIRNOS!` 🍟**
+**`¡GRACIAS POR PREFERIRNOS!` 🔥**
