@@ -20,7 +20,7 @@
 
 🍟 **`INSTALACION MANUAL POR TERMUX`**
 
-[`🚩 Instalar Termux Clic Aqui`](https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.apk/file)
+[`🚩 Instalar Termux Clic Aqui`](https://www.mediafire.com/file/pqd980pnrqrz7r3/termux-app_v0.118.1+github-debug_arm64-v8a.apk/file)
 
 > ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 
