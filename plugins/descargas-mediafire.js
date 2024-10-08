@@ -34,7 +34,7 @@ await m.reply('*❌ʟᴏ sᴇɴᴛɪᴍᴏs sᴇ ʜᴀ ɢᴇɴᴇʀᴀᴅᴏ ᴜ
 handler.help = ['mediafire'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(mediafire|mediafiredl|dlmediafire)$/i
-handler.register = true;
+handler.register = false;
 handler.group = true;
 export default handler
 async function mediafireDl2(url) {
