@@ -78,8 +78,15 @@ global.adios = fs.readFileSync('./media/Bye.jpg')
 global.stickeramor = [amor, amor2, amor3, amor4, amor5]
 global.sickerque = [que, que2, que3, que4, que5, que6]
 global.photoSity = [imagen8, imagen1, imagen4, imagen6]
-//baleys
-global.isBaileysFail = true
+//cambiar a true si el bot detecta sus propios comandos.
+global.isBaileysFail = false
+global.libreria = 'Baileys'
+global.baileys = 'V 6.7.8'
+global.vs = 'V2'
+global.languaje = 'Español'
+global.nameqr = 'HuTao-Proyect'
+global.sessions = 'seccion-activas'
+global.jadi = 'jadibots'
 
 //• ↳ ◜𝑭𝑨𝑲𝑬 𝑬𝑺𝑻𝑰𝑳𝑶◞ • 🪩
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
