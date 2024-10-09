@@ -32,6 +32,6 @@
 handler.command = /^(listanum|kicknum|listnum)$/i;
 handler.group = handler.botAdmin = handler.admin = true;
 handler.fail = null;
-handler.register = true;
+handler.register = false;
 handler.group = true;
 export default handler;
