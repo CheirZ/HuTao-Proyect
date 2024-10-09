@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args }) => {
   try {
-    let res = await fetch('https://github.com/CheirZ/HuTao-Proyect');
+    let res = await fetch('https://api.github.com/repos/CheirZ/HuTao-Proyect');
     if (!res.ok) throw new Error('Error al obtener datos del repositorio');
     let json = await res.json();
 
@@ -17,7 +17,7 @@ let handler = async (m, { conn, args }) => {
     txt += `✿  *Stars* : ${json.stargazers_count}\n\n`;
     txt += `❤️‍🔥 *${packname}*`;
 
-    let img = imagen1;
+    let img = Logo8;
 
     await conn.sendMini(m.chat, packname, wm, txt, img, img, redes, fkontak);
   } catch (error) {
