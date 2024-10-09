@@ -17,7 +17,7 @@ let handler = async (m, { conn, args }) => {
     txt += `✩  *Stars* : ${json.stargazers_count}\n\n`;
     txt += `💥 *${packname}*`;
 
-    let img = Logo8;
+    let img = logo8;
 
     await conn.sendMini(m.chat, packname, wm, txt, img, img, redes, fkontak);
   } catch (error) {
