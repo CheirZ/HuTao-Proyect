@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args }) => {
   try {
-    let res = await fetch('https://api.github.com/repos/CheirZ/HuTao-Proyect');
+    let res = await fetch('https://github.com/CheirZ/HuTao-Proyect');
     if (!res.ok) throw new Error('Error al obtener datos del repositorio');
     let json = await res.json();
 
@@ -29,6 +29,6 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['script'];
 handler.tags = ['main'];
 handler.command = ['script', 'sc'];
-handler.register = true;
+handler.register = false;
 
 export default handler;
