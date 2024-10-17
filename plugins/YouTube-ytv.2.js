@@ -28,5 +28,5 @@ await conn.reply(m.chat, '❌ʟᴏ sᴇɴᴛɪᴍᴏs sᴇ ʜᴀ ɢᴇɴᴇʀᴀ
 }}
 handler.command = /^ytmp4doc|ytvdoc|ytmp4.2|ytv.2$/i
 handler.group = true
-handler.register = true
+handler.register = false
 export default handler
