@@ -1,9 +1,11 @@
-//Codígo creado por DAVID CHIAN!! PERRAS wa.me/5351524614
+//Codígo creado por DAVID y editado por Xi_miguelon
 
 import fs from 'fs';
 import path from 'path';
 import uploadImage from '../lib/uploadImage.js'
 import { sticker } from '../lib/sticker.js';
+const handler = async (m, {conn, command, usedPrefix}) => {
+  if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '🚩 *¡Estos comandos están desactivados!*';
 
 let handler = async (m, { conn, usedPrefix }) => {
     let who;
