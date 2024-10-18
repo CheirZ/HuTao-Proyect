@@ -4,12 +4,10 @@ import fs from 'fs';
 import path from 'path';
 import uploadImage from '../lib/uploadImage.js'
 import { sticker } from '../lib/sticker.js';
-const handler = async (m, {conn, command, usedPrefix}) => {
-  if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '🚩 *¡Estos comandos están desactivados!*';
-
 let handler = async (m, { conn, usedPrefix }) => {
     let who;
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
+if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '🚩 *¡Estos comandos están desactivados!*';
     else who = m.chat;
     if (!who) throw 'Etiqueta o menciona a alguien';
 
