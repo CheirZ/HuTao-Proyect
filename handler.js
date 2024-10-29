@@ -190,6 +190,7 @@ if (!('modoadmin' in chat)) chat.modoadmin = false
 if (!('antitoxic' in chat)) chat.antitoxic = false
 if (!('simi' in chat)) chat.simi = false
 if (!('antiTraba' in chat)) chat.antiTraba = false
+if (!('autoAceptar' in chat)) chat.autoAceptar = false
 if (!('autolevelup' in chat))  chat.autolevelup = false
 if (!isNumber(chat.expired)) chat.expired = 0
 } else
@@ -230,6 +231,7 @@ simi: false,
 antiTraba: false,
 autolevelup: false,
 expired: 0,
+autoaceptar: false,
 }
 let settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
