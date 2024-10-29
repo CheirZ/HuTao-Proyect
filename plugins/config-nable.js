@@ -18,6 +18,7 @@ ${usedPrefix + command} audios
 ${usedPrefix + command} modoadmin
 ${usedPrefix + command} antifake
 ${usedPrefix + command} antibot
+${usedPrefix + command} autoaceptar
 
 ♕︎ *OPCIONES PARA MI PROPIETARIO*
 
@@ -394,6 +395,20 @@ throw false
 }}
 chat.simi = isEnable
 break      
+
+case 'autoaceptar': case 'aceptarnuevos':
+if (!m.isGroup) {
+if (!isOwner) {
+global.dfail('group', m, conn)
+throw false
+}
+} else if (!isAdmin) {
+global.dfail('admin', m, conn)
+throw false
+}
+chat.autoAceptar = isEnable
+break
+            
 
 case 'swonly': case 'statusonly':
 isAll = true
