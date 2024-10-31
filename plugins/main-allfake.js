@@ -37,7 +37,7 @@ global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'Wa.me/5218711426787'
 global.namechannel = '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.namechannel2 = ''
-global.namegrupo = '⛩️Ａｎｉｍｅꦿメーファーൣ᭄💬ᴵᴬ'
+global.namegrupo = '✦͙͙͙*͙*❥⃝∗⁎.ʚ ʰᵘᵗᵃᵒ-ᵖʳᵒʸᵉᶜᵗ ɞ.⁎∗❥⃝**͙✦͙͙͙'
 global.namecomu = '𝗖𝗼𝗺𝘂𝗻𝗶𝗱𝗮𝗱 𝝡𝝣𝗚𝗨𝗠𝗜𝗡'
 global.namecomu2 = ''
 global.colab1 = ''
@@ -65,9 +65,9 @@ global.waitttt = 'ꨄ︎ 🅱︎🅰︎🅹︎🅰︎🅽︎🅳︎🅾︎ 🆃�
 //Enlaces
 var grupo = 'https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw'
 var canal = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'  
-var git = 'https://github.com/CheirZ' 
+var git = 'https://github.com/CheirZ/HuTao-proyect.git' 
 var youtube = 'https://youtube.com/@davidchian4957' 
-var github = 'https://github.com/Cheirz' 
+var github = 'https://github.com/Cheirz/HuTao-Proyect' 
 let correo = 'miguel.doce12000@outlook.com'
 
 global.redes = [canal, grupo, git, youtube, github, correo].getRandom()
