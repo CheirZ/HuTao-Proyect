@@ -18,7 +18,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     
     conn.sendMessage(m.chat, { 
         image: { url: search.all[0].thumbnail }, 
-        caption: body + f
+        caption: body
     }, { quoted: m,rcanal });
     m.react('react1')
 
