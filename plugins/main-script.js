@@ -1,34 +1,33 @@
-import moment from 'moment-timezone';
-import fetch from 'node-fetch';
+import moment from 'moment-timezone'
+import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
-  try {
-    let res = await fetch('https://api.github.com/repos/CheirZ/HuTao-Proyect');
-    if (!res.ok) throw new Error('Error al obtener datos del repositorio');
-    let json = await res.json();
+try {
+let res = await fetch('https://api.github.com/repos/CheirZ/HuTao-Proyect')
 
-    let txt = `*乂  S C R I P T  -  M A I N  乂*\n\n`;
-    txt += `✩  *Nombre* : ${json.name}\n`;
-    txt += `✩  *Visitas* : ${json.watchers_count}\n`;
-    txt += `✩  *Peso* : ${(json.size / 1024).toFixed(2)} MB\n`;
-    txt += `✩  *Actualizado* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`;
-    txt += `✩  *Url* : ${json.html_url}\n`;
-    txt += `✩  *Forks* : ${json.forks_count}\n`;
-    txt += `✩  *Stars* : ${json.stargazers_count}\n\n`;
-    txt += `💥 *${packname}*`;
+if (!res.ok) throw new Error('Error al obtener datos del repositorio')
+let json = await res.json()
 
-    let img = logo8;
+let txt = `*乂  S C R I P T  -  M A I N  乂*\n\n`
+txt += `✩  *Nombre* : ${json.name}\n`
+txt += `✩  *Visitas* : ${json.watchers_count}\n`
+txt += `✩  *Peso* : ${(json.size / 1024).toFixed(2)} MB\n`
+txt += `✩  *Actualizado* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`
+txt += `✩  *Url* : ${json.html_url}\n`
+txt += `✩  *Forks* : ${json.forks_count}\n`
+txt += `✩  *Stars* : ${json.stargazers_count}\n\n`
+txt += `*${dev}*`
 
-    await conn.sendMini(m.chat, packname, wm, txt, img, img, redes, fkontak);
-  } catch (e) {
-    console.log(e);
-    await m.react(error); 
-  }
-};
+await conn.sendMessage(m.chat, {text: txt, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: namechannel, newsletterJid: "120363307382381547@newsletter", }, externalAdReply: { title: packname, body: dev, thumbnailUrl: imagen1, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 
-handler.help = ['script'];
-handler.tags = ['main'];
-handler.command = ['script', 'sc'];
-handler.register = false;
+} catch {
+await conn.reply(m.chat, `✖️ Ocurrió un error.\n\n${e}`, m, fake)
+await m.react(error)
+}}
 
-export default handler;
+handler.help = ['script']
+handler.tags = ['main']
+handler.command = ['script', 'sc']
+handler.register = true
+
+export default handler
