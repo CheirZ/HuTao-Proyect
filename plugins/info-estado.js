@@ -1,7 +1,7 @@
 const handler = async (m, {conn}) => {
   try {
     const pp = imagen10;
-    const img = await(await fetch('https://images3.alphacoders.com/125/1251707.png')).buffer();
+    const img = await(await fetch('https://qu.ax/sSHDo.png')).buffer();
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
@@ -15,7 +15,7 @@ const handler = async (m, {conn}) => {
 ┃⍣ *ꨄ︎ 𖨆 𝘈𝘤𝘵𝘪𝘷𝘰:* ${uptime}
 ┃⍣ *ꨄ︎ ✍︎ 𝘉𝘰𝘵 𝘜𝘴𝘰 𝘗𝘶𝘣𝘭𝘪𝘤𝘰*
 ┃⍣ *ꨄ︎ ⌨︎ 𝘖𝘸𝘯𝘦𝘳: Xi_Miguelon77XX*
-┃⍣ *ꨄ︎ ➪ 𝘊𝘶𝘦𝘯𝘵𝘢𝘴 𝘖𝘧𝘤:* https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa
+┃⍣ *ꨄ︎ ➪ 𝘊𝘶𝘦𝘯𝘵𝘢𝘴 𝘖𝘧𝘤:* https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw
 ╰✧ » ◇ « ✧ » ✦ « ✧ » ◇ « ✧`.trim();
         const doc = [
     "pdf",
@@ -26,7 +26,7 @@ const handler = async (m, {conn}) => {
   ];
 const document = doc[Math.floor(Math.random() * doc.length)];
   const Message = {
-    document: { url: `https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa` },
+    document: { url: `https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw` },
     mimetype: `application/${document}`,
     fileName: `「 ʰᵘᵗᵃᵒ-ᵐᵈ」`,
     fileLength: 99999999999999,
@@ -41,7 +41,7 @@ showAdAttribution: !![],
         title: "𝑩𝒐𝒕 𝒚 𝒅𝒊𝒓𝒆𝒄𝒕𝒐𝒓𝒂 𝒅𝒆 𝒆𝒍 𝒄𝒂𝒎𝒊𝒏𝒐",
         thumbnail: imagen10,
         renderLargerThumbnail: !![],
-        sourceUrl: "https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa",
+        sourceUrl: "https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw",
       },
     },
     caption: str,
