@@ -20,9 +20,9 @@ let handler = async (m, { conn, args }) => {
     let img = logo8;
 
     await conn.sendMini(m.chat, packname, wm, txt, img, img, redes, fkontak);
-  } catch (error) {
-    console.error(error);
-    await m.react(error);  // Reacciona con un emoji de error si ocurre un problema
+  } catch (e) {
+    console.log(e);
+    await m.react(error); 
   }
 };
 
