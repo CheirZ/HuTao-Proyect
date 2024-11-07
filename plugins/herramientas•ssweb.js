@@ -18,4 +18,5 @@ await m.react(error)}}
 handler.help = ['ssweb', 'ss']
 handler.tags = ['tools']
 handler.command = ['ssweb', 'ss']
+handler.group = true
 export default handler
