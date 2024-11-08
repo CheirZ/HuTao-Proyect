@@ -2,10 +2,9 @@ import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
-import PhoneNumber from 'awesome-phonenumber'
 
 let tags = {
-   'main': '🄸🄽🄵🄾×🄱🄾🅃',
+  'main': '🄸🄽🄵🄾×🄱🄾🅃',
   'buscador': '🄱🅄🅂🄲🄰🄳🄾🅁🄴🅂',
   'fun': '🄹🅄🄴🄶🄾🅂',
   'jadibot': '🅂🄴🅁🄱🄾🅃',
@@ -32,7 +31,8 @@ let tags = {
 
 const defaultMenu = {
   before: `❀ꗥ～ꗥ❀ 𝐋𝐥𝐚𝐦𝐚𝐬, 𝐥𝐥𝐚𝐦𝐚𝐬, ¡𝐪𝐮𝐞 𝐭𝐨𝐝𝐨 𝐚𝐫𝐝𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐚 𝐝𝐚𝐦𝐚! ❀ꗥ～ꗥ❀
-“Hola *%taguser* soy *HuTao*”
+
+“ Hola *%name* soy *HuTao*, %greeting ”
 
 .    ╭─ׅ─ׅ┈ ─๋︩︪─☪︎︎︎̸⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬🍧⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪࣪࣪۬☪︎︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╮
 ╭╼☁️⬪࣪ꥈ𑁍⃪࣭۪ٜ݊݊݊݊݊໑ٜ࣪ 🄼🄴🄽🅄-🄱🄾🅃໑⃪࣭۪ٜ݊݊݊݊𑁍ꥈ࣪⬪☁️
@@ -40,24 +40,24 @@ const defaultMenu = {
 ├ׁ̟̇❍✎ *🄲ʀᴇᴀᴅᴏʀ:* ★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★
 ├ׁ̟̇❍✎ *🄼ᴏᴅᴏ:* Público
 ├ׁ̟̇❍✎ *🄱ᴀɪʟᴇʏs:* Multi Device
-├ׁ̟̇❍✎ *🄱ᴏᴛᴏғᴄ:* %botofc
-├ׁ̟̇❍✎ *🄵ᴇᴄʜᴀ:* %fecha
 ├ׁ̟̇❍✎ *🅃ɪᴇᴍᴘᴏ ᴀᴄᴛɪᴠᴏ:* %muptime
 ├ׁ̟̇❍✎ *🅄sᴜᴀʀɪᴏs:* %totalreg
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
+%readmore
 .    ╭─ׅ─ׅ┈ ─๋︩︪─☪︎︎︎̸⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬🍨⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪࣪࣪۬☪︎︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╮
 ╭╼☁️⬪࣪ꥈ𑁍⃪࣭۪ٜ݊݊݊݊݊໑ٜ࣪ 🅄🅂🅄🄰🅁🄸🄾໑⃪࣭۪ٜ݊݊݊݊𑁍ꥈ࣪⬪☁️
 ┃֪࣪  ╰─ׅ─ׅ┈ ─๋︩︪─☪︎︎︎̸⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬🍨⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪࣪࣪۬☪︎︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╯
 ├ׁ̟̇❍✎ *🄲ʟɪᴇɴᴛᴇ:* %name
 ├ׁ̟̇❍✎ *🄴xᴘ:* %exp
-├ׁ̟̇❍✎ *🄿ᴀɪs:* %pais
 ├ׁ̟̇❍✎ *🄽ɪᴠᴇʟ:* %level
 ├ׁ̟̇❍✎ *🅁ᴀɴɢᴏ:* %role
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-*─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ─⭒─ׄ─ׅ─⭒─ׄ─ׅ─⭒*
-*L I S T A  -  D E  -  C O M A N D O S* 
-*─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ─⭒─ׄ─ׅ─⭒─ׄ─ׅ─⭒*
+
+%readmore
+*─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ─*
+
+\t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
       header: '.    ╭─ׅ─ׅ┈ ─๋︩︪─☪︎︎︎̸⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬🔥⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪࣪࣪۬☪︎︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╮\n╭╼☁️⬪࣪ꥈ𑁍⃪࣭۪ٜ݊݊݊݊݊໑ٜ࣪ %category ໑⃪࣭۪ٜ݊݊݊݊𑁍ꥈ࣪⬪☁️\n┃֪࣪  ╰─ׅ─ׅ┈ ─๋︩︪─☪︎︎︎̸⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬🔥⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪࣪࣪۬☪︎︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╯',
   body: '├ׁ̟̇❍✎ %cmd\n',
@@ -67,7 +67,7 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, cookies, level, role } = global.db.data.users[m.sender]
+    let { exp, estrellas, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -99,9 +99,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
-    let num = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + num.replace('@s.whatsapp.net', '')).getNumber('international')}`)
-     let userNationalityData = api.data.result
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
@@ -110,7 +107,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
-        cookies: plugin.cookies,
+        estrellas: plugin.estrellas,
         premium: plugin.premium,
         enabled: !plugin.disabled,
       }
@@ -153,45 +150,71 @@ npmdesc: _package.description,
 version: _package.version,
 exp: exp - min,
 maxexp: xp,
-botofc: (conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot'), 
-pais: userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido',
-fecha: moment.tz('America/Bogota').format('DD/MM/YY'), 
+botofc: (conn.user.jid == global.conn.user.jid ? '🚩 𝙴𝚂𝚃𝙴 𝙴𝚂 𝙴𝙻 𝙱𝙾𝚃 𝙾𝙵𝙲' : `🚩 𝚂𝚄𝙱-𝙱𝙾𝚃 𝙳𝙴: Wa.me/${global.conn.user.jid.split`@`[0]}`), 
 totalexp: exp,
 xp4levelup: max - exp,
 github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-greeting, level, cookies, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+greeting, level, estrellas, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
 readmore: readMore
 }
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 
-let category = "video"
-const db = './src/database/db.json'
-const db_ = JSON.parse(fs.readFileSync(db))
-const random = Math.floor(Math.random() * db_.links[category].length)
-const rlink = db_.links[category][random]
-global.vid = rlink
-const response = await fetch(vid)
-const gif = await response.buffer()
-
 const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 
-const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/exfCu.jpg')
+const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/327f6ad853cb4f405aa80.jpg')
 
-await m.react('⭐️') 
+  let category = "video"
+  const db = './media/database/db.json'
+  const db_ = JSON.parse(fs.readFileSync(db))
+  const random = Math.floor(Math.random() * db_.links[category].length)
+  const rlink = db_.links[category][random]
+  global.vid = rlink
+  const response = await fetch(vid)
+  const gif = await response.buffer()
+ // const img = imagen1
 
-await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363307382381547@newsletter', newsletterName: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★', serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*', body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
-}, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
+/*await conn.reply(m.chat, '╭ׅׄ̇─ׅ̻ׄ╮۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹*\n├ ⚘݄𖠵⃕⁖𖥔.Ƈᴀʀɢᴀɴᴅᴏ,  ꪶꪾ❍̵̤̂̂ꫂ\n├Ąɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ❞\n╰ׁ̻─ׅׄ─۪۬─۟─۪─۟─۪۬─۟─۪─۟─۪۬─۟─۪─۟┄۪۬┄۟┄۪┈۟┈۪', m, { contextInfo:{ forwardingScore: 2024, isForwarded: true, externalAdReply: {title: namechannel, body: '𝐃𝐞𝐯 𝐖𝐨𝐫𝐝 𝐓𝐞𝐚𝐦 𝐎𝐟𝐢𝐜𝐢𝐚𝐥', sourceUrl: channel, thumbnail: icons }}})*/
+
+// await conn.reply(m.chat, '🍟 Enviando el menú.....', m, rcanal)
+
+await m.react('❤️‍🔥') 
+
+//await conn.sendFile(m.chat, imagen1, 'yaemori.jpg', text.trim(), fkontak, null, rcanal)
+
+await conn.sendMessage(
+  m.chat,
+  { video: { url: vid }, caption: text.trim(),
+  contextInfo: {
+    mentionedJid: [m.sender],
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363307382381547@newsletter',
+      newsletterName: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★',
+      serverMessageId: -1,
+    },
+    forwardingScore: 999,
+    externalAdReply: {
+      title: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*',
+      body: dev,
+      thumbnailUrl: icono,
+      sourceUrl: redes,
+      mediaType: 1,
+      renderLargerThumbnail: false,
+    },
+  },
+
+  gifPlayback: true, gifAttribution: 0 },
+  { quoted: fkontak })
 
   } catch (e) {
-    await m.react(error)
-    conn.reply(m.chat, `🔵 Lo sentimos, el menú tiene un error\n\n${e}`, m, fake, )
+    conn.reply(m.chat, '🔵 Lo sentimos, el menú tiene un error', m, rcanal, )
     throw e
   }
 }
-handler.help = ['allmenu']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menuall', 'allmenú', 'allmenu', 'menucompleto'] 
-handler.register = true
+handler.command = ['menu', 'menú', 'menuall', 'allmenú', 'allmenu', 'menucompleto'] 
+handler.register = false
 
 export default handler
 
