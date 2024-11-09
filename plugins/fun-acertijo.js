@@ -29,6 +29,5 @@ const handler = async (m, {conn, usedPrefix}) => {
 handler.help = ['acertijo'];
 handler.tags = ['fun'];
 handler.group = true;
-handler.register = false
 handler.command = ['acertijo','acert','adivinanza','tekateki']
 export default handler;
