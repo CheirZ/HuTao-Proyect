@@ -21,9 +21,6 @@ await conn.sendFile(m.chat, out, 'error.png', null, m, m)
 handler.help = ['toimg']
 handler.tags = ['transformador']
 handler.group = true;
-handler.register = false
 handler.command = ['toimg', 'jpg', 'jpge', 'png']
-
-handler.estrellas = 2
 
 export default handler
