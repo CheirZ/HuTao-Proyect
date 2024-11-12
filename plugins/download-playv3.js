@@ -21,7 +21,7 @@ await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
 await m.react(error)
 }}
 
-handler.command = ['supermusic', 'supervideo'];
+handler.command = ['musicv2', 'vidv2'];
 handler.group = true
 export default handler;
 
