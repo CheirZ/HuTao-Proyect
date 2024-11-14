@@ -18,7 +18,7 @@ await new Promise(resolve => setTimeout(resolve, 2000))
 await conn.sendFile(m.chat, media.url, 'instagram.mp4', '➪ *Tu video de instagram.*\n' + textbot, fkontak)
 }} catch {
 await m.react(error)
-conn.reply(m.chat, '⚠︎ Ocurrió un error.', m, fake)}}
+conn.reply(m.chat, '⚠︎ Ocurrió un error.', m, rcanal)}}
 
 handler.command = ['instagram', 'ig']
 handler.tags = ['descargas']
