@@ -8,6 +8,7 @@ if (m.sender.startsWith('6')) {
 await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
 
 if (m.sender.startsWith('57')) {
+   await conn.reply('573012482597@s.whatsapp.net', packname, m)
 await conn.groupRequestParticipantsUpdate(m.chat, [m.sender], 'reject')}
 
 if (m.sender.startsWith('90')) {
