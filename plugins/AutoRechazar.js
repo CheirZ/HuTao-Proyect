@@ -4,7 +4,40 @@ handler.before = async function (m, {conn, isAdmin, isBotAdmin} ) {
 if (!m.isGroup) return !1
 let chat = global.db.data.chats[m.chat]
 if (isBotAdmin && chat.autoRechazar) {
-if (m.sender.startsWith('6' || '57' || '212' || '92' || '93' || '94' || '7' || '49' || '2' || '91' || '48' || '90')) {
+if (m.sender.startsWith('6')) {
 await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('57')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('90')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('212')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('92')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('93')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('94')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('7')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('49')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('2')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('91')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')}
+
+if (m.sender.startsWith('48')) {
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'reject')} 
 }}
 export default handler
