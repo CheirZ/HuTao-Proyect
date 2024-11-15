@@ -6,16 +6,14 @@ let chat = global.db.data.chats[m.chat]
 if (chat.autoRechazar && !isAdmin) {
     if (!isBotAdmin) return !0
         const participants = await conn.groupRequestParticipantsList(m.chat)
-        const antiprefix = '57'
+        const antiprefix = '212'
         const filteredParticipants = participants.filter(p => p.jid.includes('@s.whatsapp.net') && p.jid.split('@')[0].startsWith(antiprefix))
         for (const participant of filteredParticipants) {
-conn.reply('573012482597@s.whatsapp.net', 'ya', m)
             await conn.groupRequestParticipantsUpdate(m.chat, [participant.jid], "reject")
         }
         if (m.messageStubType === 172 && m.messageStubParameters) {
             const [jid] = m.messageStubParameters
             if (jid.includes('@s.whatsapp.net') && jid.split('@')[0].startsWith(antiprefix)) {
-conn.reply('573012482597@s.whatsapp.net', 'ya', m)
                 await conn.groupRequestParticipantsUpdate(m.chat, [jid], "reject")}}
 }}
 export default handler
