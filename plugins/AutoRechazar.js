@@ -6,14 +6,16 @@ let chat = global.db.data.chats[m.chat]
 if (chat.autoRechazar && !isAdmin) {
     if (!isBotAdmin) return !0
         const participants = await conn.groupRequestParticipantsList(m.chat)
-        const antiprefix = '212'
-        const filteredParticipants = participants.filter(p => p.jid.includes('@s.whatsapp.net') && p.jid.split('@')[0].startsWith(antiprefix))
-        for (const participant of filteredParticipants) {
+        const rawUser = m.messageStubParameters[0];
+const users = rawUser.split('@')[0]; 
+const prefijosProhibidos = ['91', '57', '92', '222', '93', '265', '61', '62', '966', '229', '40', '49', '20', '963', '967', '234', '210', '212'];
+const usersConPrefijo = users.startsWith('+') ? users : `+${users}`;
+        if (prefijosProhibidos.some(prefijo => usersConPrefijo.startsWith(prefijo))) {
             await conn.groupRequestParticipantsUpdate(m.chat, [participant.jid], "reject")
         }
         if (m.messageStubType === 172 && m.messageStubParameters) {
             const [jid] = m.messageStubParameters
-            if (jid.includes('@s.whatsapp.net') && jid.split('@')[0].startsWith(antiprefix)) {
+            if (prefijosProhibidos.some(prefijo => usersConPrefijo.startsWith(prefijo))) {
                 await conn.groupRequestParticipantsUpdate(m.chat, [jid], "reject")}}
 }}
 export default handler
