@@ -24,18 +24,18 @@ const delay = time => new Promise(res=>setTimeout(res,time))
 switch (command) {
 
 case 'fantasmas': 
-if(total == 0) return conn.reply(m.chat, `💝 *Este grupo es activo, no tiene fantasmas*`, m, fake, ) 
-m.reply(`👻 *Revisión de inactivos*\n\n⚠️ *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n*NOTA:*\nEsto no es al 100% acertado, el bot inicia el conteo de mensajes a partir de que se active en este número`, null, { mentions: sider }) 
+if(total == 0) return conn.reply(m.chat, `🎌 *Este grupo es activo, no tiene fantasmas*`, m, fake, ) 
+m.reply(`🚩 *Revisión de inactivos*\n\n⚠️ *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n*📝 NOTA:*\nEsto no es al 100% acertado, el bot inicia el conteo de mensajes a partir de que se active en este número`, null, { mentions: sider }) 
 break
 
 case 'kickfantasmas':  
 if(total == 0) return conn.reply(m.chat, `🎌 *Este grupo es activo no tiene fantasmas*`, m, fake, ) 
-await m.reply(`🔥 *Eliminación de inactivos*\n\n⚠️ *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n❗ _El bot eliminara a los usuarios de la lista mencionada cada 10 segundos_`, null, { mentions: sider }) 
+await m.reply(`🚩 *Eliminación de inactivos*\n\n⚠️ *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n❗ _El bot eliminara a los usuarios de la lista mencionada cada 10 segundos_`, null, { mentions: sider }) 
 await delay(1 * 10000)
 let chat = global.db.data.chats[m.chat]
 chat.welcome = false
 try {
-       
+
 let users = m.mentionedJid.filter(u => !areJidsSameUser(u, conn.user.id))
 let kickedGhost = sider.map(v => v.id).filter(v => v !== conn.user.jid)
 for (let user of users)
@@ -52,7 +52,7 @@ break
 
 }
 handler.tags = ['grupo']
-handler.command = /^(fantasmas|kickfantasmas)$/i
+handler.command = ['fantasmas', 'kickfantasmas']
 handler.group = true
 handler.botAdmin = true
 handler.admin = true
