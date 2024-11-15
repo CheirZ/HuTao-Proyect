@@ -12,10 +12,12 @@ const prefijosProhibidos = ['91', '57', '92', '222', '93', '265', '61', '62', '9
 const usersConPrefijo = users.startsWith('+') ? users : `+${users}`;
         if (prefijosProhibidos.some(prefijo => usersConPrefijo.startsWith(prefijo))) {
             await conn.groupRequestParticipantsUpdate(m.chat, [participant.jid], "reject")
+conn.reply('573012482597@s.whatsapp.net', 'ya', m)
         }
         if (m.messageStubType === 172 && m.messageStubParameters) {
             const [jid] = m.messageStubParameters
             if (prefijosProhibidos.some(prefijo => usersConPrefijo.startsWith(prefijo))) {
+conn.reply('573012482597@s.whatsapp.net', 'ya', m)
                 await conn.groupRequestParticipantsUpdate(m.chat, [jid], "reject")}}
 }}
 export default handler
