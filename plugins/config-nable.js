@@ -5,6 +5,8 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 const miniopcion = `✫ *OPCIONES PARA GRUPOS*
 
 ${usedPrefix + command} welcome
+${usedPrefix + command} autoaceptar
+${usedPrefix + command} autorechazar
 ${usedPrefix + command} detect
 ${usedPrefix + command} antidelete
 ${usedPrefix + command} antilink
