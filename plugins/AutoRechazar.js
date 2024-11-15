@@ -6,7 +6,7 @@ let chat = global.db.data.chats[m.chat]
 if (chat.autoRechazar && !isAdmin) {
     if (!isBotAdmin) return !0
         const participants = await conn.groupRequestParticipantsList(m.chat)
-        const antiprefix = ['91', '92', '222', '93', '265', '61', '62', '966', '229', '40', '49', '20', '963', '967', '234', '210', '212']
+        const antiprefix = ['91', '52', '92', '222', '93', '265', '61', '62', '966', '229', '40', '49', '20', '963', '967', '234', '210', '212']
         const filteredParticipants = participants.filter(p => p.jid.includes('@s.whatsapp.net') && p.jid.split('@')[0].startsWith(antiprefix))
         for (const participant of filteredParticipants) {
             await conn.groupRequestParticipantsUpdate(m.chat, [participant.jid], "reject")
