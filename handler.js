@@ -175,7 +175,7 @@ if (!('antiPorn' in chat)) chat.antiPorn = false
 if (!('antiLink' in chat)) chat.antiLink = true
 if (!('antiLink2' in chat)) chat.antiLink2 = false
 if (!('antiTiktok' in chat)) chat.antiTiktok = false
-if (!('antiYoutube' in chat)) chat.antiYoutube = false
+if (!('autoRechazar' in chat)) chat.autoRechazar = false
 if (!('antiTelegram' in chat)) chat.antiTelegram = false
 if (!('antiFacebook' in chat)) chat.antiFacebook = false
 if (!('antiInstagram' in chat)) chat.antiInstagram = false
@@ -214,7 +214,7 @@ antiPorn: false,
 antiLink: true,
 antiLink2: false,
 antiTiktok: false,
-antiYoutube: false,
+autoRechazar: false,
 antiTelegram: false,
 antiFacebook: false,
 antiInstagram: false,
