@@ -84,7 +84,6 @@ global.photoSity = [imagen8, imagen1, imagen4, imagen6]
 global.isBaileysFail = false
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.8'
-global.vs = 'V2'
 global.languaje = 'Español'
 global.nameqr = 'HuTao-Proyect'
 global.sessions = 'seccion-activas'
