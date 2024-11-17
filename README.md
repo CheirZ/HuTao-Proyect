@@ -120,9 +120,14 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 --- 
 
 
-### `❤️‍🔥 CREADOR`
+### **`🦋 COLABORADORES`**
+<a href="https://github.com/CheirZ/Hutao-Proyect/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=CheirZ/Hutao-Proyect" /> 
+</a>
+
+### **`❤️‍🔥 PROPIETARIO`**
 <a
-href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="CheirZ"/></a>
+href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="Miguelon"/></a>
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
