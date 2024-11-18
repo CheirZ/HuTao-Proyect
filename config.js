@@ -168,12 +168,6 @@ global.keysneoxr = keysneoxrrr[Math.floor(keysneoxrrr.length * Math.random())];
 global.lolkeysapi = ['GataDiosV2']; // ['BrunoSobrino_2']
 global.itsrose = ['4b146102c4d500809da9d1ff'];
 
-global.ch = {
-ch1: '120363307382381547@newsletter',
-ch2: '120363263466636910@newsletter',
-ch3: '120363310433406751@newsletter',
-}
-
 global.APIs = {
   ApiEmpire: 'https://api-brunosobrino.zipponodes.xyz',
   xteam: 'https://api.xteam.xyz',
