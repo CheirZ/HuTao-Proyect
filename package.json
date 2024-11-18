@@ -19,7 +19,7 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/CeirZ/HuTao-Proyect",
+"homepage": "https://github.com/CheirZ/HuTao-Proyect",
 "author": {
 "name": "Ximiguelon" },
 "repository": {
