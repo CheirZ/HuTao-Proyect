@@ -14,7 +14,7 @@ try {
 conn.reply(m.chat, wait, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 
@@ -119,10 +119,7 @@ return conn.reply(m.chat, '🌟 *Inténtelo de nuevo*', m, rcanal, )}
 }
 handler.help = ['play3', 'play4']
 handler.tags = ['descargas']
-handler.command = ['playdoc','playdoc2','play3','play4']
-
-handler.group = true;
-handler.register = false
+handler.command = ['playdoc', 'playdoc2', 'play3', 'play4']
 
 export default handler
 
