@@ -18,12 +18,13 @@
 "test2": "nodemon index.js",
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
-},"homepage": "https://github.com/CeirZ/HuTao-Proyect","author": {
-"name": "Ximiguelon"},
+},
+"homepage": "https://github.com/CeirZ/HuTao-Proyect","author": {
+"name": "Ximiguelon" },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/CheirZ/HuTao-Proyect.git"},
-"bugs": {"url": "https://github.com/CheirZ/HuTao-Proyect/issues"},
+"url": "git+https://github.com/CheirZ/HuTao-Proyect.git" },
+"bugs": { "url": "https://github.com/CheirZ/HuTao-Proyect/issues" },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@adiwajshing/keyed-db": "^0.2.4",
