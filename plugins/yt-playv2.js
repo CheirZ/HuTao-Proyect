@@ -1,4 +1,4 @@
-import yts from 'yt-search' 
+/*import yts from 'yt-search' 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Ejemplo: ${usedPrefix + command} diles`,m ,rcanal;
 
@@ -58,4 +58,4 @@ async function dl_vid(url) {
 
     const data = await response.json();
     return data;
-}
+}*/
