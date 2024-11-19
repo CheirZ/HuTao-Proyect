@@ -106,7 +106,7 @@ global.fgif2 = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid:
 //• ↳ ◜𝑳𝑰𝑵𝑲𝑺◞ • 🌿
 global.gp4 = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa' //Grupo Oficial De Hutao
 global.gp1 = 'https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI' //Grupo 
-global.gp2 = ''//
+global.gp2 = 'GE1wUxAsLleAxfCVvtsp1x' //Grupo
 global.comunidad1 = 'https://chat.whatsapp.com/GPEtINYPyIB6a6S55ZJcAO' //Comunidad Megumin
 global.channel = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820' //Canal Oficial
 global.yt = 'https://youtube.com/@davidchian4957' //Canal De Youtube
