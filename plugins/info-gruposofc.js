@@ -6,9 +6,9 @@ let str =  `Hola,
 *➤ 𝙶𝚛𝚞𝚙𝚘𝚜 donde puedes encontrar el bot y hablar con amigos*
 *1.-* https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw
 `
-await conn.sendButton(m.chat, str, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★͟͞\n` + wm, media, [
+/*await conn.sendButton(m.chat, str, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★͟͞\n` + wm, media, [
 ['Menu Lista 💖', '/lista']], null, [
-['*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*', `${md}`]], fkontak)}
+['*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*', `${md}`]], fkontak)}*/
                       
 handler.command = ['grupos','linksk','gruposofc','gruposoficiales']
 handler.register = false
