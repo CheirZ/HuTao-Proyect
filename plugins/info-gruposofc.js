@@ -6,7 +6,7 @@ let grupos =  `Hola,
 *1.-* https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw
 `
 await m.react('❤️‍🔥')
-await conn.sendFile(m.chat, media, "hutao.jpg", grupos, fkontak, null, rcanal)
+await conn.sendFile(m.chat, media, "hutao.jpg", grupos, m, null, rcanal)
                       
 handler.command = ['grupos','linksk','gruposofc','gruposoficiales']
 handler.register = false
