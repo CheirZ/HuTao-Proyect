@@ -7,6 +7,7 @@ const miniopcion = `✫ *OPCIONES PARA GRUPOS*
 ${usedPrefix + command} welcome
 ${usedPrefix + command} autoaceptar
 ${usedPrefix + command} autorechazar
+${usedPrefix + command} autoresponder
 ${usedPrefix + command} detect
 ${usedPrefix + command} antidelete
 ${usedPrefix + command} antilink
@@ -53,6 +54,19 @@ global.dfail('admin', m, conn)
 throw false
 }
 chat.welcome = isEnable
+break
+
+case 'autoresponder': case 'autorespond':
+if (!m.isGroup) {
+if (!isOwner) {
+global.dfail('group', m, conn)
+throw false
+}
+} else if (!isAdmin) {
+global.dfail('admin', m, conn)
+throw false
+}
+chat.autoresponder = isEnable
 break
 
 case 'detect': case 'avisos':
