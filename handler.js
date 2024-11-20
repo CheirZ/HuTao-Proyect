@@ -209,7 +209,7 @@ sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, 
 delete: false,
 modohorny: false,
 autosticker: false,
-autoresponder: false
+autoresponder: false,
 audios: false,
 antiBot: false,
 antiBot2: false,
