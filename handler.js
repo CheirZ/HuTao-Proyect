@@ -161,12 +161,14 @@ if (!('welcome' in chat)) chat.welcome = true
 if (!('detect' in chat)) chat.detect = true               
 if (!('sWelcome' in chat)) chat.sWelcome = ''          
 if (!('sBye' in chat)) chat.sBye = ''                    
-if (!('sPromote' in chat)) chat.sPromote = ''             
+if (!('sPromote' in chat)) chat.sPromote = ''     
+if (!('sAutoresponder' in chat)) chat.sAutoresponder = ''         
 if (!('sDemote' in chat)) chat.sDemote = '' 
 if (!('sCondition' in chat)) chat.sCondition = JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}])
 if (!('delete' in chat)) chat.delete = false                   
 if (!('modohorny' in chat)) chat.modohorny = false                   
-if (!('autosticker' in chat)) chat.autosticker = false      
+if (!('autosticker' in chat)) chat.autosticker = false
+if (!('autoresponder' in chat)) chat.autoresponder = false      
 if (!('audios' in chat)) chat.audios = false               
 if (!('antiBot' in chat)) chat.antiBot = false 
 if (!('antiBot2' in chat)) chat.antiBot2 = false
@@ -199,6 +201,7 @@ isBanned: false,
 welcome: true,
 detect: true,
 sWelcome: '',
+sAutoresponder: '',
 sBye: '',
 sPromote: '',
 sDemote: '', 
@@ -206,6 +209,7 @@ sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, 
 delete: false,
 modohorny: false,
 autosticker: false,
+autoresponder: false
 audios: false,
 antiBot: false,
 antiBot2: false,
