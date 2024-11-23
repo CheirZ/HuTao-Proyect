@@ -21,6 +21,9 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   user.age = age;
   user.regTime = + new Date;
   user.registered = true;
+  global.db.data.users[m.sender].money += 23;
+  global.db.data.users[m.sender].exp += 45;
+  global.db.data.users[m.sender].exp += 60;
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20);
   const caption = `📃Registro completado información de registro 
 
@@ -43,6 +46,13 @@ let chtxt = `
 📆 *𝙵𝚎𝚌𝚑𝚊* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 ☁️ *𝙽𝚞𝚖𝚎𝚛𝚘 𝚍𝚎 𝚛𝚎𝚐𝚒𝚜𝚝𝚛𝚘* »
 ⤷ ${sn}
+
+🎁 𝐑𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚𝐬
+23 • 𝙼𝚘𝚗𝚎𝚢 🪙
+45 • 𝙴𝚡𝚙 ✨
+60 • 𝙴𝚜𝚝𝚛𝚎𝚕𝚕𝚊𝚜 🌟
+
+> ¡Gracias por registrarte en nuestro bot: Hutao! 🌸 Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
 `.trim()
 
 await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
@@ -56,8 +66,6 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
   
-  global.db.data.users[m.sender].money += 10000;
-  global.db.data.users[m.sender].exp += 10000;
 };
 handler.help = ['verificar'];
 handler.tags = ['xp'];
