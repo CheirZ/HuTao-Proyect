@@ -7,7 +7,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
     let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
-  const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => global.imagen1);
+  let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   if (user.registered === true) throw `🌴 Hola amigo, ya estás registrado en nuestra base de datos.`;
   if (!Reg.test(text)) throw `regístrese bien hijo de su, ejemplo: !reg miguelon.23`;
   let [_, name, splitter, age] = text.match(Reg);
