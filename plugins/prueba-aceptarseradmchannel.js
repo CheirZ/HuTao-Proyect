@@ -1,4 +1,4 @@
-
+/*
 
 const { makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, makeInMemoryStore, proto } = require('@whiskeysockets/baileys');
 const pino = require('pino');
@@ -58,4 +58,4 @@ async function handleAcceptAdmin(sock, message, channelMetadata) {
 
 handler.command = ['aceptar']
 
-connectToWhatsApp().catch(err => console.log('Error:', err));
+connectToWhatsApp().catch(err => console.log('Error:', err));*/
