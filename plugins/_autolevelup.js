@@ -34,8 +34,8 @@ text22 += `\n\n> Próximo rango ${nextRole}, en el *nivel ${roles[nextRole]}*. �
 
 await conn.sendMessage(global.idchannel, { text: text22, contextInfo: {
 externalAdReply: {
-title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
-body: '🥳 ¡Alguien obtuvo un nuevo Rango!',
+title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
+body: '🥳 ¡𝙰𝚕𝚐𝚞𝚒𝚎𝚗 𝚘𝚋𝚝𝚞𝚋𝚘 𝚞𝚗 𝚗𝚞𝚎𝚟𝚒 𝚛𝚊𝚗𝚐𝚘!',
 thumbnailUrl: perfil,
 sourceUrl: redes,
 mediaType: 1,
@@ -46,7 +46,7 @@ renderLargerThumbnail: false
 
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🌵 Rango » ${user.role}\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*`)
 
-let especial = 'cookies'
+let especial = 'galletas'
 let especial2 = 'exp'
 let especial3 = 'money'
 let especial4 = 'joincount'
@@ -67,7 +67,7 @@ let normalCant3 = [1, 3, 3, 3, 4, 4, 2, 2, 4, 4, 4, 4, 1].getRandom()
 if (level >= 1) {
 let chtxt = `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n⭐️ *Nivel actual:* ${level + 1}\n👾 *Rango:* ${user.role}${(level + 1) % 5 === 0 ? `\n\n💰 *Recompensa por alacanzar el nivel ${level + 1}:*
 🎁 *Bono:* \`X${Math.floor(((level + 1) - 5) / 10) + 1}\`
-- *${especialCant * (Math.floor(((level + 1) - 5) / 10) + 1)} 🍪 ${especial}*
+- *${especialCant * (Math.floor(((level + 1) - 5) / 10) + 1)} ⭐️ ${especial}*
 - *${especialCant2 * (Math.floor(((level + 1) - 5) / 10) + 1)} ✨️ ${especial2}*
 - *${especialCant3 * (Math.floor(((level + 1) - 5) / 10) + 1)} 💸 ${especial3}*
 - *${especialCant4 * (Math.floor(((level + 1) - 5) / 10) + 1)} 🪙 ${especial4}*
@@ -75,8 +75,8 @@ let chtxt = `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n⭐�
 > 👀 Siguiente recompensa en el *nivel ${level + 6}*` : ''}`.trim()
 await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
 externalAdReply: {
-title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
-body: '🥳 ¡Un usuario obtiene un nuevo nivel!',
+title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
+body: '🥳 ¡𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚘𝚋𝚝𝚒𝚎𝚗𝚎 𝚞𝚗 𝚗𝚞𝚎𝚟𝚘 𝚗𝚒𝚟𝚎𝚕!',
 thumbnailUrl: perfil, 
 sourceUrl: redes,
 mediaType: 1,
