@@ -1,8 +1,6 @@
-/*
-
 const { makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, makeInMemoryStore, proto } = require('@whiskeysockets/baileys');
-const pino = require('pino');
-const { Boom } = require('@hapi/boom');
+import pino from 'pino';
+import { Boom } from '@hapi/boom';
 
 // Inicializa el socket
 async function connectToWhatsApp() {
@@ -29,7 +27,7 @@ async function connectToWhatsApp() {
         const sender = message.key.remoteJid;
         const channelMetadata = await sock.groupMetadata(sender);
 
-        if (text.startsWith('!aceptarAdm') && channelMetadata) {
+        if (text.startsWith('!aceptaradm') && channelMetadata) {
             await handleAcceptAdmin(sock, message, channelMetadata);
         }
     });
@@ -56,6 +54,7 @@ async function handleAcceptAdmin(sock, message, channelMetadata) {
     }
 }
 
-handler.command = ['aceptar']
+// Definición del comando
+handler.command = ['aceptaradm'];
 
-connectToWhatsApp().catch(err => console.log('Error:', err));*/
+connectToWhatsApp().catch(err => console.log('Error:', err));
