@@ -31,10 +31,13 @@ Nombre ${name}
 
 Edad de ${age}
 
-🌟Ya estás registrado en nuestra comunidad, muchas gracias por registrarte ahora disfruta del bot 🤖
+🌟 Ya estás registrado en nuestra comunidad, muchas gracias por registrarte ahora disfruta del bot 🤖
 
-código de registro
+Código de registro
 ${sn}
+
+Verifica tu registro aquí:
+https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f
 `;
   await conn.sendFile(m.chat, pp, 'hades.jpg', caption);
 
@@ -49,10 +52,10 @@ let chtxt = `
 
 🎁 𝐑𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚𝐬
 23 • 𝙼𝚘𝚗𝚎𝚢 🪙
-45 • 𝙴𝚡𝚙 ✨
-60 • 𝙴𝚜𝚝𝚛𝚎𝚕𝚕𝚊𝚜 🌟
+45 • 𝙴𝚡𝚙 💫
+60 • 𝙴𝚜𝚝𝚛𝚎𝚕𝚕𝚊𝚜 ⭐️
 
-> ¡Gracias por registrarte en nuestro bot: Hutao! 🌸 Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
+> ¡Gracias por registrarte en nuestro bot: Hutao Proyect! Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
 `.trim()
 
 await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
