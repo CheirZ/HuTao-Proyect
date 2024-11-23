@@ -32,7 +32,7 @@ if (nextRole) {
 text22 += `\n\n> Próximo rango ${nextRole}, en el *nivel ${roles[nextRole]}*. ¡Sigue así!`
 }
 
-await conn.sendMessage(m.chat, { text: text22, contextInfo: {
+await conn.sendMessage(global.idgroup,, { text: text22, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Alguien obtuvo un nuevo Rango!',
@@ -73,7 +73,7 @@ let chtxt = `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n⭐�
 - *${especialCant4 * (Math.floor(((level + 1) - 5) / 10) + 1)} 🪙 ${especial4}*
 
 > 👀 Siguiente recompensa en el *nivel ${level + 6}*` : ''}`.trim()
-await conn.sendMessage(m.chat, { text: chtxt, contextInfo: {
+await conn.sendMessage(global.idgroup,, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Un usuario obtiene un nuevo nivel!',
