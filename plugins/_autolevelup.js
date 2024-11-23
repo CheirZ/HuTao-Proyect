@@ -35,7 +35,7 @@ text22 += `\n\n> Próximo rango ${nextRole}, en el *nivel ${roles[nextRole]}*. �
 await conn.sendMessage(global.idchannel, { text: text22, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
-body: '🥳 ¡𝙰𝚕𝚐𝚞𝚒𝚎𝚗 𝚘𝚋𝚝𝚞𝚋𝚘 𝚞𝚗 𝚗𝚞𝚎𝚟𝚒 𝚛𝚊𝚗𝚐𝚘!',
+body: '🥳 ¡𝙰𝚕𝚐𝚞𝚒𝚎𝚗 𝚘𝚋𝚝𝚞𝚋𝚘 𝚞𝚗 𝚗𝚞𝚎𝚟𝚘 𝚛𝚊𝚗𝚐𝚘!',
 thumbnailUrl: perfil,
 sourceUrl: redes,
 mediaType: 1,
