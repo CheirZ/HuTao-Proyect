@@ -27,5 +27,4 @@ handler.help = ['join [chat.whatsapp.com]'];
 handler.tags = ['premium'];
 handler.command = /^join|nuevogrupo$/i;
 handler.private = true;
-handler.register = true;
 export default handler;
