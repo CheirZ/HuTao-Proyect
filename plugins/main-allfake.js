@@ -66,12 +66,13 @@ global.waitttt = 'ꨄ︎ 🅱︎🅰︎🅹︎🅰︎🅽︎🅳︎🅾︎ 🆃�
 //Enlaces
 var grupo = 'https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw'
 var canal = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'  
+var canal2 = 'https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f'
 var git = 'https://github.com/CheirZ/HuTao-proyect.git' 
 var youtube = 'https://youtube.com/@davidchian4957' 
 var github = 'https://github.com/Cheirz/HuTao-Proyect' 
 let correo = 'miguel.doce12000@outlook.com'
 
-global.redes = [canal, grupo, git, youtube, github, correo].getRandom()
+global.redes = [canal, canal2, git, youtube, github, correo].getRandom()
 
 //Imagen
 let category = "imagen"
