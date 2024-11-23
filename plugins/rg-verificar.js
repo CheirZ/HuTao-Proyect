@@ -43,7 +43,7 @@ let chtxt = `
 📆 *𝙵𝚎𝚌𝚑𝚊* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 `.trim()
 
-await conn.sendMessage(global.idgroup, { text: chtxt, contextInfo: {
+await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🥳 ¡𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚗𝚞𝚎𝚟𝚘 𝚎𝚗 𝚖𝚒 𝚋𝚊𝚜𝚎 𝚍𝚎 𝚍𝚊𝚝𝚘𝚜!',
