@@ -4,7 +4,7 @@ import { levelup } from '../lib/canvas.js'
 let handler = m => m
 handler.before = async function (m, { conn, usedPrefix }) {
 
-if (!db.data.chats[m.chat].autolevelup) return
+// if (!db.data.chats[m.chat].autolevelup) return
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let mentionedJid = [who]
@@ -30,6 +30,8 @@ user.role = currentRole
 let text22 = `✨ ¡Felicidades *${userName}*, por tu nuevo rango!\n\n\`Nuevo Rango:\`\n${currentRole}`
 if (nextRole) {
 text22 += `\n\n> Próximo rango ${nextRole}, en el *nivel ${roles[nextRole]}*. ¡Sigue así!`
+}
+
 await conn.sendMessage(m.chat, { text: text22, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
