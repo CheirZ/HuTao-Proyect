@@ -42,6 +42,7 @@ global.textbot = '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊* : ★彡( Ӿ
 global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀';
 global.namechannel = '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*'
 global.vs = 'V2'
+global.vsJB = '5.0'
 
 
 //• ↳ ◜𝑰𝑴𝑨́𝑮𝑬𝑵𝑬𝑺◞ • 🌇
