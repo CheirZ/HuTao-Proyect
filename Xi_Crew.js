@@ -51,7 +51,7 @@ global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse()
 global.prefix = new RegExp('^[/.$#!]')
 // global.opts['db'] = process.env['db']
 
-global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile('src/database/database.json'))
+global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile(media/database/database.json'))
 
 global.DATABASE = global.db 
 global.loadDatabase = async function loadDatabase() {
