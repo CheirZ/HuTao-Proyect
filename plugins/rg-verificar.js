@@ -21,7 +21,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   user.age = age;
   user.regTime = + new Date;
   user.registered = true;
-  const sn = createHash('md5').update(m.sender).digest('hex');
+  const sn = createHash('md5').update(m.sender).digest('0, 20');
   const caption = `📃Registro completado información de registro 
 
 Nombre ${name}
@@ -41,6 +41,8 @@ let chtxt = `
 🗂 *𝚅𝚎𝚛𝚒𝚏𝚒𝚌𝚊𝚌𝚒𝚘́𝚗* » ${user.name}
 ⭐️ *𝙴𝚍𝚊𝚍* » ${user.age} Años
 📆 *𝙵𝚎𝚌𝚑𝚊* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
+☁️ *𝙽𝚞𝚖𝚎𝚛𝚘 𝚍𝚎 𝚛𝚎𝚐𝚒𝚜𝚝𝚛𝚘* »
+${sn}
 `.trim()
 
 await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
