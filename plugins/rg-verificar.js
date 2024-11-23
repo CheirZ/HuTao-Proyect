@@ -23,7 +23,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   user.registered = true;
   global.db.data.users[m.sender].money += 23;
   global.db.data.users[m.sender].exp += 45;
-  global.db.data.users[m.sender].exp += 60;
+  global.db.data.users[m.sender].estrellas += 60;
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20);
   const caption = `📃Registro completado información de registro 
 
