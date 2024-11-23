@@ -282,7 +282,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdatePicture(ch, media)
 // await conn.reply(m.chat, `🚩 El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🚩YaemoriBot ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩HutaoProyect ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '✨️ 𝙽𝚞𝚎𝚟𝚊 𝚒𝚖𝚊𝚐𝚎𝚗 𝚍𝚎 𝚙𝚎𝚛𝚍𝚒𝚕 𝚍𝚎𝚕 𝚌𝚊𝚗𝚊𝚕.',
@@ -311,7 +311,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterRemovePicture(ch)
 //await conn.reply(m.chat, `🚩 El bot ha eliminado la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🚩 YaemoriBot ha eliminado la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 HutaoProyect ha eliminado la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '✨️ 𝙸𝚖𝚊𝚐𝚎𝚗 𝚍𝚎 𝚙𝚎𝚛𝚏𝚒𝚕 𝚍𝚎𝚕 𝚌𝚊𝚗𝚊𝚕 𝚑𝚊 𝚜𝚒𝚍𝚘 𝚎𝚕𝚒𝚖𝚒𝚗𝚊𝚍𝚊',
@@ -404,7 +404,7 @@ try {
 const chtitle = await conn.newsletterMetadata(ch.includes("@newsletter") ? "jid" : "invite", ch.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterReactionMode(ch, mode)
 //await conn.reply(m.chat, `🚩 El bot ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, m,  rcanal)
-await conn.sendMessage(ch, { text: `🚩 YaemoriBot ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 HutaoProyect ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '✨️ 𝙰𝚓𝚞𝚜𝚝𝚎𝚜 𝚎𝚗 𝚛𝚎𝚊𝚌𝚌𝚒𝚘𝚗𝚎𝚜.',
@@ -440,7 +440,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdateName(ch, name)
 //await conn.reply(m.chat, `🚩 El bot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🚩 YaemoriBot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 HutaoProyect ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '✨️ 𝚄𝚗 𝚗𝚞𝚎𝚟𝚘 𝚗𝚘𝚖𝚋𝚛𝚎 𝚙𝚊𝚛𝚊 𝚎𝚕 𝚌𝚊𝚗𝚊𝚕.',
@@ -475,7 +475,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdateDescription(ch, description)
 // await conn.reply(m.chat, `🚩 El bot ha modificado la descripción del canal *${chtitle}*`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🚩 YaemoriBot ha modificado la descripción del canal *${chtitle}*`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 HutaoProyect ha modificado la descripción del canal *${chtitle}*`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '✨️ 𝚞𝚗𝚊 𝚗𝚞𝚎𝚟𝚊 𝚍𝚎𝚜𝚌𝚛𝚒𝚙𝚌𝚒𝚘́𝚗 𝚊𝚕 𝚌𝚊𝚗𝚊𝚕.',
