@@ -188,7 +188,7 @@ await conn.sendMessage(
     mentionedJid: [m.sender],
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363307382381547@newsletter',
+      newsletterJid: channelRD.id,
       newsletterName: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★',
       serverMessageId: -1,
     },
