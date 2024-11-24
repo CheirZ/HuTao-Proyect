@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 var handler = async (m, { conn }) => {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who, 'image').catch(_ => imagen1)
-let { premium, level, estrellas, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[m.sender]
+let { premium, level, moras, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[m.sender]
 let username = conn.getName(who)
 let noprem = `
 🚩 *PERFIL DE USUARIO*
