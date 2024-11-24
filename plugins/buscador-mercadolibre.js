@@ -18,7 +18,7 @@ conn.reply(m.chat, libre, m, rcanal)
 handler.help = ['mercadolibre <búsqueda>']
 handler.tags = ['buscador']
 handler.command = ['mercadolibre']
-handler.estrellas = 2
+handler.moras = 2
 handler.group = true;
 handler.register = true
 export default handler;
