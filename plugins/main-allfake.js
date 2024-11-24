@@ -47,7 +47,7 @@ global.colab3 = ''
 //Ids channel
 global.idchannel = '120363371018732371@newsletter'
 global.canalIdH = ["120363371018732371@newsletter", "120363370415738881@newsletter", "120363307382381547@newsletter", "120363263466636910@newsletter"]
-global.canalNombreH = ["Hutao - Test ❤️‍🔥", "Yaemori - Test 🍄", "Megumin - Channel", "Yaemori - Channel 🍭"]
+global.canalNombreH = ["Hutao - Test ❤️‍🔥", "Yaemori - Test 🍄", "Megumin - Channel 💥", "Yaemori - Channel 🍭"]
 global.channelRD = await getRandomChannel()
 
 //Reacciones De Comandos.!
