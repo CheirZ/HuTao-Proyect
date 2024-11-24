@@ -189,7 +189,7 @@ await conn.sendMessage(
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
       newsletterJid: channelRD.id,
-      newsletterName: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★',
+      newsletterName: channelRD.name,
       serverMessageId: -1,
     },
     forwardingScore: 999,
