@@ -84,4 +84,4 @@ renderLargerThumbnail: false
     }
 }
 
-connectToWhatsApp().catch(err => console.log('Error:', err));
+//connectToWhatsApp().catch(err => console.log('Error:', err));
