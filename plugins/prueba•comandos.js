@@ -54,9 +54,7 @@ export async function before(m) {
 
   } else {
     const comando = m.text.trim().split(' ')[0];
-    await m.reply(`⚡︎ El comando *${comando}* no existe.
-Para ver la lista de comandos usa:
-» *#help*`);
+   // await m.reply(`⚡︎ El comando *${comando}* no existe.\nPara ver la lista de comandos usa:\n» *#help*`);
   }
 }
 
