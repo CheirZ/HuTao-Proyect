@@ -1,14 +1,13 @@
 let handler = async (m, { usedPrefix, command }) => {
 let uptime = await process.uptime()
-let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let runtime = `${global.packname}
 
 ✰ 𝗧𝗶𝗲𝗺𝗽𝗼 𝗔𝗰𝘁𝗶𝘃𝗮: ${rTime(uptime)}`
-conn.reply(m.chat, runtime, m, { contextInfo: { externalAdReply: { mediaUrl: false, mediaType: 1, description: false, title: packname, body: '🍟 ¡Super Bot De WhatsApp!', previewType: 0, thumbnail: perfil, sourceUrl: redes}}})
+conn.reply(m.chat, runtime, m, { contextInfo: { externalAdReply: { mediaUrl: false, mediaType: 1, description: false, title: packname, body: dev, previewType: 0, thumbnail: icons, sourceUrl: channel}}})
 }
 handler.help = ['runtime']
 handler.tags = ['main']
-handler.command = ['uptime','runtime']
+handler.command = ['uptime', 'runtime']
 
 export default handler
 
