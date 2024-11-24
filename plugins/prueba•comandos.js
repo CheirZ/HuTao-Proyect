@@ -54,7 +54,7 @@ Para ver la lista de comandos usa:
 }
 
 // Definir el prefijo global
-global.prefix = /[!#\/.]/;  // Puedes definir múltiples prefijos utilizando una expresión regular
+//global.prefix = /[!#\/.]/;  // Puedes definir múltiples prefijos utilizando una expresión regular
 
 // Inicialización y configuración del bot de WhatsApp
 /*import { makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, makeInMemoryStore } from '@whiskeysockets/baileys';
