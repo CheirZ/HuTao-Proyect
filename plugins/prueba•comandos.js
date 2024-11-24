@@ -36,7 +36,7 @@ let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https:/
 
 // Función para manejar los comandos
 async function handleCommand(sock, message, text) {
-    const usedPrefix = '!';
+    const usedPrefix = '.';
     const command = text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
     const from = message.key.remoteJid;
 
