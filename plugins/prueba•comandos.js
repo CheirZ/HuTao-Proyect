@@ -2,7 +2,7 @@ export async function before(m) {
   if (!m.text || !global.prefix.test(m.text)) {
     return;
   }
-
+let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   const usedPrefix = global.prefix.exec(m.text)[0];
   const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
 
