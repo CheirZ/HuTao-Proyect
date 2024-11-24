@@ -34,7 +34,6 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 //creador y otros
 global.creador = 'Wa.me/5218711426787'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.idchannel = '120363370415738881@newsletter' // '120363371018732371@newsletter'
 global.asistencia = 'Wa.me/5218711426787'
 global.namechannel = '❀🔥❀❦ǶꓴƬ𐤠Θ-ꝒⱤΘƳƸƇƬ❧ ❀🦋❀/★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.namechannel2 = ''
@@ -44,6 +43,12 @@ global.namecomu2 = ''
 global.colab1 = ''
 global.colab2 = ''
 global.colab3 = ''
+
+//Ids channel
+global.idchannel = '120363371018732371@newsletter'
+global.canalIdH = ["120363371018732371@newsletter", "120363370415738881@newsletter", "120363307382381547@newsletter", "120363263466636910@newsletter"]
+global.canalNombreH = ["Hutao - Test ❤️‍🔥", "Yaemori - Test 🍄", "Megumin - Channel", "Yaemori - Channel 🍭"]
+global.channelRD = await getRandomChannel()
 
 //Reacciones De Comandos.!
 global.rwait = '🕒'
@@ -99,7 +104,7 @@ global.fkontak = { key: { participants:"0@s.whatsapp.net", "remoteJid": "status@
 
 // global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: `${packname}`, orderTitle: 'Bang', thumbnail: icons, sellerJid: '0@s.whatsapp.net'}}}
 
-global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363307382381547@newsletter', newsletterName: "❀🔥❀❦ǶꓴƬ𐤠Θ-ꝒⱤΘƳƸƇƬ❧ ❀🦋❀", serverMessageId: -1 }
+global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1 }
 }}, { quoted: m }
 
 global.icono = [ 
@@ -111,6 +116,17 @@ global.icono = [
 'https://telegra.ph/file/600bc25a0a8ffbeb649cd.jpg',
 ].getRandom()
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363307382381547@newsletter", serverMessageId: 100, newsletterName: namechannel, }, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
 
 export default handler
+
+function pickRandom(list) {
+return list[Math.floor(Math.random() * list.length)]
+  }
+
+async function getRandomChannel() {
+let randomIndex = Math.floor(Math.random() * canalIdH.length)
+let id = canalIdH[randomIndex]
+let name = canalNombreH[randomIndex]
+return { id, name }
+}         
