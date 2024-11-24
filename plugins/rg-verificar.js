@@ -23,7 +23,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   user.registered = true;
   global.db.data.users[m.sender].money += 23;
   global.db.data.users[m.sender].exp += 45;
-  global.db.data.users[m.sender].estrellas += 60;
+  global.db.data.users[m.sender].moras += 60;
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20);
   const caption = `📃Registro completado información de registro 
 
@@ -51,9 +51,9 @@ let chtxt = `
 ⤷ ${sn}
 
 🎁 𝐑𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚𝐬
-23 • 𝙼𝚘𝚗𝚎𝚢 🪙
+23 • 𝙼𝚘𝚗𝚎𝚢 💰
 45 • 𝙴𝚡𝚙 💫
-60 • 𝙴𝚜𝚝𝚛𝚎𝚕𝚕𝚊𝚜 ⭐️
+60 • 𝙼𝚘𝚛𝚊𝚜 🪙
 
 > ¡Gracias por registrarte en nuestro bot: Hutao Proyect! Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
 `.trim()
