@@ -38,7 +38,7 @@ m = smsg(this, m) || m
 if (!m)
 return
 m.exp = 0
-m.estrellas = false
+m.moras = false
 try {
 let user = global.db.data.users[m.sender]
 //if (typeof user !== 'object')
@@ -50,7 +50,7 @@ if (!('premium' in user)) user.premium = false
 if (!('muto' in user)) user.muto = false
 if (!isNumber(user.joincount)) user.joincount = 1
 if (!isNumber(user.money)) user.money = 150
-if (!isNumber(user.estrellas)) user.estrellas = 20
+if (!isNumber(user.moras)) user.moras = 10
 if (!('registered' in user)) user.registered = false
 
 if (!user.registered) {
@@ -102,7 +102,7 @@ lastduel: 0,
 lastpago: 0,
 lastrob: 0,
 level: 0,
-estrellas: 20,
+moras: 10,
 money: 100,
 muto: false,
 premium: false,
@@ -273,10 +273,10 @@ if (opts['swonly'] && m.chat !== 'status@broadcast') return
 if (typeof m.text !== 'string')
 m.text = ''
 
-        //if (m.isBaileys) return 
-        if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
-        return
-        }
+// if (m.isBaileys) return 
+if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
+return
+}
 m.exp += Math.ceil(Math.random() * 10)
 let usedPrefix
 let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
@@ -450,13 +450,13 @@ if (xp > 2000)
 m.reply('Exp limit') 
 else               
 if (!isPrems && plugin.money && global.db.data.users[m.sender].money < plugin.money * 1) {
-conn.reply(m.chat, `❮💰❯ 𝗡𝗼 𝘁𝗶𝗲𝗻𝗲𝘀 𝘀𝘂𝗳𝗶𝗰𝗶𝗲𝗻𝘁𝗲𝘀 𝗠𝗲𝗴𝘂𝗖𝗼𝗶𝗻𝘀 𝗽𝗮𝗿𝗮 𝘂𝘀𝗮𝗿 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼.`, m, rcanal)       
+conn.reply(m.chat, `❮💰❯ 𝗡𝗼 𝘁𝗶𝗲𝗻𝗲𝘀 𝘀𝘂𝗳𝗶𝗰𝗶𝗲𝗻𝘁𝗲𝘀 𝗛𝘂𝘁𝗮𝗼𝗖𝗼𝗶𝗻𝘀 𝗽𝗮𝗿𝗮 𝘂𝘀𝗮𝗿 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼.`, m, rcanal)       
 continue     
 }
 
 m.exp += xp
-if (!isPrems && plugin.estrellas && global.db.data.users[m.sender].estrellas < plugin.estrellas * 1) {
-conn.reply(m.chat, `❮🌟❯ 𝗡𝗼 𝘁𝗶𝗲𝗻𝗲𝘀 𝘀𝘂𝗳𝗶𝗰𝗶𝗲𝗻𝘁𝗲𝘀 𝗘𝘀𝘁𝗿𝗲𝗹𝗹𝗮𝘀 𝗽𝗮𝗿𝗮 𝘂𝘀𝗮𝗿 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼. 𝗣𝗮𝗿𝗮 𝗰𝗼𝗺𝗽𝗿𝗮𝗿 𝗺𝗮𝘀 𝗘𝘀𝘁𝗿𝗲𝗹𝗹𝗮𝘀, 𝘂𝘀𝗲 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼.\n\n• 𝗣𝗼𝗿 𝗘𝗷𝗲𝗺𝗽𝗹𝗼:\n\n*${usedPrefix}buyall*\n*${usedPrefix}buy*`, m, rcanal) 
+if (!isPrems && plugin.moras && global.db.data.users[m.sender].moras < plugin.moras * 1) {
+conn.reply(m.chat, `❮🪙❯ 𝗡𝗼 𝘁𝗶𝗲𝗻𝗲𝘀 𝘀𝘂𝗳𝗶𝗰𝗶𝗲𝗻𝘁𝗲𝘀 𝗠𝗼𝗿𝗮𝘀 𝗽𝗮𝗿𝗮 𝘂𝘀𝗮𝗿 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼. 𝗣𝗮𝗿𝗮 𝗰𝗼𝗺𝗽𝗿𝗮𝗿 𝗺𝗮𝘀 𝗠𝗼𝗿𝗮𝘀, 𝘂𝘀𝗲 𝗲𝘀𝘁𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼.\n\n• 𝗣𝗼𝗿 𝗘𝗷𝗲𝗺𝗽𝗹𝗼:\n\n*${usedPrefix}buyall*\n*${usedPrefix}buy*`, m, rcanal) 
 continue
 }
 
@@ -491,7 +491,7 @@ __filename
 try {
 await plugin.call(this, m, extra)
 if (!isPrems)
-m.estrellas = m.estrellas || plugin.estrellas || false
+m.moras = m.moras || plugin.moras || false
 m.money = m.money || plugin.money || false
 } catch (e) {
 // Error occured
@@ -516,8 +516,8 @@ await plugin.after.call(this, m, extra)
 } catch (e) {
 console.error(e)
 }}
-if (m.estrellas)
-conn.reply(m.chat, `Utilizaste *${+m.estrellas}* 🌟`, m, fake)
+if (m.moras)
+conn.reply(m.chat, `Utilizaste *${+m.moras}* 🪙`, m, fake)
 }
 if (m.money)
 conn.reply(m.chat, `Utilizaste *${+m.money}* 💰`, m, fake)
@@ -540,7 +540,7 @@ await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id:
 }
 if (m.sender && (user = global.db.data.users[m.sender])) {
 user.exp += m.exp
-user.estrellas -= m.estrellas * 1
+user.moras -= m.moras * 1
 user.money -= m.money * 1
 }
 
@@ -581,7 +581,7 @@ if (settingsREAD.autoread2) await this.readMessages([m.key])
 //await conn.sendPresenceUpdate('composing', m.chat);
 //this.sendPresenceUpdate('recording', m.chat);
 
-if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|megumin|megu|a|s)/gi)) {
+if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|hutao|huta|a|s)/gi)) {
 let emot = pickRandom(["🚩", "🍟", "🔥","✨️", "🌸", "💥", "⭐️", "🌟", "🍂", "🫂", "🍁", "💖", "💞", "💕", "💋"])
 if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 }
