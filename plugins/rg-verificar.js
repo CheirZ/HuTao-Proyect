@@ -21,7 +21,6 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   user.age = age;
   user.regTime = + new Date;
   user.registered = true;
-  user.persona = age >= 18 ? 'Si' : 'No'
   global.db.data.users[m.sender].money += 23;
   global.db.data.users[m.sender].exp += 45;
   global.db.data.users[m.sender].estrellas += 60;
@@ -48,7 +47,6 @@ let chtxt = `
 🗂 *𝚅𝚎𝚛𝚒𝚏𝚒𝚌𝚊𝚌𝚒𝚘́𝚗* » ${user.name}
 ⭐️ *𝙴𝚍𝚊𝚍* » ${user.age} años
 📆 *𝙵𝚎𝚌𝚑𝚊* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-🍁 *𝙿𝚎𝚛𝚜𝚘𝚗𝚊 𝚊𝚍𝚞𝚕𝚝𝚘/𝚊* » ${user.persona}
 ☁️ *𝙽𝚞𝚖𝚎𝚛𝚘 𝚍𝚎 𝚛𝚎𝚐𝚒𝚜𝚝𝚛𝚘* »
 ⤷ ${sn}
 
