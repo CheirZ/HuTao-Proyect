@@ -80,7 +80,7 @@ global.stickeramor = [amor, amor2, amor3, amor4, amor5]
 global.sickerque = [que, que2, que3, que4, que5, que6]
 global.photoSity = [imagen8, imagen1, imagen4, imagen6]
 //cambiar a true si el bot detecta sus propios comandos.
-global.isBaileysFail = false
+global.isBaileysFail = true
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.8'
 global.languaje = 'Español'
