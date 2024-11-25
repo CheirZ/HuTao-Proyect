@@ -14,6 +14,7 @@ const idgroup = "120363351999685409@g.us";
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+    let pp2 = 'https://qu.ax/zdEhG.jpg'
 
     if (!text && !m.quoted) {
         return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\nh). Confesión anónima 🕵\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
@@ -53,7 +54,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let suggestionId = Math.floor(Math.random() * 901);
     suggestionQueue[suggestionId] = {
-        suggestionText, category, sender: m.sender, senderName: m.pushName, pp, suggestionId
+        suggestionText, category, sender: m.sender, senderName: m.pushName, pp, pp2, suggestionId
     };
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
@@ -77,7 +78,7 @@ handler.before = async (response) => {
         return;
     }
 
-    const { suggestionText, category, sender, senderName, pp } = suggestionQueue[suggestionId];
+    const { suggestionText, category, sender, senderName, pp, pp2 } = suggestionQueue[suggestionId];
 
     if (action === 'no') {
         await conn.sendMessage(idgroup, { react: { text: "❌", key: response.key } });
@@ -120,7 +121,7 @@ break;
 case 'confesión':
 title = `【 🕵 𝐂𝐎𝐍𝐅𝐄𝐒𝐈𝐎́𝐍 𝐀𝐍𝐎𝐍𝐈𝐌𝐀 🕵 】`;
 body = `🕵‍♂️ 𝙽𝚞𝚎𝚟𝚊 𝚌𝚘𝚗𝚏𝚎𝚜𝚒𝚘́𝚗 𝚊𝚗𝚘́𝚗𝚒𝚖𝚊`;
-foto = `${icognito}`;
+foto = `${pp2}`;
 break;
 case 'pregunta': 
 title = `【 🪐 𝐏𝐑𝐄𝐆𝐔𝐍𝐓𝐀 🪐 】`;
@@ -133,8 +134,6 @@ body = `☁️ 𝙽𝚞𝚎𝚟𝚊 𝚙𝚞𝚋𝚕𝚒𝚌𝚒𝚍𝚊𝚍 �
 foto = `${pp}`;
 break;
 }
-
-let icognito = `https://qu.ax/zdEhG.jpg`
 
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
