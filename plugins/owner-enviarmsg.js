@@ -95,42 +95,42 @@ switch (category) {
 case 'sugerencia': 
 title = `【 🔔 𝐍𝐔𝐄𝐕𝐀 𝐒𝐔𝐆𝐄𝐑𝐄𝐍𝐂𝐈𝐀 🔔 】`;
 body = `🐢 𝙽𝚞𝚎𝚟𝚊 𝚜𝚞𝚐𝚎𝚛𝚎𝚗𝚌𝚒𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'eventos':
 title = `【 ⭐️ 𝐍𝐔𝐄𝐕𝐎 𝐄𝐕𝐄𝐍𝐓𝐎 ⭐️ 】`;
 body = `🍁 𝙽𝚞𝚎𝚟𝚊 𝚜𝚞𝚐𝚎𝚛𝚎𝚗𝚌𝚒𝚊 𝚍𝚎 𝚎𝚟𝚎𝚗𝚝𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'opinion':
 title = `【 😃 𝐍𝐔𝐄𝐕𝐀 𝐎𝐏𝐈𝐍𝐈𝐎𝐍 😃 】`;
 body = `🍭 𝙽𝚞𝚎𝚟𝚊 𝚘𝚙𝚒𝚗𝚒𝚘𝚗 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'propuesta':
 title = `【 ✨️ 𝐍𝐔𝐄𝐕𝐀 𝐏𝐑𝐎𝐏𝐔𝐄𝐒𝐓𝐀 ✨️ 】`;
 body = `🌺 𝚄𝚗𝚊 𝚗𝚞𝚎𝚟𝚊 𝚙𝚛𝚘𝚙𝚞𝚎𝚜𝚝𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'frases':
 title = `【 ✍️ 𝐅𝐑𝐀𝐒𝐄 𝐂𝐎𝐌𝐏𝐀𝐑𝐓𝐈𝐃𝐀 ✍️ 】`;
 body = `🌻 𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚑𝚊 𝚌𝚘𝚖𝚙𝚊𝚛𝚝𝚒𝚍𝚘 𝚞𝚗𝚊 𝚏𝚛𝚊𝚜𝚎, 𝚍𝚒𝚏𝚛𝚞𝚝𝚊`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'confesión':
 title = `【 🕵 𝐂𝐎𝐍𝐅𝐄𝐒𝐈𝐎́𝐍 𝐀𝐍𝐎𝐍𝐈𝐌𝐀 🕵 】`;
 body = `🕵‍♂️ 𝙽𝚞𝚎𝚟𝚊 𝚌𝚘𝚗𝚏𝚎𝚜𝚒𝚘́𝚗 𝚊𝚗𝚘́𝚗𝚒𝚖𝚊`;
-thumbnailUrl = icognito;
+foto = `${icognito}`;
 break;
 case 'pregunta': 
 title = `【 🪐 𝐏𝐑𝐄𝐆𝐔𝐍𝐓𝐀 🪐 】`;
 body = `💡 𝙽𝚞𝚎𝚟𝚊 𝚙𝚛𝚎𝚐𝚞𝚗𝚝𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 case 'publicidad': 
 title = `【 🍄 𝐏𝐔𝐁𝐋𝐈𝐂𝐈𝐃𝐀𝐃 🍄 】`;
 body = `☁️ 𝙽𝚞𝚎𝚟𝚊 𝚙𝚞𝚋𝚕𝚒𝚌𝚒𝚍𝚊𝚍 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
-thumbnailUrl = pp;
+foto = `${pp}`;
 break;
 }
 
@@ -138,7 +138,7 @@ let icognito = `https://qu.ax/zdEhG.jpg`
 
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
-thumbnailUrl: thumbnailUrl, 
+thumbnailUrl: foto, 
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
