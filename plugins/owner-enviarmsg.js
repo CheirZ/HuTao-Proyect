@@ -13,7 +13,6 @@ const idgroup = "120363351999685409@g.us";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
-    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
     if (!text && !m.quoted) {
         return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
@@ -52,7 +51,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let suggestionId = Math.floor(Math.random() * 901);
     suggestionQueue[suggestionId] = {
-        suggestionText, category, sender: m.sender, senderName: m.pushName, pp, suggestionId
+        suggestionText, category, sender: m.sender, senderName: m.pushName, suggestionId
     };
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
@@ -76,7 +75,7 @@ handler.before = async (response) => {
         return;
     }
 
-    const { suggestionText, category, sender, senderName, pp } = suggestionQueue[suggestionId];
+    const { suggestionText, category, sender, senderName } = suggestionQueue[suggestionId];
 
     if (action === 'no') {
         await conn.sendMessage(idgroup, { react: { text: "❌", key: response.key } });
@@ -123,7 +122,7 @@ break;
 
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
-thumbnailUrl: pp, 
+thumbnailUrl: icons, 
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
