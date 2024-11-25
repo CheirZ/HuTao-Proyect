@@ -3,4 +3,97 @@
 - https://github.com/David-Chian
 */
 
-const _0x1e9686=_0x33b8;(function(_0x264744,_0xcda2bf){const _0x34a143=_0x33b8,_0x3e8732=_0x264744();while(!![]){try{const _0x85ebde=-parseInt(_0x34a143(0x1c4))/0x1+parseInt(_0x34a143(0x1e2))/0x2*(parseInt(_0x34a143(0x1d9))/0x3)+-parseInt(_0x34a143(0x1d5))/0x4+parseInt(_0x34a143(0x1c2))/0x5+parseInt(_0x34a143(0x1d0))/0x6+parseInt(_0x34a143(0x1be))/0x7*(-parseInt(_0x34a143(0x1b5))/0x8)+-parseInt(_0x34a143(0x1b1))/0x9*(-parseInt(_0x34a143(0x1d4))/0xa);if(_0x85ebde===_0xcda2bf)break;else _0x3e8732['push'](_0x3e8732['shift']());}catch(_0x1b786d){_0x3e8732['push'](_0x3e8732['shift']());}}}(_0x29a9,0xc3c41));import _0x54052f from'fs';import _0x432afc from'dotenv';function _0x33b8(_0x1f4065,_0x350ce9){const _0x29a967=_0x29a9();return _0x33b8=function(_0x33b85a,_0x126e9b){_0x33b85a=_0x33b85a-0x1b1;let _0x1425fa=_0x29a967[_0x33b85a];return _0x1425fa;},_0x33b8(_0x1f4065,_0x350ce9);}_0x432afc[_0x1e9686(0x1dc)]();const SECRET_KEY=process[_0x1e9686(0x1e1)][_0x1e9686(0x1c8)],obtenerDatos=()=>{const _0x4f4d99=_0x1e9686;return _0x54052f[_0x4f4d99(0x1bc)](_0x4f4d99(0x1d3))?JSON[_0x4f4d99(0x1b7)](_0x54052f['readFileSync'](_0x4f4d99(0x1d3),'utf-8')):{'usuarios':{},'personajesReservados':[]};},verifi=()=>{const _0x502972=_0x1e9686;try{const _0x479cd1=JSON[_0x502972(0x1b7)](_0x54052f[_0x502972(0x1bd)]('./package.json',_0x502972(0x1de)));if(_0x479cd1['name']!==_0x502972(0x1d7))return![];if(_0x479cd1[_0x502972(0x1cb)][_0x502972(0x1c6)]!==_0x502972(0x1e0))return![];if(SECRET_KEY!==_0x502972(0x1dd))return![];return!![];}catch(_0xb8187){return console['error'](_0x502972(0x1d1),_0xb8187),![];}},personajes=_0x54052f[_0x1e9686(0x1bc)](_0x1e9686(0x1cd))?JSON[_0x1e9686(0x1b7)](_0x54052f[_0x1e9686(0x1bd)](_0x1e9686(0x1cd),_0x1e9686(0x1de))):[],contarTotalPersonajes=()=>personajes[_0x1e9686(0x1c3)],ITEMS_PER_PAGE=0xa,mostrarInventario=async(_0x2146e3,_0x15c5a7,_0x51fddf,_0x1a65d2,_0x241f4c)=>{const _0x15588e=_0x1e9686,{characters:_0x43a8d5,totalRwcoins:_0x2e06b8}=_0x51fddf[_0x15588e(0x1b4)][_0x15c5a7[_0x15588e(0x1b8)]]||{'characters':[],'totalRwcoins':0x0},_0x86efbc=_0x43a8d5[_0x15588e(0x1c3)],_0x40a3ae=Math['ceil'](_0x86efbc/ITEMS_PER_PAGE),_0x3b4830=(_0x241f4c-0x1)*ITEMS_PER_PAGE,_0x24c7d7=_0x3b4830+ITEMS_PER_PAGE,_0x250482=_0x43a8d5['slice'](_0x3b4830,_0x24c7d7);let _0xdb7669=new Set();Object[_0x15588e(0x1c9)](_0x51fddf[_0x15588e(0x1b4)])['forEach'](_0x49b5d4=>{const _0x37b96=_0x15588e;_0x49b5d4[_0x37b96(0x1d6)][_0x37b96(0x1cc)](_0x29e65a=>_0xdb7669[_0x37b96(0x1b9)](_0x29e65a[_0x37b96(0x1bb)]));});let _0x47b530=personajes['filter'](_0x490294=>!_0xdb7669[_0x15588e(0x1c5)](_0x490294[_0x15588e(0x1bb)])),_0x5b9d7b=_0x47b530[_0x15588e(0x1c3)];const _0x5df707=_0x15588e(0x1bf)+_0x86efbc+'\x20𝑊𝐹*\x0a├▹\x20*𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠\x20𝐷𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒𝑠:*\x0a├╾\x20_'+_0x5b9d7b+_0x15588e(0x1db)+_0x1a65d2+_0x15588e(0x1c1)+(_0x86efbc/_0x1a65d2*0x64)[_0x15588e(0x1d2)](0x2)+'%\x0a├▹\x20_*𝑇𝑜𝑡𝑎𝑙\x20𝐷𝑒\x20𝑾𝑭𝐶𝑜𝑖𝑛𝑠*_\x0a├╾\x20*'+_0x2e06b8+_0x15588e(0x1cf)+_0x250482[_0x15588e(0x1b2)]((_0x2b0d33,_0x4b271e)=>'▢\x20'+(_0x3b4830+_0x4b271e+0x1)+'.\x20'+_0x2b0d33[_0x15588e(0x1bb)])['join']('\x0a')+_0x15588e(0x1ba)+_0x241f4c+'\x20𝑑𝑒\x20'+_0x40a3ae;await _0x2146e3[_0x15588e(0x1b6)](_0x15c5a7[_0x15588e(0x1e3)],_0x5df707,_0x15c5a7);};let handler=async(_0x429345,{conn:_0x5a4b24,usedPrefix:_0x11ab31,command:_0x305c51})=>{const _0x366f54=_0x1e9686,_0x27cdb6=_0x429345[_0x366f54(0x1b8)];let _0x5ab5c4=obtenerDatos(),_0x21acf1=contarTotalPersonajes();if(!verifi()){await _0x5a4b24[_0x366f54(0x1b6)](_0x429345[_0x366f54(0x1e3)],_0x366f54(0x1c7),_0x429345,rcanal);return;}if(!_0x5ab5c4['usuarios']||!(_0x27cdb6 in _0x5ab5c4[_0x366f54(0x1b4)])||_0x5ab5c4[_0x366f54(0x1b4)][_0x27cdb6][_0x366f54(0x1d6)][_0x366f54(0x1c3)]===0x0){_0x5a4b24[_0x366f54(0x1b6)](_0x429345[_0x366f54(0x1e3)],'*No\x20tienes\x20ningún\x20objeto\x20en\x20tu\x20inventario\x20😹🫵!*',_0x429345);return;}const _0x43e126=_0x5ab5c4[_0x366f54(0x1b4)][_0x27cdb6]['characters'][_0x366f54(0x1c3)],_0x2d3675=Math['ceil'](_0x43e126/ITEMS_PER_PAGE);let _0x3fabf6=0x1;if(_0x305c51===_0x366f54(0x1ce))_0x3fabf6++;if(_0x305c51==='return')_0x3fabf6--;if(_0x3fabf6<0x1)_0x3fabf6=0x1;if(_0x3fabf6>_0x2d3675)_0x3fabf6=_0x2d3675;await mostrarInventario(_0x5a4b24,_0x429345,_0x5ab5c4,_0x21acf1,_0x3fabf6);};handler[_0x1e9686(0x1c0)]=[_0x1e9686(0x1ca)],handler[_0x1e9686(0x1da)]=[_0x1e9686(0x1d8)],handler[_0x1e9686(0x1df)]=[_0x1e9686(0x1ca),'nex',_0x1e9686(0x1b3),'ob'];function _0x29a9(){const _0x490fc2=['HuTao-Proyect','rollwaifu','178362ZqEiGw','tags','\x20de\x20','config','ir83884kkc82k393i48','utf-8','command','git+https://github.com/CheirZ/HuTao-Proyect.git','env','10wBTMYu','chat','9UFYlIv','map','return','usuarios','40sPYWfo','reply','parse','sender','add','\x0a𝑃𝑎́𝑔𝑖𝑛𝑎\x20','name','existsSync','readFileSync','269955cmoqil','*╭ᚚᚚᚚⷩᚚͧᚚⷮᚚᷧᚚⷴᚚᚚᚚᷮᚚᷢᚚⷪᚚⷱᚚⷥᚚⷭᚚⷮᚚᚚ*\x0a├\x20_*𝑇𝑈\x20𝐼𝑁𝑉𝐸𝑁𝑇𝐴𝑅𝐼𝑂*_\x0a├▹\x20*𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠\x20𝑟𝑒𝑙𝑎𝑚𝑎𝑠𝑜𝑠:*\x0a├╾\x20\x20*','help','\x20en\x20total_\x0a├▹\x20_*𝑃𝑜𝑟𝑐𝑒𝑛𝑡𝑎𝑗𝑒:*_\x0a├╾\x20\x20','202590tzZcRh','length','31620SxKnmd','has','url','𝑬𝒔𝒕𝒆\x20𝒄𝒐𝒎𝒂𝒏𝒅𝒐\x20𝒔𝒐𝒍𝒐\x20𝒆𝒔𝒕𝒂\x20𝒅𝒊𝒔𝒑𝒐𝒏𝒊𝒃𝒍𝒆\x20𝒑𝒂𝒓𝒂\x20𝑯𝒖𝑻𝒂𝒐-𝑷𝒓𝒐𝒚𝒆𝒄𝒕.\x0a👻\x20https://github.com/CheirZ/HuTao-Proyect','SECRET_KEY','values','obtenidos','repository','forEach','./src/JSON/characters.json','nex','*\x0a*╰╍╌╌╌╌╌╌╌╌╌╌╌╌╌╌╾*\x0a𝑇𝑢𝑠\x20𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠:\x0a','5482728nJRGHU','Error\x20al\x20leer\x20package.json:','tofixed','data.json','4113230qaGZRf','2546388rsDheZ','characters'];_0x29a9=function(){return _0x490fc2;};return _0x29a9();}export default handler;
+import fs from 'fs';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const SECRET_KEY = process.env.SECRET_KEY;
+
+const obtenerDatos = () => {
+    if (fs.existsSync('data.json')) {
+        return JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+    } else {
+        return { usuarios: {}, personajesReservados: [] };
+    }
+};
+const verifi = () => {
+        try {
+            const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
+            if (packageJson.name !== 'HuTao-Proyect') return false;
+            if (packageJson.repository.url !== 'git+https://github.com/CheirZ/HuTao-Proyect.git') return false;
+            if (SECRET_KEY !== 'ir83884kkc82k393i48') return false;
+            return true;       
+        } catch (error) {
+            console.error('Error al leer package.json:', error);
+            return false;
+        }
+    };
+const personajes = fs.existsSync('./src/JSON/characters.json') ? JSON.parse(fs.readFileSync('./src/JSON/characters.json', 'utf-8')) : [];
+
+const contarTotalPersonajes = () => personajes.length;
+
+const ITEMS_PER_PAGE = 10;
+
+const mostrarInventario = async (conn, m, userData, totalCharacters, currentPage) => {
+    const { characters, totalRwcoins } = userData.usuarios[m.sender] || { characters: [], totalRwcoins: 0 };
+    const characterCount = characters.length;
+    const totalPages = Math.ceil(characterCount / ITEMS_PER_PAGE);
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const charactersToShow = characters.slice(start, end);
+    let personajesObtenidos = new Set();
+    Object.values(userData.usuarios).forEach(user => {
+        user.characters.forEach(character => personajesObtenidos.add(character.name));
+    });
+let availableCharacters = personajes.filter(p => !personajesObtenidos.has(p.name));
+    let availableCount = availableCharacters.length;
+    
+    const inventarioMensaje = `*╭ᚚᚚᚚⷩᚚͧᚚⷮᚚᷧᚚⷴᚚᚚᚚᷮᚚᷢᚚⷪᚚⷱᚚⷥᚚⷭᚚⷮᚚᚚ*
+├ _*𝑇𝑈 𝐼𝑁𝑉𝐸𝑁𝑇𝐴𝑅𝐼𝑂*_
+├▹ *𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠 𝑟𝑒𝑙𝑎𝑚𝑎𝑠𝑜𝑠:*
+├╾  *${characterCount} 𝑊𝐹*
+├▹ *𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠 𝐷𝑖𝑠𝑝𝑜𝑛𝑖𝑏𝑙𝑒𝑠:*
+├╾ _${availableCount} de ${totalCharacters} en total_
+├▹ _*𝑃𝑜𝑟𝑐𝑒𝑛𝑡𝑎𝑗𝑒:*_
+├╾  ${(characterCount / totalCharacters * 100).tofixed(2)}%
+├▹ _*𝑇𝑜𝑡𝑎𝑙 𝐷𝑒 𝑾𝑭𝐶𝑜𝑖𝑛𝑠*_
+├╾ *${totalRwcoins}*
+*╰╍╌╌╌╌╌╌╌╌╌╌╌╌╌╌╾*
+𝑇𝑢𝑠 𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑗𝑒𝑠:
+${charactersToShow.map((character, index) => `▢ ${start + index + 1}. ${character.name}`).join('\n')}
+𝑃𝑎́𝑔𝑖𝑛𝑎 ${currentPage} 𝑑𝑒 ${totalPages}`;
+    await conn.reply(m.chat, inventarioMensaje, m);
+};
+
+let handler = async (m, { conn, usedPrefix: prefijo, command }) => {
+    const userId = m.sender;
+    let userData = obtenerDatos();
+    let totalCharacters = contarTotalPersonajes();  
+    if (!verifi()) {
+        await conn.reply(m.chat, '𝑬𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒔𝒐𝒍𝒐 𝒆𝒔𝒕𝒂 𝒅𝒊𝒔𝒑𝒐𝒏𝒊𝒃𝒍𝒆 𝒑𝒂𝒓𝒂 𝑯𝒖𝑻𝒂𝒐-𝑷𝒓𝒐𝒚𝒆𝒄𝒕.\n👻 https://github.com/CheirZ/HuTao-Proyect', m, rcanal);
+        return;
+    }
+    if (!userData.usuarios || !(userId in userData.usuarios) || userData.usuarios[userId].characters.length === 0) {
+        conn.reply(m.chat, "*No tienes ningún objeto en tu inventario 😹🫵!*", m);
+        return;
+    }
+
+    const characterCount = userData.usuarios[userId].characters.length;
+    const totalPages = Math.ceil(characterCount / ITEMS_PER_PAGE);
+    let currentPage = 1;
+
+    if (command === 'nex') currentPage++;
+    if (command === 'return') currentPage--;
+
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    await mostrarInventario(conn, m, userData, totalCharacters, currentPage);
+};
+
+handler.help = ['obtenidos'];
+handler.tags = ['rollwaifu'];
+handler.command = ['obtenidos', 'nex', 'return', 'ob'];
+
+export default handler;
