@@ -12,7 +12,6 @@ const __dirname = dirname(__filename);
 let suggestionQueue = {};
 const ADMIN_GROUP_ID = "120363351999685409@g.us";
 const CANAL_ID = "120363371018732371@newsletter";
-const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB por video
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
@@ -24,43 +23,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   //  }
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.*\n\n> *🍄 Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Pregunta \n6. Eventos 🎉\n7. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
-    }
-
-    let media = false;
-    let q = m.quoted ? m.quoted : m;
-    let mime = (q.msg || q).mimetype || '';
-    let url = '';
-
-    if (/image|video/.test(mime)) {
-        media = await q.download();
-
-        if (/video/.test(mime)) {
-            let videoPath = join(__dirname, `./temp_video_${new Date().getTime()}.mp4`);
-            fs.writeFileSync(videoPath, media);
-
-            let videoStats = fs.statSync(videoPath);
-            let videoSizeMB = videoStats.size / (1024 * 1024);
-
-            if (videoSizeMB > MAX_VIDEO_SIZE_MB) {
-                fs.unlinkSync(videoPath);
-                return m.reply(`🍄 El video es demasiado grande (más de 40MB). Por favor, córtalo o envía uno menos pesado.`);
-            }
-
-            url = videoPath;
-        } else {
-            url = await uploadImage(media);
-        }
-    } else if (/webp/.test(mime)) {
-        media = await q.download();
-        url = await webp2png(media);
+        return m.reply(`*🚩 Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.*\n\n> *🍄 Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Pregunta 🚀\n6. Eventos 🎉\n7. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
     let suggestionText = rest.join(' ');
 
     if (!suggestionText && !media) {
-        return m.reply(`🍄 Debes agregar un texto o archivo multimedia después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi sugerencia es...`);
+        return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi solicitud es...`);
     }
 
     let categories = {
@@ -95,13 +65,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
 
-    if (url) {
-        if (/image/.test(mime)) {
-            await conn.sendMessage(ADMIN_GROUP_ID, { image: { url }, caption: confirmMessage, contextInfo: { mentionedJid: [m.sender] } }, { quoted: m });
-        } else if (/video/.test(mime)) {
-            await conn.sendMessage(ADMIN_GROUP_ID, { video: { url }, caption: confirmMessage, contextInfo: { mentionedJid: [m.sender] } }, { quoted: m });
-        }
-    } else {
+   // } else {
         await conn.sendMessage(ADMIN_GROUP_ID, { text: confirmMessage, mentions: [m.sender] }, { quoted: m });
     }
 };
@@ -176,19 +140,14 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}};
 
-if (url && /image/.test(mime)) {
-await conn.sendMessage(CANAL_ID, { image: { url }, caption: approvedText, contextInfo: options.contextInfo }, { quoted: null });
-} else if (url && /video/.test(mime)) {
-await conn.sendMessage(CANAL_ID, { video: { url }, caption: approvedText, contextInfo: options.contextInfo }, { quoted: null });
-fs.unlinkSync(url);  
-} else {
+// } else {
 await conn.sendMessage(CANAL_ID, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
 }
 
 await conn.reply(sender, `🍄 Solicitud aceptada, canal:\n_https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f_`);
 delete suggestionQueue[suggestionId];
 }};
-handler.command = /^(suggestion|propuesta|feedback|idea|contenido|sug|suggest)$/i;
+handler.command = ['sug', 'sugerencia', 'enviarmensaje', 'solicitud', 'enviarsolicitud'];
 
 export default handler;
 
