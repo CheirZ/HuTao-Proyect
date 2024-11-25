@@ -62,9 +62,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
 
-   } else {
+ //  } else {
         await conn.sendMessage(ADMIN_GROUP_ID, { text: confirmMessage, mentions: [m.sender] }, { quoted: m });
-    }
+  //  }
 };
 
 handler.before = async (response) => {
@@ -137,9 +137,9 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}};
 
-} else {
+// } else {
 await conn.sendMessage(CANAL_ID, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
-}
+// }
 
 await conn.reply(sender, `🍄 Solicitud aceptada, canal:\n_https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f_`);
 delete suggestionQueue[suggestionId];
