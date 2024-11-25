@@ -83,7 +83,7 @@ handler.before = async (response) => {
         return;
     }
 
-    const { suggestionText, category, sender, senderName, pp, url, mime } = suggestionQueue[suggestionId];
+    const { suggestionText, category, sender, senderName, pp } = suggestionQueue[suggestionId];
 
     if (action === 'no') {
         await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "❌", key: response.key } });
