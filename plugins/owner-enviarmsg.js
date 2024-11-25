@@ -54,7 +54,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     suggestionQueue[suggestionId] = {
         suggestionText, category, sender: m.sender, senderName: m.pushName, pp, suggestionId
     };
-    global.db.data.users[m.sender].suggetimme = new Date() * 1;
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
 
