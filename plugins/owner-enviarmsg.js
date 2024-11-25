@@ -15,11 +15,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
     let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
-    let time = global.db.data.users[m.sender].lastmiming + 600000;
-    if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
-
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} a Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
@@ -61,9 +58,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
 
- //  } else {
         await conn.sendMessage(idgroup, { text: confirmMessage, mentions: [m.sender] }, { quoted: m });
-  //  }
 };
 
 handler.before = async (response) => {
@@ -136,9 +131,7 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}};
 
-// } else {
 await conn.sendMessage(idchannel, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
-// }
 
 await conn.reply(sender, `🍄 Solicitud aceptada, canal:\nhttps://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f`);
 delete suggestionQueue[suggestionId];
@@ -146,16 +139,3 @@ delete suggestionQueue[suggestionId];
 handler.command = ['sug', 'sugerencia', 'enviarmensaje', 'solicitud', 'enviarsolicitud'];
 
 export default handler;
-
-function msToTime(duration) {
-var milliseconds = parseInt((duration % 1000) / 100),
-seconds = Math.floor((duration / 1000) % 60),
-minutes = Math.floor((duration / (1000 * 60)) % 60),
-hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
-
-hours = (hours < 10) ? '0' + hours : hours
-minutes = (minutes < 10) ? '0' + minutes : minutes
-seconds = (seconds < 10) ? '0' + seconds : seconds
-
-return minutes + ' m y ' + seconds + ' s '
-}
