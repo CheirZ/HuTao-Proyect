@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\nh). Confesión anónima 🕵\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
@@ -33,7 +33,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         'd': 'opinión',
         'e': 'pregunta',
         'f': 'eventos',
-        'g': 'frases'
+        'g': 'frases',
+        'h': 'confesión'
     };
 
     let category = categories[categoryChoice];
@@ -111,6 +112,10 @@ case 'frases':
 title = `【 ✍️ 𝐅𝐑𝐀𝐒𝐄 𝐂𝐎𝐌𝐏𝐀𝐑𝐓𝐈𝐃𝐀 ✍️ 】`;
 body = `🌻 𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚑𝚊 𝚌𝚘𝚖𝚙𝚊𝚛𝚝𝚒𝚍𝚘 𝚞𝚗𝚊 𝚏𝚛𝚊𝚜𝚎, 𝚍𝚒𝚏𝚛𝚞𝚝𝚊`;
 break;
+case 'opinion':
+title = `【 🕵 𝐂𝐎𝐍𝐅𝐄𝐒𝐈𝐎́𝐍 𝐀𝐍𝐎𝐍𝐈𝐌𝐀 🕵 】`;
+body = `🕵‍♂️ 𝙽𝚞𝚎𝚟𝚊 𝚌𝚘𝚗𝚏𝚎𝚜𝚒𝚘́𝚗 𝚊𝚗𝚘́𝚗𝚒𝚖𝚊`;
+break;
 case 'pregunta': 
 title = `【 🪐 𝐏𝐑𝐄𝐆𝐔𝐍𝐓𝐀 🪐 】`;
 body = `💡 𝙽𝚞𝚎𝚟𝚊 𝚙𝚛𝚎𝚐𝚞𝚗𝚝𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
@@ -123,7 +128,7 @@ break;
 
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
-thumbnailUrl: pp, 
+thumbnailUrl: icono, 
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
