@@ -10,7 +10,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 const dispositivo = await getDevice(m.key.id)
 user = global.db.data.users[m.sender]
 who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-if (user.banned) return await conn.reply(m.chat, `🚫 Esta baneado. No tiene permitido usar este bot.*`, m)
+// if (user.banned) return await conn.reply(m.chat, `🚫 Esta baneado. No tiene permitido usar este bot.*`, m)
 if (user.registered) return await conn.sendMessage(m.chat, { text: `${dis}Ya esta registrado como *${user.name}*\n\nSi desea hacer un nuevo registro ✨ debe de usar el comando:\n*${usedPrefix}delregistro* \`Número de serie\`\n\n🙂 Si no conoce su número de serie, use el comando:\n*${usedPrefix}numserie*`, ...fake }, { quoted: m })
 let nombre = await conn.getName(m.sender) || await generarNombreRandom()
 const edadRandom = _.random(10, 60)
@@ -18,7 +18,7 @@ const formatoIncorrecto = `⚠️ *¡Verifica el formato de uso!*\n\n📌 Usa el
 if (!Reg.test(text)) { 
 const edadesMayores = await generarEdades(18, 60)
 const edadesMenores = await generarEdades(10, 17)
-const sections = [
+/*const sections = [
 {
 title: `🔢 Datos Aleatorios`,
 highlight_label: "Popular",
@@ -53,7 +53,7 @@ description: `🍭 Elige ${age} para tu edad.`,
 id: `${usedPrefix + command} ${nombre}.${age}`
 }))
 }  
-]
+]*/
 if (/ios|web|desktop|unknown/gi.test(dispositivo)) {
 return await conn.reply(m.chat, formatoIncorrecto + '\n\n' + wm, m)
 } else {
@@ -98,9 +98,9 @@ user.age = age
 user.registered = true
 user.OTP = otp
 await conn.sendMessage(m.sender, { delete: msg.key })
-m.react('✨') 
+//m.react('✨') 
 await conn.sendMessage(m.chat, { image: { url: pp }, caption: `*║⫘⫘⫘⫘⫘⫘✨*
-*║ ${dis}ＲＥＧＩＳＴＲＯ*
+*║ ＲＥＧＩＳＴＲＯ*
 *║ .・゜゜・・゜゜・．*
 *║* 💠 *Nombre* ${name}
 *║* 💠 *Edad* ${age} años
