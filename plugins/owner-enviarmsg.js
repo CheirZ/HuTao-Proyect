@@ -7,8 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 let suggestionQueue = {};
-const ADMIN_GROUP_ID = "120363351999685409@g.us";
-const CANAL_ID = "120363371018732371@newsletter";
+const idgroup = "120363351999685409@g.us";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
@@ -47,7 +46,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     m.reply(`🍄 Tu Publicación ha sido enviada a los administradores para su revisión.`);
 
-    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
+    let groupMetadata = await conn.groupMetadata(idgroup);
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
 
     if (!groupAdmins || groupAdmins.length === 0) {
@@ -63,14 +62,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let confirmMessage = `🍄 El usuario @${m.sender.split('@')[0]} ha enviado una solicitud!\n\n*${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin texto'}\n\n_Escriba "si ${suggestionId}" para aceptar_\n_Escriba "no ${suggestionId}" para rechazar._\n\n> *🍁 ID de la publicación:* ${suggestionId}`;
 
  //  } else {
-        await conn.sendMessage(ADMIN_GROUP_ID, { text: confirmMessage, mentions: [m.sender] }, { quoted: m });
+        await conn.sendMessage(idgroup, { text: confirmMessage, mentions: [m.sender] }, { quoted: m });
   //  }
 };
 
 handler.before = async (response) => {
     if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
 
-    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
+    let groupMetadata = await conn.groupMetadata(idgroup);
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
     const isAdmin = groupAdmins.some(admin => admin.id === response.sender);
     if (!isAdmin) return;
@@ -86,14 +85,14 @@ handler.before = async (response) => {
     const { suggestionText, category, sender, senderName, pp } = suggestionQueue[suggestionId];
 
     if (action === 'no') {
-        await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "❌", key: response.key } });
+        await conn.sendMessage(idgroup, { react: { text: "❌", key: response.key } });
         await conn.reply(sender, `😿 Los administradores rechazaron tu solicitud.`, null, { mentions: [sender] });
         delete suggestionQueue[suggestionId];
         return;
     }
 
 if (action === 'si') {
-await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "✅", key: response.key } });
+await conn.sendMessage(idgroup, { react: { text: "✅", key: response.key } });
 let approvedText = `${suggestionText || '😿 Desconocido'}`;
 let title, body;
 
@@ -138,10 +137,10 @@ renderLargerThumbnail: false
 }}};
 
 // } else {
-await conn.sendMessage(CANAL_ID, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
+await conn.sendMessage(idchannel, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
 // }
 
-await conn.reply(sender, `🍄 Solicitud aceptada, canal:\n_https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f_`);
+await conn.reply(sender, `🍄 Solicitud aceptada, canal:\nhttps://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f`);
 delete suggestionQueue[suggestionId];
 }};
 handler.command = ['sug', 'sugerencia', 'enviarmensaje', 'solicitud', 'enviarsolicitud'];
