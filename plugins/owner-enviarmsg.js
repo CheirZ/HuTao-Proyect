@@ -15,8 +15,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
     let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
-  //  let time = global.db.data.users[m.sender].lastmiming + 600000;
-  //  if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
+    let time = global.db.data.users[m.sender].lastmiming + 600000;
+    if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
 
     if (!text && !m.quoted) {
         return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} a Texto`);
@@ -148,13 +148,14 @@ handler.command = ['sug', 'sugerencia', 'enviarmensaje', 'solicitud', 'enviarsol
 export default handler;
 
 function msToTime(duration) {
-    let seconds = Math.floor((duration / 1000) % 60),
-        minutes = Math.floor((duration / (1000 * 60)) % 60),
-        hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+var milliseconds = parseInt((duration % 1000) / 100),
+seconds = Math.floor((duration / 1000) % 60),
+minutes = Math.floor((duration / (1000 * 60)) % 60),
+hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
 
-    hours = hours > 0 ? `${hours} horas, ` : '';
-    minutes = minutes > 0 ? `${minutes} minutos, ` : '';
-    seconds = `${seconds} segundo(s)`;
+hours = (hours < 10) ? '0' + hours : hours
+minutes = (minutes < 10) ? '0' + minutes : minutes
+seconds = (seconds < 10) ? '0' + seconds : seconds
 
-    return `${hours}${minutes}`;
+return minutes + ' m y ' + seconds + ' s '
 }
