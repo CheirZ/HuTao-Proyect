@@ -15,6 +15,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
     let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
+  const time = global.db.data.users[m.sender].wait + 10000;
+  if (new Date - global.db.data.users[m.sender].wait < 10000) return m.reply(`🍄 Espera ${Math.floor((time - new Date()) / 1000)} segundos para enviar otra solicitud.`);
+
     if (!text && !m.quoted) {
         return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} c Texto`);
     }
