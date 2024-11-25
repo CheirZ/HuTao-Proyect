@@ -13,35 +13,33 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
     let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
-    let time = global.db.data.users[m.sender].suggetimme + 600000; // 10 minutos
-    if (new Date() - global.db.data.users[m.sender].suggetimme < 86400000) {
-       return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
-    }
+  //  let time = global.db.data.users[m.sender].lastmiming + 600000;
+  //  if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.*\n\n> *🍄 Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Pregunta 🚀\n6. Eventos 🎉\n7. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} a Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
     let suggestionText = rest.join(' ');
 
     if (!suggestionText) {
-        return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi solicitud es...`);
+        return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} a Mi solicitud es...`);
     }
 
     let categories = {
-        '1': 'sugerencia',
-        '2': 'propuesta',
-        '3': 'publicidad',
-        '4': 'opinión',
-        '5': 'pregunta',
-        '6': 'eventos',
-        '7': 'frases'
+        'a': 'sugerencia',
+        'b': 'propuesta',
+        'c': 'publicidad',
+        'd': 'opinión',
+        'e': 'pregunta',
+        'f': 'eventos',
+        'g': 'frases'
     };
 
     let category = categories[categoryChoice];
     if (!category) {
-        return m.reply('🍄 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
+        return m.reply('🍄 Opción inválida. Elige una categoría correcta: a, b, c o d.');
     }
 
     m.reply(`🍄 Tu Publicación ha sido enviada a los administradores para su revisión.`);
