@@ -133,7 +133,7 @@ handler.before = async (response) => {
 
 if (action === 'si') {
 await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "✅", key: response.key } });
-let approvedText = `👤 *Usuario:* ${senderName || 'Anónimo'}\n📝 *${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin descripción'}`;
+let approvedText = `${suggestionText || '😿 Desconocido'}`;
 let title, body;
 
 switch (category) {
