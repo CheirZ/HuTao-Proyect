@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [categoryChoice, ...rest] = text.split(' ');
     let suggestionText = rest.join(' ');
 
-    if (!suggestionText && !media) {
+    if (!suggestionText) {
         return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi solicitud es...`);
     }
 
