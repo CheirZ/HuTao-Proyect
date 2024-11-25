@@ -16,7 +16,7 @@ const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB por video
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
-    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => "https://telegra.ph/file/33bed21a0eaa789852c30.jpg");
+    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
     let time = global.db.data.users[m.sender].suggetimme + 86400000; // 24 horas
     if (new Date() - global.db.data.users[m.sender].suggetimme < 86400000) {
@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     if (!text && !m.quoted) {
-        return m.reply(`*⚠️ Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.* 📝\n\n> *Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Feedback 🤔\n6. Pregunta ❓\n7. Error 🚨\n8. Queja 😐\n9. Música 🎵\n10. Eventos 🎉\n11. Películas 🍿\n12. Juegos 🎮\n13. Tecnología 🤖\n14. Diseño 🎨\n15. Desarrollo de software 💻\n16. Humor 😂\n17. Soporte técnico 🤝\n18. Frases ✨\n19. Contenido creativo 📸\n\nEjemplo: ${usedPrefix + command} 1 Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.*\n\n> *🍄 Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Pregunta \n6. Eventos 🎉\n7. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
     }
 
     let media = false;
@@ -68,29 +68,17 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         '2': 'propuesta',
         '3': 'publicidad',
         '4': 'opinión',
-        '5': 'feedback',
-        '6': 'pregunta',
-        '7': 'error',
-        '8': 'queja',
-        '9': 'música',
-        '10': 'eventos',
-        '11': 'películas',
-        '12': 'juegos',
-        '13': 'tecnología',
-        '14': 'diseño',
-        '15': 'desarrollo de software',
-        '16': 'humor',
-        '17': 'soporte técnico',
-        '18': 'frases',
-        '19': 'contenido creativo'
+        '5': 'pregunta',
+        '6': 'eventos',
+        '7': 'frases'
     };
 
     let category = categories[categoryChoice];
     if (!category) {
-        return m.reply('🍭 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
+        return m.reply('🍄 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
     }
 
-    m.reply(`⭐️ Tu Publicación ha sido enviada a los administradores para su revisión.`);
+    m.reply(`🍄 Tu Publicación ha sido enviada a los administradores para su revisión.`);
 
     let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
@@ -138,7 +126,7 @@ handler.before = async (response) => {
 
     if (action === 'no') {
         await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "❌", key: response.key } });
-        await conn.reply(sender, `☁️ Los administradores rechazaron tu solicitud.`, null, { mentions: [sender] });
+        await conn.reply(sender, `😿 Los administradores rechazaron tu solicitud.`, null, { mentions: [sender] });
         delete suggestionQueue[suggestionId];
         return;
     }
@@ -147,45 +135,42 @@ if (action === 'si') {
 await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "✅", key: response.key } });
 let approvedText = `👤 *Usuario:* ${senderName || 'Anónimo'}\n📝 *${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin descripción'}`;
 let title, body;
+
 switch (category) {
-case 'sugerencia': case 'propuesta': case 'opinion': case 'feedback':
-title = `【 🔔 ¡Nueva ${category.charAt(0).toUpperCase() + category.slice(1)}! 🔔 】`;
-body = `🌟 ¡Nueva ${category.charAt(0).toUpperCase() + category.slice(1)} de un usuario! 🌟`;
+case 'sugerencia': 
+title = `【 🔔 𝐍𝐔𝐄𝐕𝐀 𝐒𝐔𝐆𝐄𝐑𝐄𝐍𝐂𝐈𝐀 🔔 】`;
+body = `🐢 𝙽𝚞𝚎𝚟𝚊 𝚜𝚞𝚐𝚎𝚛𝚎𝚗𝚌𝚒𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
 break;
-case 'error': case 'queja':
-title = `【 ⚠️ ¡Nueva queja o error! ⚠️ 】`;
-body = `🔧 ¡Nuevo reporte de error o queja de un usuario! 🔧`;
+case 'eventos':
+title = `【 ⭐️ 𝐍𝐔𝐄𝐕𝐎 𝐄𝐕𝐄𝐍𝐓𝐎 ⭐️ 】`;
+body = `🍁 𝙽𝚞𝚎𝚟𝚊 𝚜𝚞𝚐𝚎𝚛𝚎𝚗𝚌𝚒𝚊 𝚍𝚎 𝚎𝚟𝚎𝚗𝚝𝚘`;
 break;
-case 'música': case 'eventos':
-title = `【 🎵 ¡Nuevo evento o música! 🎵 】`;
-body = `🎤 ¡Nueva sugerencia de música o evento de un usuario! 🎤`;
+case 'opinion':
+title = `【 😃 𝐍𝐔𝐄𝐕𝐀 𝐎𝐏𝐈𝐍𝐈𝐎𝐍 😃 】`;
+body = `🍭 𝙽𝚞𝚎𝚟𝚊 𝚘𝚙𝚒𝚗𝚒𝚘𝚗 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
 break;
-case 'películas': case 'juegos':
-title = `【 🎬 ¡Nueva sugerencia de películas o juegos! 🎮 】`;
-body = `🎥 ¡Nuevo comentario sobre películas/juegos de un usuario! 🎮`;
-break;
-case 'humor':
-title = `【 😜 ¡Nueva broma o chiste compartido! 😂 】`;
-body = `🤣 ¡Nuevo comentario gracioso de un usuario! 🤣`;
+case 'propuesta':
+title = `【 ✨️ 𝐍𝐔𝐄𝐕𝐀 𝐏𝐑𝐎𝐏𝐔𝐄𝐒𝐓𝐀 ✨️ 】`;
+body = `🌺 𝚄𝚗𝚊 𝚗𝚞𝚎𝚟𝚊 𝚙𝚛𝚘𝚙𝚞𝚎𝚜𝚝𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
 break;
 case 'frases':
-title = `【 ✍️ Nueva frase compartida! 】`;
-body = `Un usuario compartió una frase que te hará reflexionar. ¡Lee y disfruta!`;
+title = `【 ✍️ 𝐅𝐑𝐀𝐒𝐄 𝐂𝐎𝐌𝐏𝐀𝐑𝐓𝐈𝐃𝐀 ✍️ 】`;
+body = `🌻 𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚑𝚊 𝚌𝚘𝚖𝚙𝚊𝚛𝚝𝚒𝚍𝚘 𝚞𝚗𝚊 𝚏𝚛𝚊𝚜𝚎, 𝚍𝚒𝚏𝚛𝚞𝚝𝚊`;
 break;
-case 'tecnología': case 'diseño': case 'desarrollo de software':
-title = `【 💻 ¡Nueva sugerencia en tecnología o diseño! 💻 】`;
-body = `💡 ¡Nueva sugerencia de tecnología o diseño de un usuario! 💡`;
+case 'pregunta': 
+title = `【 🪐 𝐏𝐑𝐄𝐆𝐔𝐍𝐓𝐀 🪐 】`;
+body = `💡 𝙽𝚞𝚎𝚟𝚊 𝚙𝚛𝚎𝚐𝚞𝚗𝚝𝚊 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
 break;
-default:
-title = `【 🔔 ¡Nuevo aporte! 🔔 】`;
-body = `🌟 ¡Nuevo aporte de un usuario! 🌟`;
+case 'publicidad': 
+title = `【 🍄 𝐏𝐔𝐁𝐋𝐈𝐂𝐈𝐃𝐀𝐃 🍄 】`;
+body = `☁️ 𝙽𝚞𝚎𝚟𝚊 𝚙𝚞𝚋𝚕𝚒𝚌𝚒𝚍𝚊𝚍 𝚍𝚎 𝚞𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘`;
 break;
 }
 
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
 thumbnailUrl: pp, 
-sourceUrl: accountsgb,
+sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
@@ -200,7 +185,7 @@ fs.unlinkSync(url);
 await conn.sendMessage(CANAL_ID, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
 }
 
-await conn.reply(sender, `✅ *¡Tu publicación fue aprobada por los administradores!* Puedes ver la publicación en el siguiente canal:\nhttps://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f`);
+await conn.reply(sender, `🍄 Solicitud aceptada, canal:\n_https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f_`);
 delete suggestionQueue[suggestionId];
 }};
 handler.command = /^(suggestion|propuesta|feedback|idea|contenido|sug|suggest)$/i;
