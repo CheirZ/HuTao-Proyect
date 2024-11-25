@@ -55,9 +55,9 @@ id: `${usedPrefix + command} ${nombre}.${age}`
 }  
 ]
 if (/ios|web|desktop|unknown/gi.test(dispositivo)) {
-return await conn.reply(m.chat, formatoIncorrecto + '\n\n' + wm2, m)
+return await conn.reply(m.chat, formatoIncorrecto + '\n\n' + wm, m)
 } else {
-return await conn.sendButton(m.chat, formatoIncorrecto + '\n\n> _También puedes usar el botón de abajo..._\n', wm.trim(), null, null, null, null, [['Completar registro', sections]], m)
+//return await conn.sendButton(m.chat, formatoIncorrecto + '\n\n> _También puedes usar el botón de abajo..._\n', wm.trim(), null, null, null, null, [['Completar registro', sections]], m)
 }
 }  
 [, name, , age] = text.match(Reg)
@@ -104,12 +104,12 @@ await conn.sendMessage(m.chat, { image: { url: pp }, caption: `*║⫘⫘⫘⫘�
 *║ .・゜゜・・゜゜・．*
 *║* 💠 *Nombre* ${name}
 *║* 💠 *Edad* ${age} años
-*║* 💠 *Número de serie* \`${sn.slice(0, 6)}\`
+*║* 💠 *Número de serie* \`${sn.slice(0, 20)}\`
 *║* 💠 *OTP* \`${user.OTP}\` (correcto)
 *║⫘⫘⫘⫘⫘⫘✨*\n
 > ✅ _Tus datos están seguros en nuestra base de datos y ahora puedes usar todas las funciones disponibles para usuarios verificados._`, mentions: [m.sender], ...fake }, { quoted: m })
 }}}
-handler.command = /^(ver(ify|ificar)|reg(istrar)?)$/i
+handler.command = ['reg']
 export default handler
 
 async function createOtp(buffer, code) {
