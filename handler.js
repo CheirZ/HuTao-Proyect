@@ -56,6 +56,7 @@ if (!('registered' in user)) user.registered = false
 if (!user.registered) {
 if (!('name' in user)) user.name = m.name
 if (!('age' in user)) user.age = 0
+if (!isNumber(user.OTP)) user.OTP = ''
 if (!isNumber(user.regTime)) user.regTime = -1
 }
 
@@ -85,6 +86,7 @@ afk: -1,
 afkReason: '',
 name: m.name,
 age: 0,
+OTP: '',
 bank: 0,
 banned: false,
 BannedReason: '',
