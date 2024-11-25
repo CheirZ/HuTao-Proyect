@@ -1,3 +1,5 @@
+// By: @elrebelde21
+
 import fs from 'fs';
 import fetch from 'node-fetch';
 import { fileURLToPath } from 'url';
