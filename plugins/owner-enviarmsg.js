@@ -56,7 +56,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let suggestionId = Math.floor(Math.random() * 901);
     suggestionQueue[suggestionId] = {
-        suggestionText, category, sender: m.sender, senderName: m.pushName, pp, suggestionId, url, mime
+        suggestionText, category, sender: m.sender, senderName: m.pushName, pp, suggestionId
     };
     global.db.data.users[m.sender].suggetimme = new Date() * 1;
 
