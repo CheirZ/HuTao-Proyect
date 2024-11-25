@@ -40,7 +40,7 @@ ${sn}
 Verifica tu registro aquí:
 https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f
 `;
-  await conn.sendFile(m.chat, pp, 'hades.jpg', caption, null, m, rcanal);
+  await conn.sendFile(m.chat, pp, 'hades.jpg', caption, m, null, rcanal);
 
 let chtxt = `
 👤 *𝚄𝚜𝚎𝚛* » ${m.pushName || 'Anónimo'}
