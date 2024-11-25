@@ -26,16 +26,7 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   global.db.data.users[m.sender].moras += 60;
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20);
 
-await conn.sendMessage(m.chat, { image: { url: pp }, caption: `*║⫘⫘⫘⫘⫘⫘✨*
-*║ ＲＥＧＩＳＴＲＯ*
-*║ .・゜゜・・゜゜・．*
-*║* 💠 *Nombre* ${name}
-*║* 💠 *Edad* ${age} años
-*║* 💠 *Número de serie* ${sn}
-*║⫘⫘⫘⫘⫘⫘✨*\n
-> ✅ _Tus datos están seguros en nuestra base de datos y ahora puedes usar todas las funciones disponibles para usuarios verificados._`, mentions: [m.sender], ...rcanal }, { quoted: m })
-
-  /*const caption = `📃Registro completado información de registro 
+  const caption = `📃Registro completado información de registro 
 
 Nombre ${name}
 
@@ -48,8 +39,8 @@ ${sn}
 
 Verifica tu registro aquí:
 https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f
-`;*/
- // await conn.sendFile(m.chat, pp, 'hades.jpg', caption);
+`;
+  await conn.sendFile(m.chat, pp, 'hades.jpg', caption, null, m, rcanal);
 
 let chtxt = `
 👤 *𝚄𝚜𝚎𝚛* » ${m.pushName || 'Anónimo'}
