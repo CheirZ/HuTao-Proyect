@@ -89,7 +89,7 @@ global.sessions = 'seccion-activas'
 global.jadi = 'jadibots'
 
 global.ch = {
-ch1: '120363371018732371@newsletter',
+ch1: '120363350554513092@newsletter',
 ch2: '120363263466636910@newsletter',
 ch3: '120363307382381547@newsletter',
 ch4: '120363370415738881@newsletter',
