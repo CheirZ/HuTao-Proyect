@@ -86,7 +86,7 @@ global.baileys = 'V 6.7.8'
 global.languaje = 'Español'
 global.nameqr = 'HuTao-Proyect'
 global.sessions = 'seccion-activas'
-global.jadi = 'HutaoJadiBots'
+global.jadi = 'jadibots'
 
 global.ch = {
 ch1: '120363350554513092@newsletter',
