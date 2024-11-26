@@ -3,7 +3,7 @@ const fs = { ...fsPromises, existsSync };
 import path, { join } from 'path' 
 import ws from 'ws';
 
-let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
+/*let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
 const isCommand2 = /^(stop|pausarhutao|pausarbot)$/i.test(command)  
 const isCommand3 = /^(bots|listjadibots|subbots)$/i.test(command)  
@@ -34,13 +34,13 @@ reportError(e)
 }  
 break
 
-case isCommand2:
+case isCommand2:*/
 if (global.conn.user.jid == conn.user.jid)
 conn.reply(m.chat, `🍟 El Bot principal no se puede apagar.`, m, fake)
 else {
 await conn.reply(m.chat, `🚩 Adiós Hutao`, m, fake)
 conn.ws.close()}
-break
+/*break
 
 case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
@@ -74,7 +74,7 @@ const totalUsers = users.length;
 const responseMessage = `🌻 *LISTA DE SUBBOTS*\n\n⭐️ PUEDES PEDIR PERMISO PARA QUE TE DEJEN UNIR EL BOT A TÚ GRUPO\n\n\`\`\`CADA USUARIO SUB BOT USA FUNCIÓN COMO QUIERA, EL NÚMERO PRINCIPAL NO SE HACE RESPONSABLE DEL USO DE LA FUNCIÓN \`\`\`\n\nSUBBOT CONECTADO: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
 await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
 break   
-}}
+}*/}
 
 handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarhutao', 'pausarbot', 'bots', 'listjadibots', 'subbots']
 export default handler
