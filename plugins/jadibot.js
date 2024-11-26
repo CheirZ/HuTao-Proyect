@@ -1,16 +1,4 @@
-let handler  = async (m, { conn }) => {
-if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, `🍟 El Bot principal no se puede apagar.`, m, fake)
-else {
-await conn.reply(m.chat, `🚩 Adiós Hutao`, m, fake)
-conn.ws.close()
-}}
-handler.help = ['detener']
-handler.tags = ['serbot']
-handler.command = ['stop', 'apagar', 'detener', 'apagate', 'detenerhutal', 'hutaooff']
-
-export default handler
-
-/*import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync, promises as fsPromises } from "fs";
+import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync, promises as fsPromises } from "fs";
 const fs = { ...fsPromises, existsSync };
 import path, { join } from 'path' 
 import ws from 'ws';
@@ -47,10 +35,11 @@ reportError(e)
 break
 
 case isCommand2:
-if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, `🦋 Si no es *SubBot* comuníquese al numero principal del *Bot* para ser *SubBot*`, m)
+if (global.conn.user.jid == conn.user.jid)
+conn.reply(m.chat, `🍟 El Bot principal no se puede apagar.`, m, fake)
 else {
-await conn.reply(m.chat, `❤️‍🔥 Hutao desactivada.`, m)
-conn.ws.close()}  
+await conn.reply(m.chat, `🚩 Adiós Hutao`, m, fake)
+conn.ws.close()}
 break
 
 case isCommand3:
@@ -88,4 +77,4 @@ break
 }}
 
 handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarhutao', 'pausarbot', 'bots', 'listjadibots', 'subbots']
-export default handler*/
+export default handler
