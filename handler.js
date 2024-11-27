@@ -275,8 +275,7 @@ if (opts['swonly'] && m.chat !== 'status@broadcast') return
 if (typeof m.text !== 'string')
 m.text = ''
 
-// if (m.isBaileys) return 
-if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
+if (m.isBaileys) {
 return
 }
 m.exp += Math.ceil(Math.random() * 10)
@@ -299,6 +298,9 @@ continue
 if (plugin.disabled)
 continue
 const __filename = join(___dirname, name)
+if (m.sender === this.user.jid) {
+continue
+}
 if (typeof plugin.all === 'function') {
 try {
 await plugin.all.call(this, m, {
