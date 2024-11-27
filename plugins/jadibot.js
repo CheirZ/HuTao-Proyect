@@ -2,6 +2,7 @@ import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmS
 const fs = { ...fsPromises, existsSync };
 import path, { join } from 'path' 
 import ws from 'ws';
+import fs from 'fs'
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
