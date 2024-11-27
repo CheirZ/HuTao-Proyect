@@ -6,9 +6,8 @@ import ws from 'ws'
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
-const isCommand2 = /^(stop|pausarhutao|pausarbot)$/i.test(command)
-const isCommand3 = /^(token)$/i.test(command)   
-const isCommand4 = /^(bots|listjadibots|subbots)$/i.test(command)  
+const isCommand2 = /^(stop|pausarhutao|pausarbot)$/i.test(command)   
+const isCommand3 = /^(bots|listjadibots|subbots)$/i.test(command)  
 
 async function reportError(e) {
 await m.reply(`❌️ Ocurrió un error.`)
@@ -45,18 +44,6 @@ conn.ws.close()}
 break
 
 case isCommand3:
-const user = m.sender.split('@')[0]
-if (fs.existsSync(`./${jadi}/` + user + '/creds.json')) {
-let token = Buffer.from(fs.readFileSync(`./${jadi}/` + user + '/creds.json'), 'utf-8').toString('base64')    
-
-await conn.reply(m.chat, `🍄 *El token te permite iniciar sesion en otros bots, recomendamos no compartirlo con nadie*\n\nTu token es:`, m, rcanal)
-await conn.reply(m.sender, token, m, fake)
-} else {
-await conn.reply(m.chat, `🚩 *No tienes ningun token activo, usa !jadibot para crear uno*`, m, fake)
-}
-break
-
-case isCommand4:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 function convertirMsADiasHorasMinutosSegundos(ms) {
@@ -90,5 +77,5 @@ await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseM
 break   
 }}
 
-handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarhutao', 'pausarbot', 'token', 'bots', 'listjadibots', 'subbots']
+handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarhutao', 'pausarbot', 'bots', 'listjadibots', 'subbots']
 export default handler
