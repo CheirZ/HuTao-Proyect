@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: HuTao-Proyect
-    env: docker
-    region: Frankfurt
-    plan: free
