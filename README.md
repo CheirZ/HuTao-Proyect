@@ -7,11 +7,6 @@
 
 ---
 
-> **`AVISO`**: HuTao Proyect aun no se encuentra disponible para Termux, recomiendo usar un hosting en lo que se soluciona el problema con Termux.
-
-> **`HuTao - Proyect`** Bot innovador en constante evolucion
----
-
 ### <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Prueba La Bot Aqui" width="42" height="42"> Prueba La Bot Aqui
 
 > Si Deseas Probar El Bot Antes De Instalarlo, Click Abajo. 🍟
