@@ -1,5 +1,6 @@
 import {createHash} from 'crypto';
 import PhoneNumber from 'awesome-phonenumber'
+import _ from "lodash"
 const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 const handler = async function(m, {conn, text, usedPrefix, command}) {
   const user = global.db.data.users[m.sender];
