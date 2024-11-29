@@ -1,6 +1,6 @@
 import {createHash} from 'crypto';
 import PhoneNumber from 'awesome-phonenumber'
-import _ from "lodash"
+// import _ from "lodash"
 const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 const handler = async function(m, {conn, text, usedPrefix, command}) {
   const user = global.db.data.users[m.sender];
@@ -9,9 +9,9 @@ const handler = async function(m, {conn, text, usedPrefix, command}) {
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
   let bio = 0, fechaBio
-  let who2 = m.isGroup ? _.get(m, "mentionedJid[0]", m.quoted?.sender || m.sender) : m.sender
+  // let who2 = m.isGroup ? _.get(m, "mentionedJid[0]", m.quoted?.sender || m.sender) : m.sender
   let sinDefinir = '😿 Es privada'
-  let biografia = await conn.fetchStatus(who2).catch(() => null)
+  let biografia = await conn.fetchStatus(m.sender).catch(() => null)
   if (!biografia || !biografia[0] || biografia[0].status === null) {
   bio = sinDefinir
   fechaBio = "Fecha no disponible"
