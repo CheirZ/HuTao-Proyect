@@ -22,6 +22,7 @@ const readDb = async () => {
     throw err;
   }
 };
+if (!db.data.chats[m.chat].nsfw && m.isGroup) return m.reply('🚩 *¡Estos comandos están desactivados!*');
 
 const writeDb = async (data) => {
   try {
