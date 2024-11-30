@@ -11,7 +11,7 @@ let biobot = biografiaBot.status?.toString() || 'Sin Biografía'
 let name = await conn.getName(who)
 
   await sendContactArray(conn, m.chat, [
-     [`0x856a349a25`, `❤️‍🔥 Propietario`, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★`, dev, correo, `MX`, `${global.yt}`, bio],
+     [`${nomorown}`, `❤️‍🔥 Propietario`, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★`, dev, correo, `MX`, `${global.yt}`, bio],
 [`${conn.user.jid.split('@')[0]}`, `Es Una Bot 🦋`, `${packname}`, `📵 No Hacer Spam`, correo, `MX`, md, biobot]
 ], m)
   //m.reply(`Hola @${m.sender.split(`@`)[0]} este es el contacto de mi creador, no hagas spam!!`)
