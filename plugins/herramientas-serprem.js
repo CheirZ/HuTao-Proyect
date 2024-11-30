@@ -190,7 +190,7 @@ await conn.reply(m.chat, `╭┈︨︩︣︢─┉̱╍̄╼⪻⪼╾̄╍̱�
 if (/premium/i.test(command)) {
 await conn.reply(m.chat, `🍄 `\`\`SER PREMIUM`\`\`\n\n👏 Premium basico\n• ${usedPrefix}prem1 1\n> 15 Moras por 5 minutos de premium.\n\n👏 Premium torre se encanto
 \n• ${usedPrefix}prem2 1
-\n> 35 Chocolates por 15 minutos de premium\n\n👏 Premium verduzco\n• ${usedPrefix}prem3 1\n> 25 Moras por 30 minutos de premium\n\n👏 Premium residuos eco\n• ${usedPrefix}prem4 1\n> 50 Moras por 1 h de premium\n\n👏 Premium brillante\n• ${usedPrefix}prem5 1\n> 40 Moras por 3 horas de premium\n\n👏 Premium cripto\n• ${usedPrefix}prem6 1\n> 70 Moras por 7 horas de premium\n\n👏 Premiun gema\n• ${usedPrefix}prem7 1\n> 65 Moras por 1 dia de premium\n\n👏 Premium oro\n• ${usedPrefix}prem8 1\n> 80 Moras por 3 dias de premium`, m, fake)        
+\n> 35 Moras por 15 minutos de premium\n\n👏 Premium verduzco\n• ${usedPrefix}prem3 1\n> 25 Moras por 30 minutos de premium\n\n👏 Premium residuos eco\n• ${usedPrefix}prem4 1\n> 50 Moras por 1 h de premium\n\n👏 Premium brillante\n• ${usedPrefix}prem5 1\n> 40 Moras por 3 horas de premium\n\n👏 Premium cripto\n• ${usedPrefix}prem6 1\n> 70 Moras por 7 horas de premium\n\n👏 Premiun gema\n• ${usedPrefix}prem7 1\n> 65 Moras por 1 dia de premium\n\n👏 Premium oro\n• ${usedPrefix}prem8 1\n> 80 Moras por 3 dias de premium`, m, fake)        
 
 }}
 handler.help = ['serprem']
