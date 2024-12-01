@@ -180,7 +180,6 @@ if (!('antitoxic' in chat)) chat.antitoxic = false
 if (!('simi' in chat)) chat.simi = false
 if (!('antiTraba' in chat)) chat.antiTraba = false
 if (!('autoAceptar' in chat)) chat.autoAceptar = false
-if (!('frases' in chat)) chat.frases = false
 if (!('autolevelup' in chat))  chat.autolevelup = true
 if (!isNumber(chat.expired)) chat.expired = 0
 } else
@@ -218,7 +217,6 @@ antifake: false,
 reaction: false,
 viewonce: false,
 modoadmin: false,
-frases: false,
 antitoxic: false, 
 simi: false,
 antiTraba: false,
@@ -231,6 +229,7 @@ if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
 if (settings) {
 if (!('self' in settings)) settings.self = false
 if (!('autoread' in settings)) settings.autoread = true
+if (!('frases' in chat)) chat.frases = false
 if (!('autoread2' in settings)) settings.autoread2 = false
 if (!('restrict' in settings)) settings.restrict = false
 if (!('antiPrivate' in settings)) settings.antiPrivate = false
@@ -242,6 +241,7 @@ if (!('autobio' in settings)) settings.autobio = false
 } else global.db.data.settings[this.user.jid] = {
 self: false,
 autoread: true,
+frases: false,
 autoread2: false,
 restrict: true,
 antiPrivate: false,
