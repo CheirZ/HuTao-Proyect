@@ -4,7 +4,6 @@ import fs from "fs";
 
 let frases = [];
 let frasesEnviadas = [];
-let bot = global.db.data.settings[conn.user.jid];
 
 fs.readFile('./src/FRASE/frases.json', 'utf8', (err, data) => {
   if (err) {
@@ -15,7 +14,6 @@ fs.readFile('./src/FRASE/frases.json', 'utf8', (err, data) => {
   frases = jsonData.frasesMotivadoras;
 });
 
-     if (bot.frases) { 
 function enviarFrase() {
   if (frases.length === 0) {
     conn.reply(idchannel, '🍄 No hay frases disponibles para enviar', null, fake);
@@ -37,7 +35,7 @@ function enviarFrase() {
 
   const fraseAleatoria = frases[fraseAleatoriaIndex];
   conn.reply(idchannel, `${fraseAleatoria}`, null, fake);
-}}
+}
 
 // Enviar frase cada 1 minuto
 setInterval(enviarFrase, 60000);
