@@ -180,6 +180,7 @@ if (!('antitoxic' in chat)) chat.antitoxic = false
 if (!('simi' in chat)) chat.simi = false
 if (!('antiTraba' in chat)) chat.antiTraba = false
 if (!('autoAceptar' in chat)) chat.autoAceptar = false
+if (!('frases' in chat)) chat.frases = false
 if (!('autolevelup' in chat))  chat.autolevelup = true
 if (!isNumber(chat.expired)) chat.expired = 0
 } else
@@ -217,6 +218,7 @@ antifake: false,
 reaction: false,
 viewonce: false,
 modoadmin: false,
+frases: false,
 antitoxic: false, 
 simi: false,
 antiTraba: false,
