@@ -179,6 +179,14 @@ throw false
 chat.antiInstagram = isEnable 
 break
 
+case 'frases': case 'autofrases':
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.frases = isEnable
+break 
+
 case 'antitwitter': case 'antitw': case 'antitwit': case 'antitwter': case 'antitwiter': case 'antix':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
