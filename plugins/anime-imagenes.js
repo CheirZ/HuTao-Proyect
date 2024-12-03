@@ -1,6 +1,6 @@
 import axios from 'axios';
 const handler = async (m, {command, conn, usedPrefix}) => {
-const res = (await axios.get(`https://raw.githubusercontent.com/WOTCHITA/YaemoriBot-MD/master/src/JSON/anime-${command}.json`)).data;
+const res = (await axios.get(`https://raw.githubusercontent.com/CheirZ/HuTao-Proyect/master/src/JSON/anime-${command}.json`)).data;
 const haha = await res[Math.floor(res.length * Math.random())];
 conn.sendFile(m.chat, haha, 'error.jpg', `𖦹 *${command}*`, m, null, rcanal);
 };
