@@ -1,8 +1,4 @@
-import fs from 'fs';
-
-const obtenerDatos = () => fs.existsSync('database.json') ? JSON.parse(fs.readFileSync('database.json', 'utf-8')) : { usuarios: {} };
-
-const guardarDatos = (data) => fs.writeFileSync('database.json', JSON.stringify(data, null, 2));
+let users = {};
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [eleccion, cantidad] = text.split(' ');
@@ -18,13 +14,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         return m.reply(`✐ Cantidad no válida. Por favor, elige una cantidad de chocolates para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
     }
 
-    let data = obtenerDatos();
     let userId = m.sender;
-    if (!data.usuarios[userId]) data.usuarios[userId] = { chocolates: 100 };
+    if (!users[userId]) users[userId] = { moras: 100 };
 
-    let user = data.usuarios[userId];
+    let user = users[userId];
     if (user.moras < cantidad) {
-        return m.reply(`✐ No tienes suficientes moras para apostar. Tienes ${user.moras} moras.`);
+        return m.reply(`✐ No tienes suficientes chocolates para apostar. Tienes ${user.moras} chocolates.`);
     }
 
     let resultado = Math.random() < 0.5 ? 'cara' : 'cruz';
@@ -32,14 +27,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let mensaje = `✐ Has elegido *${eleccion}* y apostado *${cantidad} moras*.\n`;
     if (resultado === eleccion) {
         user.moras += cantidad;
-        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas *${cantidad} moras*.\nTienes ahora *${user.moras} moras*.`;
+        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas *${cantidad} moras*.\nTienes ahora *${user.chocolates} chocolates*.`;
     } else {
         user.moras -= cantidad;
         mensaje += `Lo siento. Ha salido *${resultado}* y pierdes *${cantidad} moras*.\nTienes ahora *${user.moras} moras*.`;
     }
-
-    data.usuarios[userId] = user;
-    guardarDatos(data);
 
     await conn.reply(m.chat, mensaje, m);
 };
