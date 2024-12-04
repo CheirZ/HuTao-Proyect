@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let mensaje = `✐ Has elegido *${eleccion}*.\n`;
     if (resultado === eleccion) {
         user.chocolates += 60;
-        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas 60 chocolates.\nTienes ahora *${user.moras} chocolates*.`;
+        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas 60 moras.\nTienes ahora *${user.moras} chocolates*.`;
     } else {
         user.moras -= 30;
         mensaje += `Lo siento. Ha salido *${resultado}* y pierdes 30 moras.\nTienes ahora *${user.moras} chocolates*.`;
