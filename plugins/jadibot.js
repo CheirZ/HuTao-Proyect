@@ -1,5 +1,5 @@
 import fs from 'fs'
-const path = './jadibots'; 
+const path = './MiniJadiBot';  //prueba
 
 let handler = async (m, { conn }) => {
     let sesiones = {
