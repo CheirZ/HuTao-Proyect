@@ -1,5 +1,5 @@
 import fs from 'fs'
-const path = './MiniJadiBot';  //prueba
+const path = './jadibots'; 
 
 let handler = async (m, { conn }) => {
     let sesiones = {
@@ -23,12 +23,15 @@ let handler = async (m, { conn }) => {
         });
     }
 
+const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
+function
+const totalUsers = users.length;
+
     let mensaje = `
 「✦」Lista de bots activos (*${totalSessions}*)
 
 ✐ Sesiones: ${totalSessions}
-
-`;
+✧ Sockets: ${totalUsers || '0'}`;
 
     let bots = sesiones.principales.concat(sesiones.premiums, sesiones.subs);
     bots.forEach((bot, index) => {
