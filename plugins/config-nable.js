@@ -14,6 +14,7 @@ ${usedPrefix + command} antilink
 ${usedPrefix + command} antilink2
 ${usedPrefix + command} nsfw
 ${usedPrefix + command} autolevelup
+${usedPrefix + command} subbots
 ${usedPrefix + command} autosticker
 ${usedPrefix + command} reaction
 ${usedPrefix + command} antitoxic
@@ -99,6 +100,16 @@ throw false
 }}
 chat.delete = isEnable
 break
+ 
+case 'antisubbots':
+    case 'antisub':
+    case 'antisubot':
+    case 'antibot2':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
 
 case 'public': case 'publico':
 isAll = true
