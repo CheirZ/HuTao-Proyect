@@ -22,6 +22,7 @@ ${usedPrefix + command} audios
 ${usedPrefix + command} modoadmin
 ${usedPrefix + command} antifake
 ${usedPrefix + command} antibot
+${usedPrefix + command} antibot2
 ${usedPrefix + command} autoaceptar
 
 ♕︎ *OPCIONES PARA MI PROPIETARIO*
