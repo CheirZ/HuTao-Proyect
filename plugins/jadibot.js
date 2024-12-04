@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
     }
 
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
-function
+
 const totalUsers = users.length;
 
     let mensaje = `
