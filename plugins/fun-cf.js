@@ -5,12 +5,17 @@ const obtenerDatos = () => fs.existsSync('data.json') ? JSON.parse(fs.readFileSy
 const guardarDatos = (data) => fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    let [eleccion] = text.split(' ');
-    if (!eleccion) return m.reply(`✐ Por favor, elige cara o cruz.\nEjemplo: *${usedPrefix + command} cara*`);
+    let [eleccion, cantidad] = text.split(' ');
+    if (!eleccion || !cantidad) return m.reply(`✐ Por favor, elige cara o cruz y una cantidad de chocolates para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
 
     eleccion = eleccion.toLowerCase();
+    cantidad = parseInt(cantidad);
     if (eleccion !== 'cara' && eleccion !== 'cruz') {
         return m.reply(`✐ Elección no válida. Por favor, elige cara o cruz.\nEjemplo: *${usedPrefix + command} cara*`);
+    }
+
+    if (isNaN(cantidad) || cantidad <= 0) {
+        return m.reply(`✐ Cantidad no válida. Por favor, elige una cantidad de chocolates para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
     }
 
     let data = obtenerDatos();
@@ -18,15 +23,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!data.usuarios[userId]) data.usuarios[userId] = { chocolates: 100 };
 
     let user = data.usuarios[userId];
+    if (user.chocolates < cantidad) {
+        return m.reply(`✐ No tienes suficientes chocolates para apostar. Tienes ${user.chocolates} chocolates.`);
+    }
+
     let resultado = Math.random() < 0.5 ? 'cara' : 'cruz';
 
-    let mensaje = `✐ Has elegido *${eleccion}*.\n`;
+    let mensaje = `✐ Has elegido *${eleccion}* y apostado *${cantidad} chocolates*.\n`;
     if (resultado === eleccion) {
-        user.chocolates += 60;
-        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas 60 moras.\nTienes ahora *${user.moras} chocolates*.`;
+        user.chocolates += cantidad;
+        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas *${cantidad} chocolates*.\nTienes ahora *${user.chocolates} chocolates*.`;
     } else {
-        user.moras -= 30;
-        mensaje += `Lo siento. Ha salido *${resultado}* y pierdes 30 moras.\nTienes ahora *${user.moras} chocolates*.`;
+        user.chocolates -= cantidad;
+        mensaje += `Lo siento. Ha salido *${resultado}* y pierdes *${cantidad} chocolates*.\nTienes ahora *${user.chocolates} chocolates*.`;
     }
 
     data.usuarios[userId] = user;
@@ -38,6 +47,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['cf'];
 handler.tags = ['fun'];
 handler.command = ['cf', 'caracruz'];
-handler.register = true;
 
 export default handler;
