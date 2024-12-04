@@ -23,19 +23,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!data.usuarios[userId]) data.usuarios[userId] = { chocolates: 100 };
 
     let user = data.usuarios[userId];
-    if (user.chocolates < cantidad) {
-        return m.reply(`✐ No tienes suficientes chocolates para apostar. Tienes ${user.chocolates} chocolates.`);
+    if (user.moras < cantidad) {
+        return m.reply(`✐ No tienes suficientes moras para apostar. Tienes ${user.moras} moras.`);
     }
 
     let resultado = Math.random() < 0.5 ? 'cara' : 'cruz';
 
-    let mensaje = `✐ Has elegido *${eleccion}* y apostado *${cantidad} chocolates*.\n`;
+    let mensaje = `✐ Has elegido *${eleccion}* y apostado *${cantidad} moras*.\n`;
     if (resultado === eleccion) {
-        user.chocolates += cantidad;
-        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas *${cantidad} chocolates*.\nTienes ahora *${user.chocolates} chocolates*.`;
+        user.moras += cantidad;
+        mensaje += `¡Felicidades! Ha salido *${resultado}* y ganas *${cantidad} moras*.\nTienes ahora *${user.moras} moras*.`;
     } else {
-        user.chocolates -= cantidad;
-        mensaje += `Lo siento. Ha salido *${resultado}* y pierdes *${cantidad} chocolates*.\nTienes ahora *${user.chocolates} chocolates*.`;
+        user.moras -= cantidad;
+        mensaje += `Lo siento. Ha salido *${resultado}* y pierdes *${cantidad} moras*.\nTienes ahora *${user.moras} moras*.`;
     }
 
     data.usuarios[userId] = user;
