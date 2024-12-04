@@ -1,8 +1,8 @@
 import fs from 'fs';
 
-const obtenerDatos = () => fs.existsSync('data.json') ? JSON.parse(fs.readFileSync('data.json', 'utf-8')) : { usuarios: {} };
+const obtenerDatos = () => fs.existsSync('database.json') ? JSON.parse(fs.readFileSync('database.json', 'utf-8')) : { usuarios: {} };
 
-const guardarDatos = (data) => fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+const guardarDatos = (data) => fs.writeFileSync('database.json', JSON.stringify(data, null, 2));
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [eleccion, cantidad] = text.split(' ');
