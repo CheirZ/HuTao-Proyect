@@ -14,8 +14,6 @@ await m.reply(`❌️ Ocurrió un error.`)
 console.log(e)
 }
 
-const path = './jadibots'; 
-
 switch (true) {       
 case isCommand1:
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -47,6 +45,7 @@ break
 
 case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
+const path = './jadibots'; 
 let totalSessions = 0;
 if (fs.existsSync(path)) {
 const files = fs.readdirSync(path);
