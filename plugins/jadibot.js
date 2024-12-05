@@ -1,4 +1,5 @@
 import fs from 'fs'
+import ws from 'ws'
 const path = './jadibots'; 
 
 let handler = async (m, { conn }) => {
