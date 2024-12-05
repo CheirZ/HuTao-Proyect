@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     let userId = m.sender;
-    if (!users[userId]) users[userId] = { chocolates: 100 };
+    if (!users[userId]) users[userId] = { moras: 100 };
     let user = global.db.data.users[m.sender];
     if (user.moras < cantidad) {
         return m.reply(`❤️‍🔥 No tienes suficientes moras para apostar. Tienes ${user.moras} moras.`);
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         user.moras += cantidad; 
     mensaje += `*${resultado}* y has ganado *${cantidad} moras*!`;
     } else {
-        user.chocolates -= cantidad;
+        user.moras -= cantidad;
         mensaje += `*${resultado}* y has perdido *${cantidad} moras*!`;
     }
 
