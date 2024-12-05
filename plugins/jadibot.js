@@ -45,10 +45,10 @@ break
 
 case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
-const path = './jadibots'; 
+//const path = './jadibots'; 
 let totalSessions = 0;
-if (fs.existsSync(path)) {
-const files = fs.readdirSync(path);
+if (fs.existsSync(jadi)) {
+const files = fs.readdirSync(jadi);
 totalSessions = files.length;
 }
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
