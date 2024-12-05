@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, isOwner }) => {
     if (!code) return m.reply('❗️ Enlace de invitación no válido.');
 
     if (isOwner) {
-        await conn groupAcceptInvite(code)
+        await conn.groupAcceptInvite(code)
             .then(res => m.reply(`✓ Me he unido exitosamente al grupo.`))
             .catch(err => m.reply(`✗ Error al unirse al grupo: ${err.message}`));
     } else {
