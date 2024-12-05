@@ -39,6 +39,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['cf'];
 handler.tags = ['fun'];
 handler.command = ['cf', 'caracruz'];
-handler.register = true;
 
 export default handler;
