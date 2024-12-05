@@ -1,5 +1,5 @@
 // import { statSync, unlinkSync, readFileSync, watch, rmSync, promises as fsPromises } from 'fs'
-const fs = { ...fsPromises, existsSync }
+//const fs = { ...fsPromises, existsSync }
 import path, { join } from 'path' 
 import ws from 'ws'
 import fs from 'fs'
