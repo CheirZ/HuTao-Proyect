@@ -1,7 +1,4 @@
 import fs from 'fs'
-import ws from 'ws'
-import path, { join } from 'path'
-
 const path = './jadibots'; 
 
 let handler = async (m, { conn }) => {
@@ -28,17 +25,18 @@ let handler = async (m, { conn }) => {
 
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 
-const replyMessage = mensaje.length === 0 ? `` : mensaje;
-
 const totalUsers = users.length;
 
     let mensaje = `
 「✦」Lista de bots activos (*${totalSessions}*)
 
 ✐ Sesiones: ${totalSessions}
-✧ Sockets: ${totalUsers || '0'}\n\n${replyMessage.trim()}`;
+✧ Sockets: ${totalUsers || '0'}`;
 
-mensaje += users.map((v, index) => `• 「 ${index + 1} 」\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\nWa.me/${v.user.jid.replace(/[^0-9]/g, '')}`).join('\n\n__________________________\n\n');
+   // let bots = sesiones.principales.concat(sesiones.premiums, sesiones.subs);
+  //  bots.forEach((bot, index) => {
+      //  mensaje += `\n${index + 1}. ${bot}`;
+   // });
 
     await conn.reply(m.chat, mensaje, m);
 };
