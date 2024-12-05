@@ -36,7 +36,7 @@ const totalUsers = users.length;
 ✐ Sesiones: ${totalSessions}
 ✧ Sockets: ${totalUsers || '0'}`;
 
-message += users.map((v, index) => `• 「 ${index + 1} 」\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\nWa.me/${v.user.jid.replace(/[^0-9]/g, '')}`).join('\n\n__________________________\n\n');
+mensaje += users.map((v, index) => `• 「 ${index + 1} 」\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\nWa.me/${v.user.jid.replace(/[^0-9]/g, '')}`).join('\n\n__________________________\n\n');
 
     await conn.reply(m.chat, mensaje, m);
 };
