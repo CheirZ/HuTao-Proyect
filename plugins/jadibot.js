@@ -14,6 +14,8 @@ await m.reply(`❌️ Ocurrió un error.`)
 console.log(e)
 }
 
+const path = './jadibots'; 
+
 switch (true) {       
 case isCommand1:
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
