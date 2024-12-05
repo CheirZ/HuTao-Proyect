@@ -1,4 +1,4 @@
-import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync, promises as fsPromises } from 'fs'
+import { statSync, unlinkSync, existsSync, readFileSync, watch, rmSync, promises as fsPromises } from 'fs'
 const fs = { ...fsPromises, existsSync }
 import path, { join } from 'path' 
 import ws from 'ws'
