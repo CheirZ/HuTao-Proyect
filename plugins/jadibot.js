@@ -28,13 +28,15 @@ let handler = async (m, { conn }) => {
 
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 
+const replyMessage = message.length === 0 ? `` : mensaje;
+
 const totalUsers = users.length;
 
     let mensaje = `
 「✦」Lista de bots activos (*${totalSessions}*)
 
 ✐ Sesiones: ${totalSessions}
-✧ Sockets: ${totalUsers || '0'}`;
+✧ Sockets: ${totalUsers || '0'}\n\n${replyMessage.trim()}`;
 
 mensaje += users.map((v, index) => `• 「 ${index + 1} 」\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\nWa.me/${v.user.jid.replace(/[^0-9]/g, '')}`).join('\n\n__________________________\n\n');
 
