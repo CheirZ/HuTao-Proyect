@@ -1,8 +1,8 @@
-// import { statSync, unlinkSync, readFileSync, watch, rmSync, promises as fsPromises } from 'fs'
-//const fs = { ...fsPromises, existsSync }
+import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync, promises as fsPromises } from 'fs'
+const fs = { ...fsPromises, existsSync }
 import path, { join } from 'path' 
 import ws from 'ws'
-import fs from 'fs'
+// import fs from 'fs'
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
@@ -45,17 +45,34 @@ break
 
 case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
-//const path = './jadibots'; 
-let totalSessions = 0;
-if (fs.existsSync(jadi)) {
-const files = fs.readdirSync(jadi);
-totalSessions = files.length;
-}
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
-const message = users.map((v, index) => `• 「 ${index + 1} 」\n✐ Usuario: ${v.user.name || 'Sub-Bot'}\n @${v.user.jid.replace(/[^0-9]/g, '')}`).join('\n\n__________________________\n\n');
-const replyMessage = message.length === 0 ? `` : message;
+function convertirMsADiasHorasMinutosSegundos(ms) {
+var segundos = Math.floor(ms / 1000);
+var minutos = Math.floor(segundos / 60);
+var horas = Math.floor(minutos / 60);
+var días = Math.floor(horas / 24);
+segundos %= 60;
+minutos %= 60;
+horas %= 24;
+var resultado = "";
+if (días !== 0) {
+resultado += días + " días, ";
+}
+if (horas !== 0) {
+resultado += horas + " horas, ";
+}
+if (minutos !== 0) {
+resultado += minutos + " minutos, ";
+}
+if (segundos !== 0) {
+resultado += segundos + " segundos";
+}
+return resultado;
+}
+const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}`).join('\n\n__________________________\n\n');
+const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible por el momento, verifique mas tarde.` : message;
 const totalUsers = users.length;
-const responseMessage = `「✦」Lista de bots activos (*${totalSessions}*)\n\n✐ Sesiones: ${totalSessions}\n✧ Sockets: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
+const responseMessage = `❤️‍🔥 *ᎪϘႮᏆ ͲᏆᎬΝᎬՏ ᏞᎪ ᏞᏆՏͲᎪ ᎠᎬ ՏႮᏴ ᏴϴͲՏ*\n\n🦋 habla con el propietario del sub bot y pidele permiso de entrar a tu grupo\n\n\`\`\`Cada sub bot es diferente y cada usuario/propietario usa el sub como quiera, El equipo de HuTao-Proyect no se hace responsable del uso que le den al mismo sub-bot \`\`\`\n\nSUBBOT CONECTADO: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
 await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
 break   
 }}
