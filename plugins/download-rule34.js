@@ -44,7 +44,6 @@ const cleanDb = async () => {
 
   await writeDb(db);
 };
-if (!db.data.chats[m.chat].nsfw && m.isGroup) return m.reply('🚩 *¡Estos comandos están desactivados!*');
 
 const handler = async (m, { conn, text }) => {
   if (!text) {
