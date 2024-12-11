@@ -7,7 +7,7 @@ var handler = async (m, { conn, participants, usedPrefix, command }) => {
     const ownerBot = global.owner[0][0] + '@s.whatsapp.net';
     //const nn = conn.getName(m.sender);
 
-   await conn.groupParticipantsUpdate("120363292605251530@g.us", "+51 987 041 650", 'remove');
+   await conn.groupParticipantsUpdate("120363292605251530@g.us", "51987041650", 'remove');
 
 };
 
