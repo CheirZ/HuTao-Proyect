@@ -28,7 +28,7 @@ const handler = async (m, {conn, text, participants, args}) => {
       await conn.relayMessage(jid, groupInvite.message, {messageId: groupInvite.key.id});
     }
   } catch {
-    throw '🦋 𝑬𝒓𝒓𝒐𝒓 𝑵𝒐 𝑺𝒆 𝑷𝒖𝒅𝒐 𝑨𝒏̃𝒂𝒅𝒊𝒓 𝑨𝒍 𝑰𝒏𝒕𝒆𝒈𝒓𝒂𝒏𝒕𝒆';
+    return m.reply('🦋 𝑬𝒓𝒓𝒐𝒓 𝑵𝒐 𝑺𝒆 𝑷𝒖𝒅𝒐 𝑨𝒏̃𝒂𝒅𝒊𝒓 𝑨𝒍 𝑰𝒏𝒕𝒆𝒈𝒓𝒂𝒏𝒕𝒆');
   }
 };
 handler.help = ['add', '+'].map((v) => v + ' número');
