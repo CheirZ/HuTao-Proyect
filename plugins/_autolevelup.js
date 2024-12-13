@@ -1,4 +1,4 @@
-/import { canLevelUp, xpRange } from '../lib/levelling.js'
+/*import { canLevelUp, xpRange } from '../lib/levelling.js'
 import { levelup } from '../lib/canvas.js'
 
 let handler = m => m
