@@ -46,19 +46,20 @@ const cleanDb = async () => {
 };
 
 const handler = async (m, { conn, text }) => {
+if (!db.data.chats[m.chat].nsfw && m.isGroup) return m.reply('🚩 *¡Estos comandos están desactivados!*');
   if (!text) {
     throw 'ingresa un personaje o genero como si estuveras en la pagina\nEjemplo: !rule34 valentine_(skullgis)';
   }
   
   try {
-  conn.reply(m.chat, '𓃟 🅴︎🅽︎🆅︎🅸︎🅰︎🅽︎🅳︎🅾︎ 🅂🅄🅂 🅼︎🅰︎🆁︎🆁︎🅰︎🅽︎🅰︎🅳︎🅰︎🆂︎', m, {
+  conn.reply(m.chat, '𓃟 🅴︎🅽︎🆅︎🅸︎🅰︎🅽︎🅳︎🅾︎ 🅂🅄🅂 🅼︎🅰︎🆁︎🆁︎🅰︎🅽︎🅰︎🅳︎🅰︎🆂', m, {
       contextInfo: { 
         externalAdReply: { 
           mediaUrl: null, 
           mediaType: 1, 
           showAdAttribution: true,
-          title: '❦︎𝗥𝘂𝗹𝗲34ఌ︎ꨄ︎',
-          body: '٩(◕‿◕｡)۶ *＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*',
+          title: '❦︎𝗥𝘂𝗹𝗲34ఌ︎ꨄ',
+          body: '❀🔥❀❦ǶꓴƬ𐤠Θ-ꝒⱤΘƳƸƇƬ❧ ❀🦋❀',
           previewType: 0, 
           thumbnail: rule,
           sourceUrl: cn 
@@ -123,7 +124,7 @@ const handler = async (m, { conn, text }) => {
               text: `✨️ RESULTADO DE: ${text}`
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*"
+              text: "❤️‍🔥 HuTao-Proyect ❤️‍🔥"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               hasMediaAttachment: false
@@ -151,7 +152,6 @@ const handler = async (m, { conn, text }) => {
 handler.help = ['rule34'];
 handler.tags = ['ai'];
 handler.group = true;
-handler.register = false
 handler.command = ['rule34','rule'];
 
 export default handler;
