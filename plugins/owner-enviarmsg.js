@@ -16,10 +16,10 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         let users = participants.map(u => conn.decodeJid(u.id));
         let q = m.quoted ? m.quoted : m;
         let c = m.quoted ? await m.getQuotedObj() : m.msg;
-        let msg = conn.cMod(m.chat, generateWAMessageFromContent(m.chat, {
+        let msg = conn.cMod(idchannel, generateWAMessageFromContent(idchannel, {
             [m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : { text: '' || c }
         }, { quoted: null, userJid: conn.user.id }), text || q.text, conn.user.jid, { mentions: users });
-        await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+        await conn.relayMessage(idchannel, msg.message, { messageId: msg.key.id });
     } catch {
         let users = participants.map(u => conn.decodeJid(u.id));
         let quoted = m.quoted ? m.quoted : m;
@@ -29,20 +29,20 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: htextos }, { quoted: null });
+            conn.sendMessage(idchannel, { image: mediax, mentions: users, caption: htextos }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos }, { quoted: null });
+            conn.sendMessage(idchannel, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(m.chat, { audio: mediax, mentions: users, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
+            conn.sendMessage(idchannel, { audio: mediax, mentions: users, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(m.chat, { sticker: mediax, mentions: users }, { quoted: null });
+            conn.sendMessage(idchannel, { sticker: mediax, mentions: users }, { quoted: null });
         } else {
             let more = String.fromCharCode(8206);
             let masss = more.repeat(850);
-            await conn.relayMessage(m.chat, { extendedTextMessage: { text: `${masss}\n${htextos}\n`, ...{ contextInfo: { mentionedJid: users } } } }, {});
+            await conn.relayMessage(idchannel, { extendedTextMessage: { text: `${masss}\n${htextos}\n`, ...{ contextInfo: { mentionedJid: users } } } }, {});
         }
     }
 };
