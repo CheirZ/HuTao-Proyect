@@ -1,6 +1,4 @@
-// By: @OfcKing 
-
-// Código hecho por: https://github.com/elrebelde21 
+// By: @OfcKing  
 
 import { webp2png } from '../lib/webp2mp4.js';
 import uploadFile from '../lib/uploadFile.js';
