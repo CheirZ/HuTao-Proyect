@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let content = m.quoted ? m.quoted : m;
 
-    await conn.forwardMessage(idchannel, content.message, {
+    await conn.sendMessage(idchannel, content.message, {
         contextInfo: {
             mentionedJid: [who]
         }
