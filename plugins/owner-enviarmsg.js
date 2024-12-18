@@ -29,22 +29,22 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
-           let messageType = htextos ? 'una imagen con texto' : 'una imagen';
+           global.messageType = htextos ? 'una imagen con texto' : 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
-           let messageType = htextos ? 'un video con texto' : 'un video';
+           global.messageType = htextos ? 'un video con texto' : 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
-           let messageType = 'un audio';
+           global.messageType = 'un audio';
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
-           let messageType = 'un sticker';
+           global.messageType = 'un sticker';
         } else {
             await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
-           let messageType = 'un texto';
+           global.messageType = 'un texto';
         }
     }
 
