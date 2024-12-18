@@ -19,8 +19,21 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     let content = m.quoted ? m.quoted : m;
+    let messageOptions = {};
 
-    await conn.sendMessage(idgroup, content.message, false)
+    if (content.mtype === 'imageMessage') {
+        messageOptions = { image: content.message.imageMessage, caption: content.message.imageMessage.caption || '' };
+    } else if (content.mtype === 'videoMessage') {
+        messageOptions = { video: content.message.videoMessage, caption: content.message.videoMessage.caption || '' };
+    } else if (content.mtype === 'stickerMessage') {
+        messageOptions = { sticker: content.message.stickerMessage };
+    } else if (content.mtype === 'documentMessage') {
+        messageOptions = { document: content.message.documentMessage, fileName: content.message.documentMessage.fileName };
+    } else {
+        messageOptions = { text: content.text || content.message.conversation };
+    }
+
+    await conn.sendMessage(idchannel, messageOptions)
         .then(() => {
             let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
             conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
