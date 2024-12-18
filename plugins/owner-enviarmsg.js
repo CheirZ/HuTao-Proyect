@@ -35,8 +35,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     await conn.sendMessage(idchannel, messageOptions)
         .then(() => {
-            let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
-            conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+          //  let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+          //  conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
         })
         .catch(err => {
             console.error('Error al enviar el mensaje:', err);
