@@ -40,7 +40,7 @@ var handler = async (m, { conn, text }) => {
             await conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
             messageType = 'un sticker';
         } else {
-            await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
+            await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}` } }, {});
             messageType = 'un texto';
         }
 
