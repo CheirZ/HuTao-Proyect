@@ -45,8 +45,8 @@ let handler = async (m, { conn, text }) => {
             messageOptions = { audio: { url: audioUrl }, mimetype: content.message?.audioMessage?.mimetype || 'audio/mp4' };
             messageType = 'un audio';
         } else if (/webp/.test(mime)) {
-            mediaBuffer = await content.download();
-            messageOptions = { sticker: mediaBuffer };
+            var mediax = await content.download?.()
+            conn.sendMessage(m.chat, {sticker: mediax, mentions: users}, { quoted: null })
             messageType = 'un sticker';
         } else {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
