@@ -7,10 +7,8 @@ import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-idgroup = global.idchannel
-idgp = "120363351999685409@g.us"; 
-
-let idgroup, idgp
+const idgroup = global.idchannel
+const idgp = "120363351999685409@g.us"; 
 
 var handler = async (m, { conn, text }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.`, m);
