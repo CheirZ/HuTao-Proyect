@@ -37,18 +37,23 @@ let handler = async (m, { conn, text }) => {
             let videoUrl = await uploadFile(mediaBuffer);
             messageOptions = { video: { url: videoUrl }, caption: text || content.message?.videoMessage?.caption || '' };
             messageType = text ? 'un video con texto' : 'un video';
+        } else if (/audio/.test(mime)) {
+            mediaBuffer = await content.download();
+            let audioUrl = await uploadFile(mediaBuffer);
+            messageOptions = { audio: { url: audioUrl }, mimetype: content.message?.audioMessage?.mimetype || 'audio/mp4' };
+            messageType = 'un audio';
         } else if (/webp/.test(mime)) {
             mediaBuffer = await content.download();
-            let stickerBuffer = await webp2png(mediaBuffer);
+            let stickerBuffer = mediaBuffer;
             messageOptions = { sticker: stickerBuffer };
             messageType = 'un sticker';
         } else {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
         }
 
-        await conn.sendMessage(idchannel, messageOptions);
+        await conn.sendMessage(idgroup, messageOptions);
 
-        let senderInfo = `@${who.split('@')[0]} envió ${messageType} para el canal test!`;
+        let senderInfo = `@${who.split('@')[0]} envió ${messageType} para el canal!`;
         await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
 
     } catch (err) {
@@ -57,6 +62,6 @@ let handler = async (m, { conn, text }) => {
     }
 };
 
-handler.command = ['enviarmensaje', 'enviar', 'mensajegroup', 'solicitud' 'sug'];
+handler.command = ['enviarmensaje', 'enviar', 'mensajegroup', 'solicitud', 'sug'];
 
 export default handler;
