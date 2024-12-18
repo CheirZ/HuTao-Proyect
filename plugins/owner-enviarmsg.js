@@ -1,9 +1,9 @@
 // By: @OfcKing
 
-import fs from 'fs';
-import fetch from 'node-fetch';
+import axios from 'axios';
+import fs from 'fs'; 
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { sticker } from '../lib/sticker.js';
 import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
@@ -50,7 +50,7 @@ let handler = async (m, { conn, text }) => {
        // await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
     } catch (err) {
         console.error('Error al enviar el mensaje:', err);
-        m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
+        m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
     }
 };
 
