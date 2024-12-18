@@ -9,7 +9,7 @@ import { webp2png } from '../lib/webp2mp4.js';
 
 const idgroup = global.idchannel;
 const idgp = "120363351999685409@g.us";
-let messageType
+//let messageType
 
 var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m);
@@ -26,7 +26,7 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         let mime = (quoted.msg || quoted).mimetype || '';
         let isMedia = /image|video|sticker|audio/.test(mime);
         let htextos = `${text ? text : ""}`;
-        messageType = 'un texto'; 
+        let messageType = 'un texto'; 
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
