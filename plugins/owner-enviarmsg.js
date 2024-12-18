@@ -29,10 +29,10 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idchannel, { image: mediax, mentions: users, caption: htextos }, { quoted: null });
+            conn.sendMessage(idchannel, { image: mediax, mentions: users, caption: null }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idchannel, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos }, { quoted: null });
+            conn.sendMessage(idchannel, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: null }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idchannel, { audio: mediax, mentions: users, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
