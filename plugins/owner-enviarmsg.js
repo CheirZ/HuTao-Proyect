@@ -48,7 +48,7 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         }
     }
 
-    let tipio = messageType
+    let tipio = global.messageType;
 
     let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${tipio}`;
     await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
