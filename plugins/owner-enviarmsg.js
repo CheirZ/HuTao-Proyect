@@ -1,5 +1,7 @@
 // By: @OfcKing 
 
+// Código hecho por: https://github.com/elrebelde21 
+
 import { webp2png } from '../lib/webp2mp4.js';
 import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
@@ -7,11 +9,12 @@ import axios from 'axios';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { downloadContentFromMessage } from '@whiskeysockets/baileys';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const idgroup = "120363351999685409@g.us"; // ID del grupo
+const idgroup = "120363351999685409@g.us";
 
 let handler = async (m, { conn, text }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
@@ -28,16 +31,28 @@ let handler = async (m, { conn, text }) => {
 
     try {
         if (/image/.test(mime)) {
-            mediaBuffer = await conn.downloadMediaMessage(content);
-            let imageUrl = await uploadImage(mediaBuffer);
+            const stream = await downloadContentFromMessage(content.message.imageMessage, 'image');
+            let buffer = Buffer.from([]);
+            for await (const chunk of stream) {
+                buffer = Buffer.concat([buffer, chunk]);
+            }
+            let imageUrl = await uploadImage(buffer);
             messageOptions = { image: { url: imageUrl }, caption: text || content.message.imageMessage.caption || '' };
         } else if (/video/.test(mime)) {
-            mediaBuffer = await conn.downloadMediaMessage(content);
-            let videoUrl = await uploadFile(mediaBuffer);
+            const stream = await downloadContentFromMessage(content.message.videoMessage, 'video');
+            let buffer = Buffer.from([]);
+            for await (const chunk of stream) {
+                buffer = Buffer.concat([buffer, chunk]);
+            }
+            let videoUrl = await uploadFile(buffer);
             messageOptions = { video: { url: videoUrl }, caption: text || content.message.videoMessage.caption || '' };
         } else if (/webp/.test(mime)) {
-            mediaBuffer = await conn.downloadMediaMessage(content);
-            let stickerBuffer = await webp2png(mediaBuffer);
+            const stream = await downloadContentFromMessage(content.message.stickerMessage, 'sticker');
+            let buffer = Buffer.from([]);
+            for await (const chunk of stream) {
+                buffer = Buffer.concat([buffer, chunk]);
+            }
+            let stickerBuffer = await webp2png(buffer);
             messageOptions = { sticker: stickerBuffer };
         } else {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
@@ -45,8 +60,8 @@ let handler = async (m, { conn, text }) => {
 
         await conn.sendMessage(idgroup, messageOptions);
 
-        let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
-        //await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+        //let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+
     } catch (err) {
         console.error('Error al enviar el mensaje:', err);
         m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
