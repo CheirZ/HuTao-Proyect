@@ -24,11 +24,11 @@ var handler = async (m, { conn, text }) => {
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             mediax = await quoted.download?.();
-            await conn.sendMessage(idgroup, { image: mediax, caption: htextos }, { quoted: null });
+            await conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
             messageType = htextos ? 'una imagen con texto' : 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             mediax = await quoted.download?.();
-            await conn.sendMessage(idgroup, { video: mediax, caption: htextos }, { quoted: null });
+            await conn.sendMessage(idgroup, { video: mediax, caption: htextos || null }, { quoted: null });
             messageType = htextos ? 'un video con texto' : 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             mediax = await quoted.download?.();
