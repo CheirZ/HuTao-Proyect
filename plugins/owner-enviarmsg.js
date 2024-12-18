@@ -11,7 +11,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const idgroup = "120363317570465699@g.us"; // ID del grupo
+const idgroup = "120363351999685409@g.us"; // ID del grupo
 
 let handler = async (m, { conn, text }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
