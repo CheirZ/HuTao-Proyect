@@ -15,7 +15,6 @@ const idgroup = "120363351999685409@g.us";
 
 let handler = async (m, { conn, text }) => {
     let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
-    let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/33bed21a0eaa789852c30.jpg');
 
     if (!text && !m.quoted) {
         return m.reply(`*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`);
