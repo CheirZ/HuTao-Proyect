@@ -7,7 +7,8 @@ import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-const idgroup = "120363351999685409@g.us";
+const idgroup = global.idchannel;
+const idgp = "120363351999685409@g.us";
 
 var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m);
@@ -15,10 +16,10 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     try {
         let q = m.quoted ? m.quoted : m;
         let c = m.quoted ? await m.getQuotedObj() : m.msg;
-        let msg = conn.cMod(idchannel, generateWAMessageFromContent(idchannel, {
+        let msg = conn.cMod(idgroup, generateWAMessageFromContent(idgroup, {
             [m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : { text: '' || c }
         }, { quoted: null, userJid: conn.user.id }), text || q.text, conn.user.jid);
-        await conn.relayMessage(idchannel, msg.message, { messageId: msg.key.id });
+        await conn.relayMessage(idgroup, msg.message, { messageId: msg.key.id });
     } catch {
         let quoted = m.quoted ? m.quoted : m;
         let mime = (quoted.msg || quoted).mimetype || '';
@@ -27,27 +28,25 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
-            await conn.sendMessage(idchannel, { image: mediax, caption: htextos || null }, { quoted: null });
+            conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
-            await conn.sendMessage(idchannel, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
+            conn.sendMessage(idgroup, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
-            await conn.sendMessage(idchannel, { audio: mediax, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
+            conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
             var mediax = await quoted.download?.();
-            await conn.sendMessage(idchannel, { sticker: mediax }, { quoted: null });
+            conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
         } else {
-            await conn.relayMessage(idchannel, { extendedTextMessage: { text: `${htextos}\n` } }, {});
+            await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
         }
     }
 
     let contentType = isMedia ? (quoted.mtype === 'imageMessage' ? 'una imagen' : quoted.mtype === 'videoMessage' ? 'un video' : quoted.mtype === 'audioMessage' ? 'un audio' : 'un sticker') : 'un texto';
-    let senderInfo = `✨️ *HuTao-Proyect* ✨️
-
-👤 Usuario: @${m.sender.split('@')[0]}
-🎋 Tipo: ${contentType}`;
-    await conn.sendMessage(idgroup, { text: senderInfo, mentions: [m.sender] });
+    
+    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${contentType}`;
+    await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
 };
 
 handler.command = ['enviar'];
