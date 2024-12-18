@@ -7,7 +7,11 @@ import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-const idgroup = "120363351999685409@g.us"; // ID del grupo
+const idgroup, idgp
+
+idgroup = global.idchannel
+idgp = "120363351999685409@g.us"; 
+
 
 var handler = async (m, { conn, text }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.`, m);
@@ -44,7 +48,7 @@ var handler = async (m, { conn, text }) => {
         }
 
         let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
-        await conn.sendMessage(idgroup, { text: senderInfo, mentions: [m.sender] });
+        await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
         
     } catch (err) {
         console.error('Error al enviar el mensaje:', err);
@@ -52,6 +56,9 @@ var handler = async (m, { conn, text }) => {
     }
 };
 
-handler.command = ['enviar'];
+handler.help = ['enviar'];
+handler.tags = ['main'];
+handler.command = ['enviar', 'sug', 'solicitud', 'enviarcanal'];
+handler.register = false;
 
 export default handler;
