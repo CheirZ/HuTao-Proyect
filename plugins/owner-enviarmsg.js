@@ -7,13 +7,13 @@ import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-const idgroup = global.idchannel;
+const idgroup = idgp;
 const idgp = "120363351999685409@g.us";
 
 var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m);
 
-    let messageType = 'un texto'; 
+    let messageType = ''; 
 
     try {
         let q = m.quoted ? m.quoted : m;
