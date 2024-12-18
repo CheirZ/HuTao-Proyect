@@ -10,47 +10,46 @@ import { webp2png } from '../lib/webp2mp4.js';
 const idgroup = "120363351999685409@g.us"; // ID del grupo
 
 var handler = async (m, { conn, text }) => {
-    if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m);
+    if (!m.quoted && !text) return conn.reply(m.chat, `🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.`, m);
 
     let messageType = 'un texto'; 
+    let isMedia = false;
+    let quoted, mime, mediax, htextos;
 
     try {
-        let q = m.quoted ? m.quoted : m;
-        let c = m.quoted ? await m.getQuotedObj() : m.msg;
-        let msg = conn.cMod(idgroup, generateWAMessageFromContent(idgroup, {
-            [m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : { text: '' || c }
-        }, { quoted: null, userJid: conn.user.id }), text || q.text, conn.user.jid);
-        await conn.relayMessage(idgroup, msg.message, { messageId: msg.key.id });
-    } catch {
-        let quoted = m.quoted ? m.quoted : m;
-        let mime = (quoted.msg || quoted).mimetype || '';
-        let isMedia = /image|video|sticker|audio/.test(mime);
-        let htextos = `${text ? text : ""}`;
+        quoted = m.quoted ? m.quoted : m;
+        mime = (quoted.msg || quoted).mimetype || '';
+        isMedia = /image|video|sticker|audio/.test(mime);
+        htextos = `${text ? text : ""}`;
 
         if (isMedia && quoted.mtype === 'imageMessage') {
-            var mediax = await quoted.download?.();
+            mediax = await quoted.download?.();
             await conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
             messageType = htextos ? 'una imagen con texto' : 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
-            var mediax = await quoted.download?.();
+            mediax = await quoted.download?.();
             await conn.sendMessage(idgroup, { video: mediax, caption: htextos || null }, { quoted: null });
             messageType = htextos ? 'un video con texto' : 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
-            var mediax = await quoted.download?.();
+            mediax = await quoted.download?.();
             await conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
             messageType = 'un audio';
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
-            var mediax = await quoted.download?.();
+            mediax = await quoted.download?.();
             await conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
             messageType = 'un sticker';
         } else {
             await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
             messageType = 'un texto';
         }
-    }
 
-    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
-    await conn.sendMessage(idgroup, { text: senderInfo, mentions: [m.sender] });
+        let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
+        await conn.sendMessage(idgroup, { text: senderInfo, mentions: [m.sender] });
+        
+    } catch (err) {
+        console.error('Error al enviar el mensaje:', err);
+        m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
+    }
 };
 
 handler.command = ['enviar'];
