@@ -7,11 +7,12 @@ import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-const idgroup = "120363351999685409@g.us";
-const idgp = "120363351999685409@g.us";
+const idgroup = "120363351999685409@g.us"; // ID del grupo
 
-var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
-    if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m); 
+var handler = async (m, { conn, text }) => {
+    if (!m.quoted && !text) return conn.reply(m.chat, `*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`, m);
+
+    let messageType = 'un texto'; 
 
     try {
         let q = m.quoted ? m.quoted : m;
@@ -28,30 +29,28 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
-           global.messageType = 'una imagen';
+            await conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
+            messageType = htextos ? 'una imagen con texto' : 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idgroup, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
-           global.messageType = 'un video';
+            await conn.sendMessage(idgroup, { video: mediax, caption: htextos || null }, { quoted: null });
+            messageType = htextos ? 'un video con texto' : 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
-           global.messageType = 'un audio';
+            await conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
+            messageType = 'un audio';
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
-           global.messageType = 'un sticker';
+            await conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
+            messageType = 'un sticker';
         } else {
             await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
-           global.messageType = 'un texto';
+            messageType = 'un texto';
         }
     }
 
-    let tipio = global.messageType;
-
-    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${tipio}`;
-    await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
+    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
+    await conn.sendMessage(idgroup, { text: senderInfo, mentions: [m.sender] });
 };
 
 handler.command = ['enviar'];
