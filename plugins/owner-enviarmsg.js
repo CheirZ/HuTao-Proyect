@@ -43,10 +43,10 @@ let handler = async (m, { conn, text }) => {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
         }
 
-        await conn.sendMessage(idgroup, messageOptions);
+        await conn.sendMessage(idchannel, messageOptions);
 
-      //  let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
-       // await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+      let senderInfo = `@${who.split('@')[0]} envió un mensaje para el canal test! ✨️\n💫 Canal: ${channel2}`;
+       await conn.sendMessage(m.chat, { text: senderInfo, mentions: [who] });
 
     } catch (err) {
         console.error('Error al enviar el mensaje:', err);
@@ -54,6 +54,6 @@ let handler = async (m, { conn, text }) => {
     }
 };
 
-handler.command = ['enviarmensaje', 'enviar', 'mensajegroup'];
+handler.command = ['enviarmensaje', 'enviar', 'mensajegroup', 'sug'];
 
 export default handler;
