@@ -20,16 +20,17 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let content = m.quoted ? m.quoted : m;
 
-    await conn.sendMessage(idchannel, content.message, {
-        contextInfo: {
-            mentionedJid: [who]
-        }
-    });
-
-    let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
-    await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+    await conn.sendMessage(idgroup, content.message, false)
+        .then(() => {
+            let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+            conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+        })
+        .catch(err => {
+            console.error('Error al enviar el mensaje:', err);
+            m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        });
 };
 
-handler.command = ['enviarmensaje', 'hutao'];
+handler.command = ['enviarmensaje', 'enviar', 'mensajegroup'];
 
 export default handler;
