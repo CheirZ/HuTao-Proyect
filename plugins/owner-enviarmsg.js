@@ -21,26 +21,26 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let content = m.quoted ? m.quoted : m;
     let messageOptions = {};
 
-    if (content.mtype === 'imageMessage') {
+    if (content.message.imageMessage) {
         messageOptions = { image: content.message.imageMessage, caption: content.message.imageMessage.caption || '' };
-    } else if (content.mtype === 'videoMessage') {
+    } else if (content.message.videoMessage) {
         messageOptions = { video: content.message.videoMessage, caption: content.message.videoMessage.caption || '' };
-    } else if (content.mtype === 'stickerMessage') {
+    } else if (content.message.stickerMessage) {
         messageOptions = { sticker: content.message.stickerMessage };
-    } else if (content.mtype === 'documentMessage') {
+    } else if (content.message.documentMessage) {
         messageOptions = { document: content.message.documentMessage, fileName: content.message.documentMessage.fileName };
     } else {
-        messageOptions = { text: content.text || content.message.conversation };
+        messageOptions = { text: text || content.message.conversation || content.message.extendedTextMessage.text };
     }
 
-    await conn.sendMessage(idchannel, messageOptions)
+    await conn.sendMessage(idgroup, messageOptions)
         .then(() => {
-          //  let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
-          //  conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
+           // let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+           // conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
         })
         .catch(err => {
             console.error('Error al enviar el mensaje:', err);
-            m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
+            m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
         });
 };
 
