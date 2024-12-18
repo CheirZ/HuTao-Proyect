@@ -25,31 +25,31 @@ let handler = async (m, { conn, text }) => {
     let messageOptions = {};
     let mediaBuffer;
     let mime = (content.msg || content).mimetype || '';
-    let messageType = 'texto'; 
+    let messageType = 'un texto'; 
 
     try {
         if (/image/.test(mime)) {
             mediaBuffer = await content.download();
             let imageUrl = await uploadImage(mediaBuffer);
             messageOptions = { image: { url: imageUrl }, caption: text || content.message?.imageMessage?.caption || '' };
-            messageType = text ? 'imagen con texto' : 'imagen';
+            messageType = text ? 'una imagen con texto' : 'una imagen';
         } else if (/video/.test(mime)) {
             mediaBuffer = await content.download();
             let videoUrl = await uploadFile(mediaBuffer);
             messageOptions = { video: { url: videoUrl }, caption: text || content.message?.videoMessage?.caption || '' };
-            messageType = text ? 'video con texto' : 'video';
+            messageType = text ? 'un video con texto' : 'un video';
         } else if (/webp/.test(mime)) {
             mediaBuffer = await content.download();
             let stickerBuffer = await webp2png(mediaBuffer);
             messageOptions = { sticker: stickerBuffer };
-            messageType = 'sticker';
+            messageType = 'un sticker';
         } else {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
         }
 
-        await conn.sendMessage(idgroup, messageOptions);
+        await conn.sendMessage(idchannel, messageOptions);
 
-        let senderInfo = `@${who.split('@')[0]} envió un ${messageType} para el canal test!`;
+        let senderInfo = `@${who.split('@')[0]} envió ${messageType} para el canal test!`;
         await conn.sendMessage(m.chat, { text: senderInfo, mentions: [who] });
 
     } catch (err) {
