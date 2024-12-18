@@ -1,68 +1,57 @@
 // By: @OfcKing  
 
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys';
+import * as fs from 'fs';
 import { sticker } from '../lib/sticker.js';
 import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import { webp2png } from '../lib/webp2mp4.js';
 
-import axios from 'axios';
-import fs from 'fs'; 
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 const idgroup = "120363351999685409@g.us";
 
-let handler = async (m, { conn, text }) => {
-    let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
-
-    if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.*`);
-    }
-
-    let content = m.quoted ? m.quoted : m;
-    let messageOptions = {};
-    let mediaBuffer;
-    let mime = (content.msg || content).mimetype || '';
-    let messageType = 'un texto'; 
+var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
+    if (!m.quoted && !text) return conn.reply(m.chat, `🚩 Por favor, ingrese un texto`, m);
 
     try {
-        if (/image/.test(mime)) {
-            mediaBuffer = await content.download();
-            let imageUrl = await uploadImage(mediaBuffer);
-            messageOptions = { image: { url: imageUrl }, caption: text || content.message?.imageMessage?.caption || '' };
-            messageType = text ? 'una imagen con texto' : 'una imagen';
-        } else if (/video/.test(mime)) {
-            mediaBuffer = await content.download();
-            let videoUrl = await uploadFile(mediaBuffer);
-            messageOptions = { video: { url: videoUrl }, caption: text || content.message?.videoMessage?.caption || '' };
-            messageType = text ? 'un video con texto' : 'un video';
-        } else if (/audio/.test(mime)) {
-            mediaBuffer = await content.download();
-            let audioUrl = await uploadFile(mediaBuffer);
-            messageOptions = { audio: { url: audioUrl }, mimetype: content.message?.audioMessage?.mimetype || 'audio/mp4' };
-            messageType = 'un audio';
-        } else if (/webp/.test(mime)) {
-            var mediax = await content.download?.()
-            conn.sendMessage(m.chat, {sticker: mediax, mentions: users}, { quoted: null })
-            messageType = 'un sticker';
+        let users = participants.map(u => conn.decodeJid(u.id));
+        let q = m.quoted ? m.quoted : m;
+        let c = m.quoted ? await m.getQuotedObj() : m.msg;
+        let msg = conn.cMod(m.chat, generateWAMessageFromContent(m.chat, {
+            [m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : { text: '' || c }
+        }, { quoted: null, userJid: conn.user.id }), text || q.text, conn.user.jid, { mentions: users });
+        await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+    } catch {
+        let users = participants.map(u => conn.decodeJid(u.id));
+        let quoted = m.quoted ? m.quoted : m;
+        let mime = (quoted.msg || quoted).mimetype || '';
+        let isMedia = /image|video|sticker|audio/.test(mime);
+        let htextos = `${text ? text : "*Hola!!*"}`;
+
+        if (isMedia && quoted.mtype === 'imageMessage') {
+            var mediax = await quoted.download?.();
+            conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: htextos }, { quoted: null });
+        } else if (isMedia && quoted.mtype === 'videoMessage') {
+            var mediax = await quoted.download?.();
+            conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos }, { quoted: null });
+        } else if (isMedia && quoted.mtype === 'audioMessage') {
+            var mediax = await quoted.download?.();
+            conn.sendMessage(m.chat, { audio: mediax, mentions: users, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
+        } else if (isMedia && quoted.mtype === 'stickerMessage') {
+            var mediax = await quoted.download?.();
+            conn.sendMessage(m.chat, { sticker: mediax, mentions: users }, { quoted: null });
         } else {
-            messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
+            let more = String.fromCharCode(8206);
+            let masss = more.repeat(850);
+            await conn.relayMessage(m.chat, { extendedTextMessage: { text: `${masss}\n${htextos}\n`, ...{ contextInfo: { mentionedJid: users } } } }, {});
         }
-
-        await conn.sendMessage(idgroup, messageOptions);
-
-        let senderInfo = `@${who.split('@')[0]} envió ${messageType} para el canal!`;
-        await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
-
-    } catch (err) {
-        console.error('Error al enviar el mensaje:', err);
-        m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
     }
 };
 
-handler.command = ['enviarmensaje', 'enviar', 'mensajegroup', 'solicitud', 'sug'];
+handler.help = ['enviar'];
+handler.tags = ['group'];
+handler.command = ['enviar'];
+
+handler.group = true;
+handler.admin = true;
 
 export default handler;
