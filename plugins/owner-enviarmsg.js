@@ -45,7 +45,7 @@ let handler = async (m, { conn, text }) => {
 
         await conn.sendMessage(idchannel, messageOptions);
 
-      let senderInfo = `@${who.split('@')[0]} envió un mensaje para el canal test! ✨️\n💫 Canal: ${channel2}`;
+      let senderInfo = `@${who.split('@')[0]} envió un mensaje para el canal test! ✨️`;
        await conn.sendMessage(m.chat, { text: senderInfo, mentions: [who] });
 
     } catch (err) {
