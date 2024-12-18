@@ -44,7 +44,7 @@ var handler = async (m, { conn, text }) => {
             messageType = 'un texto';
         }
 
-        let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
+        let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario » @${m.sender.split('@')[0]}\n🎋 Tipo » ${messageType}\n🪴 Mensaje » ${text ? text : 'No se incluyó ningun texto.'}`;
         await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
         
     } catch (err) {
