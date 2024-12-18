@@ -48,7 +48,7 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 };
 
 handler.help = ['enviar'];
-handler.tags = ['group'];
+//handler.tags = ['group'];
 handler.command = ['enviar'];
 
 handler.group = true;
