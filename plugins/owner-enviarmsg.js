@@ -27,7 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         })
         .catch(err => {
             console.error('Error al enviar el mensaje:', err);
-            m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+            m.reply('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.\n\n' + err);
         });
 };
 
