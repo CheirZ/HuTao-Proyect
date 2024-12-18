@@ -10,7 +10,7 @@ import { webp2png } from '../lib/webp2mp4.js';
 idgroup = global.idchannel
 idgp = "120363351999685409@g.us"; 
 
-const idgroup, idgp
+let idgroup, idgp
 
 var handler = async (m, { conn, text }) => {
     if (!m.quoted && !text) return conn.reply(m.chat, `🚩 Por favor, escribe tu mensaje o cita el contenido que deseas enviar.`, m);
