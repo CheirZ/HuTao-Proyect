@@ -25,27 +25,30 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         let mime = (quoted.msg || quoted).mimetype || '';
         let isMedia = /image|video|sticker|audio/.test(mime);
         let htextos = `${text ? text : ""}`;
+        let messageType = 'un texto'; 
 
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
+         messageType = text ? 'una imagen con texto' : 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
+        messageType = text ? 'un video con texto' : 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
-            conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `Hidetag.mp3` }, { quoted: null });
+            conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
+         messageType = 'un audio';
         } else if (isMedia && quoted.mtype === 'stickerMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { sticker: mediax }, { quoted: null });
+        messageType = 'un sticker';
         } else {
             await conn.relayMessage(idgroup, { extendedTextMessage: { text: `${htextos}\n` } }, {});
         }
     }
-
-    let contentType = isMedia ? (quoted.mtype === 'imageMessage' ? 'una imagen' : quoted.mtype === 'videoMessage' ? 'un video' : quoted.mtype === 'audioMessage' ? 'un audio' : 'un sticker') : 'un texto';
     
-    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${contentType}`;
+    let senderInfo = `✨️ *HuTao-Proyect* ✨️\n\n👤 Usuario: @${m.sender.split('@')[0]}\n🎋 Tipo: ${messageType}`;
     await conn.sendMessage(idgp, { text: senderInfo, mentions: [m.sender] });
 };
 
