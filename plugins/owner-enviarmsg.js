@@ -29,11 +29,11 @@ var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         if (isMedia && quoted.mtype === 'imageMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { image: mediax, caption: htextos || null }, { quoted: null });
-           global.messageType = htextos ? 'una imagen con texto' : 'una imagen';
+           global.messageType = 'una imagen';
         } else if (isMedia && quoted.mtype === 'videoMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { video: mediax, mimetype: 'video/mp4', caption: htextos || null }, { quoted: null });
-           global.messageType = htextos ? 'un video con texto' : 'un video';
+           global.messageType = 'un video';
         } else if (isMedia && quoted.mtype === 'audioMessage') {
             var mediax = await quoted.download?.();
             conn.sendMessage(idgroup, { audio: mediax, mimetype: 'audio/mp4', fileName: `hutao.mp3` }, { quoted: null });
