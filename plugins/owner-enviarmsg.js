@@ -4,10 +4,9 @@ import { webp2png } from '../lib/webp2mp4.js';
 import uploadFile from '../lib/uploadFile.js';
 import uploadImage from '../lib/uploadImage.js';
 import axios from 'axios';
-import fs from 'fs';
+import fs from 'fs'; 
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { downloadContentFromMessage } from '@whiskeysockets/baileys';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,28 +28,16 @@ let handler = async (m, { conn, text }) => {
 
     try {
         if (/image/.test(mime)) {
-            const stream = await downloadContentFromMessage(content.message.imageMessage, 'image');
-            let buffer = Buffer.from([]);
-            for await (const chunk of stream) {
-                buffer = Buffer.concat([buffer, chunk]);
-            }
-            let imageUrl = await uploadImage(buffer);
-            messageOptions = { image: { url: imageUrl }, caption: text || content.message.imageMessage.caption || '' };
+            mediaBuffer = await content.download();
+            let imageUrl = await uploadImage(mediaBuffer);
+            messageOptions = { image: { url: imageUrl }, caption: text || content.message?.imageMessage?.caption || '' };
         } else if (/video/.test(mime)) {
-            const stream = await downloadContentFromMessage(content.message.videoMessage, 'video');
-            let buffer = Buffer.from([]);
-            for await (const chunk of stream) {
-                buffer = Buffer.concat([buffer, chunk]);
-            }
-            let videoUrl = await uploadFile(buffer);
-            messageOptions = { video: { url: videoUrl }, caption: text || content.message.videoMessage.caption || '' };
+            mediaBuffer = await content.download();
+            let videoUrl = await uploadFile(mediaBuffer);
+            messageOptions = { video: { url: videoUrl }, caption: text || content.message?.videoMessage?.caption || '' };
         } else if (/webp/.test(mime)) {
-            const stream = await downloadContentFromMessage(content.message.stickerMessage, 'sticker');
-            let buffer = Buffer.from([]);
-            for await (const chunk of stream) {
-                buffer = Buffer.concat([buffer, chunk]);
-            }
-            let stickerBuffer = await webp2png(buffer);
+            mediaBuffer = await content.download();
+            let stickerBuffer = await webp2png(mediaBuffer);
             messageOptions = { sticker: stickerBuffer };
         } else {
             messageOptions = { text: text || content.message?.conversation || content.message?.extendedTextMessage?.text || '' };
@@ -58,7 +45,8 @@ let handler = async (m, { conn, text }) => {
 
         await conn.sendMessage(idgroup, messageOptions);
 
-        //let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+      //  let senderInfo = `Mensaje enviado por @${who.split('@')[0]}`;
+       // await conn.sendMessage(idgroup, { text: senderInfo, mentions: [who] });
 
     } catch (err) {
         console.error('Error al enviar el mensaje:', err);
