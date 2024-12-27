@@ -6,16 +6,21 @@
 import { makeWASocket } from '@whiskeysockets/baileys';
 import fs from 'fs';
 
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-  let newImage = args[0];
-  if (!newImage || !fs.existsSync(newImage)) {
-    return m.reply('「✦」 Por favor, proporciona una ruta válida para la nueva imagen.');
+  if (!m.quoted || !m.quoted.fileSha256) {
+    return m.reply('「✦」 Responde a una imagen que quieres usar como nueva imagen del grupo.');
   }
 
   try {
-    let groupId = m.chat;
-    await conn.updateProfilePicture(groupId, { url: newImage });
+    let mime = m.quoted.mimetype || '';
+    if (!mime.startsWith('image/')) {
+      return m.reply('「✦」 Por favor, proporciona una imagen válida.');
+    }
+
+    let media = await conn.downloadAndSaveMediaMessage(m.quoted, 'group-profile-picture');
+    await conn.updateProfilePicture(m.chat, { url: media });
+    fs.unlinkSync(media); // Eliminar el archivo después de usarlo
     m.reply('「✦」 Imagen de perfil del grupo actualizada exitosamente.');
   } catch (e) {
     m.reply(`⚠︎ *Error:* ${e.message}`);
