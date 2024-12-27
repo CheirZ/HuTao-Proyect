@@ -5,11 +5,11 @@ import path from 'path';
 let handler = async (m, { conn }) => {
 
   let q = m.quoted ? m.quoted : m;
-  let mime = (q.message || q).mimetype || q.mediaType || '';
+  let messageType = Object.keys(q.message)[0];
+  let mime = (q.message[messageType] || {}).mimetype || q.mediaType || '';
 
   if (/image/.test(mime)) {
     try {
-      const messageType = Object.keys(q.message)[0];
       const stream = await downloadContentFromMessage(q.message[messageType], 'image');
       let buffer = Buffer.from([]);
 
