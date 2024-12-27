@@ -23,11 +23,11 @@ let handler = async (m, { conn, args }) => {
       return m.reply('「✦」 Error al descargar la imagen.');
     }
 
-    const img = './temp-image';
-    fs.writeFileSync(filePath, mediaMessage);
+    //const img = './temp-image';
+   __ fs.writeFileSync(img, mediaMessage);
 
-    await conn.updateProfilePicture(m.chat, img);
-    fs.unlinkSync(filePath); // Eliminar el archivo después de usarlo
+    await conn.updateProfilePicture(m.chat, mediaMessage);
+   // fs.unlinkSync(img); 
     m.reply('「✦」 Imagen de perfil del grupo actualizada exitosamente.');
   } catch (e) {
     m.reply(`⚠︎ *Error:* ${e.message}`);
