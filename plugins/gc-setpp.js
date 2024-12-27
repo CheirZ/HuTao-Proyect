@@ -5,12 +5,14 @@ import path from 'path';
 let handler = async (m, { conn }) => {
 
   let q = m.quoted ? m.quoted : m;
-  let messageType = Object.keys(q.message)[0];
-  let mime = (q.message[messageType] || {}).mimetype || q.mediaType || '';
+  if (!q.message || !q.message.imageMessage) {
+    return m.reply('「✦」 Por favor, responde a una imagen válida.');
+  }
 
+  let mime = q.message.imageMessage.mimetype || '';
   if (/image/.test(mime)) {
     try {
-      const stream = await downloadContentFromMessage(q.message[messageType], 'image');
+      const stream = await downloadContentFromMessage(q.message.imageMessage, 'image');
       let buffer = Buffer.from([]);
 
       for await (const chunk of stream) {
