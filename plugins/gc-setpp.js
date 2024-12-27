@@ -9,7 +9,8 @@ let handler = async (m, { conn }) => {
 
   if (/image/.test(mime)) {
     try {
-      const stream = await downloadContentFromMessage(q.message.imageMessage, 'image');
+      const messageType = Object.keys(q.message)[0];
+      const stream = await downloadContentFromMessage(q.message[messageType], 'image');
       let buffer = Buffer.from([]);
 
       for await (const chunk of stream) {
@@ -20,7 +21,7 @@ let handler = async (m, { conn }) => {
       writeFileSync(filePath, buffer);
 
       await conn.updateProfilePicture(m.chat, { url: filePath });
-      unlinkSync(filePath); // Eliminar el archivo después de actualizar la imagen del grupo ._., Hutao hace momos en este archivo.
+      unlinkSync(filePath); // Eliminar el archivo después que Hutao haga los momos.
       return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
     } catch (e) {
       return m.reply(`「✦」 Hubo un error al actualizar la imagen: ${e.message}`);
