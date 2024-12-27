@@ -3,7 +3,9 @@
 - github.com/OfcKing
 */
 
-import { makeWASocket, downloadMediaMessage } from '@whiskeysockets/baileys';
+import { downloadContentFromMessage } from '@whiskeysockets/baileys';
+import { writeFileSync } from 'fs';
+import path from 'path';
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 
@@ -11,11 +13,22 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let mime = (q.msg || q).mimetype || q.mediaType || '';
 
   if (/image/.test(mime)) {
-    let imgBuffer = await downloadMediaMessage(q);
-    if (!imgBuffer) return m.reply('「✦」 Por favor, responde a una imagen válida.');
+    try {
+      const stream = await downloadContentFromMessage(q.message.imageMessage, 'image');
+      let buffer = Buffer.from([]);
 
-    await conn.updateProfilePicture(m.chat, imgBuffer);
-    return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
+      for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk]);
+      }
+
+      const filePath = path.join(__dirname, 'temp-image.jpg');
+      writeFileSync(filePath, buffer);
+
+      await conn.updateProfilePicture(m.chat, { url: filePath });
+      return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
+    } catch (e) {
+      return m.reply(`「✦」 Hubo un error al actualizar la imagen: ${e.message}`);
+    }
   } else {
     return m.reply('「✦」 Por favor, responde a una imagen válida.');
   }
