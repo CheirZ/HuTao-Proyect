@@ -18,10 +18,12 @@ let handler = async (m, { conn, args }) => {
       return m.reply('「✦」 Por favor, proporciona una imagen válida.');
     }
 
-    let media = await downloadMediaMessage(m.quoted, 'buffer', {});
-    let groupId = m.chat;
+    let mediaMessage = await m.quoted.download();
+    if (!mediaMessage) {
+      return m.reply('「✦」 Error al descargar la imagen.');
+    }
 
-    await conn.updateProfilePicture(groupId, media);
+    await conn.updateProfilePicture(m.chat, { url: mediaMessage });
     m.reply('「✦」 Imagen de perfil del grupo actualizada exitosamente.');
   } catch (e) {
     m.reply(`⚠︎ *Error:* ${e.message}`);
