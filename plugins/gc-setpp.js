@@ -1,5 +1,4 @@
 import { downloadContentFromMessage } from '@whiskeysockets/baileys';
-import { writeFileSync, unlinkSync } from 'fs';
 
 let handler = async (m, { conn }) => {
 
@@ -21,11 +20,7 @@ let handler = async (m, { conn }) => {
       buffer = Buffer.concat([buffer, chunk]);
     }
 
-    const filePath = 'temp-image.jpg';
-    writeFileSync(filePath, buffer);
-
-    await conn.updateProfilePicture(m.chat, { url: filePath });
-    unlinkSync(filePath); // Eliminar el archivo después que Hutao haga los momos.
+    await conn.updateProfilePicture(m.chat, buffer);
     return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
   } catch (e) {
     return m.reply(`「✦」 Hubo un error al actualizar la imagen: ${e.message}`);
