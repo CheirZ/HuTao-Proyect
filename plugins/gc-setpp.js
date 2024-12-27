@@ -26,7 +26,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
     }
 
     let enhancedBuffer = await remini(buffer, "enhance");
-    await conn.updateProfilePicture(m.chat, enhancedBuffer); 
+    await conn.updateProfilePicture(m.chat, { url: enhancedBuffer }); 
 
     return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
   } catch (e) {
