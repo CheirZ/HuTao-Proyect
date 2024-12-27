@@ -3,10 +3,10 @@
 - github.com/OfcKing
 */
 
-import { makeWASocket } from '@whiskeysockets/baileys';
+import { makeWASocket, downloadMediaMessage } from '@whiskeysockets/baileys';
 import fs from 'fs';
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args }) => {
 
   if (!m.quoted || !m.quoted.fileSha256) {
     return m.reply('「✦」 Responde a una imagen que quieres usar como nueva imagen del grupo.');
@@ -18,9 +18,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       return m.reply('「✦」 Por favor, proporciona una imagen válida.');
     }
 
-    let media = await conn.downloadAndSaveMediaMessage(m.quoted, 'group-profile-picture');
-    await conn.updateProfilePicture(m.chat, { url: media });
-    fs.unlinkSync(media); // Eliminar el archivo después de usarlo
+    let media = await downloadMediaMessage(m.quoted, 'buffer', {});
+    let groupId = m.chat;
+
+    await conn.updateProfilePicture(groupId, media);
     m.reply('「✦」 Imagen de perfil del grupo actualizada exitosamente.');
   } catch (e) {
     m.reply(`⚠︎ *Error:* ${e.message}`);
