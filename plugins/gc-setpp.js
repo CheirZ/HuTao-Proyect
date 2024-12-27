@@ -4,33 +4,24 @@
 */
 
 import { makeWASocket, downloadMediaMessage } from '@whiskeysockets/baileys';
-import fs from 'fs';
 
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
 
-  if (!m.quoted || !m.quoted.fileSha256) {
-    return m.reply('「✦」 Responde a una imagen que quieres usar como nueva imagen del grupo.');
-  }
+  let q = m.quoted ? m.quoted : m;
+  let mime = (q.msg || q).mimetype || q.mediaType || '';
 
-  try {
-    let mime = m.quoted.mimetype || '';
-    if (!mime.startsWith('image/')) {
-      return m.reply('「✦」 Por favor, proporciona una imagen válida.');
-    }
+  if (/image/.test(mime)) {
+    let imgBuffer = await downloadMediaMessage(q);
+    if (!imgBuffer) return m.reply('「✦」 Por favor, responde a una imagen válida.');
 
-    let mediaMessage = await conn.downloadMediaMessage(m.quoted);
-    if (!mediaMessage) {
-      return m.reply('「✦」 Error al descargar la imagen.');
-    }
-
-    await conn.updateProfilePicture(m.chat, mediaMessage); 
-    m.reply('「✦」 Imagen de perfil del grupo actualizada exitosamente.');
-  } catch (e) {
-    m.reply(`⚠︎ *Error:* ${e.message}`);
+    await conn.updateProfilePicture(m.chat, imgBuffer);
+    return m.reply('「✦」 La foto de perfil del grupo se ha cambiado exitosamente.');
+  } else {
+    return m.reply('「✦」 Por favor, responde a una imagen válida.');
   }
 };
 
-handler.command = ['setppgroup', 'setgrouppic'];
+handler.command = ['setppgroup'];
 handler.group = true;
 handler.admin = true;
 handler.botAdmin = true;
