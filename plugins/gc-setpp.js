@@ -13,10 +13,13 @@ const handler = async (m, { conn, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || q.mediaType || "";
     if (!mime) return m.reply(`「✦」 Envía una imagen o responde a la imagen utilizando el comando: ${usedPrefix + command}`);
     if (!/image\/(jpe?g|png)/.test(mime)) return m.reply(`「✦」 El formato del archivo (${mime}) no es compatible, envía o responde a una imagen`);
-    
+
     conn.reply(m.chat, '「✦」 Mejorando la calidad de la imagen y luego colocarla de perfil del grupo....', m);
-    
-    const stream = await downloadContentFromMessage(q.message[q.mediaType], 'image');
+
+    const messageType = Object.keys(q.message).find(key => /image/.test(key));
+    if (!messageType) return m.reply('「✦」 Por favor, responde a una imagen válida.');
+
+    const stream = await downloadContentFromMessage(q.message[messageType], 'image');
     let buffer = Buffer.from([]);
     for await (const chunk of stream) {
       buffer = Buffer.concat([buffer, chunk]);
@@ -59,7 +62,7 @@ async function remini(imageData, operation) {
       }
     }, (err, res) => {
       if (err) reject(err);
-      
+
       const chunks = [];
       res.on("data", chunk => chunks.push(chunk));
       res.on("end", () => resolve(Buffer.concat(chunks)));
