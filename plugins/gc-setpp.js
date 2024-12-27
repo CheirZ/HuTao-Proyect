@@ -1,6 +1,5 @@
 import { downloadContentFromMessage } from '@whiskeysockets/baileys';
 import { writeFileSync, unlinkSync } from 'fs';
-import path from 'path';
 
 let handler = async (m, { conn }) => {
 
@@ -22,7 +21,7 @@ let handler = async (m, { conn }) => {
       buffer = Buffer.concat([buffer, chunk]);
     }
 
-    const filePath = path.join(__dirname, 'temp-image.jpg');
+    const filePath = 'temp-image.jpg';
     writeFileSync(filePath, buffer);
 
     await conn.updateProfilePicture(m.chat, { url: filePath });
