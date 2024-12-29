@@ -86,6 +86,7 @@ global.languaje = 'Español'
 global.nameqr = 'HuTao-Proyect'
 global.sessions = 'seccion-activas'
 global.jadi = 'jadibots'
+global.hutaoJadibts = true
 
 global.ch = {
 ch1: '120363350554513092@newsletter',
@@ -212,4 +213,9 @@ global.fetch = fetch;
 global.axios = axios;
 global.moment = moment;
 
-     
+const file = fileURLToPath(import.meta.url)
+watchFile(file, () => {
+  unwatchFile(file)
+  console.log(chalk.redBright(`Update "${file}"`))
+  import(`${file}?update=${Date.now()}`)
+})

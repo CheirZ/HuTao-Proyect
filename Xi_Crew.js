@@ -22,6 +22,7 @@ import {makeWASocket, protoType, serialize} from './lib/simple.js'
 import {Low, JSONFile} from 'lowdb'
 import {mongoDB, mongoDBV2} from './lib/mongoDB.js'
 import store from './lib/store.js'
+import { hutaoJadiBot } from './plugins/jadibot-serbot.js';
 const {proto} = (await import('@whiskeysockets/baileys')).default
 const {DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, PHONENUMBER_MCC} = await import('@whiskeysockets/baileys')
 import readline from 'readline'
@@ -191,8 +192,6 @@ if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 't
 
 if (opts['server']) (await import('./server.js')).default(global.conn, PORT);
 
-let ppBot = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
-
 async function connectionUpdate(update) {
 const {connection, lastDisconnect, isNewLogin} = update;
 global.stopped = connection;
@@ -209,8 +208,7 @@ console.log(chalk.bold.yellow(`\n✅ ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS
 }
 if (connection == 'open') {
 console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: '', float: '' }))
-await joinChannels(conn)
-conn.sendMessage("120363371018732371@newsletter", { text: '👋 Hola seguidores!\n🦋 Me he conectado nuevamente!!', contextInfo: { externalAdReply: { title: "❤️‍🔥 HUTAO - PROYECT 🦋", body: '🦋 Megumin Bot conectada nuevamente!', thumbnailUrl: ppBot, sourceUrl: 'https://cafirexos.com', mediaType: 1, showAdAttribution: false, renderLargerThumbnail: false }}}, { quoted: null })}
+await joinChannels(conn)}
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
@@ -281,6 +279,24 @@ conn.ev.on('creds.update', conn.credsUpdate)
 isInit = false
 return true
 };
+
+/** Arranque nativo para subbots by - ReyEndymion >> https://github.com/ReyEndymion
+ */
+global.rutaJadiBot = join(__dirname, `../${jadi}`)
+
+if (global.hutaoJadibts) {
+const readRutaJadiBot = readdirSync(rutaJadiBot)
+if (readRutaJadiBot.length > 0) {
+const creds = 'creds.json'
+for (const gjbts of readRutaJadiBot) {
+const botPath = join(rutaJadiBot, gjbts)
+const readBotPath = readdirSync(botPath)
+if (readBotPath.includes(creds)) {
+hutaoJadiBot({pathHutaoJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
+}
+}
+}
+}
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
 const pluginFilter = (filename) => /\.js$/.test(filename)
