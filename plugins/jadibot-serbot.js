@@ -58,7 +58,7 @@ hutaoJBOptions.conn = conn
 hutaoJBOptions.args = args
 hutaoJBOptions.usedPrefix = usedPrefix
 hutaoJBOptions.command = command
-hutaoJadiBot(sanJBOptions)
+hutaoJadiBot(hutaoJBOptions)
 global.db.data.users[m.sender].Subs = new Date * 1
 } 
 handler.command = ['jadibot', 'serbot']
