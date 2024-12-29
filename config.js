@@ -212,10 +212,3 @@ global.fs = fs;
 global.fetch = fetch;
 global.axios = axios;
 global.moment = moment;
-
-const file = fileURLToPath(import.meta.url)
-watchFile(file, () => {
-  unwatchFile(file)
-  console.log(chalk.redBright(`Update "${file}"`))
-  import(`${file}?update=${Date.now()}`)
-})
