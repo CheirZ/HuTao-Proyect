@@ -282,7 +282,7 @@ return true
 
 /** Arranque nativo para subbots by - ReyEndymion >> https://github.com/ReyEndymion
  */
-global.rutaJadiBot = join(__dirname, `../${jadi}`)
+global.rutaJadiBot = join(__dirname, `./${jadi}`)
 
 if (global.hutaoJadibts) {
 const readRutaJadiBot = readdirSync(rutaJadiBot)
