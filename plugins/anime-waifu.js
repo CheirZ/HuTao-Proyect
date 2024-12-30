@@ -27,6 +27,6 @@ const handler = async (m, { conn }) => {
   }, { quoted: m });
 };
 
-handler.command = /^(test3)$/i; // Define el comando
+handler.command = ['david']
 
 export default handler;
