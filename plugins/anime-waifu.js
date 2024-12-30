@@ -1,32 +1,24 @@
-const handler = async (m, { conn }) => {
-  const taguser = '@' + m.sender.split('@')[0]; // Obtiene el usuario etiquetado
+import fetch from 'node-fetch'
 
-  conn.sendMessage(m.chat, {
-    image: { url: 'https://qu.ax/MFOVJ.jpg' },
-    caption: `You like me? ${taguser}`, // Mención visible del usuario
-    footer: "Sock",
-    buttons: [
-      {
-        buttonId: ".gay",
-        buttonText: {
-          displayText: "Yes",
-        },
-        type: 1,
-      },
-      {
-        buttonId: ".play2 felices los 4",
-        buttonText: {
-          displayText: "No",
-        },
-        type: 1,
-      },
-    ],
-    viewOnce: true,
-    headerType: 4,
-    mentions: [m.sender], // Mención funcional
-  }, { quoted: m });
-};
-
-handler.command = ['david']
-
-export default handler;
+let handler = async (m, { conn, usedPrefix, command }) => {
+try {
+await m.react(emojis)
+conn.reply(m.chat, 'Ꙭ Buscando Su *Waifu*', m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+title: packname,
+body: wm,
+previewType: 0, thumbnail: icons,
+sourceUrl: channel }}})
+let res = await fetch('https://api.waifu.pics/sfw/waifu')
+if (!res.ok) return
+let json = await res.json()
+if (!json.url) return 
+await conn.sendFile(m.chat, json.url, 'thumbnail.jpg', '★ *W A I F U* ★', fkontak, null, rcanal)
+} catch {
+}}
+handler.help = ['waifu']
+handler.tags = ['anime']
+handler.command = ['waifu']
+handler.group = true;
+handler.register = false
+export default handler
