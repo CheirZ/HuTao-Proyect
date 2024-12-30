@@ -24,23 +24,22 @@ let handler = async (m, { conn }) => {
         if (!json.url) return
 
         let buttons = [
-            {buttonId: ".menu", buttonText: {displayText: 'Menú'}, type: 1},
+            {buttonId: ".menu", buttonText: {displayText: 'Menu'}, type: 1},
             {buttonId: ".waifu", buttonText: {displayText: "Siguiente"}, type: 1}
         ]
 
         let buttonMessage = {
-            image: {url: json.url},
             caption: "★ *W A I F U* ★",
             footer: wm,
             buttons: buttons,
             headerType: 4,
-            viewOnce: true
+            image: { url: json.url }
         }
 
-        await conn.sendMessage(m.chat, buttonMessage, {quoted: m})
+        await conn.sendMessage(m.chat, buttonMessage, { quoted: m })
     } catch (e) {
         console.error(e)
-        conn.reply(m.chat, 'Hubo un error al intentar enviar el mensaje.\n\n>' + e, m)
+        conn.reply(m.chat, 'Hubo un error al intentar enviar el mensaje.\n\n> ' + e, m)
     }
 }
 
