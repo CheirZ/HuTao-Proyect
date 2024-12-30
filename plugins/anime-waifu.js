@@ -23,22 +23,30 @@ let handler = async (m, { conn }) => {
         let json = await res.json()
         if (!json.url) return
 
-        let buttons = [
-            {buttonId: ".play hola remix", buttonText: {displayText: 'Yes'}, type: 1},
-            {buttonId: ".play2 felices los 4", buttonText: {displayText: "No"}, type: 1}
-        ]
+   conn.sendMessage(m.chat, {
+    image: { url: json.url },
+    caption: `Miguel es tu patrona?`, 
+    footer: "Sock",
+    buttons: [
+      {
+        buttonId: ".mamar @5218711426787",
+        buttonText: {
+          displayText: "Yes",
+        },
+        type: 1,
+      },
+      {
+        buttonId: ".waifu",
+        buttonText: {
+          displayText: "No",
+        },
+        type: 1,
+      },
+    ],
+    viewOnce: true,
+    headerType: 4,
+  }, { quoted: m });
 
-        let buttonMessage = {
-            image: { url: json.url },
-            caption: `Miguel es tu patrona?`,
-            footer: "Sock",
-            buttons: buttons,
-            headerType: 4,
-            viewOnce: true,
-            mentions: [m.sender]
-        }
-
-        await conn.sendMessage(m.chat, buttonMessage, { quoted: m })
     } catch (e) {
         console.error(e)
         conn.reply(m.chat, 'Hubo un error al intentar enviar el mensaje.', m)
