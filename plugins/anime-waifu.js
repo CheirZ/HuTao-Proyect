@@ -29,11 +29,13 @@ let handler = async (m, { conn }) => {
         ]
 
         let buttonMessage = {
-            caption: "★ *W A I F U* ★",
+            image: { url: json.url },
+            caption: `★ *W A I F U* ★`,
             footer: wm,
             buttons: buttons,
             headerType: 4,
-            image: { url: json.url }
+            viewOnce: true,
+            mentions: [m.sender]
         }
 
         await conn.sendMessage(m.chat, buttonMessage, { quoted: m })
