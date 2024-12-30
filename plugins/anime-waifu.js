@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-let handler = async (m, { conn, usedPrefix, command }) => {
+let handler = async (m, { conn }) => {
     try {
         await m.react(emojis)
         conn.reply(m.chat, 'Ꙭ Buscando Su *Waifu*', m, {
@@ -17,14 +17,15 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 }
             }
         })
+
         let res = await fetch('https://api.waifu.pics/sfw/waifu')
         if (!res.ok) return
         let json = await res.json()
         if (!json.url) return
 
         let buttons = [
-            {buttonId: ".menu", buttonText: {displayText: 'Menú'}, type: 1},
-            {buttonId: ".waifu", buttonText: {displayText: "Mas Waifu"}, type: 1}
+            {buttonId: ".menu", buttonText: {displayText: 'Menu'}, type: 1},
+            {buttonId: ".s", buttonText: {displayText: "Hola"}, type: 1}
         ]
 
         let buttonMessage = {
@@ -39,12 +40,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         await conn.sendMessage(m.chat, buttonMessage, {quoted: m})
     } catch (e) {
         console.error(e)
+        conn.reply(m.chat, 'Hubo un error al intentar enviar el mensaje.', m)
     }
 }
 
 handler.help = ['waifu']
 handler.tags = ['anime']
 handler.command = ['waifu']
-handler.group = true;
+handler.group = true
 handler.register = false
 export default handler
