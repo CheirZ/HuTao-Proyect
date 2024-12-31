@@ -5,7 +5,7 @@ import path, {join} from 'path'
 import {fileURLToPath, pathToFileURL} from 'url'
 import {platform} from 'process'
 import * as ws from 'ws'
-import {readdirSync, statSync, unlinkSync, existsSync, readFileSync, rmSync, watch} from 'fs'
+import fs, {readdirSync, mkdirSync, statSync, unlinkSync, existsSync, readFileSync, rmSync, watch} from 'fs'
 import yargs from 'yargs';
 import {spawn} from 'child_process'
 import lodash from 'lodash'
@@ -285,6 +285,13 @@ return true
 global.rutaJadiBot = join(__dirname, `./${jadi}`)
 
 if (global.hutaoJadibts) {
+if (!existsSync(global.rutaJadiBot)) {
+mkdirSync(global.rutaJadiBot, { recursive: true }) 
+console.log(chalk.bold.cyan(`La carpeta: ${jadi} se creó correctamente.`))
+} else {
+console.log(chalk.bold.cyan(`La carpeta: ${jadi} ya está creada.`)) 
+}
+
 const readRutaJadiBot = readdirSync(rutaJadiBot)
 if (readRutaJadiBot.length > 0) {
 const creds = 'creds.json'
