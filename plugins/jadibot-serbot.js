@@ -41,8 +41,8 @@ const hutaoJBOptions = {}
 if (global.conns instanceof Array) console.log()
 else global.conns = []
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-let time = global.db.data.users[m.sender].Subs + 1200000
-if (new Date - global.db.data.users[m.sender].Subs < 1200000) return conn.reply(m.chat, `🕝 Debes esperar ${msToTime(time - new Date())} para volver a intentar vincular un subbot.`, m)
+let time = global.db.data.users[m.sender].Subs + 12000
+if (new Date - global.db.data.users[m.sender].Subs < 12000) return conn.reply(m.chat, `🕝 Debes esperar ${msToTime(time - new Date())} para volver a intentar vincular un subbot.`, m)
 if (Object.values(global.conns).length === 40) {
 return m.reply('❤️‍🔥 no hay espacio disponible para sub- bots.')
 }
