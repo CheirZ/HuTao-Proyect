@@ -46,7 +46,7 @@ function cleanSessionFiles() {
       if (file !== 'creds.json') {
         fs.unlink(`${sanSessionPath}${file}`, (err) => {
           if (err && err.code !== 'ENOENT') {
-            console.log(`Error el eliminar Session: ${file}: ` + err);
+            console.log(`Error al eliminar Session: ${file}: ` + err);
           } else {
             console.log(`Session: ${file} elimiando.`);
           }
