@@ -130,6 +130,7 @@ if (qr && mcode) {
 txtCode = await conn.sendMessage(m.chat, {text : rtx2}, { quoted: m })
 await sleep(3000)
 let secret = await sock.requestPairingCode((m.sender.split`@`[0]))
+secret = secret.match(/.{1,4}/g)?.join("-")
 codeBot = await m.reply(secret)}
 const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
 console.log(code)
