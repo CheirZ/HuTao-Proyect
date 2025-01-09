@@ -5,7 +5,7 @@ const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 const handler = async function(m, {conn, text, usedPrefix, command}) {
   const user = global.db.data.users[m.sender];
   const name2 = conn.getName(m.sender);
-  let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+  let delirius = await axios.get(`https://delirius-apiofc.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
   let bio = 0, fechaBio
