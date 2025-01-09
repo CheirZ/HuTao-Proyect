@@ -32,7 +32,7 @@ const texto1 = `🦋 *Título*
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
-const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
+const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
 const apiResponse = await fetch(apiUrl);
 const delius = await apiResponse.json();
 if (!delius.status) {
@@ -111,7 +111,7 @@ const texto1 = `🦋 *Título*
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
-const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
+const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
 const apiResponse = await fetch(apiUrl);
 const delius = await apiResponse.json();
 if (!delius.status) return m.react(error);
@@ -205,7 +205,7 @@ const texto1 = `🦋 *Título*
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
-const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
+const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
 const apiResponse = await fetch(apiUrl);
 const delius = await apiResponse.json();
 if (!delius.status) {
@@ -282,7 +282,7 @@ const texto1 = `🦋 *Título* :
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
-const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
+const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
 const apiResponse = await fetch(apiUrl);
 const delius = await apiResponse.json();
 if (!delius.status) return m.react(error);
