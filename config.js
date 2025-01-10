@@ -167,6 +167,7 @@ global.APIs = {
   dzx: 'https://api.dhamzxploit.my.id',
   lol: 'https://api.lolhuman.xyz',
   neoxr: 'https://api.neoxr.my.id',
+  delirius: 'https://delirius-apiofc.vercel.app',
   zenzapis: 'https://api.zahwazein.xyz',
   akuari: 'https://api.akuari.my.id',
   akuari2: 'https://apimu.my.id',
