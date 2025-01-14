@@ -110,13 +110,13 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     } else if (command === 'play2' || command === 'ytmp4') {
       try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${url}`;
+        const apiUrl = `https://apis-starlights-team.koyeb.app/starlight/youtube-mp4?url=${url}`;
         const response = await axios.get(apiUrl);
-        const { data } = response.data;
+        const result = response.data;
 
-        if (data && data.download && data.download.url) {
+        if (result && result.dl_url) {
           await conn.sendMessage(m.chat, {
-            video: { url: data.download.url },
+            video: { url: result.dl_url },
             mimetype: "video/mp4",
           }, { quoted: m });
         } else {
