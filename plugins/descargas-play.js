@@ -110,7 +110,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     } else if (command === 'play2' || command === 'ytmp4') {
       try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${url}`;
+        const apiUrl = `https://api.youralternativeapi.com/ytmp4?url=${url}`; // Reemplaza con una API alternativa válida
         const response = await axios.get(apiUrl);
         const { data } = response.data;
 
