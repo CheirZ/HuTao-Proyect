@@ -110,14 +110,15 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     } else if (command === 'play2' || command === 'ytmp4') {
       try {
-        const apiUrl = `https://apis-starlights-team.koyeb.app/starlight/youtube-mp4?url=${url}`;
+        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp4?url=${url}`;
         const response = await axios.get(apiUrl);
-        const result = response.data;
+        const { data } = response.data;
 
-        if (result && result.dl_url) {
+        if (data && data.download && data.download.url) {
           await conn.sendMessage(m.chat, {
-            video: { url: result.dl_url },
+            video: { url: data.download.url },
             mimetype: "video/mp4",
+            caption: "Tu video"
           }, { quoted: m });
         } else {
           throw new Error('URL de descarga no encontrada');
