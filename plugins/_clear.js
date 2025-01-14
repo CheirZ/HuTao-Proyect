@@ -3,8 +3,8 @@
 
 import fs from 'fs';
 
-const directoryPath = './seccion-activas/';
-const sanSessionPath = './jadibots/';
+const directoryPath = `./${jadi}/`;
+const sanSessionPath = `./${sessions}/`;
 
 function cleanSubbotDirectories() {
   fs.readdir(directoryPath, (err, subbotDirs) => {
