@@ -118,7 +118,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           await conn.sendMessage(m.chat, {
             video: { url: data.download.url },
             mimetype: "video/mp4",
-            caption: "Tu video"
+            caption: `${packname}`
           }, { quoted: m });
         } else {
           throw new Error('URL de descarga no encontrada');
