@@ -46,8 +46,8 @@ global.colab3 = ''
 
 //Ids channel
 global.idchannel = '120363371018732371@newsletter'
-global.canalIdH = ["120363371018732371@newsletter", "120363370415738881@newsletter", "120363307382381547@newsletter", "120363263466636910@newsletter"]
-global.canalNombreH = ["Hutao - Test ❤️‍🔥", "Yaemori - Test 🍄", "Megumin - Channel 💥", "Yaemori - Channel 🍭"]
+global.canalIdH = ["120363371018732371@newsletter", "120363307382381547@newsletter", "120363263466636910@newsletter"]
+global.canalNombreH = ["◦•●◉✿ 𝐇𝐮𝐓𝐚𝐨 𝐓𝐞𝐬𝐭 ✿◉●•◦", "─͟͞̟𝑴𝒆𝒈𝒖͜𝒎͜𝒊𝒏-𝑩͜𝒐𝒕-𝑴𝑫͟͞─", "⏤͟͟͞͞ sᥱᥒk᥆ sᥲᥒ  • ᴄʜᴀɴɴᴇʟ ᰔᩚ"]
 global.channelRD = await getRandomChannel()
 
 //Reacciones De Comandos.!
@@ -55,7 +55,7 @@ global.rwait = '🕒'
 global.done = '✅'
 global.error = '✖️'
 
-//Emojis determinado de Ai Yaemori
+//Emojis determinado de HuTao
 global.emoji = '🔥'
 global.emoji2 = '💥'
 global.emoji3 = '❤️‍🔥'
@@ -115,9 +115,9 @@ global.icono = [
 'https://tinyurl.com/26qocyu9',
 ].getRandom()
 
-global.rcanal = { contextInfo: { isForwarded: true, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }}}; }
+//global.rcanal = { contextInfo: { isForwarded: true, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }}}; }
 
-// global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
 
 export default handler
 
