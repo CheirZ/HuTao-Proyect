@@ -198,7 +198,7 @@ await conn.sendMessage(global.channelid, { text: dueño, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🥳 ¡𝙽𝚞𝚎𝚟𝚘 𝚂𝚞𝚋-𝙱𝚘𝚝 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘!',
-thumbnailUrl: ppch,
+thumbnailUrl: 'https://github.com/OfcKing.png',
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
