@@ -185,18 +185,6 @@ const nameOrNumber = conn.getName(`${path.basename(pathHutaoJadiBot)}@s.whatsapp
 const baseName = path.basename(pathHutaoJadiBot)
 const displayName = nameOrNumber.replace(/\D/g, '') === baseName ? `+${baseName}` : `${nameOrNumber} (${baseName})`
 console.log(chalk.bold.cyanBright(`\n${displayName} fué conectado correctamente.`))
-let dueño = `*¡𝙲𝚘𝚗𝚟𝚒𝚎́𝚛𝚝𝚎𝚝𝚎 𝚎𝚗 𝚜𝚞𝚋-𝚋𝚘𝚝 𝚊𝚑𝚘𝚛𝚊!*
-wa.me/${path.basename(pathHutaoJadiBot)}?text=#serbot+code`.trim()
-await conn.sendMessage(global.channelid, { text: dueño, contextInfo: {
-externalAdReply: {
-title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
-body: '🥳 ¡𝙽𝚞𝚎𝚟𝚘 𝚂𝚞𝚋-𝙱𝚘𝚝 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘!',
-thumbnailUrl: "https://github.com/OfcKing.png",
-sourceUrl: redes,
-mediaType: 1,
-showAdAttribution: false,
-renderLargerThumbnail: false
-}}}, { quoted: null })
 sock.isInit = true
 global.conns.push(sock)
 //let user = global.db.data.users[m.sender]
