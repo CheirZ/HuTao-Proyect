@@ -185,6 +185,24 @@ const nameOrNumber = conn.getName(`${path.basename(pathHutaoJadiBot)}@s.whatsapp
 const baseName = path.basename(pathHutaoJadiBot)
 const displayName = nameOrNumber.replace(/\D/g, '') === baseName ? `+${baseName}` : `${nameOrNumber} (${baseName})`
 console.log(chalk.bold.cyanBright(`\n${displayName} fué conectado correctamente.`))
+let dueño = `👤 *𝐃𝐮𝐞𝐧̃𝐨* » ${m.pushName || 'Anónimo'}
+🗃️ *𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨* » ${user.registered ? `𝚂𝚒\n✅ *𝐕𝐞𝐫𝐢𝐟𝐢𝐜𝐚𝐜𝐢𝐨́𝐧* » *${user.name}` : '𝙽𝚘'}
+🔑 *𝐌𝐞́𝐭𝐨𝐝𝐨 𝐝𝐞 𝐜𝐨𝐧𝐞𝐱𝐢𝐨́𝐧* » ${mcode ? 'Código de 8 dígitos' : 'Código QR'}
+💻 *𝐁𝐫𝐨𝐰𝐬𝐞𝐫* » ${mcode ? 'Ubuntu' : 'Chrome'}
+⭐ *𝐕𝐞𝐫𝐬𝐢𝐨́𝐧 𝐝𝐞𝐥 𝐛𝐨𝐭* » ${vs}
+💫 *𝐕𝐞𝐫𝐬𝐢𝐨́𝐧 𝐬𝐮𝐛 𝐛𝐨𝐭* » 5.0
+
+> *¡𝙲𝚘𝚗𝚟𝚒𝚎́𝚛𝚝𝚎𝚝𝚎 𝚎𝚗 𝚜𝚞𝚋-𝚋𝚘𝚝 𝚊𝚑𝚘𝚛𝚊!*
+wa.me/${path.basename(pathHutaoJadiBot)}?text=${usedPrefix + command}%20code`.trim()
+await conn.sendMessage(global.channelid, { text: dueño, contextInfo: {
+externalAdReply: {
+title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
+body: '🥳 ¡𝙽𝚞𝚎𝚟𝚘 𝚂𝚞𝚋-𝙱𝚘𝚝 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘!',
+thumbnailUrl: ppch,
+sourceUrl: redes,
+mediaType: 1,
+showAdAttribution: false,
+renderLargerThumbnail: false
 sock.isInit = true
 global.conns.push(sock)
 //let user = global.db.data.users[m.sender]
