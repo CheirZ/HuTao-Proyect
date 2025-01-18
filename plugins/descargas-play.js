@@ -89,7 +89,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 │ 📇 *𝚌𝚊𝚗𝚊𝚕:* ${videoInfo.author.name || 'Desconocido'}
 │ 🔗 *𝙻𝙸𝙽𝙺:* ${urll}
 │ ${dev}
-╰─────°.♡.°‧─────`;
+╰─────°.♡.°‧─────`.trim();
     const thumb = (await conn.getFile(thumbnail))?.data;
 
     const JT = {
