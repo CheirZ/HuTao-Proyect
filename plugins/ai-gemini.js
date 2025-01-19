@@ -5,9 +5,9 @@ if (!text) return conn.reply(m.chat, `✨ *Ingresé una petición*\n\nEjemplo, $
 try {
 await m.react('🕒')
 conn.sendPresenceUpdate('composing', m.chat)
-var apii = await fetch(`https://api.dorratz.com/ai/gemini?prompt=${text}`)
+var apii = await fetch(`https://apis-starlights-team.koyeb.app/starlight/gemini?text=${text}`)
 var res = await apii.json()
-await conn.reply(m.chat, res.message, m, rcanal)
+await conn.reply(m.chat, res.result, m, rcanal)
 await m.react('✅️')
 } catch (error) {
 return conn.reply(m.chat, 'Enseñame que responder.', m)
