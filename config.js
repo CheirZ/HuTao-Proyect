@@ -76,10 +76,9 @@ global.jadi = 'jadibots'
 global.hutaoJadibts = true
 
 global.ch = {
-ch1: '120363350554513092@newsletter',
-ch2: '120363263466636910@newsletter',
-ch3: '120363307382381547@newsletter',
-ch4: '120363358338732714@newsletter',
+ch1: '120363263466636910@newsletter',
+ch2: '120363307382381547@newsletter',
+ch3: '120363371018732371@newsletter',
 }
 
 //• ↳ ◜𝑭𝑨𝑲𝑬 𝑬𝑺𝑻𝑰𝑳𝑶◞ • 🪩
