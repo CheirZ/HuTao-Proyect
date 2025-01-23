@@ -1,5 +1,6 @@
-const idgroup = global.idchannel;
-const idgp = "120363351999685409@g.us";
+const idgroup = global.idchannel; 
+const idgp = '120363351999685409@g.us'; 
+const suggestions = {}; 
 
 let handler = async (m, { conn, command, args }) => {
   if (command === 'sughutao') {
@@ -18,22 +19,15 @@ let handler = async (m, { conn, command, args }) => {
     if (tipo !== 'texto') {
       await conn.forwardMessage(idgroup, m.message);
     }
-    globalThis.db.data.sugerencias[m.key.id] = {
-      user: m.sender,
-      tipo,
-      contenido: tipo === 'texto' ? contenido : null,
-      media: tipo !== 'texto' ? m.message : null,
-      estado: 'pendiente'
-    };
 
     await conn.reply(m.chat, `❀ Tu sugerencia ha sido enviada para revisión.`, m);
 
   } else if (command === 'si' || command === 'no') {
-    if (!m.quoted || !globalThis.db.data.sugerencias[m.quoted.key.id]) {
+    if (!m.quoted || !suggestions[m.quoted.key.id]) {
       return conn.reply(m.chat, `✿ No se encontró la sugerencia para revisar.`, m);
     }
 
-    const sug = globalThis.db.data.sugerencias[m.quoted.key.id];
+    const sug = suggestions[m.quoted.key.id];
     const decision = command === 'si' ? 'aprobada' : 'rechazada';
     const motivo = command === 'no' ? args.join(' ') : 'sin motivo';
 
@@ -49,8 +43,6 @@ let handler = async (m, { conn, command, args }) => {
       await conn.reply(sug.user, `❀ Tu sugerencia ha sido rechazada. Motivo: ${motivo}`, null);
     }
 
-    sug.estado = decision;
-    sug.motivo = motivo;
   }
 }
 
