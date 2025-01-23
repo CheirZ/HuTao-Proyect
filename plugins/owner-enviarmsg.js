@@ -1,4 +1,4 @@
-const idgroup = "120363351999685409@g.us"; 
+/*const idgroup = "120363351999685409@g.us"; 
 const reports = {}; 
 
 let handler = async (m, { conn, command, args }) => {
@@ -37,4 +37,4 @@ let handler = async (m, { conn, command, args }) => {
 
 handler.command = ['test', 'responder'];
 
-export default handler;
+export default handler;*/
