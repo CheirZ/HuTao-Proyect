@@ -1,4 +1,4 @@
-const idgroup = "120363351999685409@g.us"; 
+/*const idgroup = "120363351999685409@g.us"; 
 const idgp = global.idchannel;
 const suggestions = {}; 
 
@@ -51,6 +51,6 @@ handler.tags = ['general'];
 handler.command = ['sughutao', 'si', 'no'];
 handler.admin = true; 
 handler.botAdmin = false;
-handler.customPrefix = /^si|no$/i; // 
+handler.customPrefix = /^si|no$/i;  
 
-export default handler;
+export default handler;*/
