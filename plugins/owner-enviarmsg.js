@@ -1,5 +1,5 @@
 const idgroup = "120363351999685409@g.us"; 
-const idgp = global.idchannel; 
+const idgp = global.idchannel;
 const suggestions = {}; 
 
 let handler = async (m, { conn, command, args }) => {
@@ -22,10 +22,10 @@ let handler = async (m, { conn, command, args }) => {
 
     await conn.reply(m.chat, `❀ Tu sugerencia ha sido enviada para revisión.`, m);
 
-  } else if (command === 'si' || command === 'no') {
-    if (!m.quoted || !suggestions[m.quoted.key.id]) {
-      return conn.reply(m.chat, `✿ No se encontró la sugerencia para revisar.`, m);
-    }
+  } // else if (command === 'si' || command === 'no') {
+    // if (!m.quoted || !suggestions[m.quoted.key.id]) {
+     // return conn.reply(m.chat, `✿ No se encontró la sugerencia para revisar.`, m);
+   // }
 
     const sug = suggestions[m.quoted.key.id];
     const decision = command === 'si' ? 'aprobada' : 'rechazada';
@@ -46,6 +46,11 @@ let handler = async (m, { conn, command, args }) => {
   }
 }
 
+handler.help = ['sughutao <sugerencia>', 'si', 'no <motivo>'];
+handler.tags = ['general'];
 handler.command = ['sughutao', 'si', 'no'];
+handler.admin = true; 
+handler.botAdmin = false;
+handler.customPrefix = /^si|no$/i; // 
 
 export default handler;
