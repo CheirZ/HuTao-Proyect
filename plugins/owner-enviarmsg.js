@@ -1,5 +1,5 @@
-const idgroup = global.idchannel; 
-const idgp = '120363351999685409@g.us'; 
+const idgroup = "120363351999685409@g.us"; 
+const idgp = global.idchannel; 
 const suggestions = {}; 
 
 let handler = async (m, { conn, command, args }) => {
