@@ -11,7 +11,7 @@ let handler = async (m) => {
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
   let img = await (await fetch(`${link}`)).buffer()
-  let txt = `乂  *L I N K - C A T B O X*  乂\n\n`
+  let txt = `乂  *L I N K - Q U A X*  乂\n\n`
       txt += `*» Enlace* : ${link}\n`
       txt += `*» Tamaño* : ${formatBytes(media.length)}\n`
       txt += `*» Expiración* : ${isTele ? 'No expira' : 'Desconocido'}\n\n`
@@ -23,7 +23,7 @@ await conn.reply(m.chat, '⚠︎ *Error:* ' + e, m)
 }}
 handler.help = ['tourl']
 handler.tags = ['tools']
-handler.command = ['tourl', 'catbox']
+handler.command = ['tourl', 'quax']
 export default handler
 
 function formatBytes(bytes) {
