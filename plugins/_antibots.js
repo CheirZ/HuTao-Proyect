@@ -1,4 +1,4 @@
-import { WASocket, useMultiFileAuthState, makeInMemoryStore } from '@whiskeysockets/baileys';
+/*import { WASocket, useMultiFileAuthState, makeInMemoryStore } from '@whiskeysockets/baileys';
 import { Boom } from '@hapi/boom';
 
 export async function before(m, { conn, isAdmin, isBotAdmin }) {
@@ -43,4 +43,4 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
       }
     }
   }
-}
+}*/
