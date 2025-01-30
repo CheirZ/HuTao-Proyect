@@ -7,12 +7,12 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
   let bot = global.db.data.settings[this.user.jid] || {};
   if (m.fromMe) return true;
 
-  if (m.key.id.startsWith('BAE5') && m.key.id.length === 16 && m.key.remoteJid.endsWith('@g.us') && m.key.fromMe === false) {
+  if (m.key.remoteJid.endsWith('@g.us') && m.key.fromMe === false && m.key.id.length === 22) {
     if (chat.antiBot) {
       if (isBotAdmin) {
         console.log(`Eliminando mensaje del bot: ${bang} del participante ${delet}`);
         
-        await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }});
+        await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet } });
 
        // await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
       } else {
