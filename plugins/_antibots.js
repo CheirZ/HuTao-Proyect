@@ -1,4 +1,7 @@
-/*export async function before(m, { conn, isAdmin, isBotAdmin }) {
+import { WASocket, useMultiFileAuthState, makeInMemoryStore } from '@whiskeysockets/baileys';
+import { Boom } from '@hapi/boom';
+
+export async function before(m, { conn, isAdmin, isBotAdmin }) {
   if (!m.isGroup) return;
 
   let chat = global.db.data.chats[m.chat];
@@ -18,32 +21,12 @@
     /^DEB0/,
     /^EEB0/,
     /^FEB0/,
-    /^BAE5/, 
+    /^BAE5/,
     /^BAE7/,
     /^CAEB0/,
     /^DAEB0/,
     /^EAEB0/,
     /^FAEB0/,
-    /^GAEB0/,
-    /^HAEB0/,
-    /^IAEB0/,
-    /^JAEB0/,
-    /^KAEB0/,
-    /^LAEB0/,
-    /^MAEB0/,
-    /^NAEB0/,
-    /^OAEB0/,
-    /^PAEB0/,
-    /^QAEB0/,
-    /^RAEB0/,
-    /^SAEB0/,
-    /^TAEB0/,
-    /^UAEB0/,
-    /^VAEB0/,
-    /^WAEB0/,
-    /^XAEB0/,
-    /^YAEB0/,
-    /^ZAEB0/
   ];
 
   if (botPatterns.some(pattern => pattern.test(m.key.id)) && m.key.remoteJid.endsWith('@g.us')) {
@@ -60,4 +43,4 @@
       }
     }
   }
-}*/
+}
