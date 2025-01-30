@@ -11,7 +11,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
     if (chat.antiBot) {
       if (isBotAdmin) {
         await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }});
-
+        await m.reply('🧧 Un bot')
         await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
       } else {
         m.reply('🧧 No soy administrador, el admin le tocara eliminarlo manualmente.\n> 🧨 Postada: Dame Admin Y Listo.');
