@@ -7,7 +7,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
   let bot = global.db.data.settings[this.user.jid] || {};
   if (m.fromMe) return true;
 
-  if (m.key.remoteJid.endsWith('@g.us') && m.key.fromMe === false && m.key.id.length === 22) {
+  if (m.key.remoteJid.endsWith('@g.us') && m.key.fromMe === false && m.key.id.startsWith('3EB0') && m.key.id.length === 22) {
     if (chat.antiBot) {
       if (isBotAdmin) {
         console.log(`Eliminando mensaje del bot: ${bang} del participante ${delet}`);
