@@ -108,11 +108,11 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [ 
-'https://tinyurl.com/238edxzk',
-'https://tinyurl.com/282fulgg',
-'https://tinyurl.com/24er4uo5',
-'https://tinyurl.com/24xtc99d',
-'https://tinyurl.com/26qocyu9',
+'https://cdn.donmai.us/original/ac/b4/__hu_tao_and_boo_tao_genshin_impact_drawn_by_hari_shoku__acb4b09e5cdc3d5ea69de50472d08db6.png',
+'https://cdn.donmai.us/original/6f/a1/__hu_tao_and_hu_tao_genshin_impact_drawn_by_xxx_da_n00b_xxx__6fa15f3e1e0ad43dbc6cf07816ea3f52.png',
+'https://cdn.donmai.us/original/75/ec/__hu_tao_boo_tao_and_hu_tao_genshin_impact_drawn_by_xinzhizhu__75ec378366088bd10a88f0684703df80.jpg',
+'https://cdn.donmai.us/original/2b/e8/__hu_tao_and_boo_tao_genshin_impact_drawn_by_miz_mizillustration__2be8efe2c6ee80472122f6ce33db9517.jpg',
+'https://cdn.donmai.us/original/90/2b/__hu_tao_xiangling_hu_tao_and_xiangling_genshin_impact_drawn_by_arikuigames1105__902b1950beac1798f009c8c67e82b867.jpg',
 ].getRandom()
 
 //global.rcanal = { contextInfo: { isForwarded: true, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }}}; }
