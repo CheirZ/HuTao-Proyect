@@ -13,7 +13,7 @@ if (/webp|image|video/g.test(mime)) {
 if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return m.reply(`☁️ *¡El video no puede durar mas de 8 segundos!*`)
 let img = await q.download?.()
 
-if (!img) return conn.reply(m.chat, `> y la imagen o video pedazo de animal?*`, m, gp4)
+if (!img) return conn.reply(m.chat, ` y la imagen o video pedazo de animal?*`, m, rcanal)
 
 let out
 try {
@@ -40,7 +40,7 @@ if (!stiker) stiker = e
 } finally {
 if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: `*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*`, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: m })
 
-else return conn.reply(m.chat, '> ⚠︎ Responde a una imagen o un video de 8s :3', m, gp4)
+else return conn.reply(m.chat, ' ⚠︎ Responde a una imagen o un video de 8s :3', m, rcanal)
 
 
 }}
