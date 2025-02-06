@@ -111,24 +111,14 @@ console.log(chalk.bold.redBright(`🚩 No se permiten numeros que no sean 1 o 2,
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
 
-const filterStrings = [
-"Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
-"Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
-"RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
-"U2Vzc2lvbiBlcnJvcg==", // "Session error"
-"RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
-"RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
-]
-
 console.info = () => {} 
 console.debug = () => {} 
-['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: ["Fantasia", "Aurora", "88.0.4324.182"],
+browser: ["Ubuntu", "Edge", "131.0.2903.86"],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
