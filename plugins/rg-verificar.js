@@ -53,37 +53,7 @@ ${sn}
 Verifica tu registro aquí:
 https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f
 `;
-  await conn.sendFile(m.chat, pp, 'hades.jpg', caption, m, null, rcanal);
-
-let chtxt = `
-👤 *𝚄𝚜𝚎𝚛* » ${m.pushName || 'Anónimo'}
-🌎 *𝙿𝚊𝚒𝚜* » ${mundo}
-🗂 *𝚅𝚎𝚛𝚒𝚏𝚒𝚌𝚊𝚌𝚒𝚘́𝚗* » ${user.name}
-⭐️ *𝙴𝚍𝚊𝚍* » ${user.age} años
-👀 *Descripción* » ${user.descripcion} 
-⏳ *Modificación de descripción* » ${fechaBio}
-📆 *𝙵𝚎𝚌𝚑𝚊* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-☁️ *𝙽𝚞𝚖𝚎𝚛𝚘 𝚍𝚎 𝚛𝚎𝚐𝚒𝚜𝚝𝚛𝚘* »
-⤷ ${sn}
-
-🎁 𝐑𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚𝐬
-23 • 𝙼𝚘𝚗𝚎𝚢 💰
-45 • 𝙴𝚡𝚙 💫
-60 • 𝙼𝚘𝚛𝚊𝚜 🪙
-
-> ¡Gracias por registrarte en nuestro bot: Hutao Proyect! Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
-`.trim()
-
-await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
-externalAdReply: {
-title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
-body: '🥳 ¡𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚗𝚞𝚎𝚟𝚘 𝚎𝚗 𝚖𝚒 𝚋𝚊𝚜𝚎 𝚍𝚎 𝚍𝚊𝚝𝚘𝚜!',
-thumbnailUrl: pp,
-sourceUrl: redes,
-mediaType: 1,
-showAdAttribution: false,
-renderLargerThumbnail: false
-}}}, { quoted: null })
+  await conn.sendFile(m.chat, pp, 'hutao.jpg', caption, m, null, rcanal);
   
 };
 handler.help = ['verificar'];
