@@ -187,33 +187,7 @@ const displayName = nameOrNumber.replace(/\D/g, '') === baseName ? `+${baseName}
 console.log(chalk.bold.cyanBright(`\n${displayName} fué conectado correctamente.`))
 sock.isInit = true
 global.conns.push(sock)
-//let user = global.db.data.users[m.sender]
 m?.chat? await conn.sendMessage(m.chat, { text: `❤️‍🔥 SubBot conectado correctamente.`, mentions: [m.sender]}, { quoted: m }) : ''
-let chtxt = `👤 *𝐃𝐮𝐞𝐧̃𝐨* » ${m.pushName || 'Anónimo'}
-🗃️ *𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨* » ${user.registered ? `𝚂𝚒\n✅ *𝐕𝐞𝐫𝐢𝐟𝐢𝐜𝐚𝐜𝐢𝐨́𝐧* » *${user.name}` : '𝙽𝚘'}
-🔑 *𝐌𝐞́𝐭𝐨𝐝𝐨 𝐝𝐞 𝐜𝐨𝐧𝐞𝐱𝐢𝐨́𝐧* » ${mcode ? 'Código de 8 dígitos' : 'Código QR'}
-💻 *𝐁𝐫𝐨𝐰𝐬𝐞𝐫* » ${mcode ? 'Ubuntu' : 'Chrome'}
-⭐ *𝐕𝐞𝐫𝐬𝐢𝐨́𝐧 𝐝𝐞𝐥 𝐛𝐨𝐭* » ${vs}
-💫 *𝐕𝐞𝐫𝐬𝐢𝐨́𝐧 𝐬𝐮𝐛 𝐛𝐨𝐭* » 5.0
-
-> *¡𝙲𝚘𝚗𝚟𝚒𝚎́𝚛𝚝𝚎𝚝𝚎 𝚎𝚗 𝚜𝚞𝚋-𝚋𝚘𝚝 𝚊𝚑𝚘𝚛𝚊!*
-wa.me/${path.basename(pathHutaoJadiBot)}?text=${usedPrefix + command}%20code`.trim()
-let ppch = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-await sleep(3000)
-//if (global.conn.user.jid.split`@`[0] != sock.user.jid.split`@`[0]) {
-await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
-externalAdReply: {
-title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
-body: '🥳 ¡𝙽𝚞𝚎𝚟𝚘 𝚂𝚞𝚋-𝙱𝚘𝚝 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘!',
-thumbnailUrl: ppch,
-sourceUrl: redes,
-mediaType: 1,
-showAdAttribution: false,
-renderLargerThumbnail: false
-}}}, { quoted: null })
-//}
-await sleep(3000)
-await joinChannels(sock)
 }
 }
 setInterval(async () => {
@@ -251,20 +225,6 @@ sock.ev.off("connection.update", sock.connectionUpdate)
 sock.ev.off('creds.update', sock.credsUpdate)
 }
 
-/*const currentDateTime = new Date()
-const messageDateTime = new Date(conn.ev * 1000)
-if (currentDateTime.getTime() - messageDateTime.getTime() <= 300000) {
-console.log('Leyendo mensajes entrantes:', sock.ev)
-Object.keys(sock.chats).forEach(jid => {
-sock.chats[jid].isBanned = false
-})
-} else {
-console.log(sock.chats, `❀ Omitiendo mensajes en espera.`, sock.ev)
-Object.keys(sock.chats).forEach(jid => {
-sock.chats[jid].isBanned = true
-})
-}*/
-
 sock.handler = handler.handler.bind(sock)
 sock.connectionUpdate = connectionUpdate.bind(sock)
 sock.credsUpdate = saveCreds.bind(sock, true)
@@ -291,8 +251,3 @@ minutes = (minutes < 10) ? '0' + minutes : minutes
 seconds = (seconds < 10) ? '0' + seconds : seconds
 return minutes + ' m y ' + seconds + ' s '
 }
-
-async function joinChannels(conn) {
-for (const channelId of Object.values(global.ch)) {
-await conn.newsletterFollow(channelId).catch(() => {})
-}}
