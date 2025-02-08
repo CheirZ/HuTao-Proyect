@@ -3,9 +3,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-    if (!text) return conn.reply(m.chat, `✧ Por favor proporciona el nombre de una canción o artista.`, m);
-
-    conn.reply(m.chat, 'ꕥ Espere un momento mientras procesamos su solicitud.', m);
+    if (!text) return conn.reply(m.chat, `🪼 Por favor proporciona el nombre de una canción o artista.`, m);
 
     try {
         let songInfo = await spotifyxv(text);
@@ -20,16 +18,16 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             throw "❌ Error al analizar la respuesta JSON.";
         });
 
-        if (!data || !data.result || !data.result.data || !data.result.data.download) throw "✧ No se pudo obtener el enlace de descarga.";
+        if (!data || !data.result || !data.result.data || !data.result.data.download) throw "No se pudo obtener el enlace de descarga.";
 
-        const info = `❀ *Descargando ›* ${data.result.data.title}\n\n> ✧ *Artista ›* ${data.result.data.artis}\n> ✰ *Álbum ›* ${song.album}\n> ⚡︎ *Duración ›* ${timestamp(data.result.data.durasi)}\n> ✿ *Enlace ›* ${song.url}\n\n${dev}`;
+        const info = `🪼 *Descargando:* ${data.result.data.title}\n\n🪽 *Artista:* ${data.result.data.artis}\n🪸 *Álbum:* ${song.album}\n🪷 *Duración:* ${timestamp(data.result.data.durasi)}\n⛓️‍💥 *Enlace:* ${song.url}`;
 
         await conn.sendMessage(m.chat, { text: info, contextInfo: { forwardingScore: 9999999, isForwarded: true, 
         externalAdReply: {
             showAdAttribution: true,
             containsAutoReply: true,
             renderLargerThumbnail: true,
-            title: 'Spotify Music',
+            title: 'Hutao • Spotify Music',
             body: dev,
             mediaType: 1,
             thumbnailUrl: data.result.data.image,
@@ -40,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         conn.sendMessage(m.chat, { audio: { url: data.result.data.download }, fileName: `${data.result.data.title}.mp3`, mimetype: 'audio/mp4', ptt: true }, { quoted: m });
 
     } catch (e1) {
-        m.reply(`⚠︎ *Error:* ${e1.message || e1}`);
+        m.reply(`🪼 *Error:* ${e1.message || e1}`);
     }
 };
 
