@@ -5,15 +5,24 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!text) return conn.reply(m.chat, `✧ Por favor proporciona el nombre de una canción o artista.`, m);
 
+    conn.reply(m.chat, 'ꕥ Espere un momento mientras procesamos su solicitud.', m);
+
     try {
         let songInfo = await spotifyxv(text);
         if (!songInfo.length) throw `✧ No se encontró la canción.`;
         let song = songInfo[0];
-        const res = await fetch(`https://apis-starlights-team.koyeb.app/starlight/spotifydl?url=${song.url}`);
-        const data = await res.json();
-        if (!data || !data.music) throw "✧ No se pudo obtener el enlace de descarga.";
+        const res = await fetch(`https://archive-ui.tanakadomp.biz.id/download/spotify?url=${song.url}`);
+        
+        if (!res.ok) throw `❌ Error al obtener datos de la API, código de estado: ${res.status}`;
+        
+        const data = await res.json().catch((e) => { 
+            console.error('Error parsing JSON:', e);
+            throw "❌ Error al analizar la respuesta JSON.";
+        });
 
-        const info = `❀ *Descargando »* ${data.title}\n\n> ✧ *Artista »* ${data.artist}\n> ✰ *Álbum »* ${song.album}\n> ⚡︎ *Duración »* ${song.duracion}\n> ✿ *Enlace »* ${data.spotify}\n\n${dev}`;
+        if (!data || !data.result || !data.result.data || !data.result.data.download) throw "✧ No se pudo obtener el enlace de descarga.";
+
+        const info = `❀ *Descargando ›* ${data.result.data.title}\n\n> ✧ *Artista ›* ${data.result.data.artis}\n> ✰ *Álbum ›* ${song.album}\n> ⚡︎ *Duración ›* ${timestamp(data.result.data.durasi)}\n> ✿ *Enlace ›* ${song.url}\n\n${dev}`;
 
         await conn.sendMessage(m.chat, { text: info, contextInfo: { forwardingScore: 9999999, isForwarded: true, 
         externalAdReply: {
@@ -23,12 +32,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             title: 'Spotify Music',
             body: dev,
             mediaType: 1,
-            thumbnailUrl: data.thumbnail,
-            mediaUrl: data.music,
-            sourceUrl: data.music
+            thumbnailUrl: data.result.data.image,
+            mediaUrl: data.result.data.download,
+            sourceUrl: data.result.data.download
         }}}, { quoted: m });
 
-        await conn.sendMessage(m.chat, { audio: { url: data.music }, fileName: `${data.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
+        conn.sendMessage(m.chat, { audio: { url: data.result.data.download }, fileName: `${data.result.data.title}.mp3`, mimetype: 'audio/mp4', ptt: true }, { quoted: m });
 
     } catch (e1) {
         m.reply(`⚠︎ *Error:* ${e1.message || e1}`);
@@ -45,7 +54,7 @@ async function spotifyxv(query) {
     let token = await tokens();
     let response = await axios({
         method: 'get',
-        url: 'https://api.spotify.com/v1/search?q=' + encodeURIComponent(query) + '&type=track',
+        url: 'https://api.spotify.com/v1/search?q=' + query + '&type=track',
         headers: {
             Authorization: 'Bearer ' + token,
         },
