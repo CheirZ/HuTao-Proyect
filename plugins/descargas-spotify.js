@@ -7,15 +7,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     try {
         let songInfo = await spotifyxv(text);
-        if (!songInfo.length) throw `✧ No se encontró la canción.`;
+        if (!songInfo.length) throw `No se encontró la canción.`;
         let song = songInfo[0];
         const res = await fetch(`https://archive-ui.tanakadomp.biz.id/download/spotify?url=${song.url}`);
         
-        if (!res.ok) throw `❌ Error al obtener datos de la API, código de estado: ${res.status}`;
+        if (!res.ok) throw `Error al obtener datos de la API, código de estado: ${res.status}`;
         
         const data = await res.json().catch((e) => { 
             console.error('Error parsing JSON:', e);
-            throw "❌ Error al analizar la respuesta JSON.";
+            throw "Error al analizar la respuesta JSON.";
         });
 
         if (!data || !data.result || !data.result.data || !data.result.data.download) throw "No se pudo obtener el enlace de descarga.";
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         conn.sendMessage(m.chat, { audio: { url: data.result.data.download }, fileName: `${data.result.data.title}.mp3`, mimetype: 'audio/mp4', ptt: true }, { quoted: m });
 
     } catch (e1) {
-        m.reply(`🪼 *Error:* ${e1.message || e1}`);
+        m.reply(`${e1.message || e1}`);
     }
 };
 
