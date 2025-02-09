@@ -38,7 +38,7 @@ else return m.reply(`💫 El url es incorrecto`)
 console.error(e)
 if (!stiker) stiker = e
 } finally {
-if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, //true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: `*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*`, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: m })
+if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m ) //true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: `*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*`, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: m })
 
 else return conn.reply(m.chat, ' ⚠︎ Responde a una imagen o un video de 8s :3', m, rcanal)
 
