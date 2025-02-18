@@ -13,7 +13,7 @@ let ss = await (await fetch(`https://image.thum.io/get/fullpage/${args[0]}`)).bu
 conn.sendFile(m.chat, ss, 'error.png', args[0], fkontak)
 await m.react(done)
 } catch {
-return conn.reply(m.chat, '🚩 Ocurrió un error.', m, fake)
+return conn.reply(m.chat, '🚩 Ocurrió un error.', m, rcanal)
 await m.react(error)}}
 handler.help = ['ssweb', 'ss']
 handler.tags = ['tools']
