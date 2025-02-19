@@ -4,7 +4,7 @@ var handler = async (m, {conn, usedPrefix, command, text}) => {
 if (!text) return conn.reply(m.chat, '💥 *Ingrese el nombre de la apk para descargarlo.*', m, rcanal)
 try {
 await m.react(rwait)
-conn.reply(m.chat, '💥 *Descargando su aplicación...*', m)
+conn.reply(m.chat, '💥 *Descargando su aplicación...*', m, rcanal)
 let searchA = await search(text)
 let data5 = await download(searchA[0].id)
 let txt = `*乂  APTOIDE - DESCARGAS* 乂\n\n`
