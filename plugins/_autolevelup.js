@@ -32,7 +32,7 @@ if (nextRole) {
 text22 += `\n\n> 𝙿𝚛𝚘́𝚡𝚒𝚖𝚘 𝚛𝚊𝚗𝚐𝚘 ${nextRole}, 𝚎𝚗 𝚎𝚕 *𝚗𝚒𝚟𝚎𝚕 ${roles[nextRole]}*. ¡𝚂𝚒𝚐𝚞𝚎 𝚊𝚜𝚒!`
 }
 
-m.reoly(text22)
+m.reply(text22)
 }
 
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🌵 Rango » ${user.role}\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*`)
