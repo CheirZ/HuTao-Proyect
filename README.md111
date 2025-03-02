@@ -1,9 +1,9 @@
 > 💝 Versión Actual: V2
 
-## ❤️‍🔥 **`HuTao - Proyect`**
+## ❤️‍🔥 **`CHAT GPT- Proyect`**
 ## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio;disfruta+de+HuTao🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
-![HuTao](https://tinyurl.com/2dc4xt3f)
+![CHAT GPT](https://tinyurl.com/2dc4xt3f)
 
 ---
 
@@ -56,7 +56,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
 ```
 
-💥 **`ACTUALIZAR HuTao`**
+💥 **`ACTUALIZAR CHAT GPT`**
 > Note Comandos para actualizar HuTao-Proyect de forma automática
 ```bash
 grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/CheirZ/HuTao-Proyect/master/update.sh | bash
@@ -87,7 +87,7 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
 
-<a href="https://wa.me/5216566753569?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+<a href="https://wa.me/59896288844?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 > No Spam A La Bot! (solo esta disponible para grupos)
 
