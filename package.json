@@ -1,5 +1,5 @@
 {
-"name":"HuTao-Proyect",
+"name":"CHAT GPT-Proyect",
 "version":"V2",
 "description": "la directora de la funeraria el caminó",
 "main": "index.js",
@@ -95,4 +95,4 @@
 "optionalDependencies": {
 "wa-sticker-formatter": "^4.3.2",
 "moment-timezone": "^0.5.37"
-}}
+'npm install'
