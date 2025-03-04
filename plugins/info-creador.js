@@ -1,4 +1,4 @@
-import PhoneNumber from 'awesome-phonenumber'
+import PhoneNumber from 'awesome-phonenumber'522216613773
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 //m.react('⚙️')
@@ -11,15 +11,15 @@ let biobot = biografiaBot.status?.toString() || 'Sin Biografía'
 let name = await conn.getName(who)
 
   await sendContactArray(conn, m.chat, [
-     [`${nomorown}`, `❤️‍🔥 Propietario`, `★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★`, dev, correo, `MX`, `${global.yt}`, bio],
+     [`${nomorown}`, `❤️‍🔥 Propietario`, `★彡( `GATA-BOT-MD Uruguay)彡★`, dev, correo, `MX`, `${global.yt}`, bio],
 [`${conn.user.jid.split('@')[0]}`, `Es Una Bot 🦋`, `${packname}`, `📵 No Hacer Spam`, correo, `MX`, md, biobot]
 ], m)
   //m.reply(`Hola @${m.sender.split(`@`)[0]} este es el contacto de mi creador, no hagas spam!!`)
   } 
 
-handler.help = ["creador","owner"]
+handler.help = ["creador","owner" 522216613773]
 handler.tags = ["info"]
-handler.command = ['owner','creador']
+handler.command = ['owner','creador'522216613773]
 export default handler
 
 async function sendContactArray(conn, jid, data, quoted, options) {
