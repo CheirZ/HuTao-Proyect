@@ -1,7 +1,7 @@
 > 💝 Versión Actual: V2
 
-## ❤️‍🔥 **`HuTao - Proyect`**
-## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
+## ❤️‍🔥 **`GATA-BOT-MD Uruguay - Proyect`**
+## 🔥 **``GATA-BOT-MD Uruguay la directora de "el camino" ahora en tu WhatsApp**
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio;disfruta+de+HuTao🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
 ![HuTao](https://tinyurl.com/2dc4xt3f)
 
@@ -87,9 +87,9 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
 
-<a href="https://wa.me/5216566753569?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+<a href="https://wa.me/522216613773?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
-> No Spam A La Bot! (solo esta disponible para grupos)
+> No Spam A La Bot! (disponible para grupos)
 
 ---
 
@@ -110,7 +110,7 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 - [x] Juego RPG
 - [ ] Personalizar imagen del menú
 - [x] Descarga de música y video De YT
-- [ ] Otros
+- [x] Otros
 
 --- 
 
@@ -126,4 +126,5 @@ href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width=
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
-**`¡GRACIAS POR PREFERIRNOS!` 🔥**
+**`¡GRACIAS POR PREFERIRNOS!
+`GATA-BOT-MD Uruguay` 🔥**
