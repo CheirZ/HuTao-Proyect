@@ -1,130 +1,65 @@
-> 💝 Versión Actual: V2
+*Hola, soy GATA-BOT-MD, tu asistente virtual de Uruguay. Estoy aquí para ayudarte y responder tus preguntas.*
 
-## ❤️‍🔥 **`GATA-BOT-MD Uruguay - Proyect`**
-## 🔥 **``GATA-BOT-MD Uruguay la directora de "el camino" ahora en tu WhatsApp**
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=Bienvenid@+a+mi+repositorio;disfruta+de+HuTao🦋+❤️‍🔥yajuuu🔥)](https://git.io/typing-svg)
-![HuTao](https://tinyurl.com/2dc4xt3f)
+*Contacto:*
 
----
+- Uruguay: +598 94 243 071
+- México: +52 221 661 3773
 
-### <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Prueba La Bot Aqui" width="42" height="42"> Prueba La Bot Aqui
+*Menú principal:*
 
-> Si Deseas Probar El Bot Antes De Instalarlo, Click Abajo. 🍟
+1. *Inicio*: `/start`
+2. *Ayuda*: `/ayuda`
+3. *Configuración*: `/configuracion`
+4. *Infobot*: `/infobot`
 
-[![Click Aquí](https://img.shields.io/badge/Grupo-HuTao-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw)
+*Menú de herramientas:*
 
-🍟 **`INSTALACION MANUAL POR TERMUX`**
+1. *Calculadora*: `/calculadora`
+2. *Conversor*: `/conversor`
+3. *Generador*: `/generador`
+4. *Juego*: `/juego`
+5. *Acertijo*: `/acertijo`
+6. *Chiste*: `/chiste`
 
-[`🚩 Instalar Termux Clic Aqui`](https://www.mediafire.com/file/pqd980pnrqrz7r3/termux-app_v0.118.1+github-debug_arm64-v8a.apk/file)
+*Menú de imágenes y videos:*
 
-> ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+1. *Imagen aleatoria*: `/imagen`
+2. *Video aleatorio*: `/video`
+3. *GIF*: `/giphy`
+4. *Imagen de [palabra clave]*: `/imagen de [palabra clave]`
+5. *Video de [palabra clave]*: `/video de [palabra clave]`
+6. *Imágenes de Uruguay*: `/imagenes de Uruguay`
+7. *Imágenes de México*: `/imagenes de Mexico`
 
-```bash
-termux-setup-storage
-```
-```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
-```
-```bash
-git clone https://github.com/CheirZ/HuTao-Proyect.git && cd HuTao-Proyect
-```
-```bash
-yarn install && npm update && npm i
-```
-```bash
-npm start
-```
+*Menú de música y audio:*
 
-🍟 **`ACTIVAR EN TERMUX EN CASO DE DETENERSE`**
-```bash
-ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd 
-> cd HuTao-Proyect
-> npm start
-```
+1. *Música*: `/musica`
+2. *Audio*: `/audio`
+3. *Podcast*: `/podcast`
+4. *Música [género]*: `/musica [género]`
+5. *Audio [tipo]*: `/audio [tipo]`
+6. *Música uruguaya*: `/musica uruguaya`
+7. *Música mexicana*: `/musica mexicana`
 
-🔥 **`OBTENER OTRO CODIGO QR`**
-```bash
-> ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd HuTao-Proyect
-> rm -rf Seccion-activas
-> npm start
-```
+*Menú de noticias y actualidad:*
 
-🍟 **`HuTao-Proyect 24/7 (TERMUX)`**
-```bash
-> termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
-```
+1. *Noticias*: `/noticias`
+2. *Actualidad*: `/actualidad`
+3. *Noticias [categoría]*: `/noticias [categoría]`
+4. *Actualidad [tema]*: `/actualidad [tema]`
+5. *Noticias de Uruguay*: `/noticias de Uruguay`
+6. *Noticias de México*: `/noticias de Mexico`
 
-💥 **`ACTUALIZAR HuTao`**
-> Note Comandos para actualizar HuTao-Proyect de forma automática
-```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/CheirZ/HuTao-Proyect/master/update.sh | bash
-```
-Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
+*Menú de infobot:*
 
-> Warning Estos comandos solo funcionan para TERMUX, REPLIT, LINUX
+1. *Información del bot*: `/infobot`
+2. *Estadísticas*: `/estadísticas`
+3. *Versión*: `/version`
+4. *Historial de actualizaciones*: `/historial de actualizaciones`
 
----
+*Menú de configuración:*
 
-#### ☂️ ACTIVA EN HEROKU ☂️
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CheirZ/HuTao-Proyect)
-
-#### Heroku Buildpack
-| BuildPack | LINK |
-|--------|--------|
-| **FFMPEG** |[click](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
-| **IMAGEMAGICK** | [click](https://github.com/DuckyTeam/heroku-buildpack-imagemagick) |
-
-#### 🟢 ACTIVAR EN CODES SPACES 
-[`CREAR SERVIDOR`](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=CheirZ/HuTao-Proyect&ref=main&geo=UsEast)
-
-#### ⚡ ACRIVAR EN REPLIT
-[![`CREAR SERVIDOR REPLIT`](https://repl.it/badge/github/CheirZ/HuTao-Proyect)](https://repl.it/github/CheirZ/HuTao-Proyect)
-
-#### 🤍 ACTIVAR EN RENDER
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%CheirZ%HuTao-Proyect) 
-
-## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
-
-<a href="https://wa.me/522216613773?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
-
-> No Spam A La Bot! (disponible para grupos)
-
----
-
-## <img src="https://i.pinimg.com/originals/73/69/6e/73696e022df7cd5cb3d999c6875361dd.gif" alt="Características" width="42" height="42"> Características
-
-> Bot en creación pronto se agregaran más cosas 
-
-- [x] Interacción con voz y texto
-- [x] Configuración de grupo
-- [x] antidelete, antilink, antispam, etc
-- [x] Bienvenida personalizada
-- [x] Juegos, tictactoe, mate, etc
-- [x] Chatbot (simsimi)
-- [ ] Chatbot (modoia)
-- [x] Crear sticker de image/video/gif/url
-- [x] SubBot (Jadibot)
-- [ ] Buscador Google
-- [x] Juego RPG
-- [ ] Personalizar imagen del menú
-- [x] Descarga de música y video De YT
-- [x] Otros
-
---- 
-
-
-### **`🦋 COLABORADORES`**
-<a href="https://github.com/CheirZ/Hutao-Proyect/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=CheirZ/Hutao-Proyect" /> 
-</a>
-
-### **`❤️‍🔥 PROPIETARIO`**
-<a
-href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="Miguelon"/></a>
-
-> Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
-
-**`¡GRACIAS POR PREFERIRNOS!
-`GATA-BOT-MD Uruguay` 🔥**
+1. *Idioma*: `/idioma`
+2. *Notificaciones*: `/notificaciones`
+3. *Configuración avanzada*: `/configuracion avanzada`
+4. *Restablecer configuración*: `/restablecer configuración`
