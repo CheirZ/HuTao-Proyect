@@ -378,6 +378,8 @@ typeof plugin.command === 'string' ? // String?
 plugin.command === command :
 false
 
+if ((m.id.startsWith('NJX-') || (m.id.startsWith('BAE5') && m.id.length === 16) || (m.id.startsWith('B24E') && m.id.length === 20))) return
+
 if (!isAccept) {
 continue
 }
