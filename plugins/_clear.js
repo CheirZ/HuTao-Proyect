@@ -1,7 +1,7 @@
 // Credits: OfcKing
 // >> https://github.com/OfcKing
 
-import fs from 'fs';
+/*import fs from 'fs';
 
 const paths = {
   HutaoJadiBot: `./${jadi}/`,
@@ -121,4 +121,4 @@ setInterval(displayNoFilesDeleted, 60 * 1000);
 
 cleanSubbotDirectories();
 cleanHutaoSession();
-displayNoFilesDeleted();
+displayNoFilesDeleted();*/
