@@ -6,7 +6,7 @@ handler.before = async function (m, { conn, usedPrefix }) {
 
 if (!db.data.chats[m.chat].autolevelup) return
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://cdn.donmai.us/original/31/6d/__hu_tao_genshin_impact_drawn_by_pioko__316d40e84fd8b32cb4cac320728a3a10.jpg')
 let mentionedJid = [who]
 let username = conn.getName(who)
 let userName = m.pushName || 'Anónimo'
