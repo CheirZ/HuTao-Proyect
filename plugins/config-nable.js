@@ -360,7 +360,7 @@ break
 case 'antispam':
 isAll = true
 if (!isOwner) {
-global.dfail('owner', m, conn)
+global.dfail('admin', m, conn)
 throw false
 }
 bot.antiSpam = isEnable
