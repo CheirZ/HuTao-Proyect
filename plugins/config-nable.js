@@ -92,6 +92,19 @@ case 'antibot':
         }
       }
       chat.antiBot = isEnable
+        
+case 'antisubots':
+case 'antisub':
+case 'antisubot':
+case 'antibot2':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}
+}
+chat.antiBot2 = isEnable
+break
       
 case 'antidelete': case 'antieliminar': case 'delete':
 if (m.isGroup) {
@@ -360,7 +373,7 @@ break
 case 'antispam':
 isAll = true
 if (!isOwner) {
-global.dfail('admin', m, conn)
+global.dfail('owner', m, conn)
 throw false
 }
 bot.antiSpam = isEnable
@@ -460,3 +473,4 @@ handler.help = ['en', 'dis'].map((v) => v + 'able <option>');
 handler.tags = ['nable', 'owner'];
 handler.command = ['enable', 'disable', 'on', 'off'];
 export default handler;
+            
