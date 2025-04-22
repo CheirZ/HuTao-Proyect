@@ -12,7 +12,7 @@ var handler = async (m, { text,  usedPrefix, command }) => {
         msg: m.text
       }
     })
-    var res = await apii.json()
+    var res = await apii.body.json()
     await conn.reply(m.chat, res.text, m)
     await m.react('✅️')
   } catch (error) {
