@@ -1,25 +1,28 @@
 import axios from 'axios'
-//Modificado por Ramón V3.2 wa.me//523142183828
-
-var handler = async (m, { text,  usedPrefix, command }) => {
+// Modificado por Ramón V3.2 wa.me//523142183828
+var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) return conn.reply(m.chat, `✨ *Ingresé una petición*\n\nEjemplo, ${usedPrefix + command} hola, que es HuTao?`, m)
   try {
     await m.react('🕒')
     conn.sendPresenceUpdate('composing', m.chat)
-    var apii = await axios(`mindustry.zapto.org:38566/api`,{
-      params:{
-        user: "Miguel",
+    const url = 'mindustry.zapto.org:38566/api/index.php'
+    const response = await axios.get(url, {
+      params: {
+        user: 'Miguel',
         msg: m.text
       }
     })
-    var res = await apii.body.json()
-    await conn.reply(m.chat, res.text, m)
+    const resData = response.data
+    if (resData && resData.text) {
+      await conn.reply(m.chat, resData.text, m)
+    } else {
+      await conn.reply(m.chat, 'No se recibió una respuesta válida de la API.', m)
+    }
     await m.react('✅️')
   } catch (error) {
-    return conn.reply(m.chat, `Ocurrio un error {error: ${error}}.`, m)
+    return conn.reply(m.chat, `Ocurrió un error: ${error}`, m)
   }
 }
-
 handler.command = ['gemini']
 handler.help = ['gemini']
 handler.tags = ['ai']
