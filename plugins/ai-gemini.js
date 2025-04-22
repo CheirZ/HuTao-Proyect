@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 //Modificado por Ramón V3.2 wa.me//523142183828
 
 var handler = async (m, { text,  usedPrefix, command }) => {
@@ -6,7 +6,12 @@ var handler = async (m, { text,  usedPrefix, command }) => {
   try {
     await m.react('🕒')
     conn.sendPresenceUpdate('composing', m.chat)
-    var apii = await fetch(`mindustry.zapto.org:38566/api?user=Miguel&msg=${text}`)
+    var apii = await axios(`http://mindustry.zapto.org:38566/api`,{
+      searchParam:{
+        user: "Miguel",
+        msg: m.text
+      }
+    })
     var res = await apii.json()
     await conn.reply(m.chat, res.text, m)
     await m.react('✅️')
