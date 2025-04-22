@@ -7,7 +7,7 @@ var handler = async (m, { text,  usedPrefix, command }) => {
     await m.react('🕒')
     conn.sendPresenceUpdate('composing', m.chat)
     var apii = await axios(`http://mindustry.zapto.org:38566/api`,{
-      searchParam:{
+      params:{
         user: "Miguel",
         msg: m.text
       }
