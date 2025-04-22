@@ -5,7 +5,7 @@ var handler = async (m, { text, usedPrefix, command }) => {
   try {
     await m.react('🕒')
     conn.sendPresenceUpdate('composing', m.chat)
-    const url = 'mindustry.zapto.org:38566/api/index.php'
+    const url = 'http://mindustry.zapto.org:38566/api/index.php'
     const response = await axios.get(url, {
       params: {
         user: 'Miguel',
