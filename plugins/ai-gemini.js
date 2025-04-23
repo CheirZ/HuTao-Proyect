@@ -9,7 +9,8 @@ var handler = async (m, { text, usedPrefix, command }) => {
     const response = await axios.get(url, {
       params: {
         user: 'Miguel',
-        msg: m.text
+        msg: m.text,
+        type: 'ia'
       }
     })
     const resData = response.data
