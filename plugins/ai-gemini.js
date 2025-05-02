@@ -1,5 +1,4 @@
 import axios from 'axios'
-// Modificado por Ramón V3.2 wa.me//523142183828
 var handler = async (m, { text, usedPrefix, command }) => {
   if (!text) return conn.reply(m.chat, `✨ *Ingresé una petición*\n\nEjemplo, ${usedPrefix + command} hola, que es HuTao?`, m)
   try {
