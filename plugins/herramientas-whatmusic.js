@@ -19,7 +19,7 @@ if (code !== 0) throw msg
 let { title, artists, album, genres, release_date } = res.metadata.music[0]
 let txt = `乂✰ resultados ღ
 乂✰ artista: ${artists !== undefined ? artists.map(v => v.name).join(', ') : 'Not found'} ღ
-乂✰ nombre: ${title.name|| 'not found'} ॐ
+乂✰ nombre: ${title} ॐ
 乂✰ album: ${album.name || 'Not found'}
 乂✰ genero: ${genres !== undefined ? genres.map(v => v.name).join(', ') : 'Not found'} ღ
 乂✰ publicado: ${release_date || 'Not found'} ღ`.trim()
