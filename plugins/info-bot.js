@@ -13,7 +13,7 @@ conn.reply(m.chat, `*pervertido* 🫣`, m, rcanal, )
 /*if (/^a$/i.test(m.text)) {
 conn.reply(m.chat, `*rroz y pollo* 😄👌`, m, rcanal, )
 }*/
-}
+
 
 if (/^que$/i.test(m.text)) {
 conn.reply(m.chat, `🧀 kso`, m, rcanal, )
