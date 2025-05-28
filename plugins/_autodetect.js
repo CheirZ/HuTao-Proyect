@@ -6,14 +6,15 @@ import path from 'path'
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 let handler = m => m
-handler.before = async function (m, { conn, participants, groupMetadata }) {
+handler.before = async function (m, { conn, participants, groupMetadata })
+{
 
 if (!m.messageStubType || !m.isGroup) return
 let usuario = `@${m.sender.split`@`[0]}`
-const groupName = (await conn.groupMetadata(m.chat)).subject
+const groupName = groupMetadata.subject
 const groupAdmins = participants.filter((p) => p.admin)
 
-let pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => imagen1)
+let pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => `${global.imagen1}`)
 const img = await (await fetch(pp)).buffer()
 const chat = global.db.data.chats[m.chat]
 const mentionsString = [m.sender, m.messageStubParameters[0], ...groupAdmins.map((v) => v.id)]
@@ -37,12 +38,12 @@ let txt2 = `🚩 *Un admin menos*\n\n`
 txt2 += `Nombre: @${m.messageStubParameters[0].split`@`[0]}\n`
 txt2 += `Le quitó admin: @${m.sender.split`@`[0]}`
 
-await conn.sendMessage(m.chat, {text: txt2, mentions: [...txt2.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: { mentionedJid: [...txt2.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": global.packname, "body": dev, "containsAutoReply": true, "mediaType": 1, "thumbnail": img, "mediaUrl": channel, "sourceUrl": channel}}})
+await conn.sendMessage(m.chat, {text: txt2, mentions: [...txt2.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: { mentionedJid: [...txt2.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": 'HuTao-Proyect', "body": dev, "containsAutoReply": true, "mediaType": 1, "thumbnail": img, "mediaUrl": channel, "sourceUrl": channel}}})
 } else {
-if (m.messageStubType == 2) return
+/*if (m.messageStubType == 2) return
 console.log({messageStubType: m.messageStubType,
 messageStubParameters: m.messageStubParameters,
 type: WAMessageStubType[m.messageStubType], 
-})
+})*/
 }}
 export default handler
