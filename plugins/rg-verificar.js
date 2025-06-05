@@ -20,7 +20,7 @@ fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString(
   if (user.registered === true) m.reply(`🌴 Hola amigo, ya estás registrado en nuestra base de datos.`, m, rcanal);
   if (!Reg.test(text)) m.reply(`regístrese bien hijo de su, ejemplo: !reg miguelon.23`, m, rcanal);
   let [_, name, splitter, age] = text.match(Reg);
-  if (!name) conn.reply(m.chat, '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro', m);
+  if (!name) conn.reply(m.chat, '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro', m, rcanal);
   if (!age) m.reply('❌ Por favor no dejes tu edad vacía, haz el registro completo', m, rcanal);
   if (name.length >= 30) m.reply('️☘ ¿puedes acortar tu nombre por favor?', m, rcanal);
   age = parseInt(age);
