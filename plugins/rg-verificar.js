@@ -19,7 +19,7 @@ fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString(
   let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://cdn.donmai.us/original/31/6d/__hu_tao_genshin_impact_drawn_by_pioko__316d40e84fd8b32cb4cac320728a3a10.jpg')
   if (user.registered === true) conn.reply(m.chat, `🌴 Hola amigo, ya estás registrado en nuestra base de datos.`, m, rcanal);
   if (!Reg.test(text)) conn.reply(m.chat, `regístrese bien hijo de su, ejemplo: !reg miguelon.23`, m, rcanal);
-  let [name, splitter, age] = text.match(Reg);
+  //let [name, splitter, age] = text.match(Reg);
   if (!name) conn.reply(m.chat, '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro', m, rcanal);
   if (!age) m.reply('❌ Por favor no dejes tu edad vacía, haz el registro completo', m, rcanal);
   if (name.length >= 30) conn.reply(m.chat, '️☘ ¿puedes acortar tu nombre por favor?', m, rcanal);
