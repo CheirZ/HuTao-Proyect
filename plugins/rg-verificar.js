@@ -17,15 +17,15 @@ bio = biografia[0].status || sinDefinir
 fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString("es-ES", { day: "2-digit", month: "2-digit", year: "numeric", }) : "Fecha no disponible"
   }
   let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://cdn.donmai.us/original/31/6d/__hu_tao_genshin_impact_drawn_by_pioko__316d40e84fd8b32cb4cac320728a3a10.jpg')
-  if (user.registered === true) m.reply(`🌴 Hola amigo, ya estás registrado en nuestra base de datos.`, m, rcanal);
-  if (!Reg.test(text)) m.reply(`regístrese bien hijo de su, ejemplo: !reg miguelon.23`, m, rcanal);
+  if (user.registered === true) conn.reply(m.chat, `🌴 Hola amigo, ya estás registrado en nuestra base de datos.`, m, rcanal);
+  if (!Reg.test(text)) conn.reply(m.chat, `regístrese bien hijo de su, ejemplo: !reg miguelon.23`, m, rcanal);
   let [_, name, splitter, age] = text.match(Reg);
   if (!name) conn.reply(m.chat, '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro', m, rcanal);
   if (!age) m.reply('❌ Por favor no dejes tu edad vacía, haz el registro completo', m, rcanal);
-  if (name.length >= 30) m.reply('️☘ ¿puedes acortar tu nombre por favor?', m, rcanal);
+  if (name.length >= 30) conn.reply(m.chat, '️☘ ¿puedes acortar tu nombre por favor?', m, rcanal);
   age = parseInt(age);
   if (age > 100) conn.reply(m.chat, '☘️ por favor use una edad menor, no tan alta', m, rcanal);
-  if (age < 5) m.reply('[❌] Lo siento, pero no se permiten 5 años. Lo siento, pero no se permiten 5 años.', m, rcanal);
+  if (age < 5) conn.reply(m.chat, '[❌] Lo siento, pero no se permiten 5 años. Lo siento, pero no se permiten 5 años.', m, rcanal);
   user.name = name.trim();
   user.age = age;
   user.descripcion = bio;
