@@ -11,18 +11,12 @@ global.confirmCode = ''
 
 //• ↳𝑺𝑶𝑳𝑶 𝑫𝑬𝑺𝑨𝑹𝑹𝑶𝑳𝑳𝑨𝑫𝑶𝑹𝑬𝑺 𝑨𝑷𝑹𝑶𝑩𝑨𝑫𝑶𝑺
 global.owner = [
-['5218711426787', 'CREADOR', true],
-['5216566753569', '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀', true],
-['5213142183828', 'ramonxd', true],
-['5351524614'],
-['5217561063371'],
-['573012482597'],
-['5218715746374'],
-['5213141169709']
+["5218711426787", "Propietario 👑", true],
+["5492916450307"]
 ];
 
 //• ↳𝑺𝑶𝑳𝑶 𝑴𝑶𝑫𝑬𝑹𝑨𝑫𝑶𝑹𝑬𝑺!
-global.mods = ['5351524614', '5218711426787', '', '', '']
+global.mods = []
 
 global.suittag = ['5218711426787']
 global.prems = []
@@ -70,7 +64,7 @@ global.adios = fs.readFileSync('./media/Bye.jpg')
 global.photoSity = [imagen8, imagen1, imagen4, imagen6]
 
 global.libreria = 'Baileys'
-global.baileys = 'V 6.7.8'
+global.baileys = 'V 6.7.17'
 global.languaje = 'Español'
 global.nameqr = 'HuTao-Proyect'
 global.sessions = 'seccion-activas'
