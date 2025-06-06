@@ -133,7 +133,7 @@ return msg?.message || ""
 msgRetryCounterCache, // Resolver mensajes en espera
 msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
 defaultQueryTimeoutMs: undefined,
-version: [2, 3000, 1023223821] // Posdata: quiten la opción QR
+version: [2, 3000, 1023223821], // Posdata: quiten la opción QR
 }
 
 global.conn = makeWASocket(connectionOptions);
