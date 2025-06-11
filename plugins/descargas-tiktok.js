@@ -30,5 +30,6 @@ function createCaption(title, creator, duration) {
 handler.help = ['tiktok', 'tt'];
 handler.tags = ['downloader'];
 handler.command = ['tiktok', 'tt'];
+hanlder.group = true
 
 export default handler;
