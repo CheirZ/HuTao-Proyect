@@ -85,22 +85,6 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 #### 🤍 ACTIVAR EN RENDER
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%CheirZ%HuTao-Proyect) 
 
-```
-## Despliegue en BoxMineWorld
-
-[![Logo BoxMineWorld](https://boxmineworld.com/img/Logo.png)](https://boxmineworld.com)
-
-<details>
-  <summary><b>:paperclip: Enlaces Importantes</b></summary>
-
-- **Sitio Web:** [https://boxmineworld.com](https://boxmineworld.com)  
-- **Área de Clientes:** [https://dash.boxmineworld.com](https://dash.boxmineworld.com)  
-- **Panel de Control:** [https://panel.boxmineworld.com](https://panel.boxmineworld.com)  
-- **Documentación:** [https://docs.boxmineworld.com](https://docs.boxmineworld.com)  
-- **Comunidad de Discord:** [¡Únete aquí!](https://discord.gg/84qsr4v)
-
-</details>
-```
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
 
