@@ -85,7 +85,8 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 #### 🤍 ACTIVAR EN RENDER
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%CheirZ%HuTao-Proyect) 
 
-```## Despliegue en BoxMineWorld
+```
+## Despliegue en BoxMineWorld
 
 [![Logo BoxMineWorld](https://boxmineworld.com/img/Logo.png)](https://boxmineworld.com)
 
