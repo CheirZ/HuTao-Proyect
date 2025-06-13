@@ -84,6 +84,27 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 
 #### 🤍 ACTIVAR EN RENDER
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%CheirZ%HuTao-Proyect) 
+---
+
+## **`🔥 Despliegue en BoxMineWorld 🚀`**
+
+<a href="https://boxmineworld.com">
+  <img width="180px" src="https://i.imgur.com/allAyd4.png"/>
+</a>
+
+<details>
+ <summary><b>📎 Enlaces Importantes</b></summary>
+
+- **Pagina Oficial:** [`Boxmineworld`](https://boxmineworld.com)
+- **Tutorial - Crear cuenta en la Dashboard:** [`Dashboard`](https://www.youtube.com/watch?v=ZAwBLuNmIlI)
+- **Dashboard:** [`Dash`](https://dash.boxmineworld.com)
+- **Panel:** [`Aquí`](https://panel.boxmineworld.com)
+- **Dudas sobre el Host:** [`Discord`](https://discord.gg/84qsr4v) _(Preguntar por Vicemi)_
+- **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029Va71C1q2UPBOICnxu83r)
+
+</details>
+
+---
 
 
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
