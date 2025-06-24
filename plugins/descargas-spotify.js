@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         let songInfo = await spotifyxv(text);
         if (!songInfo.length) throw `No se encontró la canción.`;
         let song = songInfo[0];
-        const res = await fetch(`https://api.sylphy.xyz/download/spotify?url=&apikey=sylphy${song.url}`);
+        const res = await fetch(`https://api.sylphy.xyz/download/spotify?url=${song.url}&apikey=sylphy`);
         
         if (!res.ok) throw `Error al obtener datos de la API, código de estado: ${res.status}`;
         
