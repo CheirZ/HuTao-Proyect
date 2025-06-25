@@ -86,7 +86,7 @@ loadDatabase()
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.sessions)
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
-const {version} = await fetchLatestBaileysVersion();
+const { version } = await fetchLatestBaileysVersion();
 let phoneNumber = global.botNumberCode
 
 const methodCodeQR = process.argv.includes("qr")
@@ -133,7 +133,7 @@ return msg?.message || ""
 msgRetryCounterCache, // Resolver mensajes en espera
 msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
 defaultQueryTimeoutMs: undefined,
-version: [2, 3000, 1023223821], // Posdata: quiten la opción QR
+version: version,
 }
 
 global.conn = makeWASocket(connectionOptions);
@@ -156,8 +156,9 @@ phoneNumber = `+${phoneNumber}`
 rl.close()
 addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
-let codeBot = await conn.requestPairingCode(addNumber)
-codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
+let codeBot = await conn.requestPairingCode(addNumber, 'CHEIHUTA')
+let codi = 'CHEIHUTA'
+codeBot = codi?.match(/.{1,4}/g)?.join("-") || codi
 console.log(chalk.bold.white(chalk.bgMagenta(`👑 CÓDIGO DE VINCULACIÓN 👑`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}
