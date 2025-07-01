@@ -139,7 +139,7 @@ if (typeof chat !== 'object')
 global.db.data.chats[m.chat] = {}
 
 if (chat) {
-if (!('isBanned' in chat)) chat.isBanned = true         
+if (!('isBanned' in chat)) chat.isBanned = false         
 if (!('welcome' in chat)) chat.welcome = true           
 if (!('detect' in chat)) chat.detect = true               
 if (!('sWelcome' in chat)) chat.sWelcome = ''          
@@ -180,7 +180,7 @@ if (!('autolevelup' in chat))  chat.autolevelup = true
 if (!isNumber(chat.expired)) chat.expired = 0
 } else
 global.db.data.chats[m.chat] = {
-isBanned: true,
+isBanned: false,
 welcome: true,
 detect: true,
 sWelcome: '',
