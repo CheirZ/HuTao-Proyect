@@ -17,6 +17,7 @@ global.owner = [
 
 // @s.whatsapp.net
 ["5218711426787", "Propietario 👑", true],
+["523142183828", "OptiShield", true],
 ["5492916450307"],
 ["5218712620915"]
 ];
