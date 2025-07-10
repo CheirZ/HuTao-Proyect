@@ -247,7 +247,7 @@ mkdirSync(global.rutaJadiBot, { recursive: true })
 }
 
 // <---• Iniciador de Sub-Bots •--->
-   await startSub();
+   await startSubBot();
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
 const pluginFilter = (filename) => /\.js$/.test(filename)
