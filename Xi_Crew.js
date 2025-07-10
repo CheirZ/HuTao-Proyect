@@ -22,7 +22,7 @@ import { startSub } from './lib/conexion.js';
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
-const {DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser} = await import('@whiskeysockets/baileys')
+const {DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, Browsers} = await import('@whiskeysockets/baileys')
 import readline from 'readline'
 import NodeCache from 'node-cache'
 const {chain} = lodash
@@ -100,26 +100,37 @@ console.log(chalk.bold.redBright(`[ ✿ ]  No se permiten numeros que no sean 1 
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
 
-console.info = () => {} 
-console.debug = () => {} 
-
 const connectionOptions = {
-    logger: pino({ level: 'silent' }),
-    printQRInTerminal: false,
-    mobile: false,
-    browser: ['Ubuntu', 'Chrome', '110.0.5585.95'],
-      auth: {
-        creds: state.creds,
-        keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'}))
-    },
-    markOnlineOnConnect: true,
-    generateHighQualityLinkPreview: true,
-    msgRetryCounterCache: msgRetryCache,
-    defaultQueryTimeoutMs: undefined,
-    version: version
-}
+logger: pino({ level: 'silent' }),
+printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
+mobile: MethodMobile, 
+browser: opcion == '1' ? Browsers.macOS("Desktop") : methodCodeQR ? Browsers.macOS("Desktop") : Browsers.macOS("Chrome"), 
+auth: {
+creds: state.creds,
+keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
+},
+markOnlineOnConnect: false, 
+generateHighQualityLinkPreview: true, 
+syncFullHistory: false,
+getMessage: async (key) => {
+try {
+let jid = jidNormalizedUser(key.remoteJid);
+let msg = await store.loadMessage(jid, key.id);
+return msg?.message || "";
+} catch (error) {
+return "";
+}},
+msgRetryCounterCache: msgRetryCounterCache || new Map(),
+userDevicesCache: userDevicesCache || new Map(),
+//msgRetryCounterMap,
+defaultQueryTimeoutMs: undefined,
+cachedGroupMetadata: (jid) => globalThis.conn.chats[jid] ?? {},
+version: version, 
+keepAliveIntervalMs: 55000, 
+maxIdleTimeMs: 60000, 
+};
 
-global.conn = makeWASocket(connectionOptions);
+globalThis.conn = makeWASocket(connectionOptions);
 
 if (!fs.existsSync(`./${sessions}/creds.json`)) {
 if (opcion === '2' || methodCode) {
@@ -130,7 +141,7 @@ if (!!phoneNumber) {
 addNumber = phoneNumber.replace(/[^0-9]/g, '')
 } else {
 do {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[✿]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
+phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[ ✿ ]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
 phoneNumber = phoneNumber.replace(/\D/g,'')
 if (!phoneNumber.startsWith('+')) {
 phoneNumber = `+${phoneNumber}`
