@@ -11,7 +11,6 @@ import ws from 'ws';
 /**
  * @type {import('@adiwajshing/baileys')}  
  */
-const { proto } = (await import('@whiskeysockets/baileys')).default
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
 clearTimeout(this)
@@ -27,16 +26,16 @@ this.msgqueque = this.msgqueque || []
 this.uptime = this.uptime || Date.now()
 if (!chatUpdate)
 return
-    this.pushMessage(chatUpdate.messages).catch(console.error)
+this.pushMessage(chatUpdate.messages).catch(console.error)
 let m = chatUpdate.messages[chatUpdate.messages.length - 1]
-if (!m)
-return;
-if (global.db.data == null)
-await global.loadDatabase()       
-try {
-m = smsg(this, m) || m
+try{m = smsg(this, m) || m;}catch{ if(!m) return };
 if (!m)
 return
+let groupMetadata = {};
+for(let o = 0; o < 10; o++){try{ groupMetadata = await this.groupMetadata(m.chat); break;}catch{}};
+if (global.db.data == null)
+await global.loadDatabase();
+try {
 m.exp = 0
 m.moras = false
 try {
@@ -56,7 +55,6 @@ if (!('registered' in user)) user.registered = false
 if (!user.registered) {
 if (!('name' in user)) user.name = m.name
 if (!('age' in user)) user.age = 0
-//if (!isNumber(user.OTP)) user.OTP = ''
 if (!isNumber(user.regTime)) user.regTime = -1
 }
 
@@ -86,7 +84,6 @@ afk: -1,
 afkReason: '',
 name: m.name,
 age: 0,
-//OTP: '',
 bank: 0,
 banned: false,
 BannedReason: '',
@@ -252,10 +249,10 @@ autobio: false,
 console.error(e)
 }
 
-const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net'
+const isROwner = [...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
 const isOwner = isROwner || m.fromMe
-const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-//const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender);
 const isPrems = isROwner || global.db.data.users[m.sender].premiumTime > 0
 if (opts['queque'] && m.text && !(isMods || isPrems)) {
 let queque = this.msgqueque, time = 1000 * 5
@@ -282,13 +279,34 @@ m.exp += Math.ceil(Math.random() * 10)
 let usedPrefix
 let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
 
-const groupMetadata = (m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}) || {}
-const participants = (m.isGroup ? groupMetadata.participants : []) || []
-const user = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) === m.sender) : {}) || {} // User Data
-const bot = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) == this.user.jid) : {}) || {}
-const isRAdmin = user?.admin == 'superadmin' || false
-const isAdmin = isRAdmin || user?.admin == 'admin' || false //user admins? 
-const isBotAdmin = bot?.admin || false //Detecta sin el bot es admin
+async function getLidFromJid(id, conn) {
+  if (id.endsWith('@lid')) return id
+  const res = await conn.onWhatsApp(id).catch(() => [])
+  return res[0]?.lid || id
+}
+
+const senderLid = await getLidFromJid(m.sender, conn)
+const botLid = await getLidFromJid(conn.user.jid, conn)
+const senderJid = m.sender
+const botJid = conn.user.jid
+
+const groupMetadata = m.isGroup
+  ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null))
+  : {}
+
+const participants = m.isGroup ? (groupMetadata.participants || []) : []
+
+const user = participants.find(
+  p => p.id === senderLid || p.id === senderJid
+) || {}
+
+const bot = participants.find(
+  p => p.id === botLid || p.id === botJid
+) || {}
+
+const isRAdmin = user?.admin === "superadmin"
+const isAdmin = isRAdmin || user?.admin === "admin"
+const isBotAdmin = !!bot?.admin
 
 const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
 for (let name in global.plugins) {
@@ -298,9 +316,6 @@ continue
 if (plugin.disabled)
 continue
 const __filename = join(___dirname, name)
-/*if (m.sender === this.user.jid) {
-continue
-}*/
 if (typeof plugin.all === 'function') {
 try {
 await plugin.all.call(this, m, {
@@ -309,17 +324,10 @@ __dirname: ___dirname,
 __filename
 })
 } catch (e) {
-// if (typeof e === 'string') continue
 console.error(e)
-/*for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
-let data = (await conn.onWhatsApp(jid))[0] || {}
-if (data.exists)
-m.reply(`⧋〘📕 FORMATO ERRONEO 📕〙⧋\n\n❒ 𝗘𝗥𝗥𝗢𝗥:\n\`\`\`${format(e)}\`\`\`\n`.trim(), data.jid)
-}*/
 }}
 if (!opts['restrict'])
 if (plugin.tags && plugin.tags.includes('admin')) {
-// global.dfail('restrict', m, this)
 continue
 }
 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
@@ -531,8 +539,7 @@ if (m) { let utente = global.db.data.users[m.sender]
 if (utente.muto == true) {
 let bang = m.key.id
 let cancellazzione = m.key.participant
-await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: cancellazzione }})
-}
+for(let i = 0; i < 5; i++){try{await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: cancellazzione }})}catch{}}}
 if (m.sender && (user = global.db.data.users[m.sender])) {
 user.exp += m.exp
 user.moras -= m.moras * 1
@@ -601,15 +608,16 @@ switch (action) {
 case 'add':
 case 'remove':
 if (chat.welcome) {
-let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
 for (let user of participants) {
 let pp = global.icons
 try {
 pp = await this.profilePictureUrl(user, 'image')
 } catch (e) {
 } finally {
-let apii = await this.getFile(pp)                                      
-const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
+if(!m.isGroup) return;
+let apii = await this.getFile(pp);                                    
+let botTt2 = {};
+for(let i = 0; i < 10; i++){try{botTt2 = (await this.groupMetadata(m.chat)).participants.find(u => this.decodeJid(u.id) == this.user.jid);break;}catch{}}
 const isBotAdminNn = botTt2?.admin === "admin" || false
 text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@date', global.botdate).replace('@time', global.bottime).replace('@readMore', global.readMore).replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*Ai-Yaemori*\n𝗦𝗶𝗻 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝗰𝗶𝗼𝗻') :
 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0]).replace('@date', global.botdate).replace('@time', global.bottime)
@@ -744,5 +752,7 @@ if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
 if (global.conns && global.conns.length > 0 ) {
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 for (const userr of users) {
-userr.subreloadHandler(false)
+    try{
+       userr.subreloadHandler(false)
+    }catch{}
 }};
