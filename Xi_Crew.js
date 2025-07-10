@@ -1,31 +1,43 @@
 // Aqui tocó David, por eso todo va bugeado.
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
-import './config.js'
-import {createRequire} from 'module'
-import path, {join} from 'path'
-import {fileURLToPath, pathToFileURL} from 'url'
-import {platform} from 'process'
-import {readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSync, rmSync, watch} from 'fs'
+import './settings.js'
+import './plugins/_allfake.js'
+import { setupMaster, fork } from 'cluster'
+import { startSub } from './lib/conexion.js';
+import { watchFile, unwatchFile } from 'fs'
+import cfonts from 'cfonts'
+import { createRequire } from 'module'
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
+import * as ws from 'ws'
+import fs, { readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSync, rmSync, watch } from 'fs'
 import yargs from 'yargs';
-import {spawn} from 'child_process'
+import { spawn, execSync } from 'child_process'
 import lodash from 'lodash'
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
-import {format} from 'util'
+import { tmpdir } from 'os'
+import { format } from 'util'
 import boxen from 'boxen'
+import P from 'pino'
 import pino from 'pino'
-import {Boom} from '@hapi/boom'
-import {makeWASocket, protoType, serialize} from './lib/simple.js'
-import {Low, JSONFile} from 'lowdb'
-import { startSub } from './lib/conexion.js';
+import Pino from 'pino'
+import path, { join, dirname } from 'path'
+import { Boom } from '@hapi/boom'
+import { makeWASocket, protoType, serialize } from './lib/simple.js'
+import { Low, JSONFile } from 'lowdb'
+import { mongoDB, mongoDBV2 } from './lib/mongoDB.js'
+import store from './lib/store.js'
+const { proto } = (await import('@whiskeysockets/baileys')).default
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
-const {DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, Browsers} = await import('@whiskeysockets/baileys')
-import readline from 'readline'
+const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, Browsers } = await import('@whiskeysockets/baileys')
+import readline, { createInterface } from 'readline'
 import NodeCache from 'node-cache'
-const {chain} = lodash
+const { CONNECTING } = ws
+const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 protoType()
