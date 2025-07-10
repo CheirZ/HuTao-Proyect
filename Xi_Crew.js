@@ -239,8 +239,8 @@ conn.ev.on('creds.update', conn.credsUpdate)
 isInit = false
 return true
 };
+
 global.rutaJadiBot = join(__dirname, `./${jadi}`)
-if (global.hutaoJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
 } else { 
