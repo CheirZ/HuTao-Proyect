@@ -42,15 +42,17 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 const { say } = cfonts
 
-say('HuTao\nProyect', {
-font: 'block',
-align: 'center',
-colors: ['red']
+console.log(chalk.magentaBright('\nIniciando...'))
+
+say('HuTao', {
+  font: 'simple',
+  align: 'left',
+  gradient: ['green', 'white']
 })
-say(`Developed By • Xi_Miguelon`, {
-font: 'console',
-align: 'center',
-colors: ['yellow']
+say('Made With CheirZ', {
+  font: 'console',
+  align: 'center',
+  colors: ['cyan', 'magenta', 'yellow']
 })
 
 protoType()
