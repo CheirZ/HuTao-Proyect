@@ -18,7 +18,7 @@ import pino from 'pino'
 import {Boom} from '@hapi/boom'
 import {makeWASocket, protoType, serialize} from './lib/simple.js'
 import {Low, JSONFile} from 'lowdb'
-import { hutaoJadiBot } from './plugins/jadibot-serbot.js';
+import { startSub } from './lib/conexion.js';
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
@@ -243,18 +243,11 @@ global.rutaJadiBot = join(__dirname, `./${jadi}`)
 if (global.hutaoJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
-console.log(chalk.bold.cyan(`La carpeta: ${jadi} se creó correctamente.`))
-} else {
-console.log(chalk.bold.cyan(`La carpeta: ${jadi} ya está creada.`)) 
+} else { 
 }
 
-const readRutaJadiBot = readdirSync(rutaJadiBot)
-if (readRutaJadiBot.length > 0) {
-const creds = 'creds.json'
-for (const gjbts of readRutaJadiBot) {
-const botPath = join(rutaJadiBot, gjbts)
-const readBotPath = readdirSync(botPath)
-if (readBotPath.includes(creds)) { hutaoJadiBot({pathHutaoJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})}}}}
+// <---• Iniciador de Sub-Bots •--->
+   await startSub();
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
 const pluginFilter = (filename) => /\.js$/.test(filename)
