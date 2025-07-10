@@ -86,10 +86,12 @@ global.db.chain = chain(global.db.data)
 }
 loadDatabase()
 
-const {state, saveCreds} = await useMultiFileAuthState(global.sessions)
-const msgRetryCache = new NodeCache()
-const { version } = await fetchLatestBaileysVersion();
-let phoneNumber = global.botNumberCode
+const {state, saveState, saveCreds} = await useMultiFileAuthState(globalThis.sessions)
+const msgRetryCounterMap = new Map()
+const msgRetryCounterCache = new NodeCache({ stdTTL: 0, checkperiod: 0 })
+const userDevicesCache = new NodeCache({ stdTTL: 0, checkperiod: 0 })
+const { version } = await fetchLatestBaileysVersion()
+let phoneNumber = global.botNumber
 
 const methodCodeQR = process.argv.includes("qr")
 const methodCode = !!phoneNumber || process.argv.includes("code")
