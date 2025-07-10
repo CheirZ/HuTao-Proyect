@@ -96,7 +96,7 @@ do {
 opcion = await question(colores('Seleccione una opción:\n') + opcionQR('1. Con código QR\n') + opcionTexto('2. Con código de texto de 8 dígitos\n--> '))
 
 if (!/^[1-2]$/.test(opcion)) {
-console.log(chalk.bold.redBright(`🚩 No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
+console.log(chalk.bold.redBright(`[ ✿ ]  No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
 
@@ -130,7 +130,7 @@ if (!!phoneNumber) {
 addNumber = phoneNumber.replace(/[^0-9]/g, '')
 } else {
 do {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`🚩 Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.yellowBright(`☁️  Ejemplo: 57321×××××××`)}\n${chalk.bold.magentaBright('---> ')}`)))
+phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[✿]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
 phoneNumber = phoneNumber.replace(/\D/g,'')
 if (!phoneNumber.startsWith('+')) {
 phoneNumber = `+${phoneNumber}`
@@ -139,17 +139,16 @@ phoneNumber = `+${phoneNumber}`
 rl.close()
 addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
-let codeBot = await conn.requestPairingCode(addNumber, 'CHEIHUTA')
-let codi = 'CHEIHUTA'
-codeBot = codi?.match(/.{1,4}/g)?.join("-") || codi
-console.log(chalk.bold.white(chalk.bgMagenta(`👑 CÓDIGO DE VINCULACIÓN 👑`)), chalk.bold.white(chalk.white(codeBot)))
+let codeBot = await conn.requestPairingCode(addNumber)
+codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
+console.log(chalk.bold.white(chalk.bgMagenta(`[ ✿ ]  Código:`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}
 }
 
 conn.isInit = false;
 conn.well = false;
-//conn.logger.info(`🔵  H E C H O\n`)
+conn.logger.info(`[ 🚀 ]  H E C H O\n`)
 
 if (!opts['test']) {
 if (global.db) setInterval(async () => {
@@ -158,7 +157,7 @@ if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 't
 }, 30 * 1000);
 }
 
-if (opts['server']) (await import('./server.js')).default(global.conn, PORT);
+// if (opts['server']) (await import('./server.js')).default(global.conn, PORT);
 
 async function connectionUpdate(update) {
 const {connection, lastDisconnect, isNewLogin} = update;
@@ -172,7 +171,7 @@ global.timestamp.connect = new Date;
 if (global.db.data == null) loadDatabase();
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
-console.log(chalk.bold.yellow(`\n✅ ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS`))}
+console.log(chalk.bold.yellow(`\n[ ✿ ]  Escanea este código QR`))}
 }
 if (connection == 'open') {
 console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: '', float: '' }))}
