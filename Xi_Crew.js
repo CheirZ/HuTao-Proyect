@@ -176,9 +176,9 @@ phoneNumber = `+${phoneNumber}`
 rl.close()
 addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
-let codeBot = await conn.requestPairingCode(addNumber)
-codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`[ ✿ ]  Código:`)), chalk.bold.white(chalk.white(codeBot)))
+let codeBot = await conn.requestPairingCode(addNumber, "HUTAO001")
+// codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
+console.log(chalk.bold.white(chalk.bgMagenta(`[ ✿ ]  Código:`)), chalk.bold.white(chalk.white("HUTA-O001")))
 }, 3000)
 }}}
 }
@@ -202,8 +202,8 @@ global.stopped = connection;
 if (isNewLogin) conn.isInit = true;
 const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
 if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
-await globalThis.reloadHandler(true).catch(console.error);
-globalThis.timestamp.connect = new Date;
+await global.reloadHandler(true).catch(console.error);
+global.timestamp.connect = new Date;
 }
 if (globalThis.db.data == null) loadDatabase();
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
@@ -220,21 +220,21 @@ if (reason === DisconnectReason.badSession) {
 console.log(chalk.bold.cyanBright(`\n💦 Sin conexión, borra la session principal del Bot, y conectate nuevamente.`))
 } else if (reason === DisconnectReason.connectionClosed) {
 console.log(chalk.bold.magentaBright(`\n🎋 Reconectando la conexión del Bot...`))
-await globalThis.reloadHandler(true).catch(console.error)
+await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.connectionLost) {
 console.log(chalk.bold.blueBright(`\n🍁 Conexión perdida con el servidor, reconectando el Bot...`))
-await globalThis.reloadHandler(true).catch(console.error)
+await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.connectionReplaced) {
 console.log(chalk.bold.yellowBright(`\n🐷 La conexión del Bot ha sido reemplazada.`))
 } else if (reason === DisconnectReason.loggedOut) {
 console.log(chalk.bold.redBright(`\n🍀 Sin conexión, borra la session principal del Bot, y conectate nuevamente.`))
-await globalThis.reloadHandler(true).catch(console.error)
+await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.restartRequired) {
 console.log(chalk.bold.cyanBright(`\n🐞 Conectando el Bot con el servidor...`))
-await globalThis.reloadHandler(true).catch(console.error)
+await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.timedOut) {
 console.log(chalk.bold.yellowBright(`\n🦋 Conexión agotada, reconectando el Bot...`))
-await globalThis.reloadHandler(true).catch(console.error) //process.send('reset')
+await global.reloadHandler(true).catch(console.error) //process.send('reset')
 } else {
 console.log(chalk.bold.redBright(`\n🎍 Conexión cerrada, conectese nuevamente.`))
 }}
