@@ -49,7 +49,7 @@ global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse()
 global.prefix = new RegExp('^[/.$#!]')
 // global.opts['db'] = process.env['db']
 
-global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile('media/database/database.json'))
+global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile('database.json'))
 
 global.DATABASE = global.db 
 global.loadDatabase = async function loadDatabase() {
@@ -67,9 +67,6 @@ global.db.READ = null
 global.db.data = {
 users: {},
 chats: {},
-stats: {},
-msgs: {},
-sticker: {},
 settings: {},
 ...(global.db.data || {}),
 }
@@ -405,7 +402,7 @@ if (stopped === 'close' || !conn || !conn.user) return
 await purgeOldFiles()
 console.log(chalk.bold.cyanBright(`\n╭» 🟠 ARCHIVOS 🟠\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 10)
 
-_quickTest().then(() => conn.logger.info(chalk.bold(`🔵  H E C H O\n`.trim()))).catch(console.error)
+_quickTest().catch(console.error)
 
 async function isValidPhoneNumber(number) {
 try {
