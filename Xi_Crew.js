@@ -18,7 +18,7 @@ import pino from 'pino'
 import {Boom} from '@hapi/boom'
 import {makeWASocket, protoType, serialize} from './lib/simple.js'
 import {Low, JSONFile} from 'lowdb'
-import { startSubBot } from './lib/conexion.js';
+import { startSub } from './lib/conexion.js';
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
@@ -247,7 +247,7 @@ mkdirSync(global.rutaJadiBot, { recursive: true })
 }
 
 // <---• Iniciador de Sub-Bots •--->
-   await startSubBot();
+   await startSub();
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
 const pluginFilter = (filename) => /\.js$/.test(filename)
