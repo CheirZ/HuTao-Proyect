@@ -81,9 +81,10 @@ let phoneNumber = global.botNumberCode
 
 const methodCodeQR = process.argv.includes("qr")
 const methodCode = !!phoneNumber || process.argv.includes("code")
-const colores = chalk.bgMagenta.white
-const opcionQR = chalk.bold.green
-const opcionTexto = chalk.bold.cyan
+const MethodMobile = process.argv.includes("mobile")
+const colors = chalk.bold.white
+const qrOption = chalk.blueBright
+const textOption = chalk.cyan
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
@@ -93,12 +94,25 @@ opcion = '1'
 }
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
 do {
-opcion = await question(colores('Seleccione una opción:\n') + opcionQR('1. Con código QR\n') + opcionTexto('2. Con código de texto de 8 dígitos\n--> '))
+        opcion = await question(colors("Seleccione una opción:\n") + qrOption("1. Con código QR\n") + textOption("2. Con código de texto de 8 dígitos\n--> "))
 
 if (!/^[1-2]$/.test(opcion)) {
-console.log(chalk.bold.redBright(`[ ✿ ]  No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
+console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
+
+const filterStrings = [
+"Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
+"Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
+"RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
+"U2Vzc2lvbiBlcnJvcg==", // "Session error"
+"RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
+"RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
+]
+
+    console.info = () => { }
+    console.debug = () => { }
+    ['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
@@ -130,7 +144,7 @@ keepAliveIntervalMs: 55000,
 maxIdleTimeMs: 60000, 
 };
 
-globalThis.conn = makeWASocket(connectionOptions);
+global.conn = makeWASocket(connectionOptions);
 
 if (!fs.existsSync(`./${sessions}/creds.json`)) {
 if (opcion === '2' || methodCode) {
@@ -385,6 +399,16 @@ if (err) {
 // console.log(chalk.bold.green(`\n╭» 🟣 ARCHIVO 🟣\n│→ ${file} BORRADO CON ÉXITO\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
 } }) }
 }) }) }) }
+
+function redefineConsoleMethod(methodName, filterStrings) {
+const originalConsoleMethod = console[methodName]
+console[methodName] = function() {
+const message = arguments[0]
+if (typeof message === 'string' && filterStrings.some(filterString => message.includes(atob(filterString)))) {
+arguments[0] = ""
+}
+originalConsoleMethod.apply(console, arguments)
+}}
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
