@@ -43,7 +43,7 @@ var grupo = 'https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw'
 global.redes = grupo
 
 let category = "imagen"
-const db = './media/database/db.json'
+const db = './src/db.json'
 const db_ = JSON.parse(fs.readFileSync(db))
 const random = Math.floor(Math.random() * db_.links[category].length)
 const randomlink = db_.links[category][random]
