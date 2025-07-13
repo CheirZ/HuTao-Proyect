@@ -40,7 +40,7 @@ global.waitttt = 'ꨄ︎ 🅱︎🅰︎🅹︎🅰︎🅽︎🅳︎🅾︎ 🆃�
 
 var grupo = 'https://chat.whatsapp.com/KxHaM2J0NWPDR4RU24OmFw'  
 
-global.redes = grupo
+global.redes = "https://github.com/CheirZ"
 
 let category = "imagen"
 const db = './src/db.json'
