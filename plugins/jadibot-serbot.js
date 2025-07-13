@@ -12,7 +12,7 @@ const handler = async (m, { conn, command }) => {
   const isCode = /^(qr|code)$/.test(command) 
   const caption = isCode ? rtx2 : rtx
 
-  await startSubBot(m, conn, caption, isCode, phone, m.chat, commandFlags)
+  await startSub(m, conn, caption, isCode, phone, m.chat, commandFlags)
 }
 
 handler.help = ['jadibot', 'serbot', 'code']
