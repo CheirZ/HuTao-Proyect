@@ -1,4 +1,4 @@
-import { startSubDynamic } from '../lib/conexion.js';
+import { startSubDynamic, startSub } from '../lib/conexion.js';
 
 const commandFlags = {};
 
@@ -16,7 +16,6 @@ const generateCaption = (isCode, devContact = '✿') => {
 ➤ *Importante:*
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
-
 ${devContact}`;
   }
 
@@ -29,7 +28,6 @@ ${devContact}`;
 \`1\` » Haz clic en los 3 puntitos de la parte superior derecha
 \`2\` » Toca en dispositivos vinculados
 \`3\` » Escanea el código QR para iniciar sesión con el bot
-
 ❤️‍🔥 *Este código QR expira en 45 segundos*
 
 *𝐉𝐀𝐃𝐈𝐁𝐎𝐓 𝐄𝐃𝐈𝐓𝐀𝐃𝐎 𝐏𝐎𝐑 𝐗𝐢_𝐌𝐢𝐠𝐮𝐞𝐥𝐨𝐧77𝐗𝐗*`;
@@ -60,18 +58,21 @@ const handler = async (m, { conn, command }) => {
   try {
     const result = await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
 
-    if (!result?.success) {
-      await conn.sendMessage(m.chat, {
-        text: '[ ✿ ] El inicio de sesión falló, intente nuevamente.',
-        quoted: m
-      });
-      return;
+    let connected = false;
+    for (let i = 0; i < 12; i++) {
+      await new Promise(res => setTimeout(res, 5000));
+      connected = startSub(phone);
+      if (connected) break;
     }
 
-    await conn.sendMessage(m.chat, {
-      text: '[ ✿ ] Configurando tu sesión....',
-      quoted: m
-    });
+    if (connected) {
+       return
+    } else {
+      await conn.sendMessage(m.chat, {
+        text: '[ ✿ ] El inicio de sesión falló. No se detectó conexión.',
+        quoted: m
+      });
+    }
 
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
