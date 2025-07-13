@@ -46,14 +46,14 @@ global.vsJB = '5.0'
 
 
 //• ↳ ◜𝑰𝑴𝑨́𝑮𝑬𝑵𝑬𝑺◞ • 🌇
-global.imagen1 = "",
-global.imagen2 = "";
-global.imagen3 = "";
-global.imagen4 = "";
+global.imagen1 = "https://stellarwa.xyz/files/1752422417390.jpg",
+global.imagen2 = "https://stellarwa.xyz/files/1752422509254.jpg";
+global.imagen3 = "https://stellarwa.xyz/files/1752422535890.jpg";
+global.imagen4 = "https://stellarwa.xyz/files/1752422562260.jpg";
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
-global.imagen6 = "";
-global.imagen7 = "";
-global.imagen8 = "";
+global.imagen6 = "https://stellarwa.xyz/files/1752422642121.jpg";
+global.imagen7 = "https://stellarwa.xyz/files/1752422693806.jpg";
+global.imagen8 = "https://stellarwa.xyz/files/1752422716622.jpg";
 global.imagen9 = fs.readFileSync('./src/menu_en.png')
 global.imagen10 = fs.readFileSync('./src/nuevobot.jpg')
 global.miniurl = fs.readFileSync('./src/grupo.jpg');
@@ -65,7 +65,7 @@ global.logo5 = fs.readFileSync('./src/logo5.jpg')
 global.logo7 = fs.readFileSync('./src/Logo7.png')
 global.logo8 = fs.readFileSync('./src/Logo8.jpg')
 global.rule = fs.readFileSync('./src/rule.jpg')
-global.welcome = fs.readFileSync('./media/Welcome.jpg')
+global.welcome = "https://stellarwa.xyz/files/1752422465230.jpg";
 global.adios = fs.readFileSync('./media/Bye.jpg')
 
 global.photoSity = [imagen8, imagen1, imagen4, imagen6]
