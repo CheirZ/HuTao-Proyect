@@ -38,7 +38,7 @@ const handler = async (m, { conn, command }) => {
   const isCode = command?.toLowerCase() === 'code';
   const caption = generateCaption(isCode, global.dev);
 
-  if (!sender || !phone) {
+  if (!m.sender || !phone) {
     return conn.sendMessage(m.chat, {
       text: '[ ✿ ] No se pudo procesar tu solicitud. El identificador del usuario es inválido.',
       quoted: m
