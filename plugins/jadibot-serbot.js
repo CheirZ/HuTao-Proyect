@@ -34,8 +34,7 @@ ${devContact}`;
 };
 
 const handler = async (m, { conn, command }) => {
-  const sender = m.sender;
-  const phone = sender?.split('@')[0];
+  const phone = m.sender.split('@')[0];
   const isCode = command?.toLowerCase() === 'code';
   const caption = generateCaption(isCode, global.dev);
 
