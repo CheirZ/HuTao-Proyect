@@ -1,12 +1,6 @@
 import { startSub } from '../lib/conexion.js'
-let commandFlags = {}
 
 const handler = async (m, { conn, command }) => {
-  if (!commandFlags[m.sender]) {
-    commandFlags[m.sender] = false
-  }
-
-  commandFlags[m.sender] = true
 
   const rtx = `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
   
