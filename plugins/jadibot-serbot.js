@@ -59,7 +59,7 @@ const handler = async (m, { conn, command }) => {
 
   try {
     await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
-    m.reply(phone)
+    m.reply(`[ ✿ ] Configurando tu sesión....`)
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
     await conn.sendMessage(m.chat, {
