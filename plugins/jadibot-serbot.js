@@ -58,8 +58,21 @@ const handler = async (m, { conn, command }) => {
   commandFlags[sender] = true;
 
   try {
-    await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
-    m.reply(`[ ✿ ] Configurando tu sesión....`)
+    const result = await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
+
+    if (!result?.success) {
+      await conn.sendMessage(m.chat, {
+        text: '[ ✿ ] El inicio de sesión falló, intente nuevamente.',
+        quoted: m
+      });
+      return;
+    }
+
+    await conn.sendMessage(m.chat, {
+      text: '[ ✿ ] Configurando tu sesión....',
+      quoted: m
+    });
+
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
     await conn.sendMessage(m.chat, {
