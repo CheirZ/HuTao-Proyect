@@ -1,8 +1,12 @@
-import { startSub } from '../lib/conexion.js';
-let commandFlags = {};
+import { startSub } from '../lib/conexion.js'
+let commandFlags = {}
 
 const handler = async (m, { conn, command }) => {
-  commandFlags[m.sender] = true; 
+  if (!commandFlags[m.sender]) {
+    commandFlags[m.sender] = false
+  }
+
+  commandFlags[m.sender] = true
 
   const rtx = `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
   
@@ -18,7 +22,7 @@ const handler = async (m, { conn, command }) => {
 
 ❤️‍🔥 *¡Este código QR expira en 45 segundos!*
 
-*𝐉𝐀𝐃𝐈𝐁𝐎𝐓 𝐄𝐃𝐈𝐓𝐀𝐃𝐎 𝐏𝐎𝐑 𝐗𝐢_𝐌𝐢𝐠𝐮𝐞𝐥𝐨𝐧77𝐗𝐗*`;
+*𝐉𝐀𝐃𝐈𝐁𝐎𝐓 𝐄𝐃𝐈𝐓𝐀𝐃𝐎 𝐏𝐎𝐑 𝐗𝐢_𝐌𝐢𝐠𝐮𝐞𝐥𝐨𝐧77𝐗𝐗*`
 
   const rtx2 = `☯ sᴜʙ ʙᴏᴛ-ᴍᴏᴅᴇ ᴄᴏᴅᴇ
 
@@ -33,24 +37,25 @@ const handler = async (m, { conn, command }) => {
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
 
-${global.dev}`;
+${global.dev}`
 
-  const phone = m.sender.split('@')[0];
-  const isCode = /^(qr|code)$/i.test(command);
-  const caption = isCode ? rtx2 : rtx;
+  const phone = m.sender.split('@')[0]
+  const isCode = /^(qr|code)$/i.test(command)
+  const caption = isCode ? rtx2 : rtx
+
   try {
-    await startSub(m, conn, caption, isCode, phone, m.chat, commandFlags);
+    await startSub(m, conn, caption, isCode, phone, m.chat, commandFlags)
   } catch (error) {
-    console.error("Error starting sub bot:", error);
+    console.error("Error starting sub bot:", error)
     await conn.sendMessage(m.chat, {
       text: "Hubo un error al intentar iniciar el Sub Bot. Por favor, inténtalo de nuevo más tarde.",
       quoted: m
-    });
+    })
   }
-};
+}
 
-handler.help = ['qr', 'code'];
-handler.tags = ['jadibot'];
-handler.command = /^(code|qr)$/i;
+handler.help = ['jadibot', 'serbot', 'code']
+handler.tags = ['jadibot']
+handler.command = /^(code|qr)$/i
 
-export default handler;
+export default handler
