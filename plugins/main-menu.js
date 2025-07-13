@@ -190,24 +190,14 @@ await conn.sendMessage(
     forwardedNewsletterMessageInfo: {
       newsletterJid: channelRD.id,
       newsletterName: channelRD.name,
-      serverMessageId: -1,
-    },/*
-    forwardingScore: 999,
-    externalAdReply: {
-      title: '*＊✿❀𝐇𝐮𝐓𝐚𝐨-𝐌𝐃❀✿＊*',
-      body: dev,
-      thumbnailUrl: icono,
-      sourceUrl: redes,
-      mediaType: 1,
-      renderLargerThumbnail: false,
-    },*/
+      serverMessageId: 0,
+    },
   },
-
   gifPlayback: true, gifAttribution: 0 },
-  { quoted: fkontak })
+  { quoted: m })
 
   } catch (e) {
-    conn.reply(m.chat, '🔵 Lo sentimos, el menú tiene un error', m, rcanal, )
+    conn.reply(m.chat, `[ ✿ ] Ocurrió un error.\n> ${e}`, m)
     throw e
   }
 }
