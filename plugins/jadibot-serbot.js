@@ -30,7 +30,7 @@ const rtx2 = `☯ sᴜʙ ʙᴏᴛ-ᴍᴏᴅᴇ ᴄᴏᴅᴇ
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
 
-${devContact}`;
+${dev}`;
 
 const phone = m.sender?.split('@')[0];
 const isCode = /^(qr|code)$/.test(command);
