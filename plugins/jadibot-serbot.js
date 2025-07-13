@@ -35,7 +35,7 @@ ${devContact}`;
 const phone = m.sender?.split('@')[0];
 const isCode = /^(qr|code)$/.test(command);
 const caption = isCode ? rtx2 : rtx;
-await startSubBot(m, conn, caption, isCode, phone, m.chat, commandFlags);
+await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
 };
 handler.help = ['qr', 'code'];
 handler.tags = ['jadibot'];
