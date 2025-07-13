@@ -17,7 +17,7 @@ const generateCaption = (isCode, devContact = 'Powered By Miguel') => {
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
 
-${devContact} ${isCode}`
+${devContact}`
     : `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
 
 ↂ SUB BOT FUNCION֎
@@ -56,7 +56,7 @@ const handler = async (m, { conn, command }) => {
   commandFlags[sender] = true;
 
   try {
-    await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
+    await startSubDynamic(m, conn, caption, false, phone, m.chat, commandFlags);
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
     await conn.sendMessage(m.chat, {
