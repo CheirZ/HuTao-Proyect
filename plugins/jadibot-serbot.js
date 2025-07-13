@@ -1,20 +1,75 @@
-import { startSubBot } from '../lib/subbot.js';
-let commandFlags = {}; 
+import { startSubDynamic } from '../lib/conexion.js';
+
+const commandFlags = {};
+
+const generateCaption = (isCode, devContact = '🛠') => {
+  return isCode
+    ? `☯ sᴜʙ ʙᴏᴛ-ᴍᴏᴅᴇ ᴄᴏᴅᴇ
+
+✰ Usa éste Código para convertirte en Sub-Bot Temporal.
+
+→ Tres Puntitos
+→ Dispositivos Vinculados
+→ Vincular Dispositivo
+→ Vincular con el número de teléfono.
+
+➤ *Importante:*
+» No es recomendable usar tu cuenta principal.
+» Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
+
+${devContact}`
+    : `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
+
+ↂ SUB BOT FUNCION֎
+
+*❤️‍🩹 Usa otro cel o tu PC para vincular el bot en el dispositivo que será el SubBot*
+
+\`1\` » Haz clic en los 3 puntitos de la parte superior derecha
+\`2\` » Toca en dispositivos vinculados
+\`3\` » Escanea el código QR para iniciar sesión con el bot
+
+❤️‍🔥 *Este código QR expira en 45 segundos*
+
+*𝐉𝐀𝐃𝐈𝐁𝐎𝐓 𝐄𝐃𝐈𝐓𝐀𝐃𝐎 𝐏𝐎𝐑 𝐗𝐢_𝐌𝐢𝐠𝐮𝐞𝐥𝐨𝐧77𝐗𝐗*`;
+};
 
 const handler = async (m, { conn, command }) => {
-commandFlags[m.sender] = true;
+  const sender = m.sender;
+  const phone = sender?.split('@')[0];
+  const isCode = /^(qr|code)$/i.test(command);
+  const caption = generateCaption(isCode, global.dev);
 
-const rtx = `*🔰 LoliBot-MD 🔰*\nㅤㅤㅤㅤSer sub bot\n\n*Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*\n\n*1. Haga clic en los tres puntos en la esquina superior derecha*\n*2. Toca WhatsApp Web*\n*3. Escanee este código QR*\n*Este código QR expira en 45 segundos!*\n\n> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar.*`;
-const rtx2 = `*🔰 LoliBot-MD 🔰*\nㅤㅤㅤㅤSer sub bot\n\n*1️⃣ Dirígete a los tres puntos en la esquina superior derecha*\n*2️⃣ Opción: Dispositivos vinculados*\n*3️⃣ Vincular con código de teléfono*\n*4️⃣ Pega el código a continuación*\n> Codigo de 8 digitos vencen en 60 segundos`;
+  if (!sender || !phone) {
+    return conn.sendMessage(m.chat, {
+      text: '❌ No se pudo procesar tu solicitud. El identificador del usuario es inválido.',
+      quoted: m
+    });
+  }
 
-const phone = m.sender?.split('@')[0];
-const isCode = /^(serbot|code)$/.test(command);
-const caption = isCode ? rtx2 : rtx;
-await startSubBot(m, conn, caption, isCode, phone, m.chat, commandFlags);
+  if (commandFlags[sender]) {
+    return conn.sendMessage(m.chat, {
+      text: '⏳ Ya estás solicitando un SubBot. Espera unos segundos antes de volver a intentarlo.',
+      quoted: m
+    });
+  }
+
+  commandFlags[sender] = true;
+
+  try {
+    await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
+  } catch (err) {
+    console.error('🛑 Error iniciando SubBot:', err);
+    await conn.sendMessage(m.chat, {
+      text: '❌ Hubo un error al iniciar el SubBot. Inténtalo nuevamente más tarde.',
+      quoted: m
+    });
+  } finally {
+    setTimeout(() => delete commandFlags[sender], 90000); // 🔁 Limpieza garantizada
+  }
 };
-handler.help = ['jadibot', 'serbot', 'code'];
+
+handler.help = ['qr', 'code'];
 handler.tags = ['jadibot'];
-handler.command = /^(serbot|code|jadibot|qr)$/i;
-handler.register = false;
+handler.command = /^(qr|code)$/i;
 
 export default handler;
