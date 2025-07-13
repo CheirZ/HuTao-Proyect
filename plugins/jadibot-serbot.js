@@ -1,4 +1,4 @@
-import { startSubBot } from '../lib/conexion.js' 
+import { startSub } from '../lib/conexion.js' 
 let commandFlags = {} 
 
 const handler = async (m, { conn, command }) => {
