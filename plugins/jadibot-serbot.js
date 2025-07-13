@@ -1,4 +1,4 @@
-import { startSubDynamic, startSub } from '../lib/conexion.js';
+import { startSubDynamic } from '../lib/conexion.js';
 
 const commandFlags = {};
 
@@ -57,22 +57,6 @@ const handler = async (m, { conn, command }) => {
 
   try {
     const result = await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
-
-    let connected = false;
-    for (let i = 0; i < 12; i++) {
-      await new Promise(res => setTimeout(res, 5000));
-      connected = startSub(phone);
-      if (connected) break;
-    }
-
-    if (connected) {
-       return
-    } else {
-      await conn.sendMessage(m.chat, {
-        text: '[ ✿ ] El inicio de sesión falló. No se detectó conexión.',
-        quoted: m
-      });
-    }
 
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
