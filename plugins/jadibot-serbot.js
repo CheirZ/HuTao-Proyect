@@ -49,7 +49,7 @@ const handler = async (m, { conn, command }) => {
     const isCode = /^(qr|code)$/i.test(command);
     const caption = generateCaption(isCode, global.dev || '✿');
 
-    await startSubDynamic(m, conn, caption, 'qr', phone, m.chat, commandFlags);
+    await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
   } catch (err) {
     console.error("Error iniciando SubBot:", err);
     await conn.sendMessage(m.chat, {
