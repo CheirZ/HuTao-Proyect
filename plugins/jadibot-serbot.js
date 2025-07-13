@@ -2,9 +2,9 @@ import { startSubDynamic } from '../lib/conexion.js';
 
 const commandFlags = {};
 
-const generateCaption = (isCode, devContact = '🛠') => {
-  return isCode
-    ? `☯ sᴜʙ ʙᴏᴛ-ᴍᴏᴅᴇ ᴄᴏᴅᴇ
+const generateCaption = (isCode, devContact = '✿') => {
+  if (isCode) {
+    return `☯ sᴜʙ ʙᴏᴛ-ᴍᴏᴅᴇ ᴄᴏᴅᴇ
 
 ✰ Usa éste Código para convertirte en Sub-Bot Temporal.
 
@@ -17,8 +17,10 @@ const generateCaption = (isCode, devContact = '🛠') => {
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
 
-${devContact}`
-    : `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
+${devContact}`;
+  }
+
+  return `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
 
 ↂ SUB BOT FUNCION֎
 
@@ -36,19 +38,19 @@ ${devContact}`
 const handler = async (m, { conn, command }) => {
   const sender = m.sender;
   const phone = sender?.split('@')[0];
-  const isCode = /^(qr|code)$/i.test(command);
+  const isCode = command?.toLowerCase() === 'code';
   const caption = generateCaption(isCode, global.dev);
 
   if (!sender || !phone) {
     return conn.sendMessage(m.chat, {
-      text: '❌ No se pudo procesar tu solicitud. El identificador del usuario es inválido.',
+      text: '[ ✿ ] No se pudo procesar tu solicitud. El identificador del usuario es inválido.',
       quoted: m
     });
   }
 
   if (commandFlags[sender]) {
     return conn.sendMessage(m.chat, {
-      text: '⏳ Ya estás solicitando un SubBot. Espera unos segundos antes de volver a intentarlo.',
+      text: '[ ✿ ] Ya estás solicitando un SubBot. Espera unos segundos antes de volver a intentarlo.',
       quoted: m
     });
   }
@@ -57,14 +59,15 @@ const handler = async (m, { conn, command }) => {
 
   try {
     await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
+    m.reply(phone)
   } catch (err) {
-    console.error('🛑 Error iniciando SubBot:', err);
+    console.error('Error iniciando SubBot:', err);
     await conn.sendMessage(m.chat, {
-      text: '❌ Hubo un error al iniciar el SubBot. Inténtalo nuevamente más tarde.',
+      text: '[ ✿ ] Hubo un error al iniciar el SubBot. Inténtalo nuevamente más tarde.',
       quoted: m
     });
   } finally {
-    setTimeout(() => delete commandFlags[sender], 90000); // 🔁 Limpieza garantizada
+    setTimeout(() => delete commandFlags[sender], 90000);
   }
 };
 
