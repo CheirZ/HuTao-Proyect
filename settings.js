@@ -70,9 +70,9 @@ global.gp1 = 'https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI'
 global.channel = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
 global.md = 'https://github.com/CheirZ'
 global.correo = 'miguel.doce12000@outlook.com'
-global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820';
+global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363371018732371@newsletter", serverMessageId: 100, newsletterName: namechannel, }}}
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363371018732371@newsletter", serverMessageId: 100, newsletterName: namechannel }}}
 
 global.cheerio = cheerio
 global.fs = fs
