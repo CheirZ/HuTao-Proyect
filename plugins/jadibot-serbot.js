@@ -15,7 +15,7 @@ const generateCaption = (isCode, devContact = '✿') => {
 
 ➤ *Importante:*
 » No es recomendable usar tu cuenta principal.
-» Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
+
 ${devContact}`;
   }
 
