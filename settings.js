@@ -6,20 +6,16 @@ import moment from 'moment-timezone'
 
 global.botnumber = ''
 
-//• ↳𝑺𝑶𝑳𝑶 𝑫𝑬𝑺𝑨𝑹𝑹𝑶𝑳𝑳𝑨𝑫𝑶𝑹𝑬𝑺 𝑨𝑷𝑹𝑶𝑩𝑨𝑫𝑶𝑺
 global.owner = [
     ["5218711426787", "Propietario 👑", true],
     ["5492916450307"],    
     ["5218712620915"]
 ];
 
-//• ↳𝑺𝑶𝑳𝑶 𝑴𝑶𝑫𝑬𝑹𝑨𝑫𝑶𝑹𝑬𝑺!
 global.mods = []
-
 global.suittag = []
 global.prems = []
 
-//• ↳ ◜𝑴𝑨𝑹𝑪𝑨𝑺 𝑫𝑬 𝑨𝑮𝑼𝑨◞ • 💌
 global.packsticker = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.packname = '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
 global.author = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
@@ -34,7 +30,6 @@ global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
 global.namechannel = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
 global.vs = 'V2.2'
 
-//• ↳ ◜𝑰𝑴𝑨́𝑮𝑬𝑵𝑬𝑺◞ • 🌇
 global.imagen1 = "https://stellarwa.xyz/files/1752422417390.jpg"
 global.imagen2 = "https://stellarwa.xyz/files/1752422509254.jpg"
 global.imagen3 = "https://stellarwa.xyz/files/1752422535890.jpg"
@@ -55,7 +50,7 @@ global.logo7 = "https://stellarwa.xyz/files/1752422642121.jpg"
 global.logo8 = "https://stellarwa.xyz/files/1752422642121.jpg"
 global.rule = fs.readFileSync('./src/rule.jpg')
 global.welcome = "https://stellarwa.xyz/files/1752422465230.jpg"
-global.adios = fs.readFileSync('./media/Bye.jpg')
+global.adios = "https://stellarwa.xyz/files/1752426542029.jpg"
 
 global.photoSity = [imagen8, imagen1, imagen4, imagen6]
 
@@ -64,18 +59,9 @@ global.nameqr = 'HuTao'
 global.sessions = 'Session/Hutao'
 global.jadi = 'Session/SubBot'
 
-//• ↳ ◜𝑳𝑰𝑵𝑲𝑺◞ • 🌿
 global.gp4 = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa'
 global.gp1 = 'https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI'
 global.channel = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
 global.md = 'https://github.com/CheirZ'
 global.correo = 'miguel.doce12000@outlook.com'
 global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'
-
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363371018732371@newsletter", serverMessageId: 100, newsletterName: namechannel }}}
-
-global.cheerio = cheerio
-global.fs = fs
-global.fetch = fetch
-global.axios = axios
-global.moment = moment
