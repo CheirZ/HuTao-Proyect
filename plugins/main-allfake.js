@@ -67,7 +67,8 @@ global.icono = [
 "https://stellarwa.xyz/files/1752426820436.jpg"
 ].getRandom()
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: textbot, body: 'ఌ︎ 𝙃𝙪𝙏𝙖𝙤 𝙙𝙞𝙧𝙚𝙘𝙩𝙤𝙧𝙖 𝙣𝙪𝙢77', mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }}}}
+global.rcanal = {contextInfo: {forwardingScore: 2025, isForwarded: true, externalAdReply: {title: textbot, body: wm, sourceUrl: redes, thumbnailUrl: icono}}}
+}
 
 export default handler
 
