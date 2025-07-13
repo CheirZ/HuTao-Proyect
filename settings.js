@@ -65,3 +65,9 @@ global.channel = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
 global.md = 'https://github.com/CheirZ'
 global.correo = 'miguel.doce12000@outlook.com'
 global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'
+
+global.cheerio = cheerio;
+global.fs = fs;
+global.fetch = fetch;
+global.axios = axios;
+global.moment = moment;
