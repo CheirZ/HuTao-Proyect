@@ -45,14 +45,14 @@ const handler = async (m, { conn, command }) => {
     });
   }
 
-  if (commandFlags[sender]) {
+  if (commandFlags[m.sender]) {
     return conn.sendMessage(m.chat, {
       text: '[ ✿ ] Ya estás solicitando un SubBot. Espera unos segundos antes de volver a intentarlo.',
       quoted: m
     });
   }
 
-  commandFlags[sender] = true;
+  commandFlags[m.sender] = true;
 
   try {
     const result = await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
@@ -64,7 +64,7 @@ const handler = async (m, { conn, command }) => {
       quoted: m
     });
   } finally {
-    setTimeout(() => delete commandFlags[sender], 90000);
+    setTimeout(() => delete commandFlags[m.sender], 90000);
   }
 };
 
