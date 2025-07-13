@@ -17,7 +17,7 @@ const generateCaption = (isCode, devContact = 'Powered By Miguel') => {
 » No es recomendable usar tu cuenta principal.
 » Si el Bot principal se reinicia, todos los Sub-Bots se desconectarán.
 
-${devContact}`
+${devContact} ${isCode}`
     : `↝↣☬ʜᴜᴛᴀᴏ-ᴘʀᴏʏᴇᴄᴛ֍↜↤
 
 ↂ SUB BOT FUNCION֎
