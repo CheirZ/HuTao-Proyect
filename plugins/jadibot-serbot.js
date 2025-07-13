@@ -38,7 +38,7 @@ ${global.dev}`
   const caption = isCode ? rtx2 : rtx
 
   try {
-    await startSub(m, conn, caption, isCode, phone, m.chat, commandFlags)
+    await startSub(m, conn, caption, isCode, phone, m.chat)
   } catch (error) {
     console.error("Error starting sub bot:", error)
     await conn.sendMessage(m.chat, {
