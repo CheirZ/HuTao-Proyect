@@ -1,4 +1,4 @@
-import { startSubDynamic } from '../lib/conexion.js';
+import { startSubBot } from '../lib/subs.js';
 
 const commandFlags = {};
 
@@ -55,7 +55,7 @@ const handler = async (m, { conn, command }) => {
   commandFlags[m.sender] = true;
 
   try {
-    const result = await startSubDynamic(m, conn, caption, isCode, phone, m.chat, commandFlags);
+    const result = await startSubBot(m, conn, caption, isCode, phone, m.chat, commandFlags);
 
   } catch (err) {
     console.error('Error iniciando SubBot:', err);
