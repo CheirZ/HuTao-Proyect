@@ -1,4 +1,4 @@
-const handler = async (m, { start: conn }) => {
+const handler = async (m, { start = conn }) => {
 
     return start.sendMessage(m.chat, {
       text: '[ ✿ ] Cómando en mantenimiento....',
