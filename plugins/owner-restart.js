@@ -1,18 +1,17 @@
-import { spawn } from 'child_process'
+let handler = async (m, { conn, usedPrefix, command }) => {
 
-var handler = async (m, { conn, isROwner, text }) => {
-
-if (!process.send) throw 'Dont: node mini.js\nDo: node index.js'
-if (conn.user.jid == conn.user.jid) {
-await conn.reply(m.chat, '🍟 *R E I N I C I A N D O* 🍟', m, rcanal, )
-process.send('reset')
-} else throw 'eh'
-
+    try {
+        m.reply(`[ ✿ ] *HuTao* se estará reiniciando...\n> Espere mienstras el Socket se reinicia. (✿❛◡❛)`)
+        setTimeout(() => {
+            process.exit(0)
+        }, 3000) 
+    } catch (error) {
+        console.log(error)
+        conn.reply(m.chat, `⚠︎ *Error:* ${error}`, m)
+    }
 }
-handler.help = ['restart']
-handler.tags = ['owner']
-handler.command = ['restart','reiniciar'] 
 
+handler.command = ['restart', 'reiniciar']
 handler.rowner = true
 
 export default handler
