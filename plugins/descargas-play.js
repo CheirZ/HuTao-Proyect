@@ -81,7 +81,7 @@ ${dev}`;
       );
     }
   } catch (e) {
-    await m.reply(e);
+    await m.reply(`Error: ${e}`);
   }
 };
 
