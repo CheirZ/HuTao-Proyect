@@ -28,7 +28,7 @@ global.dev = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.textbot = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
 global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
 global.namechannel = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.vs = 'V2.2'
+global.vs = 'V2.3'
 
 global.imagen1 = "https://stellarwa.xyz/files/1752422417390.jpg"
 global.imagen2 = "https://stellarwa.xyz/files/1752422509254.jpg"
