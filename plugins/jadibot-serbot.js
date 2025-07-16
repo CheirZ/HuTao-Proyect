@@ -19,8 +19,8 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz"
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
-let rtx = `[✿] *Vincula el Socket usando este código QR.*\n\n> *Canal:* https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p\n> *Api:* https://api.stellarwa.xyz`
-let rtx2 = `[✿] *Vincula el Socket usando el código de 8 dígitos.*\n\n> *Canal:* https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p\n> *Api:* https://api.stellarwa.xyz`
+let rtx = `[✿] *Vincula el Socket usando este código QR.*\n\n> • *Canal »* https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p\n> • *Api »* https://api.stellarwa.xyz`
+let rtx2 = `[✿] *Vincula el Socket usando el código de 8 dígitos.*\n\n> • *Canal »* https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p\n> • *Api »* https://api.stellarwa.xyz`
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
