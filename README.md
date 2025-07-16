@@ -1,4 +1,4 @@
-> 💝 Versión Actual: V2
+> 💝 Versión Actual: 1.0.5
 
 ## ❤️‍🔥 **`HuTao - Proyect`**
 ## 🔥 **`HuTao la directora de "el camino" ahora en tu WhatsApp**
