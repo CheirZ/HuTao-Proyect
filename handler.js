@@ -141,7 +141,8 @@ global.db.data.chats[m.chat] = {}
 
 if (chat) {
 if (!('isBanned' in chat)) chat.isBanned = false         
-if (!('welcome' in chat)) chat.welcome = true           
+if (!('welcome' in chat)) chat.welcome = true
+if (!('primaryBot' in chat)) chat.primaryBot = null           
 if (!('detect' in chat)) chat.detect = true               
 if (!('sWelcome' in chat)) chat.sWelcome = ''          
 if (!('sBye' in chat)) chat.sBye = ''                    
@@ -194,6 +195,7 @@ delete: false,
 nsfw: false,
 autosticker: false,
 autoresponder: false,
+primaryBot: null,
 audios: false,
 antiBot: false,
 antiBot2: false,
