@@ -106,15 +106,6 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 
 ---
 
-
-## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Bot Oficial ☄️
-
-<a href="https://wa.me/5216566753569?text=!menu"><img alt="Bot Oficial ☄️" src="https://img.shields.io/badge/Bot - Oficial-00FFFF?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
-
-> No Spam A La Bot! (solo esta disponible para grupos)
-
----
-
 ## <img src="https://i.pinimg.com/originals/73/69/6e/73696e022df7cd5cb3d999c6875361dd.gif" alt="Características" width="42" height="42"> Características
 
 > Bot en creación pronto se agregaran más cosas 
@@ -145,6 +136,12 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 ### **`❤️‍🔥 PROPIETARIO`**
 <a
 href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width="130" height="130" alt="Miguelon"/></a>
+
+### **`🎍 CREDITOS`**
+<a
+href="https://github.com/DevAlexJs"><img src="https://github.com/DevAlexJs.png" width="130" height="130" alt="Alexiu"/></a>
+<a
+href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="130" height="130" alt="Bruno"/></a>
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
