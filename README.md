@@ -140,7 +140,6 @@ href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width=
 ### **`🎍 CREDITOS`**
 <a
 href="https://github.com/DevAlexJs"><img src="https://github.com/DevAlexJs.png" width="130" height="130" alt="Alexiu"/></a>
-<a
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
