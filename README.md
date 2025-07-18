@@ -141,7 +141,6 @@ href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width=
 <a
 href="https://github.com/DevAlexJs"><img src="https://github.com/DevAlexJs.png" width="130" height="130" alt="Alexiu"/></a>
 <a
-href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="130" height="130" alt="Bruno"/></a>
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820)**.
 
