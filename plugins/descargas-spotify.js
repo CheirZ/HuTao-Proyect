@@ -50,7 +50,7 @@ handler.command = ['spotify'];
 export default handler;
 
 async function spotifyxv(query) {
-  const res = await axios.get(`https://api.sylphy.xyz/download/spotify?url=${encodeURIComponent(query)}&apikey=sylphy-8ff8`);
+  const res = await axios.get(`https://api.stellarwa.xyz/search/spotify?query=${encodeURIComponent(query)}&apikey=proyectsV2`);
   if (!res.data?.status || !res.data?.data?.length) return [];
 
   const firstTrack = res.data.data[0];
