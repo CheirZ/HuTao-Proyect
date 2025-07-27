@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 let handler = async (m, { conn, text }) => {
+  let botId = conn.user.jid;
+  let botSettings = globalThis.db.data.settings[botId];
+  let botna = botSettings.namebot;
+  let botname = botSettings.namebot2;
 
-  if (!text) return m.reply(`[ ✿ ] Ingresa el nombre de una canción o una URL de Spotify.`);
+  if (!text) return m.reply(`✎ Ingresa el nombre de una canción o una URL de Spotify.`);
 
   try {
     let song;
@@ -19,34 +23,34 @@ let handler = async (m, { conn, text }) => {
     const data = res.data?.data;
     if (!data?.download) return m.reply('No se pudo obtener el enlace de descarga.');
 
-    const info = `[ ✿ ] Descargando › *${data.title}*\n\n` +
-                 `> [✩] Artista › *${data.artist}*\n` +
+    const info = `➪ Descargando › *${data.title}*\n\n` +
+                 `> ✩ Artista › *${data.artist}*\n` +
                  (song.album ? `> ✰ Álbum › *${song.album}*\n` : '') +
-                 `> [ⴵ] Duración › *${data.duration}*\n` +
-                 `> [☁︎] Enlace › *${song.url}*`;
+                 `> ⴵ Duración › *${data.duration}*\n` +
+                 `> ☁︎ Enlace › *${song.url}*\n\n` +
+                 `${dev}`;
 
     await conn.sendMessage(m.chat, { image: { url: data.image }, caption: info }, { quoted: m });
 
     await conn.sendMessage(m.chat, {
       audio: { url: data.download },
-      ptt: true,
       fileName: `${data.title}.mp3`,
       mimetype: 'audio/mpeg'
     }, { quoted: m });
 
   } catch (e) {
     // console.error(e);
-    await m.reply(`${w}`);
+    await conn.reply(m.chat, '♪ 𝗻𝗼 𝗵𝘂𝗯𝗼 𝗿𝗲𝘀𝘂𝗹𝘁𝗮𝗱𝗼𝘀 𝗼 𝗵𝘂𝗯𝗼 𝘂𝗻 𝗲𝗿𝗿𝗼𝗿 𝗲𝗻 𝗹𝗮 𝗮𝗽𝗶', m, fake);
   }
 };
 
-handler.tags = ['descargas'];
+handler.tags = ['downloader'];
 handler.help = ['spotify'];
 handler.command = ['spotify'];
 export default handler;
 
 async function spotifyxv(query) {
-  const res = await axios.get(`https://api.stellarwa.xyz/search/spotify?query=${encodeURIComponent(query)}&apikey=proyectsV2`);
+  const res = await axios.get(`https://api.sylphy.xyz/download/spotify?url=${encodeURIComponent(query)}&apikey=sylphy-8ff8`);
   if (!res.data?.status || !res.data?.data?.length) return [];
 
   const firstTrack = res.data.data[0];
