@@ -29,7 +29,7 @@ const pinterest = async (m, { conn, text, usedPrefix, command }) => {
     await m.react('⏳')
 
     try {
-        const res = await fetch(`https://api.stellarwa.xyz/search/pinterest?query=${encodeURIComponent(text)}`)
+        const res = await fetch(`https://api.stellarwa.xyz/search/pinterest?query=${encodeURIComponent(text)}&apikey=proyectsV2`)
         const json = await res.json()
 
         if (!json.status || !Array.isArray(json.data) || json.data.length < 1) {
