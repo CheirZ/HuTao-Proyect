@@ -347,6 +347,7 @@ console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR`))}
 }
         if (connection === "open") {
             const userJid = jidNormalizedUser(conn.user.id)
+         await joinChannels(conn)
             const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
             console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
         }
@@ -614,13 +615,7 @@ return phoneUtil.isValidNumber(parsedNumber)
 return false
 }}
 
-// Reinicio Automatico
-/*setInterval(() => {
-  try {
-    execSync('git reset --hard HEAD');
-    console.log('🐞  Reiniciando el Bot manualmente...');
-   // process.exit(100);
-  } catch (err) {
-    console.error(`❌  Ocurrió un error al reiniciar el Bot: ${err}`);
-  }
-}, 1000);*/
+async function joinChannels(conn) {
+for (const channelId of Object.values(global.channel)) {
+await conn.newsletterFollow(channelId).catch(() => {})
+}}
