@@ -62,7 +62,7 @@ global.jadi = 'Session/SubBot'
 
 global.channel = {
 channel1: "120363420992828502@newsletter",
-channel2: "120363419171116775@newsletter"
+channel2: "120363419171116775@newsletter",
 channel3: "120363387958443019@newsletter",
 channel4: "120363371018732371@newsletter"
 }
