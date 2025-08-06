@@ -128,18 +128,7 @@ console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2, tamp
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
 
-const filterStrings = [
-"Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
-"Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
-"RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
-"U2Vzc2lvbiBlcnJvcg==", // "Session error"
-"RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
-"RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
-]
-
     console.info = () => { }
-    console.debug = () => { }
-    ['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
 
 /*const connectionOptions = {
     logger: pino({ level: "silent" }),
@@ -511,50 +500,21 @@ const s = global.support = {ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, fi
 Object.freeze(global.support);
 }
 
-function clearTmp() {
+// Tmp
+setInterval(async () => {
 const tmpDir = join(__dirname, 'tmp')
+try {
 const filenames = readdirSync(tmpDir)
 filenames.forEach(file => {
 const filePath = join(tmpDir, file)
 unlinkSync(filePath)})
-}
+console.log(chalk.gray(`→ Archivos de la carpeta TMP eliminados`))
+} catch {
+console.log(chalk.gray(`→ Los archivos de la carpeta TMP no se pudieron eliminar`));
+}}, 30 * 1000) 
 
-function purgeSession() {
-let prekey = []
-let directorio = readdirSync(`./${sessions}`)
-let filesFolderPreKeys = directorio.filter(file => {
-return file.startsWith('pre-key-')
-})
-prekey = [...prekey, ...filesFolderPreKeys]
-filesFolderPreKeys.forEach(files => {
-unlinkSync(`./${sessions}/${files}`)
-})
-} 
-
-function purgeSessionSB() {
-try {
-const listaDirectorios = readdirSync(`./${jadi}/`);
-let SBprekey = [];
-listaDirectorios.forEach(directorio => {
-if (statSync(`./${jadi}/${directorio}`).isDirectory()) {
-const DSBPreKeys = readdirSync(`./${jadi}/${directorio}`).filter(fileInDir => {
-return fileInDir.startsWith('pre-key-')
-})
-SBprekey = [...SBprekey, ...DSBPreKeys];
-DSBPreKeys.forEach(fileInDir => {
-if (fileInDir !== 'creds.json') {
-unlinkSync(`./${jadi}/${directorio}/${fileInDir}`)
-}})
-}})
-if (SBprekey.length === 0) {
-console.log(chalk.bold.green(`\n🎍 No hay archivos en ${jadi} para eliminar.`))
-} else {
-console.log(chalk.bold.cyanBright(`\n🐾 Archivos de la carpeta ${jadi} han sido eliminados correctamente.`))
-}} catch (err) {
-console.log(chalk.bold.red(`\n🦋 Error para eliminar archivos de la carpeta ${jadi}.\n` + err))
-}}
-
-function purgeOldFiles() {
+// Sessions Subs
+setInterval(async () => {
 const directories = [`./${sessions}/`, `./${jadi}/`]
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
@@ -564,40 +524,11 @@ if (file !== 'creds.json') {
 const filePath = path.join(dir, file);
 unlinkSync(filePath, err => {
 if (err) {
-console.log(chalk.bold.red(`\n🐽 El archivo ${file} no se logró borrar.\n` + err))
+console.log(chalk.gray(`\n→ El archivo ${file} no se logró borrar.\n` + err))
 } else {
-console.log(chalk.bold.green(`\n🐝 El archivo ${file} se ha borrado correctamente.`))
+console.log(chalk.gray(`\n→ ${file} fué eliminado correctamente.`))
 } }) }
-}) }) }) }
-
-function redefineConsoleMethod(methodName, filterStrings) {
-const originalConsoleMethod = console[methodName]
-console[methodName] = function() {
-const message = arguments[0]
-if (typeof message === 'string' && filterStrings.some(filterString => message.includes(atob(filterString)))) {
-arguments[0] = ""
-}
-originalConsoleMethod.apply(console, arguments)
-}}
-
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await clearTmp()
-console.log(chalk.bold.cyanBright(`\n🐻‍❄️ Archivos de la carpeta TMP no necesarios han sido eliminados del servidor.`))}, 1000 * 60 * 4) // 4 min 
-
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeSession()
-console.log(chalk.bold.cyanBright(`\n🐞 Archivos de la carpeta ${global.sessions} no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10) // 10 min
-
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeSessionSB()}, 1000 * 60 * 10) 
-
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeOldFiles()
-console.log(chalk.bold.cyanBright(`\n🦨 Archivos no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10)
+}) }) }) }, 10 * 60 * 1000)
 
 _quickTest().catch(console.error)
 
