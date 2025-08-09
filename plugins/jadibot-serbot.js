@@ -174,7 +174,7 @@ if (!globalThis.db.data?.users) loadDatabase()
 await joinChannels(sock)
 const isCode = /^(qr|code)$/.test(command)
 if (m && conn && isCode && commandFlags[m.sender]) {
-await conn.sendMessage(m.chat, {text: `[✿] Listo, tu Sub-Bot ha quedado configurado.\n\n> *Visita:* https://api.stellarwa.xyz` }, { quoted: m })
+await conn.sendMessage(m.chat, {text: `[✿] Listo, tu Sub-Bot ha quedado configurado.\n\n> *Visita:* https://api.stellarwa.xyz\n> *Compra Saldo:* https://api.stellarwa.xyz/store` }, { quoted: m })
 delete commandFlags[m.sender]
 }
 
