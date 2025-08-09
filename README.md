@@ -7,15 +7,16 @@
 
 ---
 
-> Visita mi api, te puede ser útil.
+> 💛🌷 Visita mi api, te puede ser útil.
 
 > [!WARNING] 
 > Esta api necesita clave de acceso, puedes comprar saldo en la tienda oficial de Stellar.
 
 ## 🌷 Stellar-API 
 
-> **URL:** [Api Stellar](https://api.stellarwa.xyz)
-> **SHOP:** [Store Stellar](https://api.stellarwa.xyz/store)
+> **Link:** [Api Stellar](https://api.stellarwa.xyz)
+
+> **Tienda:** [Store Stellar](https://api.stellarwa.xyz/store)
 
 ---
 
