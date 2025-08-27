@@ -536,7 +536,8 @@ if (quequeIndex !== -1)
 this.msgqueque.splice(quequeIndex, 1)
 }
 //console.log(global.db.data.users[m.sender])
-let user, stats = global.db.data.stats
+let user
+let stats = global.db.data.stats || (global.db.data.stats = {})
 if (m) { let utente = global.db.data.users[m.sender]
 if (utente.muto == true) {
 let bang = m.key.id
