@@ -8,6 +8,8 @@ global.botnumber = ''
 
 global.owner = [
     ["5218711426787", "Propietario 👑", true],
+    //num en lid v:
+    ["239298850873418", "creadorLid", true],
     ["5492916450307"],    
     ["5218712620915"],
     ["5351524614"]
