@@ -19,6 +19,7 @@
 |--------------|------------------------------------------------------------------------|
 | 🌱 Api        | [Aquí](https://api.stellarwa.xyz)                         |
 | 🛍️ Shop     | [Aquí](https://api.stellarwa.xyz/store)             |
+| 🐸 Canal     | [Aquí](https://stellarwa.xyz/channel)             |
 
 ---
 
