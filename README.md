@@ -12,7 +12,10 @@
 > [!WARNING] 
 > Esta api necesita clave de acceso, puedes comprar saldo en la tienda oficial de Stellar.
 
-## 🌷 Stellar-API 
+> [!TIP]
+> Estaré constantemente actualizandola para que no quede en el olvido y que más personas la usen!
+
+## 🌷 Stellar-API
 
 > **Link:** [Api Stellar](https://api.stellarwa.xyz)
 
