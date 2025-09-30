@@ -12,7 +12,7 @@
 > 💛 **Visita mi API, puede ser útil para tus proyectos.**  
 > Estaré actualizándola constantemente para que evolucione y que más personas se animen a usarla.
 
-### 🦠 *Enlaces!*
+### 🦠 **Enlaces!**
 
 
 | Tipo      | Link                                                                 |
