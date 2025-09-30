@@ -7,19 +7,25 @@
 
 ---
 
-> 💛🌷 Visita mi api, te puede ser útil.
-
-> [!WARNING] 
-> Esta api necesita clave de acceso, puedes comprar saldo en la tienda oficial de Stellar.
-
-> [!TIP]
-> Estaré constantemente actualizandola para que no quede en el olvido y que más personas la usen!
-
 ## 🌷 Stellar-API
 
-> **Link:** [Api Stellar](https://api.stellarwa.xyz)
+> 💛 **Visita mi API, puede ser útil para tus proyectos.**  
+> Estaré actualizándola constantemente para que evolucione y que más personas se animen a usarla.
 
-> **Tienda:** [Store Stellar](https://api.stellarwa.xyz/store)
+### 🌿 Información
+
+| Tipo        | Descripción                                                                 |
+|-------------|-------------------------------------------------------------------------|
+| 🦎 ApiKey     | Necesaria para usar la API                                              |
+| 🛒 Saldo     | Puedes adquirirlo en la tienda oficial de Stellar                       |
+| ✨ Actualización | La API se mantiene activa y en evolución constante                     |
+
+### 🦠 Enlaces!
+
+| Tipo      | Link                                                                 |
+|--------------|------------------------------------------------------------------------|
+| 🌱 Api        | [api.stellarwa.xyz](https://api.stellarwa.xyz)                         |
+| 🛍️ Shop     | [api.stellarwa.xyz/store](https://api.stellarwa.xyz/store)             |
 
 ---
 
