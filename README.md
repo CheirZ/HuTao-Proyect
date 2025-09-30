@@ -17,8 +17,8 @@
 
 | Tipo      | Link                                                                 |
 |--------------|------------------------------------------------------------------------|
-| 🌱 Api        | [api.stellarwa.xyz](https://api.stellarwa.xyz)                         |
-| 🛍️ Shop     | [api.stellarwa.xyz/store](https://api.stellarwa.xyz/store)             |
+| 🌱 Api        | [Aquí](https://api.stellarwa.xyz)                         |
+| 🛍️ Shop     | [Aquí](https://api.stellarwa.xyz/store)             |
 
 ---
 
