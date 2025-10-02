@@ -33,7 +33,7 @@ global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
 global.namechannel = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
 global.vs = 'V2.3'
 
-global.imagen1 = "https://stellarwa.xyz/files/1752422417390.jpg"
+global.imagen1 = "https://files-furina.stellarwa.xyz/1759366152803.jpg"
 global.imagen2 = "https://stellarwa.xyz/files/1752422509254.jpg"
 global.imagen3 = "https://stellarwa.xyz/files/1752422535890.jpg"
 global.imagen4 = "https://stellarwa.xyz/files/1752422562260.jpg"
