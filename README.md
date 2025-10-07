@@ -155,7 +155,7 @@ href="https://github.com/CheirZ"><img src="https://github.com/CheirZ.png" width=
 
 ### **`🎍 CREDITOS`**
 <a
-href="https://github.com/DevAlexJs"><img src="https://github.com/DevAlexJs.png" width="130" height="130" alt="Alexiu"/></a>
+href="https://github.com/DevZyxlJs"><img src="https://github.com/DevZyxlJs.png" width="130" height="130" alt="Alexiu"/></a>
 
 > Copyright (c) 2024 **[Xi_Miguelon](https://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f)**.
 
