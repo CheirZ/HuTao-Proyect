@@ -63,10 +63,11 @@ global.sessions = 'Session/Hutao'
 global.jadi = 'Session/SubBot'
 
 global.channel = {
-channel1: "120363420992828502@newsletter",
-channel2: "120363419171116775@newsletter",
-channel3: "120363387958443019@newsletter",
-channel4: "120363371018732371@newsletter"
+channel1: "120363371018732371@newsletter",
+channel2: "120363387958443019@newsletter",
+channel3: "120363420238618096@newsletter",
+channel4: "120363420992828502@newsletter",
+channel5: "120363419837575209@newsletter"
 }
 
 global.gp4 = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa'
