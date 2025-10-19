@@ -103,7 +103,7 @@ const handler = async (m, { conn, text, command }) => {
         await conn.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
       //  await m.reply(`✅ Audio generado desde *${sistema}*`);
       } catch {
-        const api = await fetch(`https://api.stellarwa.xyz/dow/ytmp3?url=${url}&apikey=proyectsV2`).then(r => r.json());
+        const api = await fetch(`https://api.stellarwa.xyz/dow/ytmp3?url=${url}&key=proyectsV2`).then(r => r.json());
         const result = api.data?.dl;
         if (!result) throw new Error();
         await conn.sendMessage(m.chat, {
