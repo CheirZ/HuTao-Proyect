@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, user }) => {
 
   try {
     const imageUrl = await uploadToCatbox(img)
-    const api = `https://api.stellarwa.xyz/tools/upscale?url=${encodeURIComponent(imageUrl)}&apikey=proyectsV2`
+    const api = `https://api.stellarwa.xyz/tools/upscale?url=${encodeURIComponent(imageUrl)}&key=proyectsV2`
     const res = await fetch(api)
     const buffer = await res.buffer()
     await conn.sendFile(m.chat, buffer, 'hd.jpg', '💎 Aquí tienes la imagen en HD.', m)
