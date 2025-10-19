@@ -4,7 +4,7 @@ const handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, '✨ Ingresa el enlace o término de búsqueda de una publicación de TikTok.', m);
 
   const isUrl = /(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text);
-  const apiUrl = `https://api.stellarwa.xyz/dow/tiktok?url=${encodeURIComponent(text)}&apikey=proyectsV2`;
+  const apiUrl = `https://api.stellarwa.xyz/dow/tiktok?url=${encodeURIComponent(text)}&key=proyectsV2`;
 
   try {
     const res = await fetch(apiUrl);
