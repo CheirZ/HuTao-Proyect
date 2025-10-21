@@ -28,7 +28,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   
     if (result.imgeGenerate && result.imgeGenerate.length > 0) {
       for (const imgUrl of result.imgeGenerate) {
-        await conn.sendFile(m.chat, imgUrl, 'imagen.jpg', '🎨 Aquí tienes tu creación explosiva, ¡BOOM!', m)
+        await conn.sendFile(m.chat, imgUrl, 'imagen.jpg', `${wm}`, m)
       }
     }
 
