@@ -47,7 +47,7 @@ Edad de ${age}
 Código de registro
 ${sn}
 `;
-  await conn.sendFile(m.chat, pp, 'hutao.jpg', caption, m, null, rcanal);
+  await conn.sendFile(m.chat, pp, 'hutao.jpg', caption, m, null, fake);
   
 };
 handler.help = ['verificar'];
