@@ -19,7 +19,7 @@ let handler = async (m, { conn, text }) => {
       song = results[0];
     }
 
-    const res = await axios.get(`https://api.stellarwa.xyz/dow/spotify?url=${song.url}&key=proyectsV2`);
+    const res = await axios.get(`https://api.stellarwa.xyz/dl/spotify?url=${song.url}&key=proyectsV2`);
     const data = res.data?.data;
     if (!data?.download) return m.reply('No se pudo obtener el enlace de descarga.');
 
