@@ -7,7 +7,7 @@ import moment from 'moment-timezone'
 global.botnumber = ''
 
 global.owner = [
-    ["5218711426787", "Propietario 👑", true],
+    ["", "Propietario 👑", true],
     //num en lid v:
     ["239298850873418", "creadorLid", true],
     ["5492916450307"],    
@@ -18,6 +18,11 @@ global.owner = [
 global.mods = []
 global.suittag = []
 global.prems = []
+
+// APIs Keys - Agregar aquí las claves de API si las tienes
+global.APIKeys = {
+  // Ejemplo: 'https://api.ejemplo.com': 'tu-api-key-aqui'
+}
 
 global.packsticker = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
 global.packname = '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
@@ -62,6 +67,9 @@ global.nameqr = 'HuTao'
 global.sessions = 'Session/Hutao'
 global.jadi = 'Session/SubBot'
 
+// Configuración de características
+global.jadibotEnabled = false // Deshabilitar completamente jadibot/serbot
+
 global.channel = {
 channel1: "120363371018732371@newsletter",
 channel2: "120363387958443019@newsletter",
@@ -72,7 +80,7 @@ channel5: "120363419837575209@newsletter"
 
 global.gp4 = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa'
 global.gp1 = 'https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI'
-global.channel = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
+global.channelURL = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
 global.md = 'https://github.com/CheirZ'
 global.correo = 'miguel.doce12000@outlook.com'
 global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'

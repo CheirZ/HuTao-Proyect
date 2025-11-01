@@ -17,15 +17,45 @@ bio = biografia[0].status || sinDefinir
 fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString("es-ES", { day: "2-digit", month: "2-digit", year: "numeric", }) : "Fecha no disponible"
   }
   let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://cdn.donmai.us/original/31/6d/__hu_tao_genshin_impact_drawn_by_pioko__316d40e84fd8b32cb4cac320728a3a10.jpg')
-  if (user.registered === true) conn.reply(m.chat, `🌴 Hola amigo, ya estás registrado en nuestra base de datos.`, m, rcanal);
-  if (!Reg.test(text)) conn.reply(m.chat, `regístrese bien hijo de su, ejemplo: !reg miguelon.23`, m, rcanal);
+  
+  // Verificar si ya está registrado
+  if (user.registered === true) {
+    return conn.reply(m.chat, `⚡ ACCESO DENEGADO\n\n▸ Usuario ya registrado en el sistema\n▸ Acceso completo activado\n\n╔══════════════════════════╗\n║  ✅ VERIFICACIÓN EXITOSA  ║\n╚══════════════════════════╝`, m);
+  }
+  
+  // Verificar formato del texto
+  if (!text || !Reg.test(text)) {
+    return conn.reply(m.chat, `⚠️ FORMATO INCORRECTO\n\n▸ Uso correcto: ${usedPrefix + command} nombre.edad\n▸ Ejemplo: ${usedPrefix + command} HuTao.18\n\n╔══════════════════════════╗\n║   REGISTRO REQUERIDO     ║\n╚══════════════════════════╝`, m);
+  }
+  
   let [_, name, splitter, age] = text.match(Reg);
-  if (!name) conn.reply(m.chat, '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro', m, rcanal);
-  if (!age) m.reply('❌ Por favor no dejes tu edad vacía, haz el registro completo', m, rcanal);
-  if (name.length >= 30) conn.reply(m.chat, '️☘ ¿puedes acortar tu nombre por favor?', m, rcanal);
+  
+  // Validar nombre
+  if (!name) {
+    return conn.reply(m.chat, '❌ ERROR: Campo nombre vacío\n\n▸ Por favor ingresa tu nombre\n▸ Formato: nombre.edad', m);
+  }
+  
+  // Validar edad
+  if (!age) {
+    return conn.reply(m.chat, '❌ ERROR: Campo edad vacío\n\n▸ Por favor ingresa tu edad\n▸ Formato: nombre.edad', m);
+  }
+  
+  // Validar longitud del nombre
+  if (name.length >= 30) {
+    return conn.reply(m.chat, '⚠️ NOMBRE MUY LARGO\n\n▸ Máximo 30 caracteres\n▸ Intenta con un nombre más corto', m);
+  }
+  
   age = parseInt(age);
-  if (age > 100) conn.reply(m.chat, '☘️ por favor use una edad menor, no tan alta', m, rcanal);
-  if (age < 5) conn.reply(m.chat, '[❌] Lo siento, pero no se permiten 5 años. Lo siento, pero no se permiten 5 años.', m, rcanal);
+  
+  // Validar rango de edad
+  if (age > 100) {
+    return conn.reply(m.chat, '⚠️ EDAD INVÁLIDA\n\n▸ Edad máxima: 100 años\n▸ Ingresa una edad real', m);
+  }
+  
+  if (age < 5) {
+    return conn.reply(m.chat, '⚠️ EDAD MÍNIMA REQUERIDA\n\n▸ Edad mínima: 5 años\n▸ Acceso restringido para menores', m);
+  }
+  // Registrar usuario
   user.name = name.trim();
   user.age = age;
   user.descripcion = bio;
@@ -36,21 +66,37 @@ fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString(
   global.db.data.users[m.sender].moras += 60;
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20);
 
-  const caption = `📃Registro completado información de registro 
+  const caption = `╔══════════════════════════╗
+║    ✅ REGISTRO EXITOSO    ║
+╚══════════════════════════╝
 
-Nombre ${name}
+▸ ACCESO CONCEDIDO AL SISTEMA
 
-Edad de ${age}
+┌─[ 👤 PERFIL CREADO ]─┐
+│ NOMBRE: ${name}
+│ EDAD: ${age} años
+│ STATUS: Verificado ✅
+│ 
+│ RECOMPENSAS:
+│ • +23 Monedas 💰
+│ • +45 Experiencia ⭐
+│ • +60 Moras 🔮
+└─────────────────────┘
 
-🌟 Ya estás registrado en nuestra comunidad, muchas gracias por registrarte ahora disfruta del bot 🤖
+▸ SERIAL: ${sn}
 
-Código de registro
-${sn}
-`;
-  await conn.sendFile(m.chat, pp, 'hutao.jpg', caption, m, null, fake);
+╔══════════════════════════╗
+║  🌐 BIENVENIDO AL CYBER  ║
+║     SISTEMA HUTAO        ║
+╚══════════════════════════╝
+
+▸ Usa /menu para explorar comandos
+▸ Disfruta del sistema neural!`;
+
+  await conn.sendFile(m.chat, pp, 'hutao.jpg', caption, m);
   
 };
-handler.help = ['verificar'];
-handler.tags = ['xp'];
-handler.command = /^(Reg|reg)$/i;
+handler.help = ['verificar', 'reg'];
+handler.tags = ['rg'];
+handler.command = /^(verificar|reg|registro)$/i;
 export default handler;

@@ -312,6 +312,18 @@ async function checkSubBots() {
 setInterval(checkSubBots, 60000); //1min
 
 async function joinChannels(conn) {
-for (const channelId of Object.values(global.channel)) {
-await conn.newsletterFollow(channelId).catch(() => {})
+try {
+  for (const channelId of Object.values(global.channel)) {
+    // Intentar diferentes métodos de suscripción según la versión
+    if (typeof conn.subscribeNewsletterUpdates === 'function') {
+      await conn.subscribeNewsletterUpdates(channelId).catch(() => {})
+    } else if (typeof conn.newsletterFollow === 'function') {
+      await conn.newsletterFollow(channelId).catch(() => {})
+    } else {
+      console.log("Métodos de suscripción a canales no disponibles en esta versión")
+      break
+    }
+  }
+} catch (e) {
+  console.log("Error en joinChannels:", e.message)
 }}
