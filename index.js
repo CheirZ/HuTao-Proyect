@@ -35,6 +35,7 @@ const phoneUtil = PhoneNumberUtil.getInstance()
 const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, Browsers } = await import('@whiskeysockets/baileys')
 import readline, { createInterface } from 'readline'
 import NodeCache from 'node-cache'
+import qrcode from 'qrcode-terminal'
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
@@ -154,7 +155,6 @@ console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2, tamp
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
-printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
 browser: opcion == '1' ? Browsers.macOS("Desktop") : methodCodeQR ? Browsers.macOS("Desktop") : Browsers.macOS("Chrome"), 
 auth: {
@@ -321,7 +321,7 @@ async function processLidsInMessage(message, groupJid) {
 }
 
 async function connectionUpdate(update) {
-const {connection, lastDisconnect, isNewLogin} = update;
+const {connection, lastDisconnect, isNewLogin, qr} = update;
 global.stopped = connection;
 if (isNewLogin) conn.isInit = true;
 const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
@@ -330,13 +330,19 @@ await global.reloadHandler(true).catch(console.error);
 global.timestamp.connect = new Date;
 }
 if (global.db.data == null) loadDatabase();
-if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
-if (opcion == '1' || methodCodeQR) {
-console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR`))}
+
+// Manejo del código QR
+if (qr && (opcion == '1' || methodCodeQR)) {
+console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR:`));
+qrcode.generate(qr, {small: true});
 }
         if (connection === "open") {
             const userJid = jidNormalizedUser(conn.user.id)
-         await joinChannels(conn)
+         try {
+           await joinChannels(conn)
+         } catch (e) {
+           console.log("Error uniendo canales:", e.message)
+         }
             const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
             console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
         }
@@ -547,6 +553,18 @@ return false
 }}
 
 async function joinChannels(conn) {
-for (const channelId of Object.values(global.channel)) {
-await conn.newsletterFollow(channelId).catch(() => {})
+try {
+  for (const channelId of Object.values(global.channel)) {
+    // Intentar diferentes métodos de suscripción según la versión
+    if (typeof conn.subscribeNewsletterUpdates === 'function') {
+      await conn.subscribeNewsletterUpdates(channelId).catch(() => {})
+    } else if (typeof conn.newsletterFollow === 'function') {
+      await conn.newsletterFollow(channelId).catch(() => {})
+    } else {
+      console.log("Métodos de suscripción a canales no disponibles en esta versión")
+      break
+    }
+  }
+} catch (e) {
+  console.log("Error en joinChannels:", e.message)
 }}
