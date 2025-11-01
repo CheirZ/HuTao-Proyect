@@ -123,7 +123,7 @@ const handler = async (m, { conn, text, command }) => {
       let sistema = null;
       const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command);
       const fuentes = [
-        { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4v2?url=${encodeURIComponent(url)}&key=proyectsV2`},
+        { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2`},
         { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&key=proyectsV2`},
           { sistema: "Sylphy", url: `https://api.sylphy.xyz/download/ytmp4?url=${encodeURIComponent(url)}&apikey=sylphy-8ff8`}
       ];
