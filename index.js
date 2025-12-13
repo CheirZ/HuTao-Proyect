@@ -82,14 +82,20 @@ const userInfoSyt = () => {
   }
 };
 
-console.log(chalk.bold.cyan('Made With | Stellar WaBot'))
-console.log(chalk.bold.cyan('Copyright (C) - ') + chalk.bold.red('Megumin Bot'))
+let { say } = cfonts
 
-const ramInGB = os.totalmem() / (1024 * 1024 * 1024)
-const freeRamInGB = os.freemem() / (1024 * 1024 * 1024)
-const currentTime = new Date().toLocaleString()
-const info = `\n╭─────────────────────────────◉\n│ ${chalk.red.bgBlueBright.bold('        🖥 INFORMACIÓN DEL SISTEMA        ')}\n│「 💻 」${chalk.yellow(`SO: ${os.type()}, ${os.release()} - ${os.arch()}`)}\n│「 💾 」${chalk.yellow(`RAM Total: ${ramInGB.toFixed(2)} GB`)}\n│「 💽 」${chalk.yellow(`RAM Libre: ${freeRamInGB.toFixed(2)} GB`)}\n╰─────────────────────────────◉\n\n╭─────────────────────────────◉\n│ ${chalk.red.bgGreenBright.bold('        🟢 INFORMACIÓN DEL BOT        ')}\n│「 🎈 」${chalk.cyan(`Nombre » Megumin Bot`)}\n│「 🍒 」${chalk.cyan(`Versión » 3.0`)}\n│「 🍉 」${chalk.cyan(`Descripción » WhatsApp Bot`)}\n│「 🚩 」${chalk.cyan(`Autor » David-Chian`)}\n│「 🌿 」${chalk.cyan('Colaboradores » ZyxlJs - CheirZ')}\n╰─────────────────────────────◉\n\n╭─────────────────────────────◉\n│ ${chalk.red.bgMagenta.bold('        ⏰ HORA ACTUAL        ')}\n│「 🕒 」${chalk.magenta(`${currentTime}`)}\n╰─────────────────────────────◉\n`
-console.log(info)
+console.log(chalk.magentaBright('\nIniciando...'))
+
+say('HuTao', {
+  font: 'simple',
+  align: 'left',
+  gradient: ['green', 'white']
+})
+say('Made With CheirZ', {
+  font: 'console',
+  align: 'center',
+  colors: ['cyan', 'magenta', 'yellow']
+})
 
 const BOT_TYPES = [
   { name: 'SubBot', folder: './Sessions/Subs', starter: startSubBot }
