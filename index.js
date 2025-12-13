@@ -1,7 +1,7 @@
 /*
  # ------------√ ×------------
-    # Agradecimientos :: AzamiJs
     # Agradecimientos :: ZyxlJs
+    # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
     - Recuerda dejar los creditos, no quites los creditos de los autores del código!
@@ -10,9 +10,9 @@
 */
 
 import "./settings.js"
+import cfonts from 'cfonts'
 import handler from './handler.js'
 import events from './commands/events.js'
-import cfonts from 'cfonts'
 import {
   Browsers,
   makeWASocket,
@@ -65,12 +65,10 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 const question = (text) => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
   return new Promise((resolve) => {
-    rl.question(text, resolve);
+    rl.question(text, (answer) => {
+      resolve(answer.trim());
+    });
   });
 };
 const usePairingCode = true;
@@ -82,6 +80,24 @@ const userInfoSyt = () => {
     return process.env.USER || process.env.USERNAME || "desconocido";
   }
 };
+
+  const DIGITS = (s = "") => String(s).replace(/\D/g, "");
+
+  function normalizePhoneForPairing(input) {
+    let s = DIGITS(input);
+    if (!s) return "";
+    if (s.startsWith("0")) s = s.replace(/^0+/, "");
+    if (s.length === 10 && s.startsWith("3")) {
+      s = "57" + s;
+    }
+    if (s.startsWith("52") && !s.startsWith("521") && s.length >= 12) {
+      s = "521" + s.slice(2);
+    }
+    if (s.startsWith("54") && !s.startsWith("549") && s.length >= 11) {
+      s = "549" + s.slice(2);
+    }
+    return s;
+  }
 
 let { say } = cfonts
 
@@ -162,11 +178,11 @@ async function startBot() {
   client.ev.on("creds.update", saveCreds)
 
   if (!client.authState.creds.registered) {
-    const phoneNumber = await question(
-      log.warn("Ingrese su número de WhatsApp\n") +
-        log.info("Ejemplo: 57301××××××") +
-      console.log(chalk.yellow('--->'))
-    )
+      log.warn("Ingrese su número de WhatsApp\n")
+       log.info("Ejemplo: 57301××××××")
+        console.log(chalk.yellow('--->'))
+        const fixed = await question("")
+        const phoneNumber = normalizePhoneForPairing(fixed);
     try {
       log.info("Solicitando código de emparejamiento...")
       const pairing = await client.requestPairingCode(phoneNumber)
