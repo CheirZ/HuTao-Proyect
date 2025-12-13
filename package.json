@@ -1,6 +1,6 @@
 {
-  "name": "megumin-bot",
-  "version": "3.0",
+  "name": "hutao-bot",
+  "version": "2.3",
   "description": "Bot WhatsApp",
   "main": "index.js",
   "type": "module",
@@ -37,6 +37,7 @@
     "moment-timezone": "^0.5.37",
     "moment": "^2.29.4",
     "lodash": "latest",
+    "cfonts": "latest",
     "node-fetch": "^2.6.1",
     "node-cache": "latest",
     "node-webpmux": "^3.2.0",
