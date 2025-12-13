@@ -12,6 +12,7 @@
 import "./settings.js"
 import handler from './handler.js'
 import events from './commands/events.js'
+import cfonts from 'cfonts'
 import {
   Browsers,
   makeWASocket,
