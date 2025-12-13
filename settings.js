@@ -1,84 +1,52 @@
-import fs from 'fs'
-import cheerio from 'cheerio'
-import fetch from 'node-fetch'
-import axios from 'axios'
-import moment from 'moment-timezone'
+/*
+ # ------------√ ×------------
+    # Agradecimientos :: AzamiJs
+    # Agradecimientos :: ZyxlJs
+    # Agradecimientos :: GataDios
 
-global.botnumber = ''
+    - Recuerda dejar los creditos, no quites los creditos de los autores del código!
+    - Puedes modificar esta base a tu gusto, recuerda dejar los creditos correspondiente!
+ # ------------√ ×------------
+*/
 
-global.owner = [
-    ["5218711426787", "Propietario 👑", true],
-    //num en lid v:
-    ["239298850873418", "creadorLid", true],
-    ["5492916450307"],    
-    ["5218712620915"],
-    ["5351524614"]
-];
+// # Esta base contiene la edición de Sub-Bots, este código fué hecho por ZyxlJs!
 
-global.mods = []
-global.suittag = []
-global.prems = []
+import fs from 'fs';
+import chalk from 'chalk';
 
-global.packsticker = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
-global.packname = '󠁖󠁖󠁖󠁖󠁖󠁖󠁻󠁻𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
-global.author = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.wm = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.titulowm = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
-global.titulowm2 = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.igfg = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.botname = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.dev = '★彡( Ӿł_₥ł₲ɄɆⱠØ₦77ӾӾ )彡★'
-global.textbot = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.gt = '𝐇𝐮ⷡ𝐓ⷪ𝐚ⷮ𝐨-𝐌𝐃󠁂󠀧󠁂🈀'
-global.namechannel = 'ɦʊȶǟօ-քʀօʏɛƈȶ'
-global.vs = 'V2.3'
+// Solo desarrolladores permitidos!
+global.owner = ['5492916450307', '5351524614', '5218711426787']
 
-global.imagen1 = "https://files-furina.stellarwa.xyz/1759366152803.jpg"
-global.imagen2 = "https://files-furina.stellarwa.xyz/1763136135509.jpg"
-global.imagen3 = "https://files-furina.stellarwa.xyz/1763136134850.jpg"
-global.imagen4 = "https://files-furina.stellarwa.xyz/1763136160223.jpg"
-global.imagen5 = fs.readFileSync('./src/+18.jpg')
-global.imagen6 = "https://files-furina.stellarwa.xyz/1763136179619.jpg"
-global.imagen7 = "https://files-furina.stellarwa.xyz/1763136191624.jpg"
-global.imagen8 = "https://files-furina.stellarwa.xyz/1763136575331.jpg"
-global.imagen9 = "https://files-furina.stellarwa.xyz/1763136580625.jpg"
-global.imagen10 = "https://files-furina.stellarwa.xyz/1763136591252.jpg"
-global.miniurl = "https://files-furina.stellarwa.xyz/1763136607528.jpg"
-global.logo2 = "https://files-furina.stellarwa.xyz/1763136612880.jpg"
-global.logo3 = "https://files-furina.stellarwa.xyz/1763136612880.jpg"
-global.catalogo = "https://files-furina.stellarwa.xyz/1763136613587.jpg"
-global.logo4 = "https://files-furina.stellarwa.xyz/1763136613834.jpg"
-global.logo5 = "https://files-furina.stellarwa.xyz/1763136615365.jpg"
-global.logo7 = "https://files-furina.stellarwa.xyz/1763136615901.jpg"
-global.logo8 = "https://files-furina.stellarwa.xyz/1763136621219.jpg"
-global.rule = fs.readFileSync('./src/rule.jpg')
-global.welcome = "https://files-furina.stellarwa.xyz/1763136621896.jpg"
-global.adios = "https://files-furina.stellarwa.xyz/1763136622229.jpg"
+// Infos Basica
+global.sessionName = 'Sessions/Owner'
+global.version = '^3.0'
+global.pairing_code = true
+global.number_bot = ''
+global.prefa = '.'
+global.msgglobal = '[Error: *TypeError*] fetch failed'
+globalThis.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ Ɗі᥈ოᥝᥰძ ❨◣_◢❩凸︎'
 
-global.photoSity = [imagen8, imagen1, imagen4, imagen6]
-
-global.languaje = 'Es'
-global.nameqr = 'HuTao'
-global.sessions = 'Session/Hutao'
-global.jadi = 'Session/SubBot'
-
-global.channel = {
-channel1: "120363371018732371@newsletter",
-channel2: "120363387958443019@newsletter",
-channel3: "120363420238618096@newsletter",
-channel4: "120363420992828502@newsletter",
-channel5: "120363419837575209@newsletter"
+// Webs
+global.api = {
+  url: 'https://api.stellarwa.xyz',
+  key: 'Diamond'
 }
 
-global.gp4 = 'https://chat.whatsapp.com/LcifaLUrmww6CPT27IuSAa'
-global.gp1 = 'https://chat.whatsapp.com/GFyLX1dDDxI0utho5GBmJI'
-global.channel = 'https://whatsapp.com/channel/0029Vb7Ji66KbYMTYLU9km3p'
-global.md = 'https://github.com/CheirZ'
-global.correo = 'miguel.doce12000@outlook.com'
-global.cn = 'https://whatsapp.com/channel/0029VacDy0R6hENqnTKnG820'
+global.bot = {
+  api: 'https://api.stellarwa.xyz',
+  web: 'https://diamond.stellarwa.xyz'
+}
 
-global.cheerio = cheerio;
-global.fs = fs;
-global.fetch = fetch;
-global.axios = axios;
-global.moment = moment;
+// Moderadores (Staff)
+global.mods = [
+  '5492916450307', 
+  '5351524614',
+ '5218711416787'
+]
+
+// Mensajes de ejecuciones
+global.mess = {
+  socket: '💣 Este comando solo puede ser ejecutado por un Socket.',
+  admin: '💣 Este comando solo puede ser ejecutado por los Administradores del Grupo.',
+  botAdmin: '💣 Este comando solo puede ser ejecutado si el Socket es Administrador del Grupo.'
+}
