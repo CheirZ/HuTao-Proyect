@@ -24,7 +24,7 @@ async function reloadCommands(dir = path.join(__dirname, '..')) {
             })
           }
         } catch (err) {
-          console.error(`Error recargando comando ${file}:`, err)
+          console.error(`Error recargando comando ${file}: ${err?.stack || err}`, err)
         }
       }
     }
@@ -35,7 +35,7 @@ async function reloadCommands(dir = path.join(__dirname, '..')) {
 }
 
 export default {
-  command: ['actualizar', 'update'],
+  command: ['fix', 'update'],
   isOwner: true,
   run: async (client, m) => {
     exec('git pull', async (error, stdout, stderr) => {
@@ -43,7 +43,7 @@ export default {
 
       let msg = ''
       if (stdout.includes('Already up to date.')) {
-        msg = '🫛 *Estado:* Todo está actualizado'
+        msg = 'ꕥ *Estado:* Todo está actualizado'
       } else {
         msg = `*Actualización completada*\n\n${stdout}`
       }
