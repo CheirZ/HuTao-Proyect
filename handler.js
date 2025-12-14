@@ -171,7 +171,7 @@ if (botprimaryId && botprimaryId !== selfId) {
 
     console.log(cmdData)
     if (!cmdData) {
-    await client.readMessages([m.key])
+    return
    }
     const comando = m.text.slice(prefix.length);
 
