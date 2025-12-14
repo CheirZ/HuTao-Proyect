@@ -185,8 +185,8 @@ if (cmdData && typeof cmdData === 'object' && cmdData.botAdmin && !isBotAdmins) 
 
     try {
     await client.readMessages([m.key])
-    const user = global.db.data.chats[m.chat].users[m.sender] ||= {}
-    const user2 = global.db.data.users[m.sender] ||= {}
+    const user = global.db.data.chats[m.chat].users[m.sender] || {}
+    const user2 = global.db.data.users[m.sender] || {}
 
     user2.usedcommands = (user2.usedcommands || 0) + 1
     user.usedTime = new Date()
