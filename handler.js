@@ -180,8 +180,8 @@ if (cmdData && typeof cmdData === 'object' && cmdData.isOwner && !global.owner.m
 ) { return }
    if (cmdData && typeof cmdData === 'object' && cmdData.isModeration && !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)
 ) { return } 
-    if (cmdData.isAdmin && !isAdmins) return client.reply(m.chat, mess.admin, m)
-    if (cmdData.botAdmin && !isBotAdmins) return client.reply(m.chat, mess.botAdmin, m)
+if (cmdData && typeof cmdData === 'object' && cmdData.isAdmin && !isAdmins) { return }
+if (cmdData && typeof cmdData === 'object' && cmdData.botAdmin && !isBotAdmins) { return client.reply(m.chat, mess.botAdmin, m) }  
 
     try {
     await client.readMessages([m.key])
