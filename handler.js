@@ -169,7 +169,6 @@ if (botprimaryId && botprimaryId !== selfId) {
 
     const cmdData = global.comandos.get(command)
 
-    console.log(cmdData)
     if (!cmdData) {
     return
    }
