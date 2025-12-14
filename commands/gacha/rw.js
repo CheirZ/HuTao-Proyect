@@ -53,8 +53,8 @@ export default {
     const userId = m.sender
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
     const chat = (db.chats[chatId] ||= { users: {}, personajesReservados: [] })
-    chat.users ||= {}
-    chat.personajesReservados ||= []
+   // chat.users ||= {}
+    // chat.personajesReservados ||= []
     const user = (chat.users[userId] ||= {})
     const now = Date.now()
 
