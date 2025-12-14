@@ -30,7 +30,7 @@ const obtenerPersonajes = () => {
 }
 
 const reservarPersonaje = (chatId, userId, personaje, db) => {
-  db.chats[chatId].personajesReservados ||= []
+  // db.chats[chatId].personajesReservados ||= []
   db.chats[chatId].personajesReservados.push({ userId, ...personaje })
 }
 
