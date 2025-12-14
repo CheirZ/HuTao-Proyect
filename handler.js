@@ -167,12 +167,11 @@ if (botprimaryId && botprimaryId !== selfId) {
 
   if (chat.adminonly && !isAdmins) return
 
- // if (global.comandos.has(command)) {
-    // await client.sendPresenceUpdate('composing', m.chat)
     const cmdData = global.comandos.get(command)
+
+    console.log(cmdData)
     if (!cmdData) {
     await client.readMessages([m.key])
-    // return m.reply(`💣 El comando *${command}* no existe.\n> Usa *${prefix}help* para ver la lista de comandos disponibles.`)
    }
     const comando = m.text.slice(prefix.length);
 
@@ -192,11 +191,11 @@ if (cmdData && typeof cmdData === 'object' && cmdData.botAdmin && !isBotAdmins) 
     user.usedTime = new Date()
     user2.exp = (user2.exp || 0) + Math.floor(Math.random() * 100)
     user2.name = m.pushName
-      await cmdData.run(client, m, args, command, text)
+    await cmdData.run(client, m, args, command, text)
     } catch (error) {
+     console.log(error)
       await client.sendMessage(m.chat, { text: `🌱 Error al ejecutar el comando\n${error}` }, { quoted: m })
     }
 
-  // valid(client, m, command)
   level(m)
 };
