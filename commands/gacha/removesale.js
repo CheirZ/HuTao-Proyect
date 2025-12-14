@@ -26,7 +26,7 @@ export default {
       return m.reply(`《✧》 No se encontró el personaje *${characterName}* en tu lista de ventas.`)
 
     const personajeCancelado = userData.personajesEnVenta.splice(index, 1)[0]
-    userData.characters ||= []
+    // userData.characters ||= []
     userData.characters.push(personajeCancelado)
 
     await client.sendMessage(
