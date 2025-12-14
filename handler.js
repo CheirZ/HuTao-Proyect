@@ -38,7 +38,7 @@ const sender = m.sender
     m.message.templateButtonReplyMessage?.selectedId ||
     ''
 
-  initDB(m, client)
+  initDB(client, m)
   antilink(client, m)
 
   // # Función de Prefijo de Sub-Bot hecho por ZyxlJs, su funcion es: NameBot/comando! 
