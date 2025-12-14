@@ -178,7 +178,8 @@ if (botprimaryId && botprimaryId !== selfId) {
 
 if (cmdData && typeof cmdData === 'object' && cmdData.isOwner && !global.owner.map(num => num + '@s.whatsapp.net').includes(sender)
 ) { return }
-    if (cmdData.isModeration && !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)) return 
+   if (cmdData && typeof cmdData === 'object' && cmdData.isModeration && !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)
+) { return } 
     if (cmdData.isAdmin && !isAdmins) return client.reply(m.chat, mess.admin, m)
     if (cmdData.botAdmin && !isBotAdmins) return client.reply(m.chat, mess.botAdmin, m)
 
