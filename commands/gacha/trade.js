@@ -41,7 +41,7 @@ export default {
     if (!personaje2)
       return m.reply(`《✧》 El personaje *${personaje2Nombre}* no está disponible para intercambio.`)
 
-    chatData.intercambios ||= []
+   // chatData.intercambios ||= []
     chatData.intercambios.push({
       solicitante: userId,
       personaje1,
