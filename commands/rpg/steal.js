@@ -1,4 +1,4 @@
-import { resolveLidToRealJid } from "../../lib/utils.js"
+/*import { resolveLidToRealJid } from "../../lib/utils.js"
 
 export default {
   command: ['steal', 'rob', 'robar'],
@@ -63,4 +63,4 @@ function msToTime(duration) {
   const minutes = Math.floor((duration / (1000 * 60)) % 60)
 
   return `${minutes} minuto${minutes !== 1 ? 's' : ''}, ${seconds} segundo${seconds !== 1 ? 's' : ''}`
-}
+}*/
