@@ -13,7 +13,7 @@ export default {
       return m.reply(`✎ Estos comandos estan desactivados en este grupo.`)
 
     const user = chatData.users[m.sender]
-    user.pptCooldown ||= 0
+    // user.pptCooldown ||= 0
     const remainingTime = user.pptCooldown - Date.now()
 
     if (remainingTime > 0)
