@@ -55,7 +55,7 @@ export default {
     // const chat = (db.chats[chatId] ||= { users: {}, personajesReservados: [] })
    // chat.users ||= {}
     // chat.personajesReservados ||= []
-    const user = (chat.users[userId] ||= {})
+    const user = chat.users[userId] || {}
     const now = Date.now()
 
     if (chat.adminonly || !chat.gacha)
