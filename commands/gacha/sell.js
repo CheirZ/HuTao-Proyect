@@ -73,7 +73,7 @@ setInterval(
             const exp = new Date(p.expira)
             const expired = Date.now() > exp
             if (expired) {
-              user.characters ||= []
+              // user.characters ||= []
               user.characters.push(p)
             }
             return !expired
