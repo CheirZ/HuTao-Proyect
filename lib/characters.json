@@ -1675,5 +1675,12 @@
     "gender": "Mujer",
     "source": "Kubo-san wa Mob wo Yurusanai",
     "keyword": "kubo_nagisa" 
+  },
+  {
+     "name": "Latifa Fleuranza",
+     "value": "2000",
+     "gender": "Mujer",
+     "source": "Amagami Brilliant Park",
+     "keyword": "latifa_fleuranza" 
   }
 ]
