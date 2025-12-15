@@ -1640,5 +1640,40 @@
     "gender": "Mujer",
     "source": "Kanojo, Okarishimasu",
     "keyword": "yaemori_mini"
+  },
+  {
+    "name": "Mahiru Shiina",
+    "value": "2500",
+    "gender": "Mujer",
+    "source": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken",
+    "keyword": "shiina_mahiru_(otonari_no_tenshi-sama)" 
+  },
+  {
+    "name": "Sylpha Langlis",
+    "value": "2000",
+    "gender": "Mujer",
+    "source": "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu",
+    "keyword": "sylpha_(dai_nana_oji)" 
+  },
+  {
+     "name": "Tina Sprout",
+     "value": "4000",
+     "gender": "Mujer",
+     "source": "Black Bullet",
+     "keyword": "tina_sprout" 
+  },
+  {
+     "name": "Ahiara Enju",
+     "value": "1000",
+     "gender": "Mujer",
+     "source": "Black Bullet",
+     "keyword": "aihara_enju" 
+  },
+  {
+    "name": "Nagisa Kubo",
+    "value": "850",
+    "gender": "Mujer",
+    "source": "Kubo-san wa Mob wo Yurusanai",
+    "keyword": "kubo_nagisa" 
   }
 ]
