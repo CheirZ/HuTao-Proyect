@@ -8,7 +8,7 @@ export default {
     const text = args.join(' ').toLowerCase()
 
     if (!text) {
-      return m.reply(`💣 Escriba una *petición* para que *ChatGPT* le responda.`)
+      return m.reply(`𖧷 Escriba una *petición* para que *ChatGPT* le responda.`)
     }
 
     const apiUrl = `${api.url}/ai/chatgpt?text=${encodeURIComponent(text)}&key=${api.key}`
@@ -16,7 +16,7 @@ export default {
     try {
       const { key } = await client.sendMessage(
         m.chat,
-        { text: `💣 *ChatGPT* está procesando tu respuesta...` },
+        { text: `𑁍 *ChatGPT* está procesando tu respuesta...` },
         { quoted: m },
       )
 
@@ -24,7 +24,7 @@ export default {
       const json = await res.json()
 
       if (!json || !json.result) {
-        return client.reply(m.chat, '💣 No se pudo obtener una *respuesta* válida')
+        return client.reply(m.chat, '᪥ No se pudo obtener una *respuesta* válida')
       }
 
       const response = `${json.result}`.trim()
