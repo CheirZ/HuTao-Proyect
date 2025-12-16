@@ -6,11 +6,11 @@ export default {
   run: async (client, m, args, command) => {
 
     if (!args[0]) {
-      return m.reply('💣 Ingrese un enlace de *Facebook*')
+      return m.reply('𒊹︎︎︎ Ingrese un enlace de *Facebook*')
     }
 
     if (!args[0].match(/facebook\.com|fb\.watch|video\.fb\.com/)) {
-      return m.reply('💣 Por favor, envía un link de Facebook válido')
+      return m.reply('𒊹︎︎︎ Por favor, envía un link de Facebook válido')
     }
 
     try {
@@ -36,8 +36,8 @@ export default {
 
       const caption = `ㅤ۟∩　ׅ　★　ׅ　🅕𝖡 🅓ownload　ׄᰙ　
 
-𖣣ֶㅤ֯⌗ 💥  ׄ ⬭ *Enlace* › ${args[0]}
-𖣣ֶㅤ֯⌗ 💥  ׄ ⬭ *Calidad* › ${quality}`.trim()
+𖣣ֶㅤ֯⌗ ✈︎  ׄ  *Enlace* › ${args[0]}
+𖣣ֶㅤ֯⌗ 𖤍  ׄ  *Calidad* › ${quality}`.trim()
 
       await client.sendMessage(
         m.chat,
