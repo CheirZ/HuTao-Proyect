@@ -145,7 +145,7 @@ Para que no pierda su progreso en HuTao, estos comandos realizarán un respaldo 
 
 
 ### **`🦋 COLABORADORES`**
-<a href="https://github.com/CheirZ/Hutao-Proyect/graphs/contributorsv2">
+<a href="https://api.stellarwa.xyz">
 <img src="https://contrib.rocks/image?repo=CheirZ/Hutao-Proyect" /> 
 </a>
 
