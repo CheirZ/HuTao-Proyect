@@ -36,14 +36,14 @@ export default {
 
           const caption = `ㅤ۟∩　ׅ　★ ໌　ׅ　🅣𝗂𝗄𝖳𝗈𝗄 🅓ownload　ׄᰙ
 
-𖣣ֶㅤ֯⌗ 🌾  ׄ ⬭ *Título:* ${title}
-𖣣ֶㅤ֯⌗ 💣  ׄ ⬭ *Autor:* ${author.nickname || author.unique_id || 'Desconocido'}
-𖣣ֶㅤ֯⌗ 🦋  ׄ ⬭ *Duración:* ${duration || 'N/A'}
-𖣣ֶㅤ֯⌗ 🌱  ׄ ⬭ *Likes:* ${(stats.likes || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🫐  ׄ ⬭ *Comentarios:* ${(stats.comments || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🥕  ׄ ⬭ *Vistas:* ${(stats.views || stats.plays || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🍃  ׄ ⬭ *Compartidos:* ${(stats.shares || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 💥  ׄ ⬭ *Audio:* ${music.title ? music.title + ' -' : 'Desconocido'} ${music.author || ''}`.trim()
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Título:* ${title}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Autor:* ${author.nickname || author.unique_id || 'Desconocido'}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Duración:* ${duration || 'N/A'}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Likes:* ${(stats.likes || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Comentarios:* ${(stats.comments || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Vistas:* ${(stats.views || stats.plays || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Compartidos:* ${(stats.shares || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Audio:* ${music.title ? music.title + ' -' : 'Desconocido'} ${music.author || ''}`.trim()
 
           const head = await fetch(dl, { method: 'HEAD' })
           const contentType = head.headers.get('content-type') || ''
@@ -82,14 +82,14 @@ export default {
 
         const caption = `ㅤ۟∩　ׅ　★ ໌　ׅ　🅣𝗂𝗄𝖳𝗈𝗄 🅓ownload　ׄᰙ
 
-𖣣ֶㅤ֯⌗ 💣  ׄ ⬭ *Título:* ${title}
-𖣣ֶㅤ֯⌗ 🍃  ׄ ⬭ *Autor:* ${author.nickname || author.unique_id || 'Desconocido'}
-𖣣ֶㅤ֯⌗ 💥  ׄ ⬭ *Duración:* ${duration || 'N/A'}
-𖣣ֶㅤ֯⌗ ❤  ׄ ⬭ *Likes:* ${(stats.likes || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🥕  ׄ ⬭ *Comentarios:* ${(stats.comments || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🌾  ׄ ⬭ *Vistas:* ${(stats.views || stats.plays || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🌱  ׄ ⬭ *Compartidos:* ${(stats.shares || 0).toLocaleString()}
-𖣣ֶㅤ֯⌗ 🫒  ׄ ⬭ *Audio:* ${music.title ? music.title + ' -' : 'Desconocido'} ${music.author || ''}`.trim()
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Título:* ${title}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Autor:* ${author.nickname || author.unique_id || 'Desconocido'}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Duración:* ${duration || 'N/A'}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Likes:* ${(stats.likes || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Comentarios:* ${(stats.comments || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗  ׄ ⬭ *Vistas:* ${(stats.views || stats.plays || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Compartidos:* ${(stats.shares || 0).toLocaleString()}
+𖣣ֶㅤ֯⌗   ׄ ⬭ *Audio:* ${music.title ? music.title + ' -' : 'Desconocido'} ${music.author || ''}`.trim()
 
         const head = await fetch(dl, { method: 'HEAD' })
         const contentType = head.headers.get('content-type') || ''
@@ -98,7 +98,7 @@ export default {
           return client.sendMessage(m.chat, { video: { url: dl }, caption }, { quoted: m })
         }
 
-        return m.reply('💣 El contenido no es *compatible*')
+        return m.reply('El contenido no es *compatible*')
       } catch (e) {
         // console.error(e)
         m.reply(msgglobal)
