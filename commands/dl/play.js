@@ -38,7 +38,6 @@ export default {
 │ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
 │ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${viestas}
 │ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
-> ${dev}
 ╰─────°.♡.°‧─────`;
 
         await client.sendMessage(m.chat, { image: thumbBuffer, caption: infoMessage }, { quoted: m })
