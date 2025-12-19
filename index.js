@@ -1,16 +1,16 @@
 /*
- # ------------√ ×------------
+ # ------------- √ × -------------
     # Agradecimientos :: ZyxlJs
     # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
-    - Recuerda dejar los creditos, no quites los creditos de los autores del código!
-    - Puedes modificar esta base a tu gusto, recuerda dejar los creditos correspondiente!
- # ------------√ ×------------
+   # Nota
+   - No elimines los créditos ni agregues créditos que no te pertenecen. Respeta el trabajo ajeno.
+   - No vendas el código del bot. Este proyecto es completamente gratuito y de código abierto.
+ # ------------- √ × -------------
 */
 
 import "./settings.js"
-import cfonts from 'cfonts'
 import handler from './handler.js'
 import events from './commands/events.js'
 import {
@@ -22,21 +22,18 @@ import {
   jidDecode,
   DisconnectReason,
 } from "@whiskeysockets/baileys";
-
+import cfonts from 'cfonts';
 import pino from "pino";
-import crypto from 'crypto';
 import chalk from "chalk";
 import fs from "fs";
 import path from "path";
+import readlineSync from "readline-sync";
+import boxen from 'boxen';
 import readline from "readline";
-import os from "os";
-import qrcode from "qrcode-terminal";
-import parsePhoneNumber from "awesome-phonenumber";
 import { smsg } from "./lib/message.js";
 import db from "./lib/system/database.js";
 import { startSubBot } from './lib/subs.js';
 import { exec, execSync } from "child_process";
-import moment from 'moment-timezone';
 
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
@@ -53,33 +50,9 @@ const log = {
     console.log(chalk.bgRed.white.bold(`ERROR`), chalk.redBright(msg)),
 };
 
-const print = (label, value) =>
-  console.log(
-    `${chalk.green.bold("║")} ${chalk.cyan.bold(label.padEnd(16))}${chalk.magenta.bold(":")} ${value}`,
-  );
-const pairingCode = process.argv.includes("--qr")
-  ? false
-  : process.argv.includes("--pairing-code") || global.pairing_code;
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-const question = (text) => {
-  return new Promise((resolve) => {
-    rl.question(text, (answer) => {
-      resolve(answer.trim());
-    });
-  });
-};
-const usePairingCode = true;
-
-const userInfoSyt = () => {
-  try {
-    return os.userInfo().username;
-  } catch (e) {
-    return process.env.USER || process.env.USERNAME || "desconocido";
-  }
-};
+const askQuestion = readlineSync
+let numero = "";
+let phoneInput = "";
 
   const DIGITS = (s = "") => String(s).replace(/\D/g, "");
 
@@ -99,19 +72,16 @@ const userInfoSyt = () => {
     return s;
   }
 
-let { say } = cfonts
+const { say } = cfonts
 
-console.log(chalk.magentaBright('\nIniciando...'))
-
-say('HuTao', {
-  font: 'simple',
-  align: 'left',
-  gradient: ['green', 'white']
+say('alya san', {
+align: 'center',           
+gradient: ['red', 'blue'] 
 })
-say('Made With CheirZ', {
-  font: 'console',
-  align: 'center',
-  colors: ['cyan', 'magenta', 'yellow']
+say('WhatsApp Bot', {
+font: 'console',
+align: 'center',
+gradient: ['blue', 'magenta']
 })
 
 const BOT_TYPES = [
@@ -148,6 +118,18 @@ async function loadBots() {
   await loadBots()
 })()
 
+const displayLoadingMessage = () => {
+  console.log(chalk.bold.redBright(`\n\nPor favor, Ingrese el número de WhatsApp.\n` +
+      `${chalk.bold.yellowBright("Ejemplo: +57301******")}\n` +
+      `${chalk.bold.magentaBright('---> ')} `));
+};
+
+if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
+displayLoadingMessage()
+phoneInput = askQuestion.question("")
+numero = normalizePhoneForPairing(phoneInput)
+}
+
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState(global.sessionName)
   const { version, isLatest } = await fetchLatestBaileysVersion();
@@ -177,24 +159,15 @@ async function startBot() {
   client.isInit = false
   client.ev.on("creds.update", saveCreds)
 
-  if (!client.authState.creds.registered) {
-      log.warn("Ingrese su número de WhatsApp\n")
-       log.info("Ejemplo: 57301××××××")
-        console.log(chalk.yellow('--->'))
-        const fixed = await question("")
-        const phoneNumber = normalizePhoneForPairing(fixed);
-    try {
-      log.info("Solicitando código de emparejamiento...")
-      const pairing = await client.requestPairingCode(phoneNumber)
-      log.success(
-        `Código de emparejamiento: ${chalk.cyanBright(pairing)} (expira en 15s)`,
-      )
-    } catch (err) {
-      log.error("Error al solicitar el código de emparejamiento:", err);
-      exec("rm -rf ./Sessions/Owner/*")
-      process.exit(1)
-    }
-  }
+if (!state.creds.registered) {
+setTimeout(async () => {
+try {
+const pairing = await client.requestPairingCode(numero);
+const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
+return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
+} catch {}
+}, 3000);
+}
 
   client.sendText = (jid, text, quoted = "", options) =>
     client.sendMessage(jid, { text: text, ...options }, { quoted })
@@ -249,23 +222,10 @@ async function startBot() {
     }
 
     if (connection == "open") {
-                  console.log(
-        chalk.bold.greenBright(
-          '\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ 𝗢𝗡𝗟𝗜𝗡𝗘 ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩\n│\n│★ CONEXIÓN EXITOSA CON WHATSAPP 🌷\n│\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ ✅  ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩'
-        )
-      )
+     // client.uptime = Date.now();
+ console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
-
-
-    if (isNewLogin) {
-      log.info("Nuevo dispositivo detectado")
-    }
-
-    if (receivedPendingNotifications == "true") {
-      log.warn("Por favor espere aproximadamente 1 minuto...")
-      client.ev.flush()
-    }
-  });
+})
 
   let m
   client.ev.on("messages.upsert", async ({ messages }) => {
