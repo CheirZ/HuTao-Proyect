@@ -26,6 +26,7 @@
     "sharp": "latest",
     "yargs": "^18.0.0",
     "better-sqlite3": "^12.4.1",
+    "boxen": "latest",
     "axios": "^0.24.0",
     "chalk": "^4.1.2",
     "express": "^4.19.2",
