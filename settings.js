@@ -1,3 +1,15 @@
+/*
+ # ------------- √ × -------------
+    # Agradecimientos :: ZyxlJs
+    # Agradecimientos :: AzamiJs
+    # Agradecimientos :: GataDios
+
+   # Nota
+   - No elimines los créditos ni agregues créditos que no te pertenecen. Respeta el trabajo ajeno.
+   - No vendas el código del bot. Este proyecto es completamente gratuito y de código abierto.
+ # ------------- √ × -------------
+*/
+
 import fs from 'fs';
 import chalk from 'chalk';
 
