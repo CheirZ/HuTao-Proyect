@@ -127,12 +127,12 @@ npm start
 
 ### 🪶 Colaboradores
 <a href="https://api.stellarwa.xyz">
-  <img src="https://contrib.rocks/image?repo=CheriZ/HuTao-Proyect" />
+  <img src="https://contrib.rocks/image?repo=CheirZ/HuTao-Proyect" />
 </a>
 
 ### 🌺 Creditos Principales
 [![ZyxlJs](https://github.com/DevZyxlJs.png?size=100)](https://github.com/DevZyxlJs)
-[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
+[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs)
 
 ### 🦩 Propietario
 [![CheirZ](https://github.com/CheirZ.png?size=150)](https://github.com/CheirZ) 
