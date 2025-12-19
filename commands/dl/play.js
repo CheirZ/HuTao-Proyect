@@ -31,19 +31,15 @@ export default {
 
         const vistas = (videoInfo.views || 0).toLocaleString()
         const canal = videoInfo.author?.name || 'Desconocido'
-        const infoMessage = `*𖹭.╭╭ִ╼࣪━ִﮩ٨ـﮩ♡̫𝗆𝖾𝗀֟፝𝗎꯭𝗆𝗂꯭𝗇♡ִ̫ﮩ٨ـﮩ━ִ╾࣪╮╮.𖹭*
-> 💥 Descargando › ${title}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🌱 Canal › ${canal}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 💣 Duración › ${videoInfo.timestamp || 'Desconocido'}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 👁 Vistas › ${vistas}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🌾 Publicado › ${videoInfo.ago || 'Desconocido'}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🍃 Enlace › ${url}
-*⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ׄۛ۫۫۫۫۫۫ۜ*`;
+        const infoMessage = `╭─────°.♡.°‧─────
+│ 🥀𝐏𝐋𝐀𝐘-𝐘𝐎𝐔𝐓𝐔𝐁𝐄🍃
+│ 📌 *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
+│ 📆 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${videoInfo.ago || 'Desconocido'}
+│ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
+│ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${viestas}
+│ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
+> ${dev}
+╰─────°.♡.°‧─────`;
 
         await client.sendMessage(m.chat, { image: thumbBuffer, caption: infoMessage }, { quoted: m })
       } else {
