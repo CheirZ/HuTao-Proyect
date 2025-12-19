@@ -21,7 +21,7 @@ export default {
       if (!isYTUrl(query)) {
         const search = await yts(query)
         if (!search.all.length) {
-          return m.reply('💣 No se *encontraron* resultados')
+          return m.reply('No se *encontraron* resultados')
         }
 
         const videoInfo = search.all[0]
@@ -31,19 +31,15 @@ export default {
 
         const vistas = (videoInfo.views || 0).toLocaleString()
         const canal = videoInfo.author?.name || 'Desconocido'
-           const infoMessage = `*𖹭.╭╭ִ╼࣪━ִﮩ٨ـﮩ♡̫𝗆𝖾𝗀֟፝𝗎꯭𝗆𝗂꯭𝗇♡ִ̫ﮩ٨ـﮩ━ִ╾࣪╮╮.𖹭*
-> 💥 Descargando › ${title}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🌱 Canal › ${canal}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 💣 Duración › ${videoInfo.timestamp || 'Desconocido'}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 👁 Vistas › ${vistas}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🌾 Publicado › ${videoInfo.ago || 'Desconocido'}
-*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
-> 🍃 Enlace › ${url}
-*⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ׄۛ۫۫۫۫۫۫ۜ*`;
+           const infoMessage = `╭─────°.♡.°‧─────
+│ 🥀𝐏𝐋𝐀𝐘-𝐘𝐎𝐔𝐓𝐔𝐁𝐄🍃
+│ 📌 *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
+│ 📆 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${videoInfo.ago || 'Desconocido'}
+│ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
+│ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${viestas}
+│ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
+> ${dev}
+╰─────°.♡.°‧─────`;
 
         await client.sendMessage(m.chat, { image: thumbBuffer, caption: infoMessage }, { quoted: m })
       } else {
@@ -51,7 +47,7 @@ export default {
       }
 
       let result
-      let qu = ['144', '360', '480', '720', '1080'];
+      let qu = ['480', '720', '1080'];
       let randomQuality = qu[Math.floor(Math.random() * qu.length)];
       try {
         const res = await fetch(`${api.url}/dl/ytmp4?url=${encodeURIComponent(url)}&quality=${randomQuality}&key=${api.key}`)
@@ -64,10 +60,10 @@ export default {
           const fallback = await fetch(`${api.url}/dl/ytdl?url=${encodeURIComponent(url)}&format=mp4&key=${api.key}`)
           result = await fallback.json()
           if (!result.status || !result.data || !result.data.dl) {
-            return m.reply('💣 No se pudo descargar el *video*, intenta mas tarde.')
+            return m.reply('No se pudo descargar el *video*, intenta mas tarde.')
           }
         } catch {
-          return m.reply('💣 No se pudo procesar el enlace. El servidor no respondió correctamente.')
+          return m.reply('No se pudo procesar el enlace. El servidor no respondió correctamente.')
         }
       }
 
