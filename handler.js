@@ -1,12 +1,13 @@
 /*
- # ------------√ ×------------
-    # Agradecimientos :: AzamiJs
+ # ------------- √ × -------------
     # Agradecimientos :: ZyxlJs
+    # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
-    - Recuerda dejar los creditos, no quites los creditos de los autores del código!
-    - Puedes modificar esta base a tu gusto, recuerda dejar los creditos correspondiente!
- # ------------√ ×------------
+   # Nota
+   - No elimines los créditos ni agregues créditos que no te pertenecen. Respeta el trabajo ajeno.
+   - No vendas el código del bot. Este proyecto es completamente gratuito y de código abierto.
+ # ------------- √ × -------------
 */
 
 import ws from 'ws';
