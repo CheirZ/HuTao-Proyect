@@ -1,5 +1,5 @@
 {
-  "name": "hutao-bot",
+  "name": "HuTao-Proyect",
   "version": "2.3",
   "description": "Bot WhatsApp",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "bot-wa",
     "multi-device"
   ],
-  "author": "David-Chian",
+  "author": "miguelon77xx",
   "license": "MIT",
   "engines": {
     "node": ">=21.7.3",
