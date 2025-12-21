@@ -36,7 +36,7 @@ export default {
 │ 📌 *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
 │ 📆 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${videoInfo.ago || 'Desconocido'}
 │ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
-│ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${viestas}
+│ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${vistas}
 │ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
 ╰─────°.♡.°‧─────`;
 
@@ -94,7 +94,7 @@ if (enviarComoDocumento) {
 await client.sendMessage(m.chat, mensaje, { quoted: m });
 
     } catch (e) {
-      await m.reply(msgglobal + e)
+      await m.reply(msgglobal)
     }
   }
 };
