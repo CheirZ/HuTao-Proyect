@@ -94,7 +94,7 @@ if (enviarComoDocumento) {
 await client.sendMessage(m.chat, mensaje, { quoted: m });
 
     } catch (e) {
-      await m.reply(msgglobal)
+      await m.reply(msgglobal + e)
     }
   }
 };
