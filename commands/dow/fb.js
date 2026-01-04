@@ -1,7 +1,7 @@
 export default {
   command: ['fb', 'facebook'],
   category: 'downloader',
-  run: async (client, m, args, command) => {
+  run: async (client, m, args) => {
 
     if (!args[0]) {
       return m.reply('ꕥ Ingrese un enlace de *Facebook*')
@@ -28,7 +28,7 @@ export default {
         { quoted: m }
       )
     } catch (e) {
-      await m.reply(msgglobal)
+      await m.reply('ꕥ Error: ' + e.message)
     }
   }
 }
