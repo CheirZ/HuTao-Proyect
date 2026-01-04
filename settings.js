@@ -1,7 +1,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
-global.owner = ['5492916450307', '5219921062586']
+global.owner = ['5218711436787']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
 global.pairing_code = true
@@ -9,29 +9,18 @@ global.number_bot = ''
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  key: 'ApiKey'
+  key: 'Proyectsv2'
 }
 
 global.bot = {
   api: 'https://api.stellarwa.xyz',
-  web: 'https://studio.stellarwa.xyz'
+  web: 'https://github.com/CheirZ'
 }
 
-global.mods = [
-  '5492916450307', // Creador
-  '5218711426787', // Miguel
-  '5491139010575', // Asistencia
-  '5219921062586', // Stellar
-  '5216671548329', // Legna
-  '593968263524', // Liliana
-  '5492324347631', // Akane
-  '51901019299', // Angel
-  '5492916439595', // Sebastian
-  '5511998790420' // Tokito
-]
+global.mods = ['']
 
 global.msgglobal = '[Error: *TypeError*] fetch failed'
-globalThis.dev = 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴɪɢʜᴛ ʟɪɢʜᴛ ⚡︎'
+globalThis.dev = '★彡[xɪ_ᴍɪɢᴜᴇʟᴏɴ77xx]彡★'
 
 global.mess = {
   socket: '《✧》 Este comando solo puede ser ejecutado por un Socket.',
@@ -40,12 +29,6 @@ global.mess = {
 }
 
 global.my = {
-  ch: '120363420992828502@newsletter',
-  name: '𐚁๋࣭⭑ֶָ֢ ѕтєℓℓαя ωα ⚡︎ ¢нαηηєℓ  ₍ᐢ..ᐢ₎♡',
-
-  ch2: '120363203805910750@newsletter', 
-  name2: '⚶ ⊹ Max Evolution𝄢 ⊹',
-
-  ch3: '120363420238618096@newsletter',
-  name3: '𐚁๋࣭⭑ֶָ֢ ѕтєℓℓαя ωα ⚡︎ αρι ₍ᐢ..ᐢ₎♡'
+  ch: '120363371018732371@newsletter',
+  name: 'HuTao Proyect - Official Channel 🫛🥙'
 }
