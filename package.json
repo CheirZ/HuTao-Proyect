@@ -1,6 +1,6 @@
 {
-  "name": "alya",
-  "version": "2.0",
+  "name": "hutao-proyect",
+  "version": "2.4",
   "description": "Bot WhatsApp",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,7 @@
     "bot-wa",
     "multi-device"
   ],
-  "author": "DevZyxlJs",
+  "author": "Xi_miguelon77xx",
   "license": "MIT",
   "engines": {
     "node": ">=21.7.3",
