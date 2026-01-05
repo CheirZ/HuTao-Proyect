@@ -35,7 +35,7 @@ if ((m.id.startsWith("3EB0") || (m.id.startsWith("BAE5") && m.id.length === 16) 
   const from = m.key.remoteJid
   const idDD = client.user.id.split(':')[0] + "@s.whatsapp.net" || ''
   const rawPrefijo = global.db.data.settings[idDD].prefijo || ''
-  const prefas = Array.isArray(rawPrefijo) ? rawPrefijo : rawPrefijo ? [rawPrefijo] : ['#', '/'] || ['#', '/']
+  const prefas = Array.isArray(rawPrefijo) ? rawPrefijo : rawPrefijo ? [rawPrefijo] : ['#', '/', '.'] || ['#', '/', '.']
 
 const rawBotname = global.db.data.settings[idDD].namebot2 || 'Alya'
 const tipo = global.db.data.settings[idDD].type || 'Sub'
