@@ -66,7 +66,6 @@ export default {
 → *ᴜsᴇʀs ::* ${users.toLocaleString()}
 → *ᴜʀʟ ::* ${link}
 → *ᴍɪ ᴛɪᴇᴍᴘᴏ ::* ${time}
-→ *sᴏʙʀᴇ ᴍɪ ᴄʀᴇᴀᴅᴏʀ ::* https://zyxljs.stellarwa.xyz
 
 ࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛   .   ࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛࿙⃛࿚⃛
 
@@ -141,7 +140,7 @@ await client.sendMessage(
         },
         externalAdReply: {
           title: botname,
-          body: `${botname2}, Built With 💛 By Stellar`,
+          body: `${botname2},`,
           showAdAttribution: false,
           thumbnailUrl: banner,
           mediaType: 1,
@@ -153,29 +152,6 @@ await client.sendMessage(
     { quoted: m }
   )
 }
-
-/*await client.sendMessage(
-  m.chat,
-  {
-    text: menu.trim(),
-    contextInfo: {
-      mentionedJid: [owner, m.sender],
-      isForwarded: false,
-      externalAdReply: {
-        title: botname,
-        body: `${botname2}, Built With 💛 By Stellar`,
-        showAdAttribution: false,
-        thumbnailUrl: banner,
-      //  thumbnail: banner,
-      //  sourceUrl: redes,
-        mediaType: 1,
-        previewType: 0,
-        renderLargerThumbnail: true
-      }
-    }
-  },
-  { quoted: m }
-)*/
     } catch (e) {
       await m.reply(msgglobal + e)
     }
