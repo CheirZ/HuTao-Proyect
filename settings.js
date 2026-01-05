@@ -9,7 +9,7 @@ global.number_bot = ''
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  key: 'Proyectsv2'
+  key: 'proyectsV2'
 }
 
 global.bot = {
