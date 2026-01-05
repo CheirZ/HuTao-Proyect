@@ -1,7 +1,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
-global.owner = ['5218711436787']
+global.owner = ['5218711426787']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
 global.pairing_code = true
@@ -17,7 +17,7 @@ global.bot = {
   web: 'https://github.com/CheirZ'
 }
 
-global.mods = ['']
+global.mods = ['5218711426787']
 
 global.msgglobal = '[Error: *TypeError*] fetch failed'
 globalThis.dev = '★彡[xɪ_ᴍɪɢᴜᴇʟᴏɴ77xx]彡★'
