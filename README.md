@@ -51,11 +51,11 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
 <summary><strong>🦦 Cloud</strong> — Shell</summary>
 
 ```bash
-git clone https://github.com/DevZyxlJs/AlyaBot-MD
+git clone https://github.com/CheirZ/HuTao-Proyect
 ```
 
 ```bash
-cd AlyaBot-MD
+cd HuTao-Proyect
 ```
 
 ```bash
