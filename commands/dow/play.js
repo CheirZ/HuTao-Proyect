@@ -12,7 +12,7 @@ export default {
   run: async (client, m, args) => {
     try {
       if (!args[0]) {
-        return m.reply('Por favor, menciona el nombre o URL del video que deseas descargar')
+        return m.reply('《✧》Por favor, menciona el nombre o URL del video que deseas descargar')
       }
 
       const query = args.join(' ')
@@ -21,7 +21,7 @@ export default {
       if (!isYTUrl(query)) {
         const search = await yts(query)
         if (!search.all.length) {
-          return m.reply('No se encontraron resultados')
+          return m.reply('✐ No se encontraron resultados')
         }
 
         const videoInfo = search.all[0]
@@ -38,15 +38,19 @@ export default {
 │ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
 │ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${vistas}
 │ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
-╰─────°.♡.°‧─────`;
+╰─────°.♡.°‧─────`
 
-        await client.sendMessage(m.chat, { image: thumbBuffer, caption: infoMessage }, { quoted: m })
+      await client.sendContextInfoIndex(m.chat, infoMessage, {}, m, true, null, {
+        banner: videoInfo.image,
+        title: '仚 🎧 PLAY',
+        body: title
+      })
       } else {
         url = query
       }
 
       let result
-      let qu = ['255', '320'];
+      let qu = ['92', '128', '255', '320'];
       let randomQuality = qu[Math.floor(Math.random() * qu.length)];
       try {
         const res = await fetch(`${api.url}/dl/ytmp3?url=${encodeURIComponent(url)}&quality=${randomQuality}&key=${api.key}`)
@@ -59,10 +63,10 @@ export default {
           const fallback = await fetch(`${api.url}/dl/ytdl?url=${encodeURIComponent(url)}&format=mp3&key=${api.key}`)
           result = await fallback.json()
           if (!result.status || !result.data || !result.data.dl) {
-            return m.reply('No se pudo descargar el *audio*, intenta mas tarde.')
+            return m.reply('《✧》 No se pudo descargar el *audio*, intenta mas tarde.')
           }
         } catch {
-          return m.reply('No se pudo procesar el enlace. El servidor no respondió correctamente.')
+          return m.reply('《✧》 No se pudo procesar el enlace. El servidor no respondió correctamente.')
         }
       }
 
