@@ -34,7 +34,7 @@ export default {
         const canal = videoInfo.author?.name || 'Desconocido'
         const infoMessage = `╭─────°.♡.°‧─────
 │ 🥀𝐏𝐋𝐀𝐘-𝐘𝐎𝐔𝐓𝐔𝐁𝐄🍃
-│ ���� *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
+│ ✍️ *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
 │ 📆 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${videoInfo.ago || 'Desconocido'}
 │ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
 │ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${vistas}
