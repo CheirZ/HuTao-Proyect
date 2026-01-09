@@ -9,6 +9,7 @@ const isYTUrl = (url) => /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i
 export default {
   command: ['play2', 'mp4', 'ytmp4', 'ytvideo', 'playvideo'],
   category: 'downloader',
+
   run: async (client, m, args) => {
     try {
       if (!args[0]) {
@@ -31,20 +32,20 @@ export default {
 
         const vistas = (videoInfo.views || 0).toLocaleString()
         const canal = videoInfo.author?.name || 'Desconocido'
-                const infoMessage = `╭─────°.♡.°‧─────
+        const infoMessage = `╭─────°.♡.°‧─────
 │ 🥀𝐏𝐋𝐀𝐘-𝐘𝐎𝐔𝐓𝐔𝐁𝐄🍃
-│ 📌 *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
+│ ���� *𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
 │ 📆 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${videoInfo.ago || 'Desconocido'}
 │ ⌚ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${videoInfo.timestamp || 'Desconocido'}
 │ 👀 *𝚅𝙸𝚂𝚃𝙰𝚂:* ${vistas}
 │ 🔗 *𝙻𝙸𝙽𝙺:* ${url}
 ╰─────°.♡.°‧─────`
 
-      await client.sendContextInfoIndex(m.chat, infoMessage, {}, m, true, null, {
-        banner: videoInfo.image,
-        title: '仚 🎧 PLAY',
-        body: title
-      })
+        await client.sendContextInfoIndex(m.chat, infoMessage, {}, m, true, null, {
+          banner: videoInfo.image,
+          title: '仚 🎧 PLAY',
+          body: title
+        })
       } else {
         url = query
       }
@@ -70,37 +71,39 @@ export default {
         }
       }
 
-const { dl, title: videoTitle } = result.data;
-const enviarComoDocumento = Math.random() < 0.3;
-let videoBuffer = await getBuffer(dl)
-let mensaje;
+      const { dl, title: videoTitle } = result.data;
+      const enviarComoDocumento = Math.random() < 0.3;
+      let videoBuffer = await getBuffer(dl)
+      let mensaje;
 
-if (enviarComoDocumento) {
-  const thumbBuffer2 = await sharp(thumbBuffer)
-    .resize(300, 300)
-    .jpeg({ quality: 80 })
-    .toBuffer();
+      if (enviarComoDocumento) {
+        let thumbBuffer2 = null;
+        if (thumbBuffer) {
+          thumbBuffer2 = await sharp(thumbBuffer)
+            .resize(300, 300)
+            .jpeg({ quality: 80 })
+            .toBuffer();
+        }
 
-  mensaje = {
-    document: videoBuffer,
-    mimetype: 'video/mp4',
-    fileName: `${videoTitle}.mp4`,
-    jpegThumbnail: thumbBuffer2
-  };
-} else {
-  mensaje = {
-    video: videoBuffer,
-    fileName: `${videoTitle}.mp4`,
-    mimetype: 'video/mp4'
-  };
-}
+        mensaje = {
+          document: videoBuffer,
+          mimetype: 'video/mp4',
+          fileName: `${videoTitle}.mp4`,
+          jpegThumbnail: thumbBuffer2
+        };
+      } else {
+        mensaje = {
+          video: videoBuffer,
+          fileName: `${videoTitle}.mp4`,
+          mimetype: 'video/mp4'
+        };
+      }
 
-await client.sendMessage(m.chat, mensaje, { quoted: m });
+      await client.sendMessage(m.chat, mensaje, { quoted: m });
     } catch (e) {
       await m.reply(msgglobal)
     }
-  }
-};
+  },
 
   handleFormat(userFormat, searchJson) {
     this.validateFormat(userFormat)
@@ -109,7 +112,11 @@ await client.sendMessage(m.chat, mensaje, { quoted: m });
       result = searchJson.links?.mp3?.mp3128?.k
     } else {
       const allFormats = Object.entries(searchJson.links.mp4)
-      const quality = allFormats.map(v => v[1].q).filter(v => /\d+p/.test(v)).map(v => parseInt(v)).sort((a, b) => b - a).map(v => v + 'p')
+      const quality = allFormats.map(v => v[1].q)
+        .filter(v => /\d+p/.test(v))
+        .map(v => parseInt(v))
+        .sort((a, b) => b - a)
+        .map(v => v + 'p')
       const selectedFormat = quality.includes(userFormat) ? userFormat : quality[0]
       const find = allFormats.find(v => v[1].q === selectedFormat)
       result = find?.[1]?.k
