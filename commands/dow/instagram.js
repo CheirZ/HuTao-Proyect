@@ -10,8 +10,6 @@ export default {
     const isPremiumBot = global.db.data.settings[botId]?.botprem === true
     const isModBot = global.db.data.settings[botId]?.botmod === true
 
-    if (!isOficialBot && !isPremiumBot && !isModBot) {
-      return client.reply(m.chat, `🌽 El comando *${command}* no está disponible en *Sub-Bots.*`, m)
     }
 
     const url = args[0]
