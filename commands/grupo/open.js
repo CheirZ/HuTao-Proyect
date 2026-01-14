@@ -9,10 +9,12 @@ export default {
       const groupAnnouncement = groupMetadata.announce
 
       if (groupAnnouncement === false) {
+        m.react('❌')
         //return client.reply(m.chat, `🌽 El grupo ya está abierto.`, m)
       }
 
       await client.groupSettingUpdate(m.chat, 'not_announcement')
+      m.react('✅')
       //return client.reply(m.chat, `🌽 El grupo ha sido abierto correctamente.`, m)
     } catch (err) {
       console.error(err)
