@@ -115,7 +115,7 @@ export default {
             const res = await fetch(fuente.url).then(r => r.json());
             const dl = res?.result?.url || res?.data?.dl || res?.result?.download?.url || res?.downloads?.url || res?.data?.download?.url;
             if (dl) {
-              const objeto = { [docMode ? 'document' : 'video']: { url: dl }, fileName: `${title}.mp4`, mimetype: 'video/mp4', caption: `✅ ${docMode ? "Documento" : "Video"} entregado desde *${fuente.sistema}*`, thumbnail: thumb };
+              const objeto = { [docMode ? 'document' : 'video']: { url: dl }, fileName: `${title}.mp4`, mimetype: 'video/mp4', caption: `✅ ${docMode ? "Documento" : "Video"} ${dev}`, thumbnail: thumb };
               await client.sendMessage(m.chat, objeto, { quoted: m });
               return;
             }
