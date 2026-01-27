@@ -9,7 +9,9 @@ global.number_bot = ''
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  key: 'proyectsV2'
+  url2: 'https://sylphy.xyz',
+  key: 'proyectsV2', //saca ru apikey en la web stellarwa.xyz
+  key2: 'ApiKey' //saca tu apikey en la web sylphy.xyz
 }
 
 global.bot = {
