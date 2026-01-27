@@ -7,8 +7,8 @@ export default {
 
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
     const isOficialBot = botId === global.client.user.id.split(':')[0] + '@s.whatsapp.net'
-    const isPremiumBot = global.db.data.settings[botId]?.botprem === true
-    const isModBot = global.db.data.settings[botId]?.botmod === true
+    const isPremiumBot = global.db.data.settings[botId]?.botprem === false
+    const isModBot = global.db.data.settings[botId]?.botmod === false
 
     if (!isOficialBot && !isPremiumBot && !isModBot) {
       return client.reply(m.chat, `🌽 El comando *${command}* no esta disponible en *Sub-Bots.*`, m)
