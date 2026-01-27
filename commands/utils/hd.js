@@ -1,57 +1,78 @@
-import fetch from 'node-fetch';
-import FormData from 'form-data';
+import sharp from 'sharp'
+import { downloadContentFromMessage } from '@whiskeysockets/baileys'
 
 export default {
-  command: ['hd'],
+  command: ['hd', 'enhance', 'hdphoto', 'mejorar'],
   category: 'utils',
-    run: async (client, m, args, command, text, prefix) => {
+
+  run: async (client, m) => {
     try {
       const q = m.quoted || m
-      const mime = q.mimetype || q.msg?.mimetype || ''
+      const mime = (q.msg || q).mimetype || ''
 
-      if (!mime) return m.reply(`🍒 Envía una *imagen* junto al *comando* ${prefix + command}`)
-      if (!/image\/(jpe?g|png)/.test(mime)) {
-        return m.reply(`🌾 El formato *${mime}* no es compatible`)
+      if (!/image\/(jpeg|jpg|png|webp)/i.test(mime)) {
+        return client.reply(
+          m.chat,
+          '🖼️ *Responde a una imagen para mejorarla en HD*',
+          m
+        )
       }
 
-     // await m.reply(mess.wait)
+      await client.sendMessage(m.chat, {
+        react: { text: '🕒', key: m.key }
+      })
 
-      const buffer = await q.download()
-      const uploadedUrl = await uploadToUguu(buffer)
-      if (!uploadedUrl) {
-        return m.reply('🌱 No se pudo *subir* la imagen')
+      const stream = await downloadContentFromMessage(
+        q.msg || q.message,
+        'image'
+      )
+
+      let buffer = Buffer.alloc(0)
+      for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk])
       }
 
-      const enhancedBuffer = await getEnhancedBuffer(uploadedUrl)
-      if (!enhancedBuffer) {
-        return m.reply('🦩 No se pudo *obtener* la imagen mejorada')
+      if (!buffer.length) {
+        await client.sendMessage(m.chat, {
+          react: { text: '❌', key: m.key }
+        })
+        return client.reply(m.chat, '❌ No pude descargar la imagen.', m)
       }
 
-      await client.sendMessage(m.chat, { image: enhancedBuffer, caption: null }, { quoted: m })
+      const hdBuffer = await sharp(buffer)
+        .resize({
+          width: 2000,
+          withoutEnlargement: false
+        })
+        .jpeg({ quality: 100 })
+        .toBuffer()
+
+      await client.sendMessage(
+        m.chat,
+        {
+          image: hdBuffer,
+          caption: '✨ *Imagen mejorada en HD*'
+        },
+        { quoted: m }
+      )
+
+      await client.sendMessage(m.chat, {
+        react: { text: '✅', key: m.key }
+      })
+
     } catch (err) {
-      console.error(err)
-      await m.reply(msgglobal)
+      console.error('Error en hd:', err)
+      try {
+        await client.sendMessage(m.chat, {
+          react: { text: '❌', key: m.key }
+        })
+      } catch {}
+
+      client.reply(
+        m.chat,
+        '❌ Error al procesar la imagen en HD.',
+        m
+      )
     }
-  },
-};
-
-async function uploadToUguu(buffer) {
-  const body = new FormData()
-  body.append('files[]', buffer, 'image.jpg')
-
-  const res = await fetch('https://uguu.se/upload.php', {
-    method: 'POST',
-    body,
-    headers: body.getHeaders(),
-  })
-
-  const json = await res.json()
-  return json.files?.[0]?.url
-}
-
-async function getEnhancedBuffer(url) {
-  const res = await fetch(`${api.url}/tools/upscale?url=${url}&key=${api.key}`)
-  if (!res.ok) return null
-
-  return Buffer.from(await res.arrayBuffer())
+  }
 }
