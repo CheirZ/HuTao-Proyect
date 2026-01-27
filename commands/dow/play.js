@@ -90,7 +90,7 @@ export default {
           const result = api.downloadUrl;
           await client.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
         } catch {
-          const api = await fetch(`https://api.stellarwa.xyz/dl/ytmp3?url=${url}&key=${srellar.apikey}`).then(r => r.json());
+          const api = await fetch(`https://${api.url}/dl/ytmp3?url=${url}&key=${api.key}`).then(r => r.json());
           const result = api.data?.dl;
           if (!result) throw new Error();
           await client.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.data.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
@@ -102,9 +102,9 @@ export default {
       } else if (['play2', 'ytv', 'mp4', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command)) {
         const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command);
         const fuentes = [
-            { sistema: "sylphy", url: `https://sylphy.xyz/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${sylphy.apikey}` },
-          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${stellar.apikey}` },
-          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&key=${stellar.apikey}` },
+            { sistema: "sylphy", url: `https://${api.url2}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key2}` },
+          { sistema: "Stellar", url: `https://${api.url}dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${api.key}` },
+          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&key=${api.key}` },
          // { sistema: "SiputzX", url: `https://api.siputzx.my.id/api/d/ytmp4?url=${url}` },
           //{ sistema: "ZenKey", url: `https://api.zenkey.my.id/api/download/ytmp4?apikey=zenkey&url=${url}` },
           //{ sistema: "Axeel", url: `https://axeel.my.id/api/download/video?url=${encodeURIComponent(url)}` },
