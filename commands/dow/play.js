@@ -90,7 +90,7 @@ export default {
           const result = api.downloadUrl;
           await client.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
         } catch {
-          const api = await fetch(`https://${api.url}/dl/ytmp3?url=${url}&key=${api.key}`).then(r => r.json());
+          const api = await fetch(`https://apo.stellarwa.xyz/dl/ytmp3?url=${url}&key=proyectsV2`).then(r => r.json());
           const result = api.data?.dl;
           if (!result) throw new Error();
           await client.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.data.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
