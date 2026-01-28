@@ -31,6 +31,7 @@ export default {
       const json = await res.json()
 
       if (!json.status || !json.result?.dl) {
+        m.rract('❌')
         return client.reply(m.chat, '🌽 No se pudo *obtener* el contenido', m)
       }
 
@@ -46,6 +47,7 @@ export default {
       )
 
     } catch (e) {
+      m.react('❌')
       await client.reply(m.chat, msgglobal, m)
     }
   }
