@@ -102,8 +102,8 @@ export default {
       } else if (['play2', 'ytv', 'mp4', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command)) {
         const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command);
         const fuentes = [
-            { sistema: "sylphy", url: `https://${api.url2}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key2}` },
-          { sistema: "Stellar", url: `https://${api.url}dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${api.key}` },
+            { sistema: "sylphy", url: `https://${global.api.url2}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${global.api.key2}` },
+          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${global.api.key}` },
           { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&key=${api.key}` },
          // { sistema: "SiputzX", url: `https://api.siputzx.my.id/api/d/ytmp4?url=${url}` },
           //{ sistema: "ZenKey", url: `https://api.zenkey.my.id/api/download/ytmp4?apikey=zenkey&url=${url}` },
