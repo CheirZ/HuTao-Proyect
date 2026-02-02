@@ -1689,5 +1689,26 @@
      "gender": "Hombre",
      "source": "Dragon Ball",
      "keyword": "goku" 
-  }
+  },
+  {
+     "name": "Anya Forger",
+     "value": "3500",
+     "gender": "Mujer",
+     "source": "Spy x Family",
+     "keyword": "anya_(spy_x_family)"
+  },
+  {
+     "name": "Loid Forger",
+     "value": "1000",
+     "gender": "Hombre",
+     "source": "Spy x Family",
+     "keyword": "loid_forger"
+  },
+  { 
+     "name": "Yor Forger",
+     "value": "5000",
+     "gender": "Mujer",
+     "source": "Spy x Family",
+     "keyword": "yor_forger"
+  }  
 ]
