@@ -22,7 +22,7 @@ export default {
       return m.reply(`🫛 Estos comandos estan desactivados en este grupo.`)
 
     const user = chatData.users[m.sender]
-    const cooldown = 10 * 60 * 1000
+    const cooldown = 5 * 60 * 1000
     const now = Date.now()
     const remaining = (user.rtCooldown || 0) - now
     const currency = botSettings.currency || 'Monedas'
