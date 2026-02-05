@@ -29,7 +29,7 @@ export default {
         }).length
       : 0
 
-    const maxSubs = 45
+    const maxSubs = 50
     if (subsCount >= maxSubs) {
       return client.reply(
         m.chat,
