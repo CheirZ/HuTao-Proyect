@@ -1710,5 +1710,19 @@
      "gender": "Mujer",
      "source": "Spy x Family",
      "keyword": "yor_forger"
-  }  
+  },
+  {
+     "name": "Ladybug",
+     "value": "2500",
+     "gender": "Mujer",
+     "source": "Miraculous Ladybug",
+     "keyword": "ladybug_(miraculous_ladybug)"
+  },
+  {
+    "name": "Cat Noir",
+     "value": "1500",
+     "gender": "Mujer",
+     "source": "Miraculous Ladybug",
+     "keyword": "chat_noir"
+  }
 ]
