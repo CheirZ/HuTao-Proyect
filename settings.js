@@ -31,6 +31,6 @@ global.mess = {
 }
 
 global.my = {
-  ch: '120363405797868544@newsletter',
-  name: 'Hu Tao-Proyect (el respaldo)'
+  ch: '120363425434939442@newsletter',
+  name: '🦋 HuTao-proyect 🔥 Oficial chanel'
 }
