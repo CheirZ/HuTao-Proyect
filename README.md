@@ -157,22 +157,20 @@ cd && cd HuTao-Proyect && rm -rf Sessions/Owner && npm start
 ### Patrocinadores del Proyecto
 
 <details>
-<summary><strong>☁️ Stellar</strong> — API</summary>
+<summary><strong>☁️ Night</strong> — API</summary>
 
 <div align="center">
-  <a href="https://api.stellarwa.xyz">
-    <img src="https://api.stellarwa.xyz/favicon.ico" alt="Logo" height="125px">
+  <a href="https://api.nightlight.qzz.io">
+    <img src="https://api.nightlight.qzz.io/favicon.ico" alt="Logo" height="125px">
   </a>
 </div>
 
 ### 🐢 Enlaces Principales
 | Servicio | Enlace |
 |------------|-----------|
-| Dashboard | [Abrir](https://api.stellarwa.xyz) |
-| Store | [Abrir](https://api.stellarwa.xyz/store) 
-| Soporte | [Visitar](https://api.stellarwa.xyz/ticket) 
-| Terminos | [Ver](https://stellarwa.xyz/terms) 
-| Estado de Servicios | [Ver](https://stellarwa.xyz/status) 
+| Dashboard | [Abrir](https://api.nightlight.qzz.io) |
+| Store | [Abrir](https://api.nightlight.qzz.io/store) 
+| Soporte | [Visitar](https://api.nightlight.qzz.io/ticket)  
 
 </details>
 
