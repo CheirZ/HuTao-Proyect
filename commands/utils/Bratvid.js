@@ -19,7 +19,7 @@ export default {
       await m.react('🕒');
       let user = global.db.data.users[m.sender] || {};
       const name = user.name || m.sender.split('@')[0];
-      let texto1 = user.metadatos || `ʏᴜᴋɪ 🧠 Wᴀʙᴏᴛ'ꜱ`;
+      let texto1 = user.metadatos || ``;
       let texto2 = user.metadatos2 || `@${name}`;      
       const videoBuffer = await fetchStickerVideo(text);
       const tmpFile = `./tmp-${Date.now()}.mp4`;
