@@ -56,7 +56,7 @@ export default {
 
       let menu = `> *¡ʜᴏʟᴀ!* ${global.db.data.users[m.sender].name}, como está tu día?, mucho gusto mi nombre es *${botname2}*
 
-︵ׄ⏜︵ׄ⠑ ⏜ 𓊈  🌱  𓊉 ⏜ ⠊︵ֺ⏜︵ֺ
+︵ׄ⏜︵ׄ⠑ ⏜ 𓊈    𓊉 ⏜ ⠊︵ֺ⏜︵ֺ
 
 → *ᴅᴇᴠᴇʟᴏᴘᴇʀ ::* ${owner ? (!isNaN(owner.replace(/@s\.whatsapp\.net$/, '')) ? `${global.db.data.users[owner].name}` : owner) : "Oculto por privacidad"}
 → *ᴛɪᴘᴏ ::* ${botType}
@@ -81,7 +81,7 @@ export default {
       }
 
       if (categoryArg && !categories[categoryArg]) {
-        return m.reply(`🌱 La categoría *${categoryArg}* no fue encontrada.`)
+        return m.reply(` La categoría *${categoryArg}* no fue encontrada.`)
       }
 
       for (const [category, cmds] of Object.entries(categories)) {
@@ -99,7 +99,7 @@ export default {
               return `${prefix}${aliasClean}`
             })
             .join(' › ')
-          menu += `.꒷🌳.𖦹˙ ${aliases} ${cmd.uso ? `+ ${cmd.uso}` : ''}\n`
+          menu += `.꒷.𖦹˙ ${aliases} ${cmd.uso ? `+ ${cmd.uso}` : ''}\n`
           menu += `> ${cmd.desc}\n`
         })
       }
