@@ -16,7 +16,7 @@ const fecha = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', ye
 
 let user = globalThis.db.data.users[m.sender];
 const name = user.name;
-let text1 = user.metadatos || `S'ᴛᴇʟʟᴀʀ 🧠 WᴀBᴏᴛ`;
+let text1 = user.metadatos || ``;
 let text2 = user.metadatos2 || `@${name}`;
 
 if (/image/.test(mime)) {
@@ -25,7 +25,7 @@ let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: tex
 await fs.unlinkSync(encmedia)  
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 20) {
-return m.reply('🌽 El video no puede ser muy largo')
+return m.reply('El video no puede ser muy largo')
 }
 media = await quoted.download()
 
@@ -33,7 +33,7 @@ let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: tex
 await new Promise((resolve) => setTimeout(resolve, 2000))
 await fs.unlinkSync(encmedia)  
 } else {
-return client.reply(m.chat, '🍒 Por favor, envia una imagen o video para hacer un sticker.', m);
+return client.reply(m.chat, 'Por favor, envia una imagen o video para hacer un sticker.', m);
 }
 } catch (e) {
 m.reply(msgglobal + e)
