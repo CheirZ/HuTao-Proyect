@@ -21,7 +21,7 @@
     "npm": ">=10.9.4"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "^v7.0.0-rc.9",
+    "@whiskeysockets/baileys": "github:Ado21/BailMod",
     "awesome-phonenumber": "^4.4.0",
     "sharp": "latest",
     "yargs": "^18.0.0",
