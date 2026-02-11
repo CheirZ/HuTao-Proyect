@@ -3,12 +3,14 @@ import moment from 'moment-timezone'
 
 export default async (client, m) => {
   client.ev.on('group-participants.update', async (anu) => {
-  //  console.log(anu)
     try {
       const metadata = await client.groupMetadata(anu.id)
       const chat = global.db.data.chats[anu.id]
       const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
       const primaryBotId = chat?.primaryBot
+
+      const isSelf = global.db.data.settings[botId]?.self ?? false
+      if (isSelf) return
 
       const now = new Date()
       const colombianTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Bogota' }))
@@ -27,13 +29,7 @@ export default async (client, m) => {
         const pp = await client.profilePictureUrl(jid, 'image').catch(_ => 'https://files-furina.stellarwa.xyz/1769449314017.jpg')
 
         const fakeContext = {
-          contextInfo: {
-            isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-              newsletterJid: global.db.data.settings[botId].id,
-              serverMessageId: '0',
-              newsletterName: global.db.data.settings[botId].nameid
-            },
+          contextInfo: {        
             externalAdReply: {
               title: global.db.data.settings[botId].namebot,
               body: dev,
@@ -50,7 +46,16 @@ export default async (client, m) => {
         }
 
         if (anu.action === 'add' && chat?.welcome && (!primaryBotId || primaryBotId === botId)) {
-          const caption = `╭┈──̇─̇─̇────̇─̇─̇──◯◝
+          let caption;
+          if (chat.welcomeMessage && chat.welcomeMessage.trim() !== '') {
+            caption = chat.welcomeMessage
+              .replace(/@user/g, `@${phone}`)
+              .replace(/@group/g, metadata.subject)
+              .replace(/@desc/g, metadata.desc || 'Sin descripción')
+              .replace(/@members/g, memberCount)
+              .replace(/@time/g, `${tiempo} ${tiempo2}`);
+          } else {
+            caption = `╭┈──̇─̇─̇────̇─̇─̇──◯◝
 ┊「 *Bienvenido (⁠ ⁠ꈍ⁠ᴗ⁠ꈍ⁠)* 」
 ┊︶︶︶︶︶︶︶︶︶︶︶
 ┊  *Usuario ›* @${phone}
@@ -60,11 +65,21 @@ export default async (client, m) => {
 ┊➤ *Ahora somos ${memberCount} miembros.*
 ┊ ︿︿︿︿︿︿︿︿︿︿︿
 ╰─────────────────╯`
+          }
           await client.sendMessage(anu.id, { image: { url: pp }, caption, ...fakeContext })
         }
 
-        if ((anu.action === 'remove' || anu.action === 'leave') && chat?.welcome && (!primaryBotId || primaryBotId === botId)) {
-          const caption = `╭┈──̇─̇─̇────̇─̇─̇──◯◝
+        if ((anu.action === 'remove' || anu.action === 'leave') && chat?.goodbye && (!primaryBotId || primaryBotId === botId)) {
+          let caption;
+          if (chat.byeMessage && chat.byeMessage.trim() !== '') {
+            caption = chat.byeMessage
+              .replace(/@user/g, `@${phone}`)
+              .replace(/@group/g, metadata.subject)
+              .replace(/@desc/g, metadata.desc || 'Sin descripción')
+              .replace(/@members/g, memberCount)
+              .replace(/@time/g, `${tiempo} ${tiempo2}`);
+          } else {
+            caption = `╭┈──̇─̇─̇────̇─̇─̇──◯◝
 ┊「 *Hasta pronto (⁠╥⁠﹏⁠╥⁠)* 」
 ┊︶︶︶︶︶︶︶︶︶︶︶
 ┊  *Nombre ›* @${phone}
@@ -73,6 +88,7 @@ export default async (client, m) => {
 ┊➤ *Ahora somos ${memberCount} miembros.*
 ┊ ︿︿︿︿︿︿︿︿︿︿︿
 ╰─────────────────╯`
+          }
           await client.sendMessage(anu.id, { image: { url: pp }, caption, ...fakeContext })
         }
 
