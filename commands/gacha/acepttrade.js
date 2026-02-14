@@ -1,5 +1,5 @@
 export default {
-  command: ['accepttrade', 'aceptarintercambio'],
+  command: ['accepttrade', 'aceptarintercambio', 'aceptarwf'],
   category: 'gacha',
   run: async (client, m) => {
     const db = global.db.data
