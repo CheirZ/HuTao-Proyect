@@ -160,17 +160,17 @@ cd && cd HuTao-Proyect && rm -rf Sessions/Owner && npm start
 <summary><strong>☁️ Night</strong> — API</summary>
 
 <div align="center">
-  <a href="https://api.nightlight.qzz.io">
-    <img src="https://api.nightlight.qzz.io/favicon.ico" alt="Logo" height="125px">
+  <a href="https://api.stellarwa.xyz">
+    <img src="https://api.stellarwa.xyz/favicon.ico" alt="Logo" height="125px">
   </a>
 </div>
 
 ### 🐢 Enlaces Principales
 | Servicio | Enlace |
 |------------|-----------|
-| Dashboard | [Abrir](https://api.nightlight.qzz.io) |
-| Store | [Abrir](https://api.nightlight.qzz.io/store) 
-| Soporte | [Visitar](https://api.nightlight.qzz.io/ticket)  
+| Dashboard | [Abrir](https://api.stellarwa.xyz) |
+| Store | [Abrir](https://api.stellarwa.xyz/store) 
+| Soporte | [Visitar](https://api.stellarwa.xyz/ticket)  
 
 </details>
 
