@@ -157,7 +157,7 @@ cd && cd HuTao-Proyect && rm -rf Sessions/Owner && npm start
 ### Patrocinadores del Proyecto
 
 <details>
-<summary><strong>☁️ Night</strong> — API</summary>
+<summary><strong>☁️ Stellar</strong> — API</summary>
 
 <div align="center">
   <a href="https://api.stellarwa.xyz">
