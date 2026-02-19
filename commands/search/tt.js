@@ -17,7 +17,7 @@ export default {
     }
 
     const query = args.join(' ')
-    const url = `${api.url}/search/tiktok?query=${query}&key=${api.key}`
+    const url = `https://api.evogb.org/search/tiktok?query=${query}&key=${api.key}`
 
     // await m.reply(mess.wait)
 
