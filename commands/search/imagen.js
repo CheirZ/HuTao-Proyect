@@ -41,7 +41,7 @@ const bannedWords = [
   'sexvid', 'sexpics', 'sexphoto', 'seximage', 'sexgif', 'pornpic', 'pornimage',
   'pornvid', 'pornvideo', 'only fan', 'only-fans', 'only_fans', 'onlyfans.com',
   'mia khalifha', 'mia khalifah', 'mia khalifaa', 'mia khalif4', 'mia khal1fa',
-  'mia khalifa +18', 'mia khalifa xxx', 'mia khalifa desnuda', 'mia khalifa porno'
+  'mia khalifa +18', 'mia khalifa xxx', 'mia khalifa desnuda', 'mia khalifa porno', 'rule34', 'r34'
 ]
     const lowerText = text.toLowerCase()
     const nsfwEnabled = global.db.data.chats[m.chat]?.nsfw === true
@@ -52,7 +52,7 @@ const bannedWords = [
 
     await m.reply(mess.wait)
 
-    const url = `${api.url}/search/googleimagen?query=${encodeURIComponent(text)}&key=${api.key}`
+    const url = `https://api.evogb.org/search/googleimagen?query=${encodeURIComponent(text)}&key=${api.key}`
 
     try {
       const res = await fetch(url)
