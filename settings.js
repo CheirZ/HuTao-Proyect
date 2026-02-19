@@ -8,10 +8,12 @@ global.pairing_code = true
 global.number_bot = ''
 
 global.api = {
-  url: 'https://api.stellarwa.xyz',
-  url2: 'https://sylphy.xyz',
-  key: 'proyectsV2', //saca ru apikey en la web stellarwa.xyz
-  key2: 'ApiKey' //saca tu apikey en la web sylphy.xyz
+  url: 'https://api.evogb.org',
+  url2: 'https://api.stellarwa.xyz',
+  url3: 'https://sylphy.xyz',
+  key: 'Apikey',
+  key2: 'proyectsV2', //saca ru apikey en la web stellarwa.xyz
+  key3: 'ApiKey' //saca tu apikey en la web sylphy.xyz
 }
 
 global.bot = {
