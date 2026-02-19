@@ -16,7 +16,7 @@ export default {
 
     try {
       const response = await axios.get(
-        `${api.url}/search/apk?query=${encodeURIComponent(query)}&key=${api.key}`,
+        `https://api.evogb.org/search/apk?query=${encodeURIComponent(query)}&key=proyectsV2`,
       )
       const data = response.data.data
 
