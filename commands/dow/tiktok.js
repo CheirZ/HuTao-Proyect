@@ -100,8 +100,8 @@ export default {
 
         return m.reply('🌽 El contenido no es *compatible*')
       } catch (e) {
-        // console.error(e)
-        m.reply(msgglobal)
+         console.error(e)
+        m.reply(msgglobal + ${e})
       }
     }
   },
