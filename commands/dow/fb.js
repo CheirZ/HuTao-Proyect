@@ -12,7 +12,7 @@ export default {
     }
 
     try {
-      const videoUrl = `${api.url}/dl/facebookv2?url=${args[0]}&key=${api.key}`
+      const videoUrl = `https://api.evogb.org/dl/facebook?url=${args[0]}&key=${api.key}`
 
       const response = await fetch(videoUrl)
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
