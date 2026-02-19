@@ -1,5 +1,5 @@
 export default {
-  command: ['promote'],
+  command: ['promote', 'darpija'],
   category: 'grupo',
   isAdmin: true,
   botAdmin: true,
