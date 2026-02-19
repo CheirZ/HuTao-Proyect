@@ -14,7 +14,7 @@ export default {
     if (urls.length) {
       for (const url of urls) {
         try {
-          const apiUrl = `${global.api.url}/dl/tiktok?url=${url}&key=${global.api.key}`
+          const apiUrl = `https://api.evogb.org/dl/tiktok?url=${url}&key=proyectsV2`
           const res = await fetch(apiUrl)
           if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
           const json = await res.json()
@@ -61,7 +61,7 @@ export default {
     } else {
       const query = args.join(" ")
       try {
-        const apiUrl = `${api.url}/search/tiktok?query=${encodeURIComponent(query)}&key=${api.key}`
+        const apiUrl = `https://api.evogb.org/search/tiktok?query=${encodeURIComponent(query)}&key=proyectsV2`
         const res = await fetch(apiUrl)
         if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
         const json = await res.json()
@@ -100,8 +100,8 @@ export default {
 
         return m.reply('🌽 El contenido no es *compatible*')
       } catch (e) {
-         console.error(e)
-        m.reply(msgglobal + ${e})
+        // console.error(e)
+        m.reply(msgglobal + e)
       }
     }
   },
