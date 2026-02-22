@@ -23,7 +23,7 @@ const obtenerImagenGelbooru = async (keyword, name) => {
   }
 
   try {
-    const urlPinterest = `https://api.evogb.org/search/pinterest?query=${name}-Anime&key=${api.key}`;
+    const urlPinterest = `${api.url2}/search/pinterest?query=${name}-Anime&key=${api.key} `;
     const resPinterest = await fetch(urlPinterest);
     if (!resPinterest.ok) throw new Error(`Pinterest HTTP ${resPinterest.status}`);
     const dataPinterest = await resPinterest.json();
@@ -41,7 +41,7 @@ const obtenerImagenGelbooru = async (keyword, name) => {
   }
 
   try {
-    const urlStellar = `https://api.evogb.org/search/googleimagen?query=${name}-Anime`;
+    const urlStellar = `${apu.url}/search/googleimagen?query=${name}-Anime `;
     const resStellar = await fetch(urlStellar);
     if (!resStellar.ok) throw new Error(`StellarWa HTTP ${resStellar.status}`);
     const buffer = await resStellar.buffer();
