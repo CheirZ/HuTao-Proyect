@@ -14,7 +14,7 @@ export default {
     if (urls.length) {
       for (const url of urls) {
         try {
-          const apiUrl = `https://api.evogb.org/dl/tiktok?url=${url}&key=proyectsV2`
+          const apiUrl = `${api.url2}/dl/tiktok?url=${url}&key=${api.key2}`
           const res = await fetch(apiUrl)
           if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
           const json = await res.json()
@@ -61,7 +61,7 @@ export default {
     } else {
       const query = args.join(" ")
       try {
-        const apiUrl = `https://api.evogb.org/search/tiktok?query=${encodeURIComponent(query)}&key=proyectsV2`
+        const apiUrl = `${api.url2}/search/tiktok?query=${encodeURIComponent(query)}&key=${api.key2}`
         const res = await fetch(apiUrl)
         if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
         const json = await res.json()
