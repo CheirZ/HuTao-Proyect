@@ -103,7 +103,7 @@ export default {
         const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command);
         const fuentes = [
             { sistema: "sylphy", url: `https://${api.url3}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key3}` },
-          { sistema: "Stellar", url: `${api.url2}/dl/youtube?url=${encodeURIComponent(url)}&quality=720&key=${api.key2}` },
+          { sistema: "Stellar", url: `https://api.evogb.org/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2` },
           { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&key=proyectsV2` },
          // { sistema: "SiputzX", url: `https://api.siputzx.my.id/api/d/ytmp4?url=${url}` },
           //{ sistema: "ZenKey", url: `https://api.zenkey.my.id/api/download/ytmp4?apikey=zenkey&url=${url}` },
