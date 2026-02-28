@@ -20,7 +20,7 @@ export default {
       return m.reply(`🍒 Escriba una *petición* para que *ChatGPT* le responda.`)
     }
 
-    const apiUrl = `${api.url}/ai/chatgpt?text=${encodeURIComponent(text)}&key=${api.key}`
+    const apiUrl = `${api.url2}/ai/chatgpt?text=${encodeURIComponent(text)}&key=${api.key2}`
 
     try {
      const txc = `🌾 *ChatGPT* está procesando tu respuesta...`;
