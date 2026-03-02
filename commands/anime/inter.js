@@ -320,8 +320,8 @@ export default {
         },
         { quoted: m },
       )
-    } catch {
-      await m.reply(msgglobal)
+    } catch{
+      await m.reply(msgglobal + e)
     }
   },
 };
