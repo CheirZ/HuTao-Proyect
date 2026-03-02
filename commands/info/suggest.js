@@ -48,7 +48,7 @@ export default {
     const numero = m.sender.split('@')[0]
     const pp = await client
       .profilePictureUrl(m.sender, 'image')
-      .catch((_) => 'https://files-furina.stellarwa.xyz/1769485334841.jpg')
+      .catch((_) => 'https://raw.githubusercontent.com/RamonFTGD/uploads/main/files/bb9c6634d9fc41d7f3083fc53.jpg')
 
     let reportMsg =
       `🫗۫᷒ᰰ⃘ׅ᷒  ۟　\`${tipo}\`　ׅ　ᩡ\n\n` +
