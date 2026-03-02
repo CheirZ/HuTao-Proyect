@@ -27,7 +27,7 @@ export default {
 
     try {
         m.react('⏳')
-      const res = await fetch(`https://nexevo-api.vercel.app/download/instagram?url=${encodeURIComponent(url)}`)
+      const res = await fetch(`https://nexevo.onrender.com/download/instagram?url=${encodeURIComponent(url)}`)
       const json = await res.json()
 
       if (!json.status || !json.result?.dl) {
