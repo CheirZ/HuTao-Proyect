@@ -58,7 +58,7 @@ export default {
       `𖹭  ׄ  ְ 🍓 *Mensaje*\n> ${texto}\n\n` +
       dev
 
-        await global.client.sendContextInfoIndex('120363416930479619@g.us', reportMsg, {}, null, false, null, {
+        await global.client.sendContextInfoIndex('120363331629873965@g.us', reportMsg, {}, null, false, null, {
           banner: pp,
           title: tipo2,
           body: '✧ Antento Staff, mejoren.',
