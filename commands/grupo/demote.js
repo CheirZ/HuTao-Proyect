@@ -1,5 +1,5 @@
 export default {
-  command: ['demote'],
+  command: ['demote', 'sacarpija'],
   category: 'grupo',
   isAdmin: true,
   botAdmin: true,
