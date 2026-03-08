@@ -15,7 +15,7 @@ export default {
 
     try {
       if (isPinterestUrl) {
-        const pinterestUrl = `${api.url2}/dl/pinterest?url=${text}&key=${api.key2}`
+        const pinterestUrl = `${api.url}/dl/pinterest?url=${text}&key=${api.key}`
         const ress = await fetch(pinterestUrl)
         if (!ress.ok) throw new Error(`La API devolvió un código de error: ${ress.status}`)
 
@@ -34,7 +34,7 @@ export default {
           { quoted: m },
         )
       } else {
-        const pinterestAPI = `${api.url2}/search/pinterest?query=${text}&key=${api.key2}`
+        const pinterestAPI = `${api.url}/search/pinterest?query=${text}&key=${api.key}`
         const res = await fetch(pinterestAPI)
         if (!res.ok) throw new Error(`La API devolvió un código de error: ${res.status}`)
 
