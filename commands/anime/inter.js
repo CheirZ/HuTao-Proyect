@@ -305,7 +305,7 @@ export default {
 
     try {
       const response = await fetch(
-        `${api.url2}/sfw/interaction?type=${currentCommand}&key=${api.key2}`,
+        `${api.url}/sfw/interaction?type=${currentCommand}&key=${api.key}`,
       )
       const json = await response.json()
       const { result } = json
@@ -320,9 +320,8 @@ export default {
         },
         { quoted: m },
       )
-    } catch{
-      console.log(error)
-      await m.reply(msgglobal + error)
+    } catch {
+      await m.reply(msgglobal)
     }
   },
 };
