@@ -104,12 +104,8 @@ export default {
         const fuentes = [
           { sistema: "evogb", url: `https://api.evogb.org/dl/ytmp4?url=${encodeURIComponent(url)}&quality=auto&key=proyectsV2` },
             { sistema: "sylphy", url: `${api.url3}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key3}` },
-          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2` },
-          { sistema: "SiputzX", url: `https://api.siputzx.my.id/api/d/ytmp4?url=${url}` },
-          { sistema: "ZenKey", url: `https://api.zenkey.my.id/api/download/ytmp4?apikey=zenkey&url=${url}` },
-          { sistema: "Axeel", url: `https://axeel.my.id/api/download/video?url=${encodeURIComponent(url)}` },
-          { sistema: "elcarlosapi", url: `https://nexevo.onrender.com/download/y2?url=${url}` }
-        ];
+          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2` }
+          ];
         for (let fuente of fuentes) {
           try {
             const res = await fetch(fuente.url).then(r => r.json());
