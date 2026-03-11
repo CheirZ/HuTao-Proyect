@@ -18,7 +18,7 @@ export default {
       )
     }
 
-  //await client.sendMessage(m.chat, { react: { text: '💥', key: m.key } });
+  await client.sendMessage(m.chat, { react: { text: '💥', key: m.key } });
 
   try {
     let media = await q.download();
