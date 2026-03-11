@@ -53,7 +53,7 @@ export default {
       const upload = `𖹭 ❀ *Upload To Catbox*\n\nׅ  ׄ  ✿   ׅ り *Link ›* ${link}\nׅ  ׄ  ✿   ׅ り *Peso ›* ${formatBytes(media.length)}\nׅ  ׄ  ✿   ׅ り *Solicitado por ›* ${userName}\n\n${dev}`
       await client.sendContextInfoIndex(m.chat, upload, {}, m, true, {})
     } catch (e) {
-      await m.reply(msgglobal)
+      await m.reply(msgglobal + e)
     }
   }
 }
