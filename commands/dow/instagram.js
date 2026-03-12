@@ -1,54 +1,71 @@
 import fetch from 'node-fetch'
 
 export default {
-  command: ['instagram', 'ig'],
+  command: ['instagram', 'ig', 'reel'],
   category: 'downloader',
   run: async (client, m, args, command) => {
-
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
-    const isOficialBot = botId === global.client.user.id.split(':')[0] + '@s.whatsapp.net'
-    const isPremiumBot = global.db.data.settings[botId]?.botprem === false
-    const isModBot = global.db.data.settings[botId]?.botmod === false
-    
-    if (!isOficialBot && !isPremiumBot && !isModBot) {
-      return client.reply(m.chat, `🌽 El comando *${command}* no está disponible en *Sub-Bots.*`, m)
+
+    if (!args.length) {
+      return m.reply('✎ Ingrese uno o varios enlaces de *Instagram*.')
     }
 
-    const url = args[0]
-
-    if (!url) {
-      return m.reply('🍒 Ingrese un enlace de *Instagram*.')
-    }
-
-    if (!url.match(/instagram\.com\/(p|reel|share|tv)\//)) {
-        m.react('❌')
-      return m.reply('🌽 El enlace no parece *válido*. Asegúrate de que sea de *Instagram*')
+    const urls = args.filter(arg => arg.match(/instagram\.com\/(p|reel|share|tv)\//))
+    if (!urls.length) {
+      return m.reply('✿ El enlace no parece *válido*. Asegúrate de que sea de *Instagram*')
     }
 
     try {
-        m.react('⏳')
-      const res = await fetch(`https://nexevo.onrender.com/download/instagram?url=${encodeURIComponent(url)}`)
-      const json = await res.json()
+      if (urls.length > 1) {
+        const medias = []
+        for (const url of urls.slice(0, 10)) {
+          try {
+            const res = await fetch(`${api.url}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key}`)
+            const json = await res.json()
+            if (!json.status || !json.data) continue
 
-      if (!json.status || !json.result?.dl) {
-        m.rract('❌')
-        return client.reply(m.chat, '🌽 No se pudo *obtener* el contenido', m)
+            if (json.data.length === 1) {
+              const media = json.data[0]
+              medias.push({ type: 'video', data: { url: media.url } })
+            } else {
+              for (const media of json.data.slice(0, 10)) {
+                medias.push({ type: 'image', data: { url: media.url || media.thumbnail } })
+              }
+            }
+          } catch (e) {
+            continue
+          }
+        }
+        if (medias.length) {
+          await client.sendAlbumMessage(m.chat, medias, { quoted: m })
+        } else {
+          await m.reply(`✿ No se pudieron procesar los enlaces.`)
+        }
+      } else {
+        const url = urls[0]
+        const res = await fetch(`${api.url}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key}`)
+        const json = await res.json()
+        if (!json.status || !json.data) {
+          return client.reply(m.chat, '✿ No se pudo *obtener* el contenido', m)
+        }
+
+        if (json.data.length === 1) {
+          const media = json.data[0]
+          await client.sendMessage(
+            m.chat,
+            { video: { url: media.url }, mimetype: 'video/mp4', fileName: 'instagram.mp4' },
+            { quoted: m }
+          )
+        } else {
+          const medias = []
+          for (const media of json.data.slice(0, 10)) {
+            medias.push({ type: 'image', data: { url: media.url || media.thumbnail } })
+          }
+          await client.sendAlbumMessage(m.chat, medias, { quoted: m })
+        }
       }
-
-      const videoUrl = json.result.dl
-
-      m.react('✅')
-      const captionMsg = `ㅤ۟∩　ׅ　★ ໌　ׅ　🅘𝖦 🅓ownload　ׄᰙ`.trim()
-
-      await client.sendMessage(
-        m.chat,
-        { video: { url: videoUrl }, caption: captionMsg, mimetype: 'video/mp4', fileName: 'ig.mp4' },
-        { quoted: m }
-      )
-
     } catch (e) {
-      m.react('❌')
-      await client.reply(m.chat, msgglobal + e, m)
+      await client.reply(m.chat, msgglobal, m)
     }
   }
 }
