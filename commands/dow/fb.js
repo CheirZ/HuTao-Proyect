@@ -52,7 +52,7 @@ export default {
         )
       }
     } catch (e) {
-      await m.reply(msgglobal)
+      await m.reply(msgglobal + e)
     }
   }
 }
