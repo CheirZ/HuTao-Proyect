@@ -48,7 +48,7 @@ export default {
 
     } catch (e) {
       m.react('❌')
-      await client.reply(m.chat, msgglobal, m)
+      await client.reply(m.chat, msgglobal + e, m)
     }
   }
 }
