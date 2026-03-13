@@ -1,57 +1,37 @@
 import fetch from 'node-fetch';
 import FormData from 'form-data';
 
-async function uploadToCatbox(buffer, mime) {
-  const form = new FormData();
-  form.append('reqtype', 'fileupload');
-  form.append('fileToUpload', buffer, {
-    filename: `${Date.now()}.${mime.split('/')[1]}`,
-    contentType: mime
-  });
-
-  const res = await fetch('https://catbox.moe/user/api.php', {
-    method: 'POST',
-    body: form
-  });
-
-  const url = await res.text();
-  if (!url.startsWith('http')) {
-    throw new Error('Falló la subida a Catbox: ' + url);
-  }
-
-  return url;
-}
-
 export default {
-  command: ['seticon'],
+  command: ['seticon', 'setboticon'],
   category: 'socket',
   run: async (client, m, args) => {
-    const idBot = client.user.id.split(':')[0] + '@s.whatsapp.net';
-    const config = global.db.data.settings[idBot];
-    const isOwner2 = [idBot, ...global.owner.map((number) => number + '@s.whatsapp.net')].includes(m.sender);
-    if (!isOwner2 && m.sender !== owner) return m.reply(mess.socket);
-
-    const value = args.join(' ').trim();
-
+    const idBot = client.user.id.split(':')[0] + '@s.whatsapp.net'
+    const config = global.db.data.settings[idBot]
+    const isOwner2 = [idBot, ...(config.owner ? [config.owner] : []), ...global.owner.map(num => num + '@s.whatsapp.net')].includes(m.sender)
+    if (!isOwner2) return m.reply(mess.socket)
+    const value = args.join(' ').trim()
     if (!value && !m.quoted && !m.message.imageMessage)
-      return m.reply('🍒 Debes enviar o citar una imagen para cambiar el icon del bot.');
-
+      return m.reply('✎ Debes enviar o citar una imagen para cambiar el icon del bot.')
     if (value.startsWith('http')) {
-      config.icon = value;
-      return m.reply(`🌾 Se ha actualizado el icon de *${config.namebot2}*!`);
+      config.icon = value
+      return m.reply(`✿ Se ha actualizado el icon de *${config.namebot}*!`)
     }
-
-    const q = m.quoted ? m.quoted : m.message.imageMessage ? m : m;
-    const mime = (q.msg || q).mimetype || q.mediaType || '';
-    if (!/image\/(png|jpe?g|gif)/.test(mime))
-      return m.reply('🍒 Responde a una imagen válida.');
-
-    const media = await q.download();
-    if (!media) return m.reply('🍒 No se pudo descargar la imagen.');
-
-    const link = await uploadToCatbox(media, mime);
-    config.icon = link;
-
-    return m.reply(`🌾 Se ha actualizado el icon de *${config.namebot2}*!`);
+    const q = m.quoted ? m.quoted : m.message.imageMessage ? m : m
+    const mime = (q.msg || q).mimetype || q.mediaType || ''
+    if (!/image\/(png|jpe?g)/.test(mime))
+      return m.reply('✎ Responde a una imagen válida.')
+    const buffer = await q.download()
+    if (!buffer) return m.reply('✎ No se pudo descargar la imagen.')
+    const url = await uploadImage(buffer, mime)
+    config.icon = url
+    return m.reply(`✿ Se ha actualizado el icon de *${config.namebot}*!`)
   },
 };
+
+async function uploadImage(buffer, mime) {
+  const body = new FormData()
+  body.append('files[]', buffer, `file.${mime.split('/')[1]}`)
+  const res = await fetch('https://uguu.se/upload.php', { method: 'POST', body, headers: body.getHeaders() })
+  const json = await res.json()
+  return json.files?.[0]?.url
+}
