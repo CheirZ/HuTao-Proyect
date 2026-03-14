@@ -36,3 +36,9 @@ global.my = {
   ch: '120363425434939442@newsletter',
   name: '🦋 HuTao-proyect 🔥 Oficial chanel'
 }
+
+let file = fileURLToPath(import.meta.url)
+watchFile(file, () => {
+  unwatchFile(file)
+  import(`${file}?update=${Date.now()}`)
+})
