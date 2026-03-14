@@ -4,16 +4,16 @@ import chalk from 'chalk';
 global.owner = ['5218711426787']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
-global.pairing_code = true
-global.number_bot = ''
+
+// No olvides sacar tu apikey de cada api!
 
 global.api = {
   url: 'https://api.evogb.org',
   url2: 'https://api.stellarwa.xyz',
   url3: 'https://sylphy.xyz',
-  key: 'Apikey',
-  key2: 'proyectsV2', //saca ru apikey en la web stellarwa.xyz
-  key3: 'ApiKey' //saca tu apikey en la web sylphy.xyz
+  key: '', // api.evogb.org
+  key2: '', // api.stellarwa.xyz
+  key3: '' // sylphy.xyz
 }
 
 global.bot = {
