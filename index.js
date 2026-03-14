@@ -10,14 +10,12 @@ import {
   jidDecode,
   DisconnectReason,
 } from "@whiskeysockets/baileys";
-import cfonts from 'cfonts';
 import pino from "pino";
 import qrcode from "qrcode-terminal";
 import chalk from "chalk";
 import fs from "fs";
 import path from "path";
 import readlineSync from "readline-sync";
-import boxen from 'boxen';
 import readline from "readline";
 import { smsg } from "./lib/message.js";
 import db from "./lib/system/database.js";
@@ -62,17 +60,12 @@ let phoneInput = "";
     return s;
   }
 
-const { say } = cfonts
+console.log(chalk.blue.bold('\nI N I C I A N D O  .  .  .'));
 
-say('hu tao', {
-align: 'center',           
-gradient: ['red', 'blue'] 
-})
-say('WhatsApp Bot', {
-font: 'console',
-align: 'center',
-gradient: ['blue', 'magenta']
-})
+console.log(chalk.cyan(`
+      HuTao | Proyect
+     Powered by CheriZ ~
+`));
 
 const BOT_TYPES = [
   { name: 'SubBot', folder: './Sessions/Subs', starter: startSubBot }
@@ -149,7 +142,6 @@ async function startBot() {
     version,
     logger,
     printQRInTerminal: false,
-  //  browser: ['Windows', 'Chrome'],
     browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
@@ -172,7 +164,7 @@ setTimeout(async () => {
 try {
 const pairing = await client.requestPairingCode(numero);
 const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
-return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
+return console.log(chalk.bold.white(chalk.bgMagenta(`[  ✿  ]  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
 } catch {}
 }, 3000);
 }
@@ -181,13 +173,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
     client.sendMessage(jid, { text: text, ...options }, { quoted })
 
   client.ev.on("connection.update", async (update) => {
-    const {
-      qr,
-      connection,
-      lastDisconnect,
-      isNewLogin,
-      receivedPendingNotifications,
-    } = update
+     const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications, } = update
 
     if (qr && !usarCodigo) {
       qrcode.generate(qr, { small: true })
@@ -196,9 +182,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
     if (connection === "close") {
       const reason = lastDisconnect?.error?.output?.statusCode || 0;
       if (reason === DisconnectReason.connectionLost) {
-        log.warning(
-          "Se perdió la conexión al servidor, intento reconectarme..",
-        )
+        log.warning("Se perdió la conexión al servidor, intento reconectarme..")
         startBot()
       } else if (reason === DisconnectReason.connectionClosed) {
         log.warning("Conexión cerrada, intentando reconectarse...")
@@ -227,15 +211,21 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
         exec("rm -rf ./Sessions/Owner/*")
         process.exit(0)
       } else {
-        client.end(
-          `Motivo de desconexión desconocido : ${reason}|${connection}`,
-        )
+        client.end(`Motivo de desconexión desconocido : ${reason}|${connection}`)
       }
     }
 
     if (connection == "open") {
-     // client.uptime = Date.now();
- console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
+     const userName = client.user.name || "Desconocido"
+         console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
+    }
+
+    if (isNewLogin) {
+      log.info("Nuevo dispositivo detectado")
+    }
+    if (receivedPendingNotifications == "true") {
+      log.warn("Por favor espere aproximadamente 1 minuto...")
+      client.ev.flush()
     }
 })
 
@@ -254,7 +244,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
       m = await smsg(client, m)
       handler(client, m, messages)
     } catch (err) {
-      console.log(err)
+     // console.log(err)
     }
   })
 
@@ -273,50 +263,6 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
         jid
       )
     } else return jid
-  }
-}
-
- function enqueue(task) {
-  queue.push(task)
-  run()
-}
-
-async function run() {
-  if (running) return
-  running = true
-
-  while (queue.length) {
-    const job = queue.shift()
-    try {
-      await job()
-    } catch (e) {
-      if (String(e).includes('rate-overlimit')) {
-        console.log('Rate limit detectado, reintentando…')
-        await new Promise(r => setTimeout(r, 2000))
-        queue.unshift(job)
-      } else {
-        console.error('Send error:', e)
-      }
-    }
-    await new Promise(r => setTimeout(r, DELAY))
-  }
-
-  running = false
-}
-
-export function patchSendMessage(client) {
-  if (client._sendMessagePatched) return
-  client._sendMessagePatched = true
-
-  const original = client.sendMessage.bind(client)
-
-  client.sendMessage = (jid, content, options = {}) => {
-    return new Promise((resolve, reject) => {
-      enqueue(async () => {
-        const res = await original(jid, content, options)
-        resolve(res)
-      })
-    })
   }
 }
 
