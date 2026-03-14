@@ -107,25 +107,29 @@ export default {
           { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2` }
           ];
         for (let fuente of fuentes) {
-          try {
-            const res = await fetch(fuente.url).then(r => r.json());
-            const dl = rest?.data?.dowload?.url || res?.result?.url || res?.data?.dl || res?.result?.download?.url || res?.downloads?.url || res?.data?.download?.url;
-            if (dl) {
-              const objeto = { [docMode ? 'document' : 'video']: { url: dl }, fileName: `${title}.mp4`, mimetype: 'video/mp4', caption: `✅ ${docMode ? "Documento" : "Video"} ${dev}`, thumbnail: thumb };
-              await client.sendMessage(m.chat, objeto, { quoted: m });
-              return;
-            }
-          } catch (error) {
-            console.error(`Error con ${fuente.sistema}:`, error.message);
-          }
-        }
-        return m.reply("✱ No se encontró un enlace de descarga válido en ninguna fuente.");
-      } else {
-        return m.reply("Comando no reconocido.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      return m.reply(`𓁏 *Error:* ${error}`);
+  try {
+    const res = await fetch(fuente.url).then(r => r.json());
+    
+    const dl = res?.data?.download?.url || 
+               res?.result?.url || 
+               res?.data?.dl || 
+               res?.result?.download?.url || 
+               res?.downloads?.url || 
+               res?.data?.download?.url;
+
+    if (dl) {
+      const objeto = { 
+        [docMode ? 'document' : 'video']: { url: dl }, 
+        fileName: `${title}.mp4`, 
+        mimetype: 'video/mp4', 
+        caption: `✅ ${docMode ? "Documento" : "Video"} ${dev}`, 
+        thumbnail: thumb 
+      };
+      await client.sendMessage(m.chat, objeto, { quoted: m });
+      return;
+    }
+  } catch (error) {
+    console.error(`Error con ${fuente.sistema}:`, error.message);
     }
   }
 };
