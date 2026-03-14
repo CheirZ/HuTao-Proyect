@@ -130,8 +130,6 @@ export default {
     }
   } catch (error) {
     console.error(`Error con ${fuente.sistema}:`, error.message);
-  }
-        }
     }
   }
 };
