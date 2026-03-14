@@ -124,7 +124,7 @@ export default {
             console.error(`Error con ${fuente.sistema}:`, error.message);
           }
         }
-        return m.reply("✱ No se encontró un enlace de descarga válido en ninguna fuente.", error);
+        return m.reply(`✱ No se encontró un enlace de descarga válido en ninguna fuente. ${error}`);
       } else {
         return m.reply("Comando no reconocido.");
       }
