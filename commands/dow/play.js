@@ -132,4 +132,5 @@ export default {
     console.error(`Error con ${fuente.sistema}:`, error.message);
     }
   }
+      }
 };
