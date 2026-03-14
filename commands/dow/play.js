@@ -90,7 +90,7 @@ export default {
           const result = api.downloadUrl;
           await client.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
         } catch {
-          const api = await fetch(`https://api.evogb.org/dl/ytmp3?url=${url}&key=proyectsV2`).then(r => r.json());
+          const api = await fetch(`${api.url}/dl/ytmp3?url=${url}&key=${api.key}`).then(r => r.json());
           const result = api.data?.dl;
           if (!result) throw new Error();
           await client.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.data.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
@@ -104,17 +104,12 @@ export default {
         const fuentes = [
           { sistema: "evogb", url: `${api.url}/dl/ytmp4?url=${encodeURIComponent(url)}&quality=auto&key=${api.key}` },
             { sistema: "sylphy", url: `${api.url3}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key3}` },
-          { sistema: "Stellar", url: `https://api.stellarwa.xyz/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=proyectsV2` }
+          { sistema: "Stellar", url: `${api.url2}/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${api.key2}` }
           ];
         for (let fuente of fuentes) {
           try {
             const res = await fetch(fuente.url).then(r => r.json());
-            const dl = res?.data?.download?.url || 
-               res?.result?.url || 
-               res?.data?.dl || 
-               res?.result?.download?.url || 
-               res?.downloads?.url || 
-               res?.data?.download?.url;
+            const dl = res?.data?.dowload?.url || res?.result?.url || res?.data?.dl || res?.result?.download?.url || res?.downloads?.url || res?.data?.download?.url;
             if (dl) {
               const objeto = { [docMode ? 'document' : 'video']: { url: dl }, fileName: `${title}.mp4`, mimetype: 'video/mp4', caption: `✅ ${docMode ? "Documento" : "Video"} ${dev}`, thumbnail: thumb };
               await client.sendMessage(m.chat, objeto, { quoted: m });
@@ -124,7 +119,7 @@ export default {
             console.error(`Error con ${fuente.sistema}:`, error.message);
           }
         }
-        return m.reply(`✱ No se encontró un enlace de descarga válido en ninguna fuente. ${error}`);
+        return m.reply("✱ No se encontró un enlace de descarga válido en ninguna fuente.");
       } else {
         return m.reply("Comando no reconocido.");
       }
