@@ -1,6 +1,5 @@
 import fetch from "node-fetch"
 import { getBuffer } from '../../lib/message.js'
-import sharp from 'sharp'
 
 export default {
   command: ["xnxx"],
@@ -55,27 +54,10 @@ export default {
 
       const videoDownloadLink = downloadJson.resultado.videos.low
 
-      /*await client.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
         video: { url: videoDownloadLink },
         mimetype: "video/mp4"
-      }, { quoted: m })*/
-
-      const thumbBuffer = await getBuffer(downloadJson.resultado. thumb)
-      const videoBuffer = await getBuffer(videoDownloadLink)
-
-  const thumbBuffer2 = await sharp(thumbBuffer)
-    .resize(300, 300)
-    .jpeg({ quality: 80 })
-    .toBuffer()
-
-  let mensaje = {
-    document: videoBuffer,
-    mimetype: 'video/mp3',
-    fileName: `${videoInfo.title}.mp4`,
-    jpegThumbnail: thumbBuffer2
-  }
-
-await client.sendMessage(m.chat, mensaje, { quoted: m })
+      }, { quoted: m })
 
     } catch (err) {
       return m.reply(msgglobal)
