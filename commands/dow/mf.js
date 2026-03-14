@@ -1,7 +1,6 @@
 import axios from 'axios';
 import path from 'path';
 import { getBuffer } from '../../lib/message.js';
-import sharp from 'sharp';
 
 function isValidMediafireUrl(url) {
   try {
