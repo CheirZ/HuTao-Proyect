@@ -14,7 +14,7 @@ export default {
     if (urls.length) {
       for (const url of urls) {
         try {
-          const apiUrl = `${api.url}/dl/tiktok?url=${url}&key=${api.key}`
+          const apiUrl = `${api.url2}/dl/tiktok?url=${url}&key=${api.key2}`
           const res = await fetch(apiUrl)
           if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
           const json = await res.json()
@@ -55,13 +55,13 @@ export default {
           }
         } catch (e) {
           //console.error(e)
-          await m.reply(msgglobal)
+          await m.reply(msgglobal + e)
         }
       }
     } else {
       const query = args.join(" ")
       try {
-        const apiUrl = `${api.url}/search/tiktok?query=${encodeURIComponent(query)}&key=${api.key}`
+        const apiUrl = `${api.url2}/search/tiktok?query=${encodeURIComponent(query)}&key=${api.key2}`
         const res = await fetch(apiUrl)
         if (!res.ok) throw new Error(`El servidor respondió con ${res.status}`)
         const json = await res.json()
