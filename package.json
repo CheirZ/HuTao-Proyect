@@ -28,6 +28,7 @@
     "chalk": "^4.1.2",
     "fluent-ffmpeg": "^2.1.2",
     "form-data": "^4.0.0",
+    "lodash": "latest",
     "gradient-string": "^2.0.2",
     "human-readable": "^0.2.1",
     "jimp": "latest",
