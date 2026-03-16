@@ -66,7 +66,7 @@ export default {
 
     try {
       const response = await fetch(
-        `${api.url2}/nsfw/interaction?type=${currentCommand}&key=${api.key2}`,
+        `${api.url}/nsfw/interaction?type=${currentCommand}&key=${api.key}`,
       )
       const json = await response.json()
       const { result } = json
