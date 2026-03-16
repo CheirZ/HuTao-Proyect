@@ -305,7 +305,7 @@ export default {
 
     try {
       const response = await fetch(
-        `${api.url}/sfw/interaction?type=${currentCommand}&key=${api.key}`,
+        `${api.url2}/sfw/interaction?type=${currentCommand}&key=${api.key2}`,
       )
       const json = await response.json()
       const { result } = json
