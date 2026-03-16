@@ -67,7 +67,7 @@ export default {
      // console.error('[Pinterest Error]', e)
       await client.reply(
         m.chat,
-       msgglobal,
+       msgglobal + e,
         m
       )
     }
