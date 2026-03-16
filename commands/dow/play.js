@@ -109,7 +109,7 @@ export default {
         for (let fuente of fuentes) {
           try {
             const res = await fetch(fuente.url).then(r => r.json());
-            const dl = res?.data?.dowload?.url || res?.result?.url || res?.data?.dl || res?.result?.download?.url || res?.downloads?.url || res?.data?.download?.url;
+            const dl = res?.data?.dl || res?.result?.url || res?.data?.dl || res?.result?.download?.url || res?.downloads?.url || res?.data?.download?.url;
             if (dl) {
               const objeto = { [docMode ? 'document' : 'video']: { url: dl }, fileName: `${title}.mp4`, mimetype: 'video/mp4', caption: `✅ ${docMode ? "Documento" : "Video"} ${dev}`, thumbnail: thumb };
               await client.sendMessage(m.chat, objeto, { quoted: m });
