@@ -40,7 +40,7 @@ export default {
         }
       } else {
         const url = urls[0]
-        const apiUrl = `${api.url}/dl/facebookv3?url=${url}&key=${api.key}`
+        const apiUrl = `${api.url2}/dl/facebookv3?url=${url}&key=${api.key2}`
         const res = await fetch(apiUrl)
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         const buffer = await res.buffer()
