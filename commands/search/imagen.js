@@ -52,7 +52,7 @@ const bannedWords = [
 
     await m.reply(mess.wait)
 
-    const url = `https://api.evogb.org/search/googleimagen?query=${encodeURIComponent(text)}&key=${api.key}`
+    const url = `${api.url}/search/googleimagen?query=${encodeURIComponent(text)}&key=${api.key}`
 
     try {
       const res = await fetch(url)
