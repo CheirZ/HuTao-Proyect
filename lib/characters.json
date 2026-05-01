@@ -2403,5 +2403,12 @@
     "gender": "Hombre",
     "source": "Jujutsu Kaisen",
     "keyword": "gojo"
+  },
+  {
+    "name": "Toji Fushiguro",
+    "value": 585445,
+    "gender": "Hombre",
+    "source": "Jujutsu Kaisen",
+    "keyword": "fushiguro_toji"
   }
 ]
