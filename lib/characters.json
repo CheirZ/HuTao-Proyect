@@ -2284,5 +2284,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "risotto_nero"
+  },
+  {
+    "name": "Ghiaccio",
+    "value": 830316,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "ghiaccio"
   }
 ]
