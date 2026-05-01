@@ -2179,5 +2179,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "moody_blues_(stand)"
+  },
+  {
+    "name": "Gold Experience",
+    "value": 13024,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "gold_experience"
   }
 ]
