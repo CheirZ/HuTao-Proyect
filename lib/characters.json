@@ -2277,5 +2277,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "formaggio"
+  },
+  {
+    "name": "Risotto Nero",
+    "value": 520899,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "risotto_nero"
   }
 ]
