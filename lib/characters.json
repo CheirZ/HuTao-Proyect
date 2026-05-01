@@ -2333,5 +2333,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "cioccolata"
+  },
+  {
+    "name": "Gwess",
+    "value": 6062,
+    "gender": "Mujer",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "gwess"
   }
 ]
