@@ -2312,5 +2312,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "prosciutto"
+  },
+  {
+    "name": "Secco",
+    "value": 800571,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "secco"
   }
 ]
