@@ -2256,5 +2256,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "ball_breaker_(stand)"
+  },
+  {
+    "name": "Boingo",
+    "value": 332140,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "boingo"
   }
 ]
