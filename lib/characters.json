@@ -2193,5 +2193,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "sticky_fingers_(stand)"
+  },
+  {
+    "name": "King Crimson",
+    "value": 67617,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "king_crimson_(stand)"
   }
 ]
