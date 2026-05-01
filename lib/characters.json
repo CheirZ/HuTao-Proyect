@@ -2536,5 +2536,12 @@
     "gender": "Hombre",
     "source": "Creepypastas",
     "keyword": "eyeless_jack"
+  },
+  {
+    "name": "Jeff The Killer",
+    "value": 648165,
+    "gender": "Hombre",
+    "source": "Creepypastas",
+    "keyword": "jeff_the_killer"
   }
 ]
