@@ -2522,5 +2522,12 @@
     "gender": "Hombre",
     "source": "Creepypastas",
     "keyword": "ticci_toby"
+  },
+  {
+    "name": "Laughing Jack",
+    "value": 133989,
+    "gender": "Hombre",
+    "source": "Creepypastas",
+    "keyword": "laughing_jack"
   }
 ]
