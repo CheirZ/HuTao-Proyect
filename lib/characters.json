@@ -2116,5 +2116,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "echoes_(stand)"
+  },
+  {
+    "name": "The Hand",
+    "value": 328991,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "the_hand_(stand)"
   }
 ]
