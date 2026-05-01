@@ -2207,5 +2207,12 @@
     "gender": "Mujer",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "spice_girl_(stand)"
+  },
+  {
+    "name": "Purple Haze",
+    "value": 460703,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "purple_haze_(stand)"
   }
 ]
