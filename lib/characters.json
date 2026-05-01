@@ -2095,5 +2095,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "the_fool_(stand)"
+  },
+  {
+    "name": "Silver Chariot",
+    "value": 949988,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "silver_chariot"
   }
 ]
