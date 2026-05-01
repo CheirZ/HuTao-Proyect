@@ -2592,5 +2592,12 @@
     "gender": "Mujer",
     "source": "Creepypastas",
     "keyword": "nina_the_killer"
+  },
+  {
+    "name": "Smile Dog",
+    "value": 85500,
+    "gender": "Hombre",
+    "source": "Creepypastas",
+    "keyword": "smile_dog"
   }
 ]
