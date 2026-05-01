@@ -2361,5 +2361,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "axl_ro"
+  },
+  {
+    "name": "Wekapipo",
+    "value": 50620,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "wekapipo"
   }
 ]
