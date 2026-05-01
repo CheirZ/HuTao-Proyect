@@ -2529,5 +2529,12 @@
     "gender": "Hombre",
     "source": "Creepypastas",
     "keyword": "laughing_jack"
+  },
+  {
+    "name": "Eyeless Jack",
+    "value": 77158,
+    "gender": "Hombre",
+    "source": "Creepypastas",
+    "keyword": "eyeless_jack"
   }
 ]
