@@ -2354,5 +2354,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "donatello_versus"
+  },
+  {
+    "name": "Axl RO",
+    "value": 950220,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "axl_ro"
   }
 ]
