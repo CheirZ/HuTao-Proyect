@@ -2228,5 +2228,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "diver_down_(stand)"
+  },
+  {
+    "name": "Kiss",
+    "value": 515725,
+    "gender": "Mujer",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "kiss_(stand)"
   }
 ]
