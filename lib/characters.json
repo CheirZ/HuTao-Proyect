@@ -2438,5 +2438,12 @@
     "gender": "Mujer",
     "source": "Jujutsu Kaisen",
     "keyword": "iori_utahime"
+  },
+  {
+    "name": "Noritoshi Kamo",
+    "value": 337778,
+    "gender": "Hombre",
+    "source": "Jujutsu Kaisen",
+    "keyword": "kamo_noritoshi"
   }
 ]
