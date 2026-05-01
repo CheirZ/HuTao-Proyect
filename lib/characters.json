@@ -2347,5 +2347,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "rikiel"
+  },
+  {
+    "name": "Donatello Versus",
+    "value": 47032,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "donatello_versus"
   }
 ]
