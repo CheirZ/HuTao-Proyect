@@ -2515,5 +2515,12 @@
     "gender": "Mujer",
     "source": "Chainsaw Man",
     "keyword": "sawatari_akane"
+  },
+  {
+    "name": "Ticci Toby",
+    "value": 591140,
+    "gender": "Hombre",
+    "source": "Creepypastas",
+    "keyword": "ticci_toby"
   }
 ]
