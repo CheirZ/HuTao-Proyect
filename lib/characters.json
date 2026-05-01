@@ -2102,5 +2102,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "silver_chariot"
+  },
+  {
+    "name": "Hierophant Green",
+    "value": 801611,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "hierophant_green"
   }
 ]
