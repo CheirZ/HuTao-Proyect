@@ -2081,5 +2081,12 @@
     "gender": "Mujer",
     "source": "Invincible",
     "keyword": "amanda_(invincible)"
+  },
+  {
+    "name": "Justice",
+    "value": 928281,
+    "gender": "Mujer",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "justice_(stand)"
   }
 ]
