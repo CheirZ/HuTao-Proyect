@@ -2109,5 +2109,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "hierophant_green"
+  },
+  {
+    "name": "Echoes",
+    "value": 418010,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "echoes_(stand)"
   }
 ]
