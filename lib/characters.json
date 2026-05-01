@@ -2494,5 +2494,12 @@
     "gender": "Hombre",
     "source": "Jujutsu Kaisen",
     "keyword": "ino_takuma"
+  },
+  {
+    "name": "Misato Kuroi",
+    "value": 554130,
+    "gender": "Mujer",
+    "source": "Jujutsu Kaisen",
+    "keyword": "kuroi_misato"
   }
 ]
