@@ -2389,5 +2389,12 @@
     "gender": "Mujer",
     "source": "Vocaloid",
     "keyword": "kasane_teto"
+  },
+  {
+    "name": "Suguru Geto",
+    "value": 748607,
+    "gender": "Hombre",
+    "source": "Jujutsu Kaisen",
+    "keyword": "geto_suguru"
   }
 ]
