@@ -2424,5 +2424,12 @@
     "gender": "Mujer",
     "source": "Jujutsu Kaisen",
     "keyword": "ieiri_shoko"
+  },
+  {
+    "name": "Naoya Zenin",
+    "value": 490623,
+    "gender": "Hombre",
+    "source": "Jujutsu Kaisen",
+    "keyword": "zenin_naoya"
   }
 ]
