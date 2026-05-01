@@ -2319,5 +2319,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "secco"
+  },
+  {
+    "name": "Polpo",
+    "value": 799685,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "polpo"
   }
 ]
