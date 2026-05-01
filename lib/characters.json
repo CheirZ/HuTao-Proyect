@@ -2431,5 +2431,12 @@
     "gender": "Hombre",
     "source": "Jujutsu Kaisen",
     "keyword": "zenin_naoya"
+  },
+  {
+    "name": "Utahime Iori",
+    "value": 449449,
+    "gender": "Mujer",
+    "source": "Jujutsu Kaisen",
+    "keyword": "iori_utahime"
   }
 ]
