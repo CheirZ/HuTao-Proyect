@@ -2585,5 +2585,12 @@
     "gender": "Hombre",
     "source": "Creepypastas",
     "keyword": "bloody_painter"
+  },
+  {
+    "name": "Nina The Killer",
+    "value": 528000,
+    "gender": "Mujer",
+    "source": "Creepypastas",
+    "keyword": "nina_the_killer"
   }
 ]
