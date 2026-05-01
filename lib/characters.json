@@ -2144,5 +2144,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "harvest_(stand)"
+  },
+  {
+    "name": "Bad Company",
+    "value": 848013,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "bad_company_(stand)"
   }
 ]
