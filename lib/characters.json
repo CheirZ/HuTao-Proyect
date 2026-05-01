@@ -2200,5 +2200,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "king_crimson_(stand)"
+  },
+  {
+    "name": "Spice Girl",
+    "value": 816066,
+    "gender": "Mujer",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "spice_girl_(stand)"
   }
 ]
