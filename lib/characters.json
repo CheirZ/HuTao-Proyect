@@ -2291,5 +2291,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "ghiaccio"
+  },
+  {
+    "name": "Melone",
+    "value": 261299,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "melone"
   }
 ]
