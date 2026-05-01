@@ -2088,5 +2088,12 @@
     "gender": "Mujer",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "justice_(stand)"
+  },
+  {
+    "name": "The Fool",
+    "value": 153735,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "the_fool_(stand)"
   }
 ]
