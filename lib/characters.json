@@ -2508,5 +2508,12 @@
     "gender": "Mujer",
     "source": "Jujutsu Kaisen",
     "keyword": "amanai_riko"
+  },
+  {
+    "name": "Akane Sawatari",
+    "value": 133523,
+    "gender": "Mujer",
+    "source": "Chainsaw Man",
+    "keyword": "sawatari_akane"
   }
 ]
