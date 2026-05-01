@@ -2242,5 +2242,12 @@
     "gender": "Mujer",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "stone_free"
+  },
+  {
+    "name": "Scary Monsters",
+    "value": 124437,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "scary_monsters_(stand)"
   }
 ]
