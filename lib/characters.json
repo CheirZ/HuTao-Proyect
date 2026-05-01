@@ -2172,5 +2172,12 @@
     "gender": "Hombre",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "sex_pistols_(stand)"
+  },
+  {
+    "name": "Moody Blues",
+    "value": 813816,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "moody_blues_(stand)"
   }
 ]
