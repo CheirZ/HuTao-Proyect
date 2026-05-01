@@ -2137,5 +2137,12 @@
     "gender": "Mujer",
     "source": "JoJo's Bizarre Adventure",
     "keyword": "love_deluxe"
+  },
+  {
+    "name": "Harvest",
+    "value": 10457,
+    "gender": "Hombre",
+    "source": "JoJo's Bizarre Adventure",
+    "keyword": "harvest_(stand)"
   }
 ]
