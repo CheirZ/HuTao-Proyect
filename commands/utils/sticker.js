@@ -14,7 +14,7 @@ export default {
       }      
       const quoted = m.quoted ? m.quoted : m
       const mime = (quoted.msg || quoted).mimetype || ''      
-      const user = await getUser(m.sender)
+      let user = globalThis.db.data.users[m.sender];
       const name = user.name
       let texto1 = user.metadatos || ``;
       let texto2 = user.metadatos2 || `@${name}`;      
