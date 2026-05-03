@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 import fetch from 'node-fetch';
-import exif from '../../core/exif.ts';
+import exif from '../../lib/exif.js';
 const { writeExif } = exif;
 
 export default {
