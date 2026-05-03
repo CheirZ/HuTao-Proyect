@@ -131,7 +131,7 @@ export default {
         return client.reply(m.chat, `❀ Por favor, envía una imagen, video, sticker.\n> Usa *${prefix + command} -list* para ver formas y efectos`, m)
       }
     } catch (e) {
-      return m.reply(msgglobal)
+      return m.reply(msgglobal + e)
     }
   }
 }
