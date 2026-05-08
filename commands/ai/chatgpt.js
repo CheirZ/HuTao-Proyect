@@ -10,9 +10,9 @@ export default {
     const isPremiumBot = global.db.data.settings[botId]?.botprem === false
     const isModBot = global.db.data.settings[botId]?.botmod === false
 
-    if (!isOficialBot && !isPremiumBot && !isModBot) {
+  /*  if (!isOficialBot && !isPremiumBot && !isModBot) {
       return client.reply(m.chat, `🌽 El comando *${command}* no esta disponible en *Sub-Bots.*`, m)
-    }
+    }*/
 
     const text = args.join(' ').toLowerCase()
 
