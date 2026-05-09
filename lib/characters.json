@@ -2613,5 +2613,12 @@
     "gender": "Hombre",
     "source": "Creepypastas",
     "keyword": "splendor_man"
+  },
+  {
+    "name": "Alucard",
+    "value": 740628,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "alucard_(hellsing)"
   }
 ]
