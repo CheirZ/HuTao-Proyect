@@ -2627,5 +2627,12 @@
     "gender": "Mujer",
     "source": "Hellsing",
     "keyword": "integra_hellsing"
+  },
+  {
+    "name": "Seras Victoria",
+    "value": 240962,
+    "gender": "Mujer",
+    "source": "Hellsing",
+    "keyword": "seras_victoria"
   }
 ]
