@@ -2620,5 +2620,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "alucard_(hellsing)"
+  },
+  {
+    "name": "Integra",
+    "value": 945203,
+    "gender": "Mujer",
+    "source": "Hellsing",
+    "keyword": "integra_hellsing"
   }
 ]
