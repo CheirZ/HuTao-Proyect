@@ -2662,5 +2662,12 @@
     "gender": "Mujer",
     "source": "Hellsing",
     "keyword": "rip_van_winkle_(hellsing)"
+  },
+  {
+    "name": "Zorin Blitz",
+    "value": 391393,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "zorin_blitz"
   }
 ]
