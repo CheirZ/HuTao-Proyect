@@ -2697,5 +2697,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "doctor_(hellsing)"
+  },
+  {
+    "name": "Heinkel Wolfe",
+    "value": 824071,
+    "gender": "Mujer",
+    "source": "Hellsing",
+    "keyword": "heinkel_wolfe"
   }
 ]
