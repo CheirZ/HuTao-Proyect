@@ -2725,5 +2725,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "battle_beast_(invincible)"
+  },
+  {
+    "name": "Gowther",
+    "value": 489099,
+    "gender": "Hombre",
+    "source": "nanatsu no taizai",
+    "keyword": "gowther"
   }
 ]
