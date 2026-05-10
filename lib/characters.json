@@ -2648,5 +2648,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "alexander_anderson"
+  },
+  {
+    "name": "Montana Max",
+    "value": 864139,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "major_(hellsing)"
   }
 ]
