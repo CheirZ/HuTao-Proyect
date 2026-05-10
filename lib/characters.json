@@ -2634,5 +2634,12 @@
     "gender": "Mujer",
     "source": "Hellsing",
     "keyword": "seras_victoria"
+  },
+  {
+    "name": "Walter C. Dornez",
+    "value": 744908,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "walter_c_dornez"
   }
 ]
