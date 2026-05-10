@@ -2711,5 +2711,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "conquest_(invincible)"
+  },
+  {
+    "name": "Thragg",
+    "value": 772990,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "thragg_(invincible)"
   }
 ]
