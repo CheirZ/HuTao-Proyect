@@ -2704,5 +2704,12 @@
     "gender": "Mujer",
     "source": "Hellsing",
     "keyword": "heinkel_wolfe"
+  },
+  {
+    "name": "Conquest",
+    "value": 572172,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "conquest_(invincible)"
   }
 ]
