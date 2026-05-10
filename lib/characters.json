@@ -2676,5 +2676,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "schroedinger_(hellsing)"
+  },
+  {
+    "name": "Tubalcain Alhambra",
+    "value": 671079,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "tubalcain_alhambra"
   }
 ]
