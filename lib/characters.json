@@ -2669,5 +2669,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "zorin_blitz"
+  },
+  {
+    "name": "Schrödinger",
+    "value": 769598,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "schroedinger_(hellsing)"
   }
 ]
