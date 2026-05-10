@@ -2655,5 +2655,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "major_(hellsing)"
+  },
+  {
+    "name": "Rip Van Winkle",
+    "value": 922702,
+    "gender": "Mujer",
+    "source": "Hellsing",
+    "keyword": "rip_van_winkle_(hellsing)"
   }
 ]
