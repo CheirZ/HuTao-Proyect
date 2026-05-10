@@ -2641,5 +2641,12 @@
     "gender": "Hombre",
     "source": "Hellsing",
     "keyword": "walter_c_dornez"
+  },
+  {
+    "name": "Alexander Anderson",
+    "value": 763566,
+    "gender": "Hombre",
+    "source": "Hellsing",
+    "keyword": "alexander_anderson"
   }
 ]
