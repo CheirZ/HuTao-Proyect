@@ -2718,5 +2718,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "thragg_(invincible)"
+  },
+  {
+    "name": "Battle Beast",
+    "value": 645751,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "battle_beast_(invincible)"
   }
 ]
