@@ -2914,5 +2914,12 @@
     "gender": "Hombre",
     "source": "black_clover",
     "keyword": "nozel_silva"
+  },
+  {
+    "name": "Mereoleona Vermillion",
+    "value": 799199,
+    "gender": "Mujer",
+    "source": "black_clover",
+    "keyword": "mereoleona_vermillion"
   }
 ]
