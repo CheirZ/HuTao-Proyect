@@ -2865,5 +2865,12 @@
     "gender": "Hombre",
     "source": "Limbus Company",
     "keyword": "yi_sang_(limbus_company)"
+  },
+  {
+    "name": "Meursault",
+    "value": 956118,
+    "gender": "Hombre",
+    "source": "Limbus Company",
+    "keyword": "meursault_(limbus_company)"
   }
 ]
