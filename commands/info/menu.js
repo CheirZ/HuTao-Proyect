@@ -138,7 +138,6 @@ await client.sendMessage(
           serverMessageId: '0',
           newsletterName: canalname,
         },
-        externalAdReply: {
           title: botname,
           body: `${botname2},`,
           showAdAttribution: false,
@@ -146,7 +145,7 @@ await client.sendMessage(
           mediaType: 1,
           previewType: 0,
           renderLargerThumbnail: true
-        }
+        
       }
     },
     { quoted: m }
