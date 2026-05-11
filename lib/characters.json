@@ -2837,5 +2837,12 @@
     "gender": "Mujer",
     "source": "Invincible",
     "keyword": "anissa_(invincible)"
+  },
+  {
+    "name": "Kregg",
+    "value": 962548,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "kregg"
   }
 ]
