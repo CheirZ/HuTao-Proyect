@@ -2802,5 +2802,12 @@
     "gender": "Mujer",
     "source": "black_clover",
     "keyword": "charlotte_roselei"
+  },
+  {
+    "name": "Akemi Keiichi",
+    "value": 213079,
+    "gender": "Hombre",
+    "source": "Yarichin Bitch Club",
+    "keyword": "akemi_keiichi"
   }
 ]
