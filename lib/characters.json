@@ -2886,5 +2886,12 @@
     "gender": "Mujer",
     "source": "Limbus Company",
     "keyword": "ryoshu_(limbus_company)"
+  },
+  {
+    "name": "Sinclar",
+    "value": 569100,
+    "gender": "Hombre",
+    "source": "Limbus Company",
+    "keyword": "sinclair_(limbus_company)"
   }
 ]
