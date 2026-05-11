@@ -2795,5 +2795,12 @@
     "gender": "Hombre",
     "source": "black_clover",
     "keyword": "asta_(black_clover)"
+  },
+  {
+    "name": "Charlotte Roselei",
+    "value": 415269,
+    "gender": "Mujer",
+    "source": "black_clover",
+    "keyword": "charlotte_roselei"
   }
 ]
