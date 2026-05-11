@@ -2823,5 +2823,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "lucan_(invincible)"
+  },
+  {
+    "name": "Oliver Grayson",
+    "value": 695554,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "oliver_grayson"
   }
 ]
