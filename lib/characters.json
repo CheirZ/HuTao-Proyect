@@ -2921,5 +2921,12 @@
     "gender": "Mujer",
     "source": "black_clover",
     "keyword": "mereoleona_vermillion"
+  },
+  {
+    "name": "Gris",
+    "value": 152199,
+    "gender": "Mujer",
+    "source": "black_clover",
+    "keyword": "gris"
   }
 ]
