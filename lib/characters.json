@@ -2739,5 +2739,12 @@
     "gender": "Hombre",
     "source": "Yarichin Bitch Club",
     "keyword": "yuri_ayato"
+  },
+  {
+    "name": "Scaramouche",
+    "value": 133921,
+    "gender": "Hombre",
+    "source": "Genshin impact",
+    "keyword": "scaramouche_(genshin_impact)"
   }
 ]
