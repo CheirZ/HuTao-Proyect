@@ -2830,5 +2830,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "oliver_grayson"
+  },
+  {
+    "name": "Anissa",
+    "value": 531610,
+    "gender": "Mujer",
+    "source": "Invincible",
+    "keyword": "anissa_(invincible)"
   }
 ]
