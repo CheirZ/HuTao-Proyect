@@ -2851,5 +2851,12 @@
     "gender": "Hombre",
     "source": "black_clover",
     "keyword": "julius_novachrono"
+  },
+  {
+    "name": "Dante",
+    "value": 777194,
+    "gender": "Hombre",
+    "source": "Limbus Company",
+    "keyword": "dante_(limbus_company)"
   }
 ]
