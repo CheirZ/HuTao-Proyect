@@ -2753,5 +2753,12 @@
     "gender": "Hombre",
     "source": "howl's_moving_castle",
     "keyword": "howl"
+  },
+  {
+    "name": "Gordon Agrippa",
+    "value": 242087,
+    "gender": "Hombre",
+    "source": "black_clover",
+    "keyword": "gordon_agrippa"
   }
 ]
