@@ -2816,5 +2816,12 @@
     "gender": "Hombre",
     "source": "black_clover",
     "keyword": "yami_sukehiro"
+  },
+  {
+    "name": "Lucan",
+    "value": 137957,
+    "gender": "Hombre",
+    "source": "Invincible",
+    "keyword": "lucan_(invincible)"
   }
 ]
