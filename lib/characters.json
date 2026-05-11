@@ -2746,5 +2746,12 @@
     "gender": "Hombre",
     "source": "Genshin impact",
     "keyword": "scaramouche_(genshin_impact)"
+  },
+  {
+    "name": "Howl",
+    "value": 107982,
+    "gender": "Hombre",
+    "source": "howl's_moving_castle",
+    "keyword": "howl"
   }
 ]
