@@ -2732,5 +2732,12 @@
     "gender": "Hombre",
     "source": "nanatsu no taizai",
     "keyword": "gowther"
+  },
+  {
+    "name": "Yuri Ayato",
+    "value": 940882,
+    "gender": "Hombre",
+    "source": "Yarichin Bitch Club",
+    "keyword": "yuri_ayato"
   }
 ]
