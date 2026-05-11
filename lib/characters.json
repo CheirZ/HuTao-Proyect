@@ -2844,5 +2844,12 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "kregg"
+  },
+  {
+    "name": "Julio Novachrono",
+    "value": 452551,
+    "gender": "Hombre",
+    "source": "black_clover",
+    "keyword": "julius_novachrono"
   }
 ]
