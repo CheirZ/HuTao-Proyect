@@ -2760,5 +2760,12 @@
     "gender": "Hombre",
     "source": "black_clover",
     "keyword": "gordon_agrippa"
+  },
+  {
+    "name": "Vanessa Enoteca",
+    "value": 383063,
+    "gender": "Mujer",
+    "source": "black_clover",
+    "keyword": "vanessa_enoteca"
   }
 ]
