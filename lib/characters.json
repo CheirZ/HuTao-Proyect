@@ -2781,5 +2781,12 @@
     "gender": "Mujer",
     "source": "black_clover",
     "keyword": "mimosa_vermillion"
+  },
+  {
+    "name": "Takashi Tono",
+    "value": 369185,
+    "gender": "Hombre",
+    "source": "Yarichin Bitch Club",
+    "keyword": "toono_takashi"
   }
 ]
