@@ -2858,5 +2858,12 @@
     "gender": "Hombre",
     "source": "Limbus Company",
     "keyword": "dante_(limbus_company)"
+  },
+  {
+    "name": "Yi Sang",
+    "value": 79795,
+    "gender": "Hombre",
+    "source": "Limbus Company",
+    "keyword": "yi_sang_(limbus_company)"
   }
 ]
