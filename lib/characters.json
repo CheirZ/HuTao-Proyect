@@ -2928,5 +2928,12 @@
     "gender": "Mujer",
     "source": "black_clover",
     "keyword": "gris"
+  },
+  {
+    "name": "William Vangeance",
+    "value": 165660,
+    "gender": "Hombre",
+    "source": "black_clover",
+    "keyword": "william_vangeance"
   }
 ]
