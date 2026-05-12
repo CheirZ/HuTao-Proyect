@@ -2977,5 +2977,12 @@
     "gender": "Mujer",
     "source": "Black clover",
     "keyword": "kahono"
+  },
+  {
+    "name": "Rill Boismortier",
+    "value": 891649,
+    "gender": "Hombre",
+    "source": "Black clover",
+    "keyword": "rill_boismortier"
   }
 ]
