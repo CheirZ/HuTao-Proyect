@@ -113,15 +113,15 @@ menu += `\n> *${botname2} desarrollado por ZyxlJs* ૮(˶ᵔᵕᵔ˶)ა`
       };
 
       if (isVideo) {
-        await sock.sendMessage(
+        await client.sendMessage(
           m.chat,
           { video: { url: banner }, caption: menu.trim(), contextInfo: contextBase },
           { quoted: m }
         );
       } else {
-        await sock.sendMessage(m.chat, { 
+        await client.sendMessage(m.chat, { 
           text: menu.trim(), 
-          linkPreview: link && banner ? (await prepareWAMessageMedia({ image: { url: banner } }, { upload: sock.waUploadToServer, mediaTypeOverride: 'thumbnail-link' }).then(({ imageMessage }) => ({ 'canonical-url': link, 'matched-text': link, title: botname, description: dev, jpegThumbnail: imageMessage?.jpegThumbnail ? Buffer.from(imageMessage.jpegThumbnail) : undefined, highQualityThumbnail: imageMessage || undefined }))) : undefined, 
+          linkPreview: link && banner ? (await prepareWAMessageMedia({ image: { url: banner } }, { upload: client.waUploadToServer, mediaTypeOverride: 'thumbnail-link' }).then(({ imageMessage }) => ({ 'canonical-url': link, 'matched-text': link, title: botname, description: dev, jpegThumbnail: imageMessage?.jpegThumbnail ? Buffer.from(imageMessage.jpegThumbnail) : undefined, highQualityThumbnail: imageMessage || undefined }))) : undefined, 
           contextInfo: contextBase
         }, { quoted: m });
       }
