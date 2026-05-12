@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { getDevice } from '@whiskeysockets/baileys';
+import { getDevice, prepareWAMessageMedia } from '@whiskeysockets/baileys';
 import fs from 'fs';
 import axios from 'axios';
 import moment from 'moment-timezone';
@@ -106,51 +106,25 @@ export default {
 
 menu += `\n> *${botname2} desarrollado por ZyxlJs* ૮(˶ᵔᵕᵔ˶)ა`
 
-if (banner.endsWith('.mp4') || banner.endsWith('.gif') || banner.endsWith('.webm')) {
-await client.sendMessage(
-  m.chat,
-  {
-    video: { url: banner },
-    gifPlayback: true,
-    caption: menu,
-    contextInfo: {
-      mentionedJid: [owner],
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: canalid,
-        serverMessageId: '0',
-        newsletterName: canalname,
+      const isVideo = banner.includes('.mp4') || banner.includes('.gif') || banner.includes('.webm');
+      const contextBase = {
+        mentionedJid: [owner, m.sender].filter(Boolean),
+        isForwarded: false
+      };
+
+      if (isVideo) {
+        await sock.sendMessage(
+          m.chat,
+          { video: { url: banner }, caption: menu.trim(), contextInfo: contextBase },
+          { quoted: m }
+        );
+      } else {
+        await sock.sendMessage(m.chat, { 
+          text: menu.trim(), 
+          linkPreview: link && banner ? (await prepareWAMessageMedia({ image: { url: banner } }, { upload: sock.waUploadToServer, mediaTypeOverride: 'thumbnail-link' }).then(({ imageMessage }) => ({ 'canonical-url': link, 'matched-text': link, title: botname, description: dev, jpegThumbnail: imageMessage?.jpegThumbnail ? Buffer.from(imageMessage.jpegThumbnail) : undefined, highQualityThumbnail: imageMessage || undefined }))) : undefined, 
+          contextInfo: contextBase
+        }, { quoted: m });
       }
-    }
-  },
-  { quoted: m }
-)
-} else {
-  await client.sendMessage(
-    m.chat,
-    {
-      text: menu,
-      contextInfo: {
-        mentionedJid: [owner],
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-          newsletterJid: canalid,
-          serverMessageId: '0',
-          newsletterName: canalname,
-        },
-          title: botname,
-          body: `${botname2},`,
-          showAdAttribution: false,
-          thumbnailUrl: banner,
-          mediaType: 1,
-          previewType: 0,
-          renderLargerThumbnail: true
-        
-      }
-    },
-    { quoted: m }
-  )
-}
     } catch (e) {
       await m.reply(msgglobal + e)
     }
