@@ -2998,5 +2998,12 @@
     "gender": "Hombre",
     "source": "Black clover",
     "keyword": "fuegoleon_vermillion"
+  },
+  {
+    "name": "Lily Aquaria",
+    "value": 936592,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "lily_aquaria"
   }
 ]
