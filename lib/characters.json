@@ -3026,5 +3026,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "rades_spirito"
+  },
+  {
+    "name": "Klaus Lunettes",
+    "value": 20701,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "klaus_lunettes"
   }
 ]
