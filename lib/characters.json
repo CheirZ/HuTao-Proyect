@@ -3047,5 +3047,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "marie_adlai"
+  },
+  {
+    "name": "Luck Voltia",
+    "value": 997850,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "luck_voltia"
   }
 ]
