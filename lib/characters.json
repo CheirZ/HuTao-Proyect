@@ -3054,5 +3054,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "luck_voltia"
+  },
+  {
+    "name": "Charmy Pappitson",
+    "value": 123848,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "charmy_pappitson"
   }
 ]
