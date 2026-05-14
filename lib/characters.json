@@ -3040,5 +3040,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "gauche_adlai"
+  },
+  {
+    "name": "Marie Adlai",
+    "value": 615681,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "marie_adlai"
   }
 ]
