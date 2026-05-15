@@ -2837,5 +2837,12 @@
     "gender": "Hombre",
     "source": "Limbus Company",
     "keyword": "sinclair_(limbus_company)"
+  },
+  {
+    "name": "Dorothy",
+    "value": 405396,
+    "gender": "Mujer",
+    "source": "nikke",
+    "keyword": "dorothy_(nikke)"
   }
 ]
