@@ -2755,34 +2755,6 @@
     "keyword": "howl"
   },
   {
-    "name": "Gordon Agrippa",
-    "value": 242087,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "gordon_agrippa"
-  },
-  {
-    "name": "Vanessa Enoteca",
-    "value": 383063,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "vanessa_enoteca"
-  },
-  {
-    "name": "Noelle Silva",
-    "value": 616201,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "noelle_silva"
-  },
-  {
-    "name": "Mimosa Vermillion",
-    "value": 777296,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "mimosa_vermillion"
-  },
-  {
     "name": "Takashi Tono",
     "value": 369185,
     "gender": "Hombre",
@@ -2790,32 +2762,11 @@
     "keyword": "toono_takashi"
   },
   {
-    "name": "Asta",
-    "value": 871427,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "asta_(black_clover)"
-  },
-  {
-    "name": "Charlotte Roselei",
-    "value": 415269,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "charlotte_roselei"
-  },
-  {
     "name": "Akemi Keiichi",
     "value": 213079,
     "gender": "Hombre",
     "source": "Yarichin Bitch Club",
     "keyword": "akemi_keiichi"
-  },
-  {
-    "name": "Yami Sukehiro",
-    "value": 380019,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "yami_sukehiro"
   },
   {
     "name": "Lucan",
@@ -2844,13 +2795,6 @@
     "gender": "Hombre",
     "source": "Invincible",
     "keyword": "kregg"
-  },
-  {
-    "name": "Julio Novachrono",
-    "value": 452551,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "julius_novachrono"
   },
   {
     "name": "Dante",
@@ -2893,187 +2837,5 @@
     "gender": "Hombre",
     "source": "Limbus Company",
     "keyword": "sinclair_(limbus_company)"
-  },
-  {
-    "name": "Finral Roulacase",
-    "value": 975198,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "finral_roulacase"
-  },
-  {
-    "name": "Patry",
-    "value": 594383,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "patry"
-  },
-  {
-    "name": "Nozel Silva",
-    "value": 858926,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "nozel_silva"
-  },
-  {
-    "name": "Mereoleona Vermillion",
-    "value": 799199,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "mereoleona_vermillion"
-  },
-  {
-    "name": "Gris",
-    "value": 152199,
-    "gender": "Mujer",
-    "source": "black_clover",
-    "keyword": "gris"
-  },
-  {
-    "name": "William Vangeance",
-    "value": 165660,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "william_vangeance"
-  },
-  {
-    "name": "Rhya",
-    "value": 489952,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "rhya_(black_clover)"
-  },
-  {
-    "name": "Revchi Salik",
-    "value": 349659,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "revchi_salik"
-  },
-  {
-    "name": "Ragus",
-    "value": 949945,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "ragus_(black_clover)"
-  },
-  {
-    "name": "Licht",
-    "value": 642609,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "licht_(black_clover)"
-  },
-  {
-    "name": "Sally",
-    "value": 774329,
-    "gender": "Mujer",
-    "source": "Black clover",
-    "keyword": "sally_(black_clover)"
-  },
-  {
-    "name": "Kahono",
-    "value": 145604,
-    "gender": "Mujer",
-    "source": "Black clover",
-    "keyword": "kahono"
-  },
-  {
-    "name": "Rill Boismortier",
-    "value": 891649,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "rill_boismortier"
-  },
-  {
-    "name": "Magna Swing",
-    "value": 570659,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "magna_swing"
-  },
-  {
-    "name": "Fuegoleón Vermillion",
-    "value": 363196,
-    "gender": "Hombre",
-    "source": "Black clover",
-    "keyword": "fuegoleon_vermillion"
-  },
-  {
-    "name": "Lily Aquaria",
-    "value": 936592,
-    "gender": "Mujer",
-    "source": "black clover",
-    "keyword": "lily_aquaria"
-  },
-  {
-    "name": "Theresa Rapual",
-    "value": 362615,
-    "gender": "Mujer",
-    "source": "black clover",
-    "keyword": "theresa_rapual"
-  },
-  {
-    "name": "Dorothyunsworth",
-    "value": 330721,
-    "gender": "Mujer",
-    "source": "black clover",
-    "keyword": "dorothy_unsworth"
-  },
-  {
-    "name": "Rades Spirito",
-    "value": 740883,
-    "gender": "Hombre",
-    "source": "black clover",
-    "keyword": "rades_spirito"
-  },
-  {
-    "name": "Klaus Lunettes",
-    "value": 20701,
-    "gender": "Hombre",
-    "source": "black clover",
-    "keyword": "klaus_lunettes"
-  },
-  {
-    "name": "Gauche Adlai",
-    "value": 388087,
-    "gender": "Hombre",
-    "source": "black clover",
-    "keyword": "gauche_adlai"
-  },
-  {
-    "name": "Marie Adlai",
-    "value": 615681,
-    "gender": "Mujer",
-    "source": "black clover",
-    "keyword": "marie_adlai"
-  },
-  {
-    "name": "Luck Voltia",
-    "value": 997850,
-    "gender": "Hombre",
-    "source": "black clover",
-    "keyword": "luck_voltia"
-  },
-  {
-    "name": "Charmy Pappitson",
-    "value": 123848,
-    "gender": "Mujer",
-    "source": "black clover",
-    "keyword": "charmy_pappitson"
-  },
-  {
-    "name": "Jack El Destripador",
-    "value": 126986,
-    "gender": "Hombre",
-    "source": "black clover",
-    "keyword": "jack_the_ripper_(black_clover)"
-  },
-  {
-    "name": "Valtos",
-    "value": 277315,
-    "gender": "Hombre",
-    "source": "black_clover",
-    "keyword": "valtos"
   }
 ]
