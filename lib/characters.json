@@ -2865,5 +2865,12 @@
     "gender": "Hombre",
     "source": "Hotline Miami",
     "keyword": "son_(hotline_miami)"
+  },
+  {
+    "name": "Henchman",
+    "value": 377813,
+    "gender": "Hombre",
+    "source": "Hotline Miami",
+    "keyword": "henchman_(hotline_miami)"
   }
 ]
