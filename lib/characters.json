@@ -2886,5 +2886,12 @@
     "gender": "Hombre",
     "source": "Hotline Miami",
     "keyword": "tony_(hotline_miami)"
+  },
+  {
+    "name": "Richter",
+    "value": 502166,
+    "gender": "Hombre",
+    "source": "Hotline Miami",
+    "keyword": "richter_(hotline_miami)"
   }
 ]
