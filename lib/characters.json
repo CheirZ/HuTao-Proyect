@@ -2851,5 +2851,12 @@
     "gender": "Hombre",
     "source": "Hotline Miami",
     "keyword": "biker_(hotline_miami)"
+  },
+  {
+    "name": "Jacket",
+    "value": 378518,
+    "gender": "Hombre",
+    "source": "Hotline Miami",
+    "keyword": "jacket_(hotline_miami)"
   }
 ]
