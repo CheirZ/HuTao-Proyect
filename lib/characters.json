@@ -2872,5 +2872,12 @@
     "gender": "Hombre",
     "source": "Hotline Miami",
     "keyword": "henchman_(hotline_miami)"
+  },
+  {
+    "name": "Girlfriend",
+    "value": 243408,
+    "gender": "Mujer",
+    "source": "Hotline Miami",
+    "keyword": "hooker_(hotline_miami)"
   }
 ]
