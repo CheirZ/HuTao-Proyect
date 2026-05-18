@@ -3313,5 +3313,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "morgen_faust"
+  },
+  {
+    "name": "Jester Garandros",
+    "value": 8249,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "jester_garandros"
   }
 ]
