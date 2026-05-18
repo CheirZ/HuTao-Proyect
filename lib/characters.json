@@ -2970,5 +2970,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "licht_(black_clover)"
+  },
+  {
+    "name": "Sally",
+    "value": 37939,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "sally_(black_clover)"
   }
 ]
