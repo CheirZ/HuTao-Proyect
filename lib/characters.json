@@ -3285,5 +3285,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "sol_marron"
+  },
+  {
+    "name": "Liebe",
+    "value": 875140,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "liebe_(black_clover)"
   }
 ]
