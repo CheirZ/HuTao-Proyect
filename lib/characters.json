@@ -3299,5 +3299,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "langris_vaude"
+  },
+  {
+    "name": "Dante Zogratis",
+    "value": 118356,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "dante_zogratis"
   }
 ]
