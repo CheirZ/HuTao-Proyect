@@ -3243,5 +3243,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "secre_swallowtail"
+  },
+  {
+    "name": "Conrad Leto",
+    "value": 872920,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "conrad_leto"
   }
 ]
