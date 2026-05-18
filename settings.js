@@ -22,7 +22,12 @@ global.bot = {
   web: 'https://github.com/CheirZ'
 }
 
-global.mods = ['5218711426787', '5218712620915']
+global.mods = ['5218711426787', 
+               '5218712620915',
+               //esclavos del rw
+              '5493873416766',
+              '573144875412',
+              '573142349959']
 
 global.msgglobal = '[Error: *TypeError*] fetch failed'
 globalThis.dev = '★彡[xɪ_ᴍɪɢᴜᴇʟᴏɴ77xx]彡★'
