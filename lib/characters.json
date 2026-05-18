@@ -3383,5 +3383,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "lucifero_(black_clover)"
+  },
+  {
+    "name": "Sophie",
+    "value": 471985,
+    "gender": "Mujer",
+    "source": "Cry of fear",
+    "keyword": "sophie_(cry_of_fear)"
   }
 ]
