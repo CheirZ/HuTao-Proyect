@@ -3096,5 +3096,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "solid_silva"
+  },
+  {
+    "name": "Nebra Silva",
+    "value": 243605,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "nebra_silva"
   }
 ]
