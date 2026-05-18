@@ -3131,5 +3131,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "luck_voltia"
+  },
+  {
+    "name": "Gauche Adlai",
+    "value": 36874,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "gauche_adlai"
   }
 ]
