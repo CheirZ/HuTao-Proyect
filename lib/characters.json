@@ -3019,5 +3019,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "mereoleona_vermillion"
+  },
+  {
+    "name": "Lumiere Silvamillion Clover",
+    "value": 198058,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "lumiere_silvamillion_clover"
   }
 ]
