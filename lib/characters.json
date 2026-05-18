@@ -2963,5 +2963,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "gordon_agrippa"
+  },
+  {
+    "name": "Licht",
+    "value": 123980,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "licht_(black_clover)"
   }
 ]
