@@ -3040,5 +3040,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "fuegoleon_vermillion"
+  },
+  {
+    "name": "Magna Swing",
+    "value": 542788,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "magna_swing"
   }
 ]
