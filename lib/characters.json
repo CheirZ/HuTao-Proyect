@@ -3061,5 +3061,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "charlotte_roselei"
+  },
+  {
+    "name": "Rades Spirito",
+    "value": 772045,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "rades_spirito"
   }
 ]
