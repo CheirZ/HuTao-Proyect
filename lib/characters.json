@@ -3390,5 +3390,12 @@
     "gender": "Mujer",
     "source": "Cry of fear",
     "keyword": "sophie_(cry_of_fear)"
+  },
+  {
+    "name": "Doctor Purnell",
+    "value": 853582,
+    "gender": "Hombre",
+    "source": "Cry of fear",
+    "keyword": "dr_purnell"
   }
 ]
