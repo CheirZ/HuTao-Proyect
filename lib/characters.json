@@ -3306,5 +3306,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "dante_zogratis"
+  },
+  {
+    "name": "Morgen Faust",
+    "value": 3450,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "morgen_faust"
   }
 ]
