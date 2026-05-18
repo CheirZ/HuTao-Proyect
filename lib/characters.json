@@ -2900,5 +2900,12 @@
     "gender": "Mujer",
     "source": "nikke",
     "keyword": "rapi_(nikke)"
+  },
+  {
+    "name": "Yuno",
+    "value": 94081,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "yuno_(black_clover)"
   }
 ]
