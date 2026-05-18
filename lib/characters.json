@@ -2984,5 +2984,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "vanessa_enoteca"
+  },
+  {
+    "name": "Yami Sukehiro",
+    "value": 319953,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "yami_sukehiro"
   }
 ]
