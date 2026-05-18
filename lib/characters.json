@@ -3110,5 +3110,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "acier_silva"
+  },
+  {
+    "name": "Leopold Vermillion",
+    "value": 717286,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "leopold_vermillion"
   }
 ]
