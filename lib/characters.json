@@ -2914,5 +2914,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "noelle_silva"
+  },
+  {
+    "name": "Simón Henriksson",
+    "value": 986154,
+    "gender": "Hombre",
+    "source": "Cry of fear",
+    "keyword": "simon_henriksson"
   }
 ]
