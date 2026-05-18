@@ -2942,5 +2942,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "lotus_whomalt"
+  },
+  {
+    "name": "Lily Aquaria",
+    "value": 343083,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "lily_aquaria"
   }
 ]
