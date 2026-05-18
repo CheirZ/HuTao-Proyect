@@ -2921,5 +2921,12 @@
     "gender": "Hombre",
     "source": "Cry of fear",
     "keyword": "simon_henriksson"
+  },
+  {
+    "name": "Nacht Faust",
+    "value": 858984,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "nacht_faust"
   }
 ]
