@@ -3236,5 +3236,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "zora_ideale"
+  },
+  {
+    "name": "Secre Swallowtail",
+    "value": 836529,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "secre_swallowtail"
   }
 ]
