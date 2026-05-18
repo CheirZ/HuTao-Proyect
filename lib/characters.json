@@ -2956,5 +2956,12 @@
     "gender": "Mujer",
     "source": "black clover",
     "keyword": "dorothy_unsworth"
+  },
+  {
+    "name": "Gordon Agrippa",
+    "value": 746390,
+    "gender": "Hombre",
+    "source": "black clover",
+    "keyword": "gordon_agrippa"
   }
 ]
