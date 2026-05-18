@@ -2928,5 +2928,12 @@
     "gender": "Hombre",
     "source": "black clover",
     "keyword": "nacht_faust"
+  },
+  {
+    "name": "Catherine",
+    "value": 759843,
+    "gender": "Mujer",
+    "source": "black clover",
+    "keyword": "catherine_(black_clover)"
   }
 ]
