@@ -2893,5 +2893,12 @@
     "gender": "Hombre",
     "source": "Hotline Miami",
     "keyword": "richter_(hotline_miami)"
+  },
+  {
+    "name": "Rapi",
+    "value": 442594,
+    "gender": "Mujer",
+    "source": "nikke",
+    "keyword": "rapi_(nikke)"
   }
 ]
