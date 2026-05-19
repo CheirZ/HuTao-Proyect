@@ -3404,5 +3404,12 @@
     "gender": "Mujer",
     "source": "One Piece",
     "keyword": "nico_robin"
+  },
+  {
+    "name": "Crocodile",
+    "value": 826644,
+    "gender": "Hombre",
+    "source": "One Piece",
+    "keyword": "crocodile_(one_piece)"
   }
 ]
