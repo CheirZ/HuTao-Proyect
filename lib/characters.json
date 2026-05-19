@@ -3411,5 +3411,12 @@
     "gender": "Hombre",
     "source": "One Piece",
     "keyword": "crocodile_(one_piece)"
+  },
+  {
+    "name": "Broly",
+    "value": 4162,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "broly_(dragon_ball_super)"
   }
 ]
