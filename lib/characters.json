@@ -3397,5 +3397,12 @@
     "gender": "Hombre",
     "source": "Cry of fear",
     "keyword": "dr_purnell"
+  },
+  {
+    "name": "Nico Robin",
+    "value": 538388,
+    "gender": "Mujer",
+    "source": "One Piece",
+    "keyword": "nico_robin"
   }
 ]
