@@ -3586,5 +3586,12 @@
     "gender": "Hombre",
     "source": "Dragon Ball",
     "keyword": "piccolo"
+  },
+  {
+    "name": "Hyouka Nijiku",
+    "value": 477758,
+    "gender": "Mujer",
+    "source": "Gachiakuta",
+    "keyword": "hyouka_nijiku"
   }
 ]
