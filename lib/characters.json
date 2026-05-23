@@ -3579,5 +3579,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "fu_orostor"
+  },
+  {
+    "name": "Piccolo",
+    "value": 204912,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "piccolo"
   }
 ]
