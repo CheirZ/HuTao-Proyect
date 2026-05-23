@@ -3523,5 +3523,12 @@
     "gender": "Hombre",
     "source": "Dragon Ball",
     "keyword": "nappa"
+  },
+  {
+    "name": "Eishia Stilza",
+    "value": 270870,
+    "gender": "Mujer",
+    "source": "Gachiakuta",
+    "keyword": "eishia_stilza"
   }
 ]
