@@ -3537,5 +3537,12 @@
     "gender": "Hombre",
     "source": "Dragon Ball",
     "keyword": "raditz"
+  },
+  {
+    "name": "Dear",
+    "value": 747609,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "dear_santa"
   }
 ]
