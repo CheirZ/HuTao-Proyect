@@ -3439,5 +3439,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "zanka_nijiku"
+  },
+  {
+    "name": "Amo Empool",
+    "value": 144895,
+    "gender": "Mujer",
+    "source": "Gachiakuta",
+    "keyword": "amo_empool"
   }
 ]
