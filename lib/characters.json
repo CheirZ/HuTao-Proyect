@@ -3516,5 +3516,12 @@
     "gender": "Hombre",
     "source": "Dragon Ball",
     "keyword": "vegeta"
+  },
+  {
+    "name": "Nappa",
+    "value": 921685,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "nappa"
   }
 ]
