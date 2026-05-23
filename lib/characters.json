@@ -3544,5 +3544,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "dear_santa"
+  },
+  {
+    "name": "Maestro Karin",
+    "value": 765554,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "farmer_(dragon_ball)"
   }
 ]
