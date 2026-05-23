@@ -3467,5 +3467,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "jabber_wonger"
+  },
+  {
+    "name": "Gris Rubion",
+    "value": 310176,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "gris_rubion"
   }
 ]
