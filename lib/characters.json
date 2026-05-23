@@ -3530,5 +3530,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "eishia_stilza"
+  },
+  {
+    "name": "Raditz",
+    "value": 101113,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "raditz"
   }
 ]
