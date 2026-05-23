@@ -3474,5 +3474,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "gris_rubion"
+  },
+  {
+    "name": "Arkha Corvus",
+    "value": 615653,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "arkha_corvus"
   }
 ]
