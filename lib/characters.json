@@ -3558,5 +3558,12 @@
     "gender": "Mujer",
     "source": "Dragon Ball",
     "keyword": "bulma_(future)"
+  },
+  {
+    "name": "Trunks",
+    "value": 876476,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "trunks_(dragon_ball)"
   }
 ]
