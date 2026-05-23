@@ -3572,5 +3572,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "remlin_tysark"
+  },
+  {
+    "name": "Fu Orostor",
+    "value": 679494,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "fu_orostor"
   }
 ]
