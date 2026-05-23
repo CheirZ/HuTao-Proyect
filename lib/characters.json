@@ -3551,5 +3551,12 @@
     "gender": "Hombre",
     "source": "Dragon Ball",
     "keyword": "farmer_(dragon_ball)"
+  },
+  {
+    "name": "Bulma",
+    "value": 611540,
+    "gender": "Mujer",
+    "source": "Dragon Ball",
+    "keyword": "bulma_(future)"
   }
 ]
