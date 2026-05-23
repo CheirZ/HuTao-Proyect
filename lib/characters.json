@@ -3509,5 +3509,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "too_lily"
+  },
+  {
+    "name": "Vegeta",
+    "value": 885586,
+    "gender": "Hombre",
+    "source": "Dragon Ball",
+    "keyword": "vegeta"
   }
 ]
