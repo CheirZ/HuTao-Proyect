@@ -3453,5 +3453,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "riyo_reaper"
+  },
+  {
+    "name": "Tamsy Caines",
+    "value": 568251,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "tamsy_caines"
   }
 ]
