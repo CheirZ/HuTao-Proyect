@@ -3607,5 +3607,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "zodyl_typhon"
+  },
+  {
+    "name": "Momoa Rukel",
+    "value": 61369,
+    "gender": "Mujer",
+    "source": "Gachiakuta",
+    "keyword": "momoa_rukel"
   }
 ]
