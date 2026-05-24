@@ -3656,5 +3656,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "chiwa_(gachiakuta)"
+  },
+  {
+    "name": "Regto",
+    "value": 382244,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "regto_(gachiakuta)"
   }
 ]
