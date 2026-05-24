@@ -3677,5 +3677,12 @@
     "gender": "Mujer",
     "source": "spy x family",
     "keyword": "becky_blackbell"
+  },
+  {
+    "name": "Nana Komatsu",
+    "value": 705490,
+    "gender": "Mujer",
+    "source": "NANA",
+    "keyword": "komatsu_nana"
   }
 ]
