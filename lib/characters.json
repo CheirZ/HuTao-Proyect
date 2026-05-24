@@ -3670,5 +3670,12 @@
     "gender": "Hombre",
     "source": "spy x family",
     "keyword": "damian_desmond"
+  },
+  {
+    "name": "Becky Blackbell",
+    "value": 942701,
+    "gender": "Mujer",
+    "source": "spy x family",
+    "keyword": "becky_blackbell"
   }
 ]
