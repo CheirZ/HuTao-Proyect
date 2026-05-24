@@ -3600,5 +3600,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "noerde_hew_amozo"
+  },
+  {
+    "name": "Zodyl Typhon",
+    "value": 353171,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "zodyl_typhon"
   }
 ]
