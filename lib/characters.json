@@ -3663,5 +3663,12 @@
     "gender": "Hombre",
     "source": "Gachiakuta",
     "keyword": "regto_(gachiakuta)"
+  },
+  {
+    "name": "Damian Desmond",
+    "value": 971114,
+    "gender": "Hombre",
+    "source": "spy x family",
+    "keyword": "damian_desmond"
   }
 ]
