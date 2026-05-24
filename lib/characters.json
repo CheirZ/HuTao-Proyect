@@ -3621,5 +3621,12 @@
     "gender": "Mujer",
     "source": "Gachiakuta",
     "keyword": "cthoni_andor"
+  },
+  {
+    "name": "Bundus",
+    "value": 655395,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "bundus_begalkelt"
   }
 ]
