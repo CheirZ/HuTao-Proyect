@@ -3684,5 +3684,12 @@
     "gender": "Mujer",
     "source": "NANA",
     "keyword": "komatsu_nana"
+  },
+  {
+    "name": "Nana Osaki",
+    "value": 541983,
+    "gender": "Mujer",
+    "source": "NANA",
+    "keyword": "osaki_nana"
   }
 ]
