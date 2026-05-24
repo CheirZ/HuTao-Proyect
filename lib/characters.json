@@ -3691,5 +3691,12 @@
     "gender": "Mujer",
     "source": "NANA",
     "keyword": "osaki_nana"
+  },
+  {
+    "name": "Shinichi Okazaki",
+    "value": 574654,
+    "gender": "Hombre",
+    "source": "NANA",
+    "keyword": "okazaki_shin'ichi"
   }
 ]
