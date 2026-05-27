@@ -10,7 +10,7 @@ const ddownr = {
     if (!formatAudio.includes(format) && !formatVideo.includes(format)) {
       throw new Error("Formato no soportado, verifica la lista de formatos disponibles.");
     }
-    const config = { method: 'GET', url: `https://p.savenow.to/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36' }};
+    const config = { method: 'GET', url: `https://p.savenow.to/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=0493022af731cd23b73e2f595c1d478f`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36' }};
     try {
       const response = await axios.request(config);
       if (response.data && response.data.success) {
