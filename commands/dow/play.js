@@ -10,7 +10,7 @@ const ddownr = {
     if (!formatAudio.includes(format) && !formatVideo.includes(format)) {
       throw new Error("Formato no soportado, verifica la lista de formatos disponibles.");
     }
-    const config = { method: 'GET', url: `https://p.savenow.to/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=0493022af731cd23b73e2f595c1d478f`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36' }};
+    const config = { method: 'GET', url: `https://p.savenow.to/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=0493022af731cd23b73e2f595c1d478f`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' } };
     try {
       const response = await axios.request(config);
       if (response.data && response.data.success) {
@@ -27,7 +27,7 @@ const ddownr = {
     }
   },
   cekProgress: async (id) => {
-    const config = { method: 'GET', url: `https://p.savenow.to/ajax/progress.php?id=${id}`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36' }};
+    const config = { method: 'GET', url: `https://p.savenow.to/ajax/progress.php?id=${id}`, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' } };
     try {
       while (true) {
         const response = await axios.request(config);
@@ -52,7 +52,7 @@ function formatViews(views) {
 }
 
 export default {
-  command: ['play', 'play2', 'mp3', 'yta', 'mp4', 'ytv', 'play3', 'ytadoc', 'playdoc', 'ytmp3doc', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc'],
+  command: ['play', 'play2', 'mp3', 'yta', 'mp4', 'ytv', 'play3', 'ytadoc', 'playdoc', 'ytmp3doc', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc', 'ytdoc', 'ytdocmp3', 'ytdocmp4', 'playdocforzado', 'ytdocforzado'],
   category: 'downloader',
   run: async (client, m, args, command, text) => {
     try {
@@ -95,17 +95,17 @@ export default {
           if (!result) throw new Error();
           await client.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.data.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
         }
-      } else if (command === 'play3' || command === 'ytadoc' || command === 'playdoc' || command === 'ytmp3doc') {
+      } else if (command === 'play3' || command === 'ytadoc' || command === 'playdoc' || command === 'ytmp3doc' || command === 'ytdoc' || command === 'ytdocmp3' || command === 'ytdocforzado') {
         const api = await ddownr.download(url, 'mp3');
         const result = api.downloadUrl;
-        await client.sendMessage(m.chat, { document: { url: result }, mimetype: "audio/mpeg", fileName: `${title}.mp3`, caption: `${dev} Aqui tienes tu audio` }, { quoted: m });        
-      } else if (['play2', 'ytv', 'mp4', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command)) {
-        const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc'].includes(command);
+        await client.sendMessage(m.chat, { document: { url: result }, mimetype: "audio/mpeg", fileName: `${title}.mp3`, caption: `${dev} Aqui tienes tu audio como documento` }, { quoted: m });        
+      } else if (['play2', 'ytv', 'mp4', 'play4', 'ytvdoc', 'play2doc', 'ytmp4doc', 'ytdocmp4', 'playdocforzado', 'ytdocforzado'].includes(command)) {
+        const docMode = ['play4', 'ytvdoc', 'play2doc', 'ytmp4doc', 'ytdocmp4', 'playdocforzado', 'ytdocforzado'].includes(command);
         const fuentes = [
           { sistema: "evogb", url: `${api.url}/dl/ytmp4?url=${encodeURIComponent(url)}&quality=auto&key=${api.key}` },
-            { sistema: "sylphy", url: `${api.url3}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key3}` },
+          { sistema: "sylphy", url: `${api.url3}/download/ytmp4?url=${encodeURIComponent(url)}&q=720p&api_key=${api.key3}` },
           { sistema: "Stellar", url: `${api.url2}/dl/ytmp4?url=${encodeURIComponent(url)}&quality=720&key=${api.key2}` }
-          ];
+        ];
         for (let fuente of fuentes) {
           try {
             const res = await fetch(fuente.url).then(r => r.json());
