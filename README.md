@@ -1,35 +1,34 @@
 > [!NOTE]
-> **Este proyecto está en constante evolución. Estamos comprometidos en ofrecer a nuestra comunidad un Bot increíble. Te invitamos a instalarlo y para estar al tanto de todas las novedades. [¡Únete a nuestro canal oficial!](https://stellarwa.xyz/channel)**
+> **Este proyecto está en constante evolución. Estamos comprometidos en ofrecer a nuestra comunidad un Bot increíble. Te invitamos a instalarlo y para estar al tanto de todas las novedades. [¡Únete a nuestro nuevo canal!](https://stellarwa.xyz/channel/hutao)**
 
 <p align="center"> 
-<img src="https://nube.stellarwa.xyz/rf/mU87XEXArc7d.jpg" alt="AlyaBot-MD" style="width: 75%; height: auto; max-width: 100px;">
+<img src="https://files.catbox.moe/n46cln.png" alt="HuTao-Proyect" style="width: 75%; height: auto; max-width: 100px;">
 
 <p align="center"> 
-<a href="#"><img title="AlyaBot-MD" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
+<a href="#"><img title="HuTao-Proyect" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
 </p>
 
 ---
 
-## 👣 Descripción 
+## 🪾 Descripción 
 
-Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
+Hutao es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
 
 ---
 
-## 🥦 Características
+## ☃️ Características
 
-- Comandos Gacha (Y más juegos)
-- Comandos de economia
 - Respuestas automáticas
 - Gestión de grupos
+- Juegos interactivos
 - Integración con APIs externas
 
 ---
 
-## Informaciones Importantes
+## 🌾 Informaciones Importantes
 
 <details>
-<summary><strong>🌵 Información</strong> — Recomendado</summary>
+<summary><strong>⛄ Información</strong> — Recomendado</summary>
 
 Evita completamente usar forks, mods o versiones alteradas de Baileys.
 No utilices “baileys mods” ni variantes no oficiales.
@@ -38,16 +37,9 @@ Siempre usa la librería principal y oficial de Baileys.
 </details>
 
 <details>
-<summary><strong>🌵 Información</strong> — Oficial</summary>
+<summary><strong>⛄ Información</strong> — Oficial</summary>
 
-Quiero dejar algo completamente claro: mi base es única, original y desarrollada por mí.  
-Fue creada desde cero por **Carlos (AzamiJs)**, quien posteriormente se retiró del proyecto.  
-Desde entonces, durante todos estos meses, he sido yo quien la ha mejorado, optimizado y evolucionado hasta convertirla en lo que es hoy.
-
-Cualquier otra versión que circule son copias no autorizadas que no representan mi trabajo real, no cuentan con mi aprobación y no tienen validez oficial dentro de mi proyecto.
-
-Mi estructura, mi lógica y mi diseño pertenecen exclusivamente a mi desarrollo.  
-Ninguna réplica, modificación o derivado externo tiene relación con mi trabajo actual ni con la identidad oficial de mi proyecto.
+Si editas el bot, debes mantener los créditos principales y no borrarlos bajo ninguna circunstancia.
 
 </details>
 
@@ -59,11 +51,11 @@ Ninguna réplica, modificación o derivado externo tiene relación con mi trabaj
 <summary><strong>🦦 Cloud</strong> — Shell</summary>
 
 ```bash
-git clone https://github.com/DevZyxlJs/AlyaBot-MD
+git clone https://github.com/CheirZ/HuTao-Proyect
 ```
 
 ```bash
-cd AlyaBot-MD
+cd HuTao-Proyect
 ```
 
 ```bash
@@ -91,11 +83,11 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/DevZyxlJs/AlyaBot-MD
+git clone https://github.com/CheirZ/HuTao-Proyect
 ```
 
 ```bash
-cd AlyaBot-MD
+cd HuTao-Proyect
 ```
 
 ```bash
@@ -117,7 +109,7 @@ npm start
 <details>
 <summary><strong>🦦 Comandos para tener mas tiempo activo</strong> — el Bot</summary>
 
-> *Ejecutar estos comandos dentro de la carpeta AlyaBot-MD*
+> *Ejecutar estos comandos dentro de la carpeta HuTao-Proyect*
 ```bash
 termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
 ``` 
@@ -148,15 +140,15 @@ pm2 start index
 ### En caso de detenerse
 > _Si despues que ya instalastes tu bot y termux te salta en blanco, se fue tu internet o reiniciaste tu celular, solo realizaras estos pasos:_
 ```bash
-cd && cd AlyaBot-MD && npm start
+cd && cd HuTao-Proyect && npm start
 ```
 ---
 
 ### Obtener nuevo inicio de Sessión 
-> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `AlyaBot-MD $`*
+> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `HuTao-Proyect $`*
  
 ```bash 
-cd && cd AlyaBot-MD && rm -rf Sessions/Owner && npm start
+cd && cd HuTao-Proyect && rm -rf Sessions/Owner && npm start
 ```
 </details>
 
@@ -178,42 +170,39 @@ cd && cd AlyaBot-MD && rm -rf Sessions/Owner && npm start
 |------------|-----------|
 | Dashboard | [Abrir](https://api.stellarwa.xyz) |
 | Store | [Abrir](https://api.stellarwa.xyz/store) 
-| Soporte | [Visitar](https://api.stellarwa.xyz/ticket)  
-| Estado de Servicios | [Ver](https://api.stellarwa.xyz/stats) | 
-| Canal | [Abrir](https://stellarwa.xyz/channel/api) |
+| Soporte | [Visitar](https://api.stellarwa.xyz/ticket) |
+| Canal | [Abrir](https://stellarwa.xyz/channel)  
 
 </details>
 
 <details>
-<summary><strong>☁️ Cafirexos</strong> — Hosting</summary>
+<summary><strong>☁️ Boxmine</strong> — Hosting</summary>
 
 <div align="center">
-  <a href="https://cafirexos.com">
-    <img src="https://cdn.cafirexos.com/logos/logo_cfros_2000x2000.png" alt="Logo" height="125px">
+  <a href="https://boxmineworld.com">
+    <img src="https://i.imgur.com/allAyd4.png" alt="Logo" height="125px">
   </a>
 </div>
 
 ### 🐢 Enlaces Principales
 | Servicio | Enlace |
 |------------|-----------|
-| Sitio Web | [Visitar](https://cafirexos.com) |
-| Area de clientes | [Abrir](https://cafirexos.com/clientarea.php) |
-| Panel | [Abrir](https://panel.cafirexos.com) |
-| Estado de Servicios | [Ver](https://estado.cafirexos.com) 
-| Canal de WhatsApp | [Ver](https://links.cafirexos.com/whatsapp/canal) 
-| Soporte | [Ver](https://cafirexos.com/contactenos)
+| Sitio Web | [Visitar](https://boxmineworld.com) |
+| Dashboard | [Abrir](https://dash.boxmineworld.com) |
+| Panel | [Abrir](https://panel.boxmineworld.com)
 
 </details>
 
 ---
 
-### 🌿 Colaboradores
-<a href="https://stellarwa.xyz/about">
-  <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD" />
+### 🪶 Colaboradores
+<a href="https://api.stellarwa.xyz">
+  <img src="https://contrib.rocks/image?repo=CheirZ/HuTao-Proyect" />
 </a>
 
-### 🌱 Agradecimientos
-[![Zam](https://github.com/AzamiJs.png?size=120)](https://stellarwa.xyz/about)
+### 🌺 Creditos Principales
+[![ZyxlJs](https://github.com/DevZyxlJs.png?size=100)](https://github.com/DevZyxlJs)
+[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs)
 
-### 🪴 Propietario
-[![ZyxlJs](https://github.com/DevZyxlJs.png?size=120)](https://stellarwa.xyz/about) 
+### 🦩 Propietario
+[![CheirZ](https://github.com/CheirZ.png?size=150)](https://github.com/CheirZ) 
