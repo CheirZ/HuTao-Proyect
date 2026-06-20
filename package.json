@@ -1,5 +1,5 @@
 {
-  "name": "alya",
+  "name": "hutao",
   "version": "4.0",
   "description": "WhatsApp Bot updated to the latest version.",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "whatsapp",
     "baileys"
   ],
-  "author": "DevZyxlJs",
+  "author": "CheirZ",
   "license": "MIT",
   "engines": {
     "node": ">=22.13.0",
