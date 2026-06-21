@@ -2,15 +2,15 @@ import fs from 'fs';
 import { watchFile, unwatchFile } from 'fs'
 import { fileURLToPath } from 'url'
 
-global.owner = ['5492916450307']
+global.owner = ['5218711426787']
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  key: 'stellarwa-2026.xyz@maia@20-12-2025' 
+  key: 'proyectsV2' 
 }
 
 global.msgglobal = '✿⸝꙳.˖ Ocurrió un problema, contacte al creador'
-global.dev = `ʙᴜɪʟᴛ ʙʏ ɪ'ᴍ ᴅɪᴇɢᴏ ♡`
+global.dev = `★彡[xɪ_ᴍɪɢᴜᴇʟᴏɴ77xx]彡★`
 
 global.mess = {
   socket: '(∩´͈ ᴖ `͈∩ ྀི) Este comando solo puede ser ejecutado por un Socket.',
@@ -21,8 +21,7 @@ global.mess = {
 }
 
 global.my = {
-ch: "120363420992828502@newsletter", // Oficial
-ch2: "120363405689107729@newsletter" // Api
+ch: "120363407128588763@newsletter"
 }
 
 let file = fileURLToPath(import.meta.url)
