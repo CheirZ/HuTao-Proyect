@@ -252,7 +252,7 @@ export default {
         }).length
       : 0;
 
-    const maxSubs = 20;
+    const maxSubs = 50;
     if (subsCount >= maxSubs) {
       return client.reply(
         msg.chat,
