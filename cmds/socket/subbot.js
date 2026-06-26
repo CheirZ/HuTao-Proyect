@@ -256,7 +256,7 @@ export default {
     if (subsCount >= maxSubs) {
       return client.reply(
         msg.chat,
-        '✎ No se han encontrado espacios disponibles para registrar un `Sub-Bot`.\n\n𑁍ࠬܓ Recuerda que tambien puedes conectarte desde nuestra web oficial en el siguiente link.\n> ✐ https://stellarwa.xyz/register',
+        '✎ No se han encontrado espacios disponibles para registrar un `Sub-Bot`.\n\n𑁍ࠬܓ Recuerda que tambien puedes conectarte desde nuestra web oficial en el siguiente link.\n> ✐ https://nube.stellarwa.xyz/go/Register-Furina',
         msg,
       );
     }
