@@ -1,11 +1,12 @@
 import axios from 'axios';
+import db from "#db"
 
 let enviando = false;
 
 export default {
-  comand: ['twitter', 'x', 'xdl'],
+  command: ['twitter', 'x', 'xdl'],
   category: 'downloader',
-  run: async (msg, { sock, text, usedPrefix, command }) => {
+  run: async ({ msg, sock, text, usedPrefix, command }) => {
     if (!text) throw `Ejemplo: *${usedPrefix + command}* https://twitter.com/auronplay/status/1586487664274206720?s=20&t=3snvkvwGUIez5iWYQAehpw`;
     if (enviando) return;
     enviando = true;
@@ -19,14 +20,14 @@ export default {
       // Manejar errores devueltos por TwitterDL
       if (!res || res.status !== 'success') {
         if (typeof msg.react === 'function') msg.react('✖️');
-        throw new Error(res?.msgessage || 'Error al procesar la URL de Twitter.');
+        throw new Error(res?.message || 'Error al procesar la URL de Twitter.');
       }
 
       const type = res.result?.type;
 
       if (type === 'video') {
-        if (typeof msg.react === 'function') m.react('✔️');
-        const caption = res.result?.caption ? res.result.caption : '*Aquí tiene su imsgagen*';
+        if (typeof msg.react === 'function') msg.react('✔️');
+        const caption = res.result?.caption ? res.result.caption : '*Aquí tiene su video*';
         const media = res.result?.media || [];
 
         for (const item of media) {
