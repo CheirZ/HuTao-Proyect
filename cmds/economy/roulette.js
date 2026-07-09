@@ -1,3 +1,5 @@
+import db from "#db"
+
 const msToTime = (duration) => {
   const seconds = Math.floor((duration / 1000) % 60)
   const minutes = Math.floor((duration / (1000 * 60)) % 60)
@@ -10,61 +12,73 @@ const msToTime = (duration) => {
 export default {
   command: ['rt', 'roulette', 'ruleta'],
   category: 'rpg',
-  run: async (client, m, args) => {
-    const db = global.db.data
-    const chatId = m.chat
-    const senderId = m.sender
-    const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
-    const botSettings = db.settings[botId]
-    const chatData = db.chats[chatId]
+  run: async ({ msg, sock, args }) => {
+    const chatId = msg.chat
+    const senderId = msg.sender
+    const botId = sock.user.id.split(':')[0] + '@s.whatsapp.net'
+    
+    // Obtener configuración del bot y del chat
+    const botSettings = await db.getSettings(botId)
+    const chatData = await db.getChat(chatId)
 
     if (chatData.adminonly || !chatData.rpg)
-      return m.reply(`🫛 Estos comandos estan desactivados en este grupo.`)
+      return msg.reply(mess.comandooff)
 
-    const user = chatData.users[m.sender]
+    const user = await db.getChatUser(chatId, senderId)
     const cooldown = 5 * 60 * 1000
     const now = Date.now()
     const remaining = (user.rtCooldown || 0) - now
     const currency = botSettings.currency || 'Monedas'
 
     if (remaining > 0)
-      return m.reply(`🌱 Debes esperar *${msToTime(remaining)}* antes de apostar nuevamente.`)
+      return msg.reply(`🌱 Debes esperar *${msToTime(remaining)}* antes de apostar nuevamente.`)
 
     if (args.length !== 2)
-      return m.reply(`🌾 Debes ingresar una cantidad de ${currency} y apostar a un color.`)
+      return msg.reply(`🌾 Debes ingresar una cantidad de ${currency} y apostar a un color.`)
 
     const amount = parseInt(args[0])
     const color = args[1].toLowerCase()
     const validColors = ['red', 'black', 'green']
 
     if (isNaN(amount) || amount < 200)
-      return m.reply(`🌾 La cantidad mínima de ${currency} a apostar es 200.`)
+      return msg.reply(`🌾 La cantidad mínima de ${currency} a apostar es 200.`)
 
     if (!validColors.includes(color))
-      return m.reply(`🍒 Por favor, elige un color válido: red, black, green.`)
+      return msg.reply(`🍒 Por favor, elige un color válido: red, black, green.`)
 
     if (user.coins < amount)
-      return m.reply(`🍒 No tienes suficientes *${currency}* para hacer esta apuesta.`)
+      return msg.reply(`🍒 No tienes suficientes *${currency}* para hacer esta apuesta.`)
 
+    // Actualizar cooldown
     user.rtCooldown = now + cooldown
+    await db.updateChatUser(chatId, senderId, 'rtCooldown', user.rtCooldown)
+
     const resultColor = validColors[Math.floor(Math.random() * validColors.length)]
 
     if (resultColor === color) {
       const reward = amount * (resultColor === 'green' ? 14 : 2)
       user.coins += reward
-      await client.reply(
+      await db.updateChatUser(chatId, senderId, 'coins', user.coins)
+      
+      await sock.sendMessage(
         chatId,
-        `🌱 La ruleta salió en *${resultColor}* y has ganado *¥${reward.toLocaleString()} ${currency}*.`,
-        m,
-        { mentions: [senderId] }
+        { 
+          text: `🌱 La ruleta salió en *${resultColor}* y has ganado *¥${reward.toLocaleString()} ${currency}*.`,
+          mentions: [senderId]
+        },
+        { quoted: msg }
       )
     } else {
       user.coins -= amount
-      await client.reply(
+      await db.updateChatUser(chatId, senderId, 'coins', user.coins)
+      
+      await sock.sendMessage(
         chatId,
-        `🌱 La ruleta salió en *${resultColor}* y has perdido *¥${amount.toLocaleString()} ${currency}*.`,
-        m,
-        { mentions: [senderId] }
+        { 
+          text: `🌱 La ruleta salió en *${resultColor}* y has perdido *¥${amount.toLocaleString()} ${currency}*.`,
+          mentions: [senderId]
+        },
+        { quoted: msg }
       )
     }
   },
