@@ -63,7 +63,7 @@ export default {
         }
       }
     } catch (e) {
-      await sock.reply(msg.chat, msgglobal, msg)
+      await sock.reply(msg.chat, msgglobal + e, msg)
     }
   }
 }
