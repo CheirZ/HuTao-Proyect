@@ -6,7 +6,9 @@ global.owner = ['5218711426787']
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  key: 'proyectsV2' 
+  key: 'proyectsV2',
+  url2: 'https://api.evogb.org',
+  key2: 'putostodos'
 }
 
 global.msgglobal = '✿⸝꙳.˖ Ocurrió un problema, contacte al creador'
