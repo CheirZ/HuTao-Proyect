@@ -18,7 +18,7 @@ export default {
         const medias = []
         for (const url of urls.slice(0, 10)) {
           try {
-            const res = await axios.get(`${api.url}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key}`)
+            const res = await axios.get(`${api.url2}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key2}`)
             const json = res.data
             if (!json.status || !json.data || !json.data.download) continue
             for (const media of json.data.download.slice(0, 10)) {
@@ -37,7 +37,7 @@ export default {
         }
       } else {
         const url = urls[0]
-        const res = await axios.get(`${api.url}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key}`)
+        const res = await axios.get(`${api.url2}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key2}`)
         const json = res.data
         if (!json.status || !json.data || !json.data.download) {
           return sock.reply(msg.chat, "✿ No se pudo *obtener* el contenido", msg)
